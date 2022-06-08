@@ -1,6 +1,6 @@
 <%-- 
-    Document   : blog-list
-    Created on : Jun 5, 2022, 11:26:10 PM
+    Document   : blog-grid
+    Created on : Jun 8, 2022, 10:10:54 AM
     Author     : dell
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -35,7 +35,7 @@
                                 <ul>
                                     <li><i class="fas fa-map-marker-alt top-icon"></i> 123, washington street, uk</li>
                                     <li><i class="fas fa-phone-volume top-icon"></i> +19 123-456-7890</li>
-                                    <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0ddd1d9dcf0c9dfc5c2d4dfddd1d9de9ed3dfdd">[email&#160;protected]</a></li>
+                                    <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="412c20282d01382e3433252e2c20282f6f222e2c">[email&#160;protected]</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -152,16 +152,16 @@
                                         </li>
                                         <li><a href="blank-page.html">Starter Page</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="register.jsp">Register</a></li>
                                         <li><a href="forgot-password.html">Forgot Password</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu active">
                                     <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
-                                        <li class="active"><a href="blog-list.html">Blog List</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                        <li><a href="blog-list.jsp">Blog List</a></li>
+                                        <li class="active"><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-details.jsp">Blog Details</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -212,7 +212,7 @@
                                     <li class="breadcrumb-item active" aria-current="page">Blog</li>
                                 </ol>
                             </nav>
-                            <h2 class="breadcrumb-title">Blog List</h2>
+                            <h2 class="breadcrumb-title">Blog Grid</h2>
                         </div>
                     </div>
                 </div>
@@ -223,114 +223,218 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
+                            <div class="row blog-grid-row">
+                                <div class="col-md-6 col-sm-12">
 
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.html">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user.jpg" alt="Post Author"> <span>Ruby Perrin</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>4 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>12 Comments</li>
-                                            <li><i class="fa fa-tags"></i>HTML</li>
-                                        </ul>
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user1.jpg" alt="Post Author"> <span>Ruby Perrin</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 4 Dec 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">Sed ut perspiciatis unde omnis iste natus</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
                                     </div>
+
                                 </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.html" class="read-more">Read More</a>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user2.jpg" alt="Post Author"> <span>Darren Elder</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 3 Dec 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">1914 translation by H. Rackham?</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-03.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user3.jpg" alt="Post Author"> <span>Deborah Angel</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 3 Dec 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">At vero eos et accusamus et iusto odio</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-04.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user4.jpg" alt="Post Author"> <span>Sofia Brient</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 2 Dec 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">On the other hand, we denounce with righte</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-05.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user5.jpg" alt="Post Author"> <span>Marvin Campbell</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 1 Dec 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">The standard chunk of Lorem Ipsum used since</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-06.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user6.jpg" alt="Post Author"> <span>Katharine Berthold</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 30 Nov 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">There are many variations of passages of Lorem</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-07.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user7.jpg" alt="Post Author"> <span>Linda Tobin</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 28 Nov 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">It is a long established fact that</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-08.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user8.jpg" alt="Post Author"> <span>Paul Richard </span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 25 Nov 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">Contrary to popular belief, Lorem </a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-09.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user9.jpg" alt="Post Author"> <span>John Gibbs</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 24 Nov 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">packages and web page editors now use Lorem</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+
+                                    <div class="blog grid-blog">
+                                        <div class="blog-image">
+                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-10.jpg" alt="Post Image"></a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <ul class="entry-meta meta-item">
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user10.jpg" alt="Post Author"> <span>Olga Barlow</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i> 23 Nov 2019</li>
+                                            </ul>
+                                            <h3 class="blog-title"><a href="blog-details.html">Lorem Ipsum is simply dummy</a></h3>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt=""></a>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.html">1914 translation by H. Rackham</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user1.jpg" alt="Post Author"> <span>Darren Elder</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>3 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>7 Comments</li>
-                                            <li><i class="fa fa-tags"></i>Java Script</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.html" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <div class="video">
-                                        <iframe width="940" src="https://www.youtube.com/embed/ZMty6R0Bn0I" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.html">The standard Lorem Ipsum passage, used since the</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user2.jpg" alt="Post Author"> <span>Deborah Angel</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>3 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>2 Comments</li>
-                                            <li><i class="fa fa-tags"></i>C++</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.html" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <div class="video">
-                                        <iframe width="940" src="https://www.youtube.com/embed/svmGQhQLuBQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.html">Section 1.10.32 of "de Finibus Bonorum et Malorum</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user3.jpg" alt="Post Author"> <span>Sofia Brient</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>2 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>41 Comments</li>
-                                            <li><i class="fa fa-tags"></i>Css</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.html" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -625,5 +729,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:39 GMT -->
 </html>
