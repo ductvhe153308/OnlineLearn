@@ -113,7 +113,7 @@
                                     <li><a href="invoices.html">Invoices</a></li>
                                     <li><a href="profile-settings.html">Profile Settings</a></li>
                                     <li><a href="reviews.html">Reviews</a></li>
-                                    <li><a href="mentor-register.html">Mentor Register</a></li>
+                                    <li><a href="mentor-recover.jsp">Mentor Register</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
@@ -153,8 +153,8 @@
                                         </ul>
                                     </li>
                                     <li><a href="blank-page.html">Starter Page</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="login.jsp">Login</a></li>
+                                    <li><a href="recover.jsp">Register</a></li>
                                     <li><a href="forgot-password.html">Forgot Password</a></li>
                                 </ul>
                             </li>
@@ -170,16 +170,16 @@
                                 <a href="admin/index.html" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
-                                <a href="login.html">Login / Signup</a>
+                                <a href="login.jsp">Login / Signup</a>
                             </li>
                         </ul>
                     </div>
                     <ul class="nav header-navbar-rht">
                         <li class="nav-item">
-                            <a class="nav-link header-register" href="login.html">Login</a>
+                            <a class="nav-link header-register" href="login.jsp">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link header-login" href="register.html">Register</a>
+                            <a class="nav-link header-login" href="recover.jsp">Register</a>
                         </li>
                     </ul>
                 </div>

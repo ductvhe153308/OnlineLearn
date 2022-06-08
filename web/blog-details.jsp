@@ -111,7 +111,7 @@
                                         <li><a href="invoices.html">Invoices</a></li>
                                         <li><a href="profile-settings.html">Profile Settings</a></li>
                                         <li><a href="reviews.html">Reviews</a></li>
-                                        <li><a href="mentor-register.html">Mentor Register</a></li>
+                                        <li><a href="mentor-recover.jsp">Mentor Register</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu">
@@ -151,8 +151,8 @@
                                             </ul>
                                         </li>
                                         <li><a href="blank-page.html">Starter Page</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="forgot-password.html">Forgot Password</a></li>
                                     </ul>
                                 </li>
@@ -168,7 +168,7 @@
                                     <a href="admin/index.html" target="_blank">Admin</a>
                                 </li>
                                 <li class="login-link">
-                                    <a href="login.html">Login / Signup</a>
+                                    <a href="login.jsp">Login / Signup</a>
                                 </li>
                             </ul>
                         </div>
@@ -192,7 +192,7 @@
                                     </div>
                                     <a class="dropdown-item" href="dashboard.html">Dashboard</a>
                                     <a class="dropdown-item" href="profile-settings.html">Profile Settings</a>
-                                    <a class="dropdown-item" href="login.html">Logout</a>
+                                    <a class="dropdown-item" href="login.jsp">Logout</a>
                                 </div>
                             </li>
 
@@ -583,8 +583,8 @@
                                     <h2 class="footer-title">For Mentee</h2>
                                     <ul>
                                         <li><a href="search.html">Search Mentors</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="booking.html">Booking</a></li>
                                         <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
                                     </ul>
@@ -598,8 +598,8 @@
                                     <ul>
                                         <li><a href="appointments.html">Appointments</a></li>
                                         <li><a href="chat.html">Chat</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="dashboard.html">Mentor Dashboard</a></li>
                                     </ul>
                                 </div>

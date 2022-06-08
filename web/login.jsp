@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/login.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -53,7 +53,7 @@
                                         <a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
                                     </div>
                                     <button class="btn btn-primary login-btn" type="submit">Login</button>
-                                    <div class="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div>
+                                    <div class="text-center dont-have">Don’t have an account? <a href="recover.jsp">Register</a></div>
                                 </form>
                             </div>
                         </div>
@@ -72,5 +72,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/login.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
 </html>
