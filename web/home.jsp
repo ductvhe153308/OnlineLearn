@@ -854,7 +854,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.jsp">
+                                    <a href="blog-details.html">
                                         <img src="assets/img/blog/blog-01.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -862,7 +862,7 @@
                                     <div class="blog-avatar text-center">
                                         <p>Posted on 24-01-2021</p>
                                     </div>
-                                    <h4><a href="blog-details.jsp">Contrary to popular belief, Lorem Ipsum is</a></h4>
+                                    <h4><a href="blog-details.html">Contrary to popular belief, Lorem Ipsum is</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                     <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
@@ -871,7 +871,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.jsp">
+                                    <a href="blog-details.html">
                                         <img src="assets/img/blog/blog-02.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -879,7 +879,7 @@
                                     <div class="blog-avatar text-center">
                                         <p>Posted on 24-01-2021</p>
                                     </div>
-                                    <h4><a href="blog-details.jsp">The standard chunk of Lorem Ipsum used</a></h4>
+                                    <h4><a href="blog-details.html">The standard chunk of Lorem Ipsum used</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                     <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
@@ -888,7 +888,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.jsp">
+                                    <a href="blog-details.html">
                                         <img src="assets/img/blog/blog-03.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -896,7 +896,7 @@
                                     <div class="blog-avatar text-center">
                                         <p>Posted on 24-01-2021</p>
                                     </div>
-                                    <h4><a href="blog-details.jsp">The standard Lorem Ipsum passage, used</a></h4>
+                                    <h4><a href="blog-details.html">The standard Lorem Ipsum passage, used</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                     <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>

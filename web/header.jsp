@@ -35,9 +35,9 @@
                     <div class="col-md-8">
                         <div class="left-top">
                             <ul>
-                                <li><i class="fas fa-map-marker-alt top-icon"></i>FPT University, Hoa Lac Hi-Tech Park, Thach That, Hanoi, Vietnam</li>
-                                <li><i class="fas fa-phone-volume top-icon"></i> +84-915021248</li>
-                                <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">truonghdhe140305@fpt.edu.vn</a></li>
+                                <li><i class="fas fa-map-marker-alt top-icon"></i> 123, washington street, uk</li>
+                                <li><i class="fas fa-phone-volume top-icon"></i> +19 123-456-7890</li>
+                                <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">[email&#160;protected]</a></li>
                             </ul>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                                         <a href="blog.html">Blog</a>
                                         <ul class="submenu">
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.jsp">Blog View</a></li>
+                                            <li><a href="blog-details.html">Blog View</a></li>
                                             <li><a href="add-blog.html">Add Blog</a></li>
                                             <li><a href="edit-blog.html">Edit Blog</a></li>
                                         </ul>
@@ -113,7 +113,7 @@
                                     <li><a href="invoices.html">Invoices</a></li>
                                     <li><a href="profile-settings.html">Profile Settings</a></li>
                                     <li><a href="reviews.html">Reviews</a></li>
-                                    <li><a href="mentor-recover.jsp">Mentor Register</a></li>
+                                    <li><a href="mentor-register.html">Mentor Register</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
@@ -153,33 +153,33 @@
                                         </ul>
                                     </li>
                                     <li><a href="blank-page.html">Starter Page</a></li>
-                                    <li><a href="login.jsp">Login</a></li>
-                                    <li><a href="recover.jsp">Register</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
                                     <li><a href="forgot-password.html">Forgot Password</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="blog-list.jsp">Blog List</a></li>
-                                    <li><a href="blog-grid.jsp">Blog Grid</a></li>
-                                    <li><a href="blog-details.jsp">Blog Details</a></li>
+                                    <li><a href="blog-list.html">Blog List</a></li>
+                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="admin/index.html" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
-                                <a href="login.jsp">Login / Signup</a>
+                                <a href="login.html">Login / Signup</a>
                             </li>
                         </ul>
                     </div>
                     <ul class="nav header-navbar-rht">
                         <li class="nav-item">
-                            <a class="nav-link header-register" href="login.jsp">Login</a>
+                            <a class="nav-link header-register" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link header-login" href="recover.jsp">Register</a>
+                            <a class="nav-link header-login" href="register.html">Register</a>
                         </li>
                     </ul>
                 </div>
