@@ -35,9 +35,9 @@
                     <div class="col-md-8">
                         <div class="left-top">
                             <ul>
-                                <li><i class="fas fa-map-marker-alt top-icon"></i>FPT University, Hoa Lac Hi-Tech Park, Km29 Thang Long Avenue, Thach That District, Hanoi</li>
+                                <li><i class="fas fa-map-marker-alt top-icon"></i>FPT University, Hoa Lac Hi-Tech Park, Thach That, Hanoi, Vietnam</li>
                                 <li><i class="fas fa-phone-volume top-icon"></i> +84-915021248</li>
-                                <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">[email&#160;protected]</a></li>
+                                <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">truonghdhe140305@fpt.edu.vn</a></li>
                             </ul>
                         </div>
                     </div>
