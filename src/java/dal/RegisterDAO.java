@@ -5,7 +5,7 @@
  */
 package dal;
 
-import utils.ConnectionUtils;
+import utils.DBContext;
 import model.Account;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +26,7 @@ public class RegisterDAO {
     public Account checkAccountExist(String email) {
         String query = "select * from swp391.account where email = ?";
         try {
-            conn = new ConnectionUtils().getConnection();
+            conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, email);
             rs = ps.executeQuery();
@@ -63,7 +63,7 @@ public class RegisterDAO {
                 + "`address`)\n"
                 + "VALUES (?,?,?,?,?,5,'normal',null,1,?,?,?,??,);";
         try {
-            conn = new ConnectionUtils().getConnection();
+            conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, a.getFirst_name());
             ps.setString(2, a.getLast_name());
