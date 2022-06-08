@@ -102,7 +102,7 @@
                                             <a href="blog.html">Blog</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog View</a></li>
+                                                <li><a href="blog-details.jsp">Blog View</a></li>
                                                 <li><a href="add-blog.html">Add Blog</a></li>
                                                 <li><a href="edit-blog.html">Edit Blog</a></li>
                                             </ul>
@@ -228,7 +228,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -239,7 +239,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 4 Dec 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">Sed ut perspiciatis unde omnis iste natus</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">Sed ut perspiciatis unde omnis iste natus</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -249,7 +249,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -260,7 +260,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 3 Dec 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">1914 translation by H. Rackham?</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">1914 translation by H. Rackham?</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -270,7 +270,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-03.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-03.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -281,7 +281,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 3 Dec 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">At vero eos et accusamus et iusto odio</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">At vero eos et accusamus et iusto odio</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -291,7 +291,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-04.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-04.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -302,7 +302,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 2 Dec 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">On the other hand, we denounce with righte</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">On the other hand, we denounce with righte</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -312,7 +312,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-05.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-05.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -323,7 +323,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 1 Dec 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">The standard chunk of Lorem Ipsum used since</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">The standard chunk of Lorem Ipsum used since</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -333,7 +333,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-06.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-06.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -344,7 +344,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 30 Nov 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">There are many variations of passages of Lorem</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">There are many variations of passages of Lorem</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -354,7 +354,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-07.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-07.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -365,7 +365,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 28 Nov 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">It is a long established fact that</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">It is a long established fact that</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-08.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-08.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -386,7 +386,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 25 Nov 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">Contrary to popular belief, Lorem </a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">Contrary to popular belief, Lorem </a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -396,7 +396,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-09.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-09.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -407,7 +407,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 24 Nov 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">packages and web page editors now use Lorem</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">packages and web page editors now use Lorem</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -417,7 +417,7 @@
 
                                     <div class="blog grid-blog">
                                         <div class="blog-image">
-                                            <a href="blog-details.html"><img class="img-fluid" src="assets/img/blog/blog-10.jpg" alt="Post Image"></a>
+                                            <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-10.jpg" alt="Post Image"></a>
                                         </div>
                                         <div class="blog-content">
                                             <ul class="entry-meta meta-item">
@@ -428,7 +428,7 @@
                                                 </li>
                                                 <li><i class="far fa-clock"></i> 23 Nov 2019</li>
                                             </ul>
-                                            <h3 class="blog-title"><a href="blog-details.html">Lorem Ipsum is simply dummy</a></h3>
+                                            <h3 class="blog-title"><a href="blog-details.jsp">Lorem Ipsum is simply dummy</a></h3>
                                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor.</p>
                                         </div>
                                     </div>
@@ -486,65 +486,65 @@
                                     <ul class="latest-posts">
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">Lorem Ipsum is simply dummy text of the printing</a>
+                                                    <a href="blog-details.jsp">Lorem Ipsum is simply dummy text of the printing</a>
                                                 </h4>
                                                 <p>4 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">It is a long established fact that a reader will be</a>
+                                                    <a href="blog-details.jsp">It is a long established fact that a reader will be</a>
                                                 </h4>
                                                 <p>3 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">here are many variations of passages of Lorem Ipsum</a>
+                                                    <a href="blog-details.jsp">here are many variations of passages of Lorem Ipsum</a>
                                                 </h4>
                                                 <p>3 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-04.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">The standard chunk of Lorem Ipsum used since the</a>
+                                                    <a href="blog-details.jsp">The standard chunk of Lorem Ipsum used since the</a>
                                                 </h4>
                                                 <p>2 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-05.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">generate Lorem Ipsum which looks reasonable</a>
+                                                    <a href="blog-details.jsp">generate Lorem Ipsum which looks reasonable</a>
                                                 </h4>
                                                 <p>1 Dec 2019</p>
                                             </div>
