@@ -69,8 +69,8 @@
                                     <h2 class="footer-title">For Mentee</h2>
                                     <ul>
                                         <li><a href="search.html">Search Mentors</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="booking.html">Booking</a></li>
                                         <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
                                     </ul>
@@ -84,8 +84,8 @@
                                     <ul>
                                         <li><a href="appointments.html">Appointments</a></li>
                                         <li><a href="chat.html">Chat</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="dashboard.html">Mentor Dashboard</a></li>
                                     </ul>
                                 </div>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="copyright-text text-md-end">
-                                        <p>&copy; 2020 Mentoring. All rights reserved.</p>
+                                        <p>&copy; 2022 Mentoring. All rights reserved.</p>
                                     </div>
                                 </div>
                             </div>

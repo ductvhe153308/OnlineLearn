@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -111,7 +111,7 @@
                                         <li><a href="invoices.html">Invoices</a></li>
                                         <li><a href="profile-settings.html">Profile Settings</a></li>
                                         <li><a href="reviews.html">Reviews</a></li>
-                                        <li><a href="mentor-register.html">Mentor Register</a></li>
+                                        <li><a href="mentor-recover.jsp">Mentor Register</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu">
@@ -151,16 +151,16 @@
                                             </ul>
                                         </li>
                                         <li><a href="blank-page.html">Starter Page</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="forgot-password.html">Forgot Password</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu active">
                                     <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
-                                        <li class="active"><a href="blog-list.html">Blog List</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li class="active"><a href="blog-list.jsp">Blog List</a></li>
+                                        <li><a href="blog-grid.jsp">Blog Grid</a></li>
                                         <li><a href="blog-details.jsp">Blog Details</a></li>
                                     </ul>
                                 </li>
@@ -168,7 +168,7 @@
                                     <a href="admin/index.html" target="_blank">Admin</a>
                                 </li>
                                 <li class="login-link">
-                                    <a href="login.html">Login / Signup</a>
+                                    <a href="login.jsp">Login / Signup</a>
                                 </li>
                             </ul>
                         </div>
@@ -192,7 +192,7 @@
                                     </div>
                                     <a class="dropdown-item" href="dashboard.html">Dashboard</a>
                                     <a class="dropdown-item" href="profile-settings.html">Profile Settings</a>
-                                    <a class="dropdown-item" href="login.html">Logout</a>
+                                    <a class="dropdown-item" href="login.jsp">Logout</a>
                                 </div>
                             </li>
 
@@ -542,8 +542,8 @@
                                     <h2 class="footer-title">For Mentee</h2>
                                     <ul>
                                         <li><a href="search.html">Search Mentors</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="booking.html">Booking</a></li>
                                         <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
                                     </ul>
@@ -557,8 +557,8 @@
                                     <ul>
                                         <li><a href="appointments.html">Appointments</a></li>
                                         <li><a href="chat.html">Chat</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="login.jsp">Login</a></li>
+                                        <li><a href="recover.jsp">Register</a></li>
                                         <li><a href="dashboard.html">Mentor Dashboard</a></li>
                                     </ul>
                                 </div>
@@ -625,5 +625,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
 </html>

@@ -38,13 +38,13 @@
                                     <p class="text-muted">Enter your email to get a password reset link</p>
                                 </div>
 
-                                <form action="https://mentoring-html.dreamguystech.com/template-1/login.html">
+                                <form action="https://mentoring-html.dreamguystech.com/template-1/login.jsp">
                                     <div class="form-group">
                                         <label class="form-control-label">Email Address</label>
                                         <input type="email" class="form-control">
                                     </div>
                                     <div class="text-right">
-                                        <a class="forgot-link" href="login.html">Remember your password?</a>
+                                        <a class="forgot-link" href="login.jsp">Remember your password?</a>
                                     </div>
                                     <button class="btn btn-primary login-btn" type="submit">Reset Password</button>
                                 </form>
