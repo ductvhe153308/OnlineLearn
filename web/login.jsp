@@ -37,15 +37,15 @@
                                     <h3>Login <span>Mentoring</span></h3>
                                     <p class="text-muted">Access to our dashboard</p>
                                 </div>
-                                <form action="https://mentoring-html.dreamguystech.com/template-1/index.html">
+                                <form action="account" method="post">
                                     <div class="form-group">
                                         <label class="form-control-label">Email Address</label>
-                                        <input type="email" class="form-control">
+                                        <input type="text" name="email" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">Password</label>
                                         <div class="pass-group">
-                                            <input type="password" class="form-control pass-input">
+                                            <input type="password" name="password" class="form-control pass-input">
                                             <span class="fas fa-eye toggle-password"></span>
                                         </div>
                                     </div>
