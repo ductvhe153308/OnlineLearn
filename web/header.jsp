@@ -35,8 +35,8 @@
                     <div class="col-md-8">
                         <div class="left-top">
                             <ul>
-                                <li><i class="fas fa-map-marker-alt top-icon"></i> 123, washington street, uk</li>
-                                <li><i class="fas fa-phone-volume top-icon"></i> +19 123-456-7890</li>
+                                <li><i class="fas fa-map-marker-alt top-icon"></i>FPT University, Hoa Lac Hi-Tech Park, Km29 Thang Long Avenue, Thach That District, Hanoi</li>
+                                <li><i class="fas fa-phone-volume top-icon"></i> +84-915021248</li>
                                 <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">[email&#160;protected]</a></li>
                             </ul>
                         </div>
@@ -104,7 +104,7 @@
                                         <a href="blog.html">Blog</a>
                                         <ul class="submenu">
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog View</a></li>
+                                            <li><a href="blog-details.jsp">Blog View</a></li>
                                             <li><a href="add-blog.html">Add Blog</a></li>
                                             <li><a href="edit-blog.html">Edit Blog</a></li>
                                         </ul>
@@ -161,9 +161,9 @@
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="blog-list.jsp">Blog List</a></li>
+                                    <li><a href="blog-grid.jsp">Blog Grid</a></li>
+                                    <li><a href="blog-details.jsp">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li>

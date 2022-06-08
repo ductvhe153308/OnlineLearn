@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-grid.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -160,7 +160,7 @@
                                     <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="blog-list.jsp">Blog List</a></li>
-                                        <li class="active"><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li class="active"><a href="blog-grid.jsp">Blog Grid</a></li>
                                         <li><a href="blog-details.jsp">Blog Details</a></li>
                                     </ul>
                                 </li>
@@ -729,5 +729,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:39 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-grid.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:39 GMT -->
 </html>

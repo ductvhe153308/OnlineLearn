@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:23 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:23 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -102,7 +102,7 @@
                                             <a href="blog.html">Blog</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
-                                                <li class="active"><a href="blog-details.html">Blog View</a></li>
+                                                <li class="active"><a href="blog-details.jsp">Blog View</a></li>
                                                 <li><a href="add-blog.html">Add Blog</a></li>
                                                 <li><a href="edit-blog.html">Edit Blog</a></li>
                                             </ul>
@@ -159,9 +159,9 @@
                                 <li class="has-submenu">
                                     <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
-                                        <li><a href="blog-list.html">Blog List</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                        <li><a href="blog-list.jsp">Blog List</a></li>
+                                        <li><a href="blog-grid.jsp">Blog Grid</a></li>
+                                        <li><a href="blog-details.jsp">Blog Details</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -423,65 +423,65 @@
                                     <ul class="latest-posts">
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">Lorem Ipsum is simply dummy text of the printing</a>
+                                                    <a href="blog-details.jsp">Lorem Ipsum is simply dummy text of the printing</a>
                                                 </h4>
                                                 <p>4 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">It is a long established fact that a reader will be</a>
+                                                    <a href="blog-details.jsp">It is a long established fact that a reader will be</a>
                                                 </h4>
                                                 <p>3 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">here are many variations of passages of Lorem Ipsum</a>
+                                                    <a href="blog-details.jsp">here are many variations of passages of Lorem Ipsum</a>
                                                 </h4>
                                                 <p>3 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-04.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">The standard chunk of Lorem Ipsum used since the</a>
+                                                    <a href="blog-details.jsp">The standard chunk of Lorem Ipsum used since the</a>
                                                 </h4>
                                                 <p>2 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.html">
+                                                <a href="blog-details.jsp">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-05.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.html">to generate Lorem Ipsum which looks reasonable.</a>
+                                                    <a href="blog-details.jsp">to generate Lorem Ipsum which looks reasonable.</a>
                                                 </h4>
                                                 <p>1 Dec 2019</p>
                                             </div>
@@ -666,5 +666,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
 </html>
