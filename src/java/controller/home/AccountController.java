@@ -13,13 +13,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Account;
 
 /**
  *
  * @author admin
  */
-@WebServlet(name = "AccountController", urlPatterns = {"/account"})
+
 public class AccountController extends HttpServlet {
 
     /**
@@ -71,6 +72,8 @@ public class AccountController extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
             if (a != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("user", a);
                 response.sendRedirect("home.jsp");
             }
         } catch (Exception e) {
