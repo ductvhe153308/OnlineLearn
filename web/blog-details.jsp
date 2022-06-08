@@ -1,6 +1,6 @@
 <%-- 
-    Document   : blog-list
-    Created on : Jun 5, 2022, 11:26:10 PM
+    Document   : blog-detail
+    Created on : Jun 8, 2022, 10:36:23 AM
     Author     : dell
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:23 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -35,7 +35,7 @@
                                 <ul>
                                     <li><i class="fas fa-map-marker-alt top-icon"></i> 123, washington street, uk</li>
                                     <li><i class="fas fa-phone-volume top-icon"></i> +19 123-456-7890</li>
-                                    <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0ddd1d9dcf0c9dfc5c2d4dfddd1d9de9ed3dfdd">[email&#160;protected]</a></li>
+                                    <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ce1ede5e0ccf5e3f9fee8e3e1ede5e2a2efe3e1">[email&#160;protected]</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                 <li>
                                     <a href="index.html">Home</a>
                                 </li>
-                                <li class="has-submenu">
+                                <li class="has-submenu active">
                                     <a href="#">Mentor <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="dashboard.html">Mentor Dashboard</a></li>
@@ -98,11 +98,11 @@
                                         <li><a href="schedule-timings.html">Schedule Timing</a></li>
                                         <li><a href="mentee-list.html">Mentee List</a></li>
                                         <li><a href="profile-mentee.html">Mentee Profile</a></li>
-                                        <li class="has-submenu">
+                                        <li class="has-submenu active">
                                             <a href="blog.html">Blog</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.jsp">Blog View</a></li>
+                                                <li class="active"><a href="blog-details.html">Blog View</a></li>
                                                 <li><a href="add-blog.html">Add Blog</a></li>
                                                 <li><a href="edit-blog.html">Edit Blog</a></li>
                                             </ul>
@@ -116,7 +116,7 @@
                                 </li>
                                 <li class="has-submenu">
                                     <a href="#">Mentee <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
+                                    <ul class="submenu"> 
                                         <li class="has-submenu">
                                             <a href="#">Mentors</a>
                                             <ul class="submenu">
@@ -156,12 +156,12 @@
                                         <li><a href="forgot-password.html">Forgot Password</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu active">
+                                <li class="has-submenu">
                                     <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
-                                        <li class="active"><a href="blog-list.html">Blog List</a></li>
+                                        <li><a href="blog-list.html">Blog List</a></li>
                                         <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-details.jsp">Blog Details</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -212,7 +212,7 @@
                                     <li class="breadcrumb-item active" aria-current="page">Blog</li>
                                 </ol>
                             </nav>
-                            <h2 class="breadcrumb-title">Blog List</h2>
+                            <h2 class="breadcrumb-title">Blog Details</h2>
                         </div>
                     </div>
                 </div>
@@ -223,141 +223,182 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user.jpg" alt="Post Author"> <span>Ruby Perrin</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>4 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>12 Comments</li>
-                                            <li><i class="fa fa-tags"></i>HTML</li>
-                                        </ul>
+                            <div class="blog-view">
+                                <div class="blog blog-single-post">
+                                    <div class="blog-image">
+                                        <a href="javascript:void(0);"><img alt="" src="assets/img/blog/blog-01.jpg" class="img-fluid"></a>
                                     </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt=""></a>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">1914 translation by H. Rackham</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user1.jpg" alt="Post Author"> <span>Darren Elder</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>3 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>7 Comments</li>
-                                            <li><i class="fa fa-tags"></i>Java Script</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <div class="video">
-                                        <iframe width="940" src="https://www.youtube.com/embed/ZMty6R0Bn0I" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">The standard Lorem Ipsum passage, used since the</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user2.jpg" alt="Post Author"> <span>Deborah Angel</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>3 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>2 Comments</li>
-                                            <li><i class="fa fa-tags"></i>C++</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <div class="video">
-                                        <iframe width="940" src="https://www.youtube.com/embed/svmGQhQLuBQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">Section 1.10.32 of "de Finibus Bonorum et Malorum</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user3.jpg" alt="Post Author"> <span>Sofia Brient</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>2 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>41 Comments</li>
-                                            <li><i class="fa fa-tags"></i>Css</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="blog-pagination">
-                                        <nav>
-                                            <ul class="pagination justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                    <h3 class="blog-title">Lorem Ipsum is simply dummy text of the printing</h3>
+                                    <div class="blog-info clearfix">
+                                        <div class="post-left">
+                                            <ul>
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user.jpg" alt="Post Author"> <span>Marvin Downey</span></a>
+                                                    </div>
                                                 </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
-                                                </li>
+                                                <li><i class="far fa-calendar"></i>4 Dec 2019</li>
+                                                <li><i class="far fa-comments"></i>12 Comments</li>
+                                                <li><i class="fa fa-tags"></i>HTML</li>
                                             </ul>
-                                        </nav>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                                    </div>
+                                </div>
+                                <div class="card blog-share clearfix">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Share the post</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="social-share">
+                                            <li><a href="#" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+                                            <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                            <li><a href="#" title="Google Plus"><i class="fab fa-google-plus"></i></a></li>
+                                            <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                                <div class="card author-widget clearfix">
+                                    <div class="card-header">
+                                        <h4 class="card-title">About Author</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="about-author">
+                                            <div class="about-author-img">
+                                                <div class="author-img-wrap">
+                                                    <a href="profile.html"><img class="img-fluid rounded-circle" alt="" src="assets/img/user/user1.jpg"></a>
+                                                </div>
+                                            </div>
+                                            <div class="author-details">
+                                                <a href="profile.html" class="blog-author-name">Darren Elder</a>
+                                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card blog-comments clearfix">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Comments (12)</h4>
+                                    </div>
+                                    <div class="card-body pb-0">
+                                        <ul class="comments-list">
+                                            <li>
+                                                <div class="comment">
+                                                    <div class="comment-author">
+                                                        <img class="avatar" alt="" src="assets/img/user/user4.jpg">
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <span class="comment-by">
+                                                            <span class="blog-author-name">Michelle Fairfax</span>
+                                                        </span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                        <p class="blog-date">Dec 6, 2017</p>
+                                                        <a class="comment-btn" href="#">
+                                                            <i class="fas fa-reply"></i> Reply
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <ul class="comments-list reply">
+                                                    <li>
+                                                        <div class="comment">
+                                                            <div class="comment-author">
+                                                                <img class="avatar" alt="" src="assets/img/user/user5.jpg">
+                                                            </div>
+                                                            <div class="comment-block">
+                                                                <span class="comment-by">
+                                                                    <span class="blog-author-name">Gina Moore</span>
+                                                                </span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
+                                                                <p class="blog-date">Dec 6, 2017</p>
+                                                                <a class="comment-btn" href="#">
+                                                                    <i class="fas fa-reply"></i> Reply
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="comment">
+                                                            <div class="comment-author">
+                                                                <img class="avatar" alt="" src="assets/img/user/user3.jpg">
+                                                            </div>
+                                                            <div class="comment-block">
+                                                                <span class="comment-by">
+                                                                    <span class="blog-author-name">Carl Kelly</span>
+                                                                </span>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
+                                                                <p class="blog-date">December 7, 2017</p>
+                                                                <a class="comment-btn" href="#">
+                                                                    <i class="fas fa-reply"></i> Reply
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="comment">
+                                                    <div class="comment-author">
+                                                        <img class="avatar" alt="" src="assets/img/user/user6.jpg">
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <span class="comment-by">
+                                                            <span class="blog-author-name">Elsie Gilley</span>
+                                                        </span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                        <p class="blog-date">December 11, 2017</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="comment">
+                                                    <div class="comment-author">
+                                                        <img class="avatar" alt="" src="assets/img/user/user7.jpg">
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <span class="comment-by">
+                                                            <span class="blog-author-name">Joan Gardner</span>
+                                                        </span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                        <p class="blog-date">December 13, 2017</p>
+                                                        <a class="comment-btn" href="#">
+                                                            <i class="fas fa-reply"></i> Reply
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card new-comment clearfix">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Leave Comment</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Name <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Your Email Address <span class="text-danger">*</span></label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Comments</label>
+                                                <textarea rows="4" class="form-control"></textarea>
+                                            </div>
+                                            <div class="submit-section">
+                                                <button class="btn btn-primary submit-btn" type="submit">Submit</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="col-lg-4 col-md-12 sidebar-right theiaStickySidebar">
@@ -382,65 +423,65 @@
                                     <ul class="latest-posts">
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.jsp">
+                                                <a href="blog-details.html">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.jsp">Lorem Ipsum is simply dummy text of the printing</a>
+                                                    <a href="blog-details.html">Lorem Ipsum is simply dummy text of the printing</a>
                                                 </h4>
                                                 <p>4 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.jsp">
+                                                <a href="blog-details.html">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.jsp">It is a long established fact that a reader will be</a>
+                                                    <a href="blog-details.html">It is a long established fact that a reader will be</a>
                                                 </h4>
                                                 <p>3 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.jsp">
+                                                <a href="blog-details.html">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.jsp">here are many variations of passages of Lorem Ipsum</a>
+                                                    <a href="blog-details.html">here are many variations of passages of Lorem Ipsum</a>
                                                 </h4>
                                                 <p>3 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.jsp">
+                                                <a href="blog-details.html">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-04.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.jsp">The standard chunk of Lorem Ipsum used since the</a>
+                                                    <a href="blog-details.html">The standard chunk of Lorem Ipsum used since the</a>
                                                 </h4>
                                                 <p>2 Dec 2019</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="post-thumb">
-                                                <a href="blog-details.jsp">
+                                                <a href="blog-details.html">
                                                     <img class="img-fluid" src="assets/img/blog/blog-thumb-05.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.jsp">generate Lorem Ipsum which looks reasonable</a>
+                                                    <a href="blog-details.html">to generate Lorem Ipsum which looks reasonable.</a>
                                                 </h4>
                                                 <p>1 Dec 2019</p>
                                             </div>
@@ -625,5 +666,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
 </html>
