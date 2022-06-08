@@ -41,6 +41,13 @@
                                          </div>
                                      </div>
                                      <div class="form-group">
+                                          <label for="gender">Gender</label>
+                                                 <select name="gender" id="gender" class="form-control">
+                                                       <option value="true">male</option>
+                                                     <option value="false">female</option>
+                                                  </select>
+                                     </div>
+                                     <div class="form-group">
                                          <label class="form-control-label">Email Address</label>
                                          <input id="email" type="email" class="form-control">
                                      </div>
@@ -70,12 +77,8 @@
                                          <label class="form-control-label">Date of Birth</label>
                                           <input type="date" name="dob" placeholder="Date Of Birth"class="form-control"><br>
                                      </div>
-                                     <div class="form-group">
-                                         <div class="form-check form-check-xs form-checkbox">
-                                             <input type="checkbox" class="form-check-input" name="agreeCheckboxUser" id="agree_checkbox_user">
-                                             <label class="form-check-label" for="agree_checkbox_user">I agree to Mentoring</label> <a tabindex="-1" href="javascript:void(0);">Privacy Policy</a> &amp; <a tabindex="-1" href="javascript:void(0);"> Terms.</a>
-                                         </div>
-                                     </div>
+                                     
+                                    
                                      <button class="btn btn-primary login-btn" type="submit">Create Account</button>
                                      <div class="account-footer text-center mt-3">Already have an account? <a class="forgot-link mb-0" href="login.jsp">Login</a>
                                      </div>
