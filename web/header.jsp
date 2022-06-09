@@ -103,7 +103,7 @@
                                         <a href="blog.html">Blog</a>
                                         <ul class="submenu">
                                             <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog View</a></li>
+                                            <li><a href="blog-details.jsp">Blog View</a></li>
                                             <li><a href="add-blog.html">Add Blog</a></li>
                                             <li><a href="edit-blog.html">Edit Blog</a></li>
                                         </ul>
@@ -160,9 +160,9 @@
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="blog-list.jsp">Blog List</a></li>
+                                    <li><a href="blog-grid.jsp">Blog Grid</a></li>
+                                    <li><a href="blog-details.jsp">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li>
