@@ -25,7 +25,7 @@
                                      <h3><span>Mentoring</span> Register</h3>
                                      <p class="text-muted">Access to our dashboard</p>
                                  </div>
-                                 <form action="https://mentoring-html.dreamguystech.com/template-1/index.html">
+                                 <form action="register_controller" method="post">
                                      <div class="row">
                                          <div class="col-lg-6">
                                              <div class="form-group">
