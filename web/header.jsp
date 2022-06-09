@@ -3,7 +3,6 @@
     Created on : Jun 6, 2022, 7:50:00 PM
     Author     : ADMIN
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -176,8 +175,8 @@
                     </div>
                     <ul class="nav header-navbar-rht">
                         <li class="nav-item">
-                            <a class="nav-link header-register" href="login.html">Login</a>
-                        </li>
+                                    <a class="nav-link header-register" href="login.jsp">Login</a>
+                                </li>
                         <li class="nav-item">
                             <a class="nav-link header-login" href="register.html">Register</a>
                         </li>
