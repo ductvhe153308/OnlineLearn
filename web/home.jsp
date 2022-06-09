@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:09 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/home.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:09 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -515,7 +515,9 @@
                             </div>
                         </div>
                         <div class="section-btn m-auto text-center">
-                            <button class="btn btn-course">View all <i class="fas fa-caret-right right-nav-white"></i></button>
+                            <a href="all-course.jsp">
+                                <button class="btn btn-course">View all <i class="fas fa-caret-right right-nav-white"></i></button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -854,7 +856,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.html">
+                                    <a href="blog-details.jsp">
                                         <img src="assets/img/blog/blog-01.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -862,7 +864,7 @@
                                     <div class="blog-avatar text-center">
                                         <p>Posted on 24-01-2021</p>
                                     </div>
-                                    <h4><a href="blog-details.html">Contrary to popular belief, Lorem Ipsum is</a></h4>
+                                    <h4><a href="blog-details.jsp">Contrary to popular belief, Lorem Ipsum is</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                     <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
@@ -871,7 +873,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.html">
+                                    <a href="blog-details.jsp">
                                         <img src="assets/img/blog/blog-02.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -879,7 +881,7 @@
                                     <div class="blog-avatar text-center">
                                         <p>Posted on 24-01-2021</p>
                                     </div>
-                                    <h4><a href="blog-details.html">The standard chunk of Lorem Ipsum used</a></h4>
+                                    <h4><a href="blog-details.jsp">The standard chunk of Lorem Ipsum used</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                     <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
@@ -888,7 +890,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.html">
+                                    <a href="blog-details.jsp">
                                         <img src="assets/img/blog/blog-03.jpg" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -896,7 +898,7 @@
                                     <div class="blog-avatar text-center">
                                         <p>Posted on 24-01-2021</p>
                                     </div>
-                                    <h4><a href="blog-details.html">The standard Lorem Ipsum passage, used</a></h4>
+                                    <h4><a href="blog-details.jsp">The standard Lorem Ipsum passage, used</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                     <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
@@ -905,7 +907,7 @@
                     </div>
                 </div>
             </section>
-             <%@include file="footer.jsp" %> 
+            <%@include file="footer.jsp" %> 
         </div>
 
 
@@ -918,5 +920,5 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:33 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/home.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:33 GMT -->
 </html>

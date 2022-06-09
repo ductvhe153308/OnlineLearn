@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
-                        <h2><span class="text-weight">Popular</span> Courses <span class="header-right"></span></h2>
+                        <h2><span class="text-weight">All</span> Courses <span class="header-right"></span></h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                 </div>
@@ -385,8 +385,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-btn m-auto text-center">
-                        <button class="btn btn-course">View all <i class="fas fa-caret-right right-nav-white"></i></button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="blog-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>

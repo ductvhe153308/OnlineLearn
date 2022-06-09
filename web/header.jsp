@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:09 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/home.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:09 GMT -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -74,13 +74,13 @@
                                 <span></span>
                             </span>
                         </a>
-                        <a href="index.html" class="navbar-brand logo">
+                        <a href="home.jsp" class="navbar-brand logo">
                             <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
                         <div class="menu-header">
-                            <a href="index.html" class="menu-logo">
+                            <a href="home.jsp" class="menu-logo">
                                 <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                             </a>
                             <a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -89,7 +89,7 @@
                         </div>
                         <ul class="main-nav">
                             <li class="active">
-                                <a href="index.html">Home</a>
+                                <a href="home.jsp">Home</a>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">Mentor <i class="fas fa-chevron-down"></i></a>
@@ -166,7 +166,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="admin/index.html" target="_blank">Admin</a>
+                                <a href="admin/home.jsp" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
                                 <a href="login.html">Login / Signup</a>
@@ -193,6 +193,6 @@
         <script src="assets/js/script.js"></script>
     </body>
 
-    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:33 GMT -->
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/home.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:33 GMT -->
 </html>
 
