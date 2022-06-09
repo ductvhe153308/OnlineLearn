@@ -33,6 +33,65 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="sidebar-right theiaStickySidebar">
+                        <div class="card search-widget">
+                            <div class="card-body">
+                                <form class="search-form">
+                                    <div class="input-group">
+                                        <input onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="suggest" style="display: none">
+                            <div class="card category-widget">
+                                <div class="card-header">
+                                    <h4 class="card-title">Course Categories</h4>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="categories">
+                                        <li><a href="#">HTML <span>(62)</span></a></li>
+                                        <li><a href="#">Css <span>(27)</span></a></li>
+                                        <li><a href="#">Java Script <span>(41)</span></a></li>
+                                        <li><a href="#">Photoshop <span>(16)</span></a></li>
+                                        <li><a href="#">Wordpress <span>(55)</span></a></li>
+                                        <li><a href="#">VB <span>(07)</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card tags-widget">
+                                <div class="card-header">
+                                    <h4 class="card-title">Tags</h4>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="tags">
+                                        <li><a href="#" class="tag">HTML</a></li>
+                                        <li><a href="#" class="tag">Css</a></li>
+                                        <li><a href="#" class="tag">Java Script</a></li>
+                                        <li><a href="#" class="tag">Jquery</a></li>
+                                        <li><a href="#" class="tag">Wordpress</a></li>
+                                        <li><a href="#" class="tag">Php</a></li>
+                                        <li><a href="#" class="tag">Angular js</a></li>
+                                        <li><a href="#" class="tag">React js</a></li>
+                                        <li><a href="#" class="tag">Vue js</a></li>
+                                        <li><a href="#" class="tag">Photoshop</a></li>
+                                        <li><a href="#" class="tag">Ajax</a></li>
+                                        <li><a href="#" class="tag">Json</a></li>
+                                        <li><a href="#" class="tag">C</a></li>
+                                        <li><a href="#" class="tag">C++</a></li>
+                                        <li><a href="#" class="tag">Vb</a></li>
+                                        <li><a href="#" class="tag">Vb.net</a></li>
+                                        <li><a href="#" class="tag">Asp.net</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
                         <div class="popular-course">
                             <div class="courses-head">
@@ -59,7 +118,7 @@
                                     </ul>
                                     <p class="mb-1">Hinata Hyuga</p>
                                     <h4 class="mb-0" >
-                                        <a href="newhtml.html">Introduction Learn – LMS plugin</a>
+                                        <a href="course-detail.jsp">Introduction Learn – LMS plugin</a>
                                     </h4>
                                 </div>
                             </div>
@@ -103,7 +162,7 @@
                                     </ul>
                                     <p class="mb-1">Keny White</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">From Zero to Hero with Nodejs</a>
+                                        <a href="course-detail.jsp">From Zero to Hero with Nodejs</a>
                                     </h4>
                                 </div>
                             </div>
@@ -147,7 +206,7 @@
                                     </ul>
                                     <p class="mb-1">John Paul</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">Learn Python – Interactive Tutorial</a>
+                                        <a href="course-detail.jsp">Learn Python – Interactive Tutorial</a>
                                     </h4>
                                 </div>
                             </div>
@@ -191,7 +250,7 @@
                                     </ul>
                                     <p class="mb-1">Antony Noel</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">Your Guide to Photography</a>
+                                        <a href="course-detail.jsp">Your Guide to Photography</a>
                                     </h4>
                                 </div>
                             </div>
@@ -235,7 +294,7 @@
                                     </ul>
                                     <p class="mb-1">Hinata Hyuga</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">Become a PHP Master and Expertise</a>
+                                        <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
                                     </h4>
                                 </div>
                             </div>
@@ -279,7 +338,7 @@
                                     </ul>
                                     <p class="mb-1">Keny White</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">Learning jQuery Mobile for Beginners</a>
+                                        <a href="course-detail.jsp">Learning jQuery Mobile for Beginners</a>
                                     </h4>
                                 </div>
                             </div>
@@ -323,7 +382,7 @@
                                     </ul>
                                     <p class="mb-1">John Paul</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">The Art of Black and White Photography</a>
+                                        <a href="course-detail.jsp">The Art of Black and White Photography</a>
                                     </h4>
                                 </div>
                             </div>
@@ -367,7 +426,7 @@
                                     </ul>
                                     <p class="mb-1">Antony Noel</p>
                                     <h4 class="mb-0">
-                                        <a href="newhtml.html">HTML5/CSS3 Essentials in 4-Hours</a>
+                                        <a href="course-detail.jsp">HTML5/CSS3 Essentials in 4-Hours</a>
                                     </h4>
                                 </div>
                             </div>
@@ -415,4 +474,14 @@
         </section>
         <%@include file="footer.jsp" %> 
     </body>
+    <script>
+        function toogleSuggestSearch() {
+            var x = document.getElementById("suggest");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </html>
