@@ -6,12 +6,23 @@
 package controller.home;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Properties;
+import java.util.Random;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,61 +43,14 @@ public class RecoverController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RecoverController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RecoverController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+
     }
 
-     @Override
+    @Override
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        //Get uid, if uid null, get email
-        String uid = request.getParameter("uid");
-
-        request.setAttribute("verified", 0);
-        //Check if uid is present
-        if (uid != null) {
-            VerificationToken vt = accDb.getAccountToken(uid);
-            long now = Timestamp.valueOf(LocalDateTime.now()).getTime();
-            if (vt != null) {
-                if (vt.getExpiry() > now) {
-                    Account a = accDb.getAccountByID(vt.getUid());
-                    request.setAttribute("aid", a.getAid());
-                    request.setAttribute("oldPassword", a.getPassword());
-                    request.setAttribute("verified", 1);
-                } else {
-                    request.setAttribute("expired", 1);
-                }
-            }
-        }
-
-        request.getRequestDispatcher("reset_password.jsp").forward(request, response);
-
-        String toAddress = request.getParameter("email");
-        //Get email to send link
-        try {
-            if (toAddress != null) {
-                int expiry_time = Integer.parseInt(getInitParameter("expiry"));
-                String token = Function.generateRandomTokenWithExpiry(8, expiry_time);
-                accDb.updateVerificationTokenByEmail(toAddress, token);
-                String url = "http://localhost:8080/WebApplication2/resetpw?uid=" + token;
-                String message = "A Reset Password request was made with this email. You can access <a href=\"" + url + "\">this link</a> to reset your password. This link will only be available for "+expiry_time+" minutes.";
-                Function.sendEmail(toAddress, "Reset Password", message);
-            }
-        } catch (UnsupportedEncodingException e) {
-            request.setAttribute("failed", 1);
-        }
+        request.getRequestDispatcher("recover.jsp").forward(request, response);
     }
 
     /**
@@ -100,20 +64,51 @@ public class RecoverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            String aid = request.getParameter("aid");
-            String password = request.getParameter("new_password");
-            
-            Account acc = new Account();
-            acc.setAid(Integer.parseInt(aid));
-            acc.setPassword(password);
-            
-            accDb.changeAccountPassword(acc);
-            accDb.updateVerificationTokenByID(Integer.parseInt(aid), null);
-            
-            response.sendRedirect("login_controller");
-        } catch (Exception e) {
-            
+        String email = request.getParameter("email");
+        RequestDispatcher dispatcher = null;
+        int otpvalue = 0;
+        HttpSession mySession = request.getSession();
+
+        if (email != null || !email.equals("")) {
+            // sending otp
+            Random rand = new Random();
+            otpvalue = rand.nextInt(1255650);
+
+            String to = email;// change accordingly
+            // Get the session object
+            Properties props = new Properties();
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.socketFactory.port", "465");
+            props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.port", "465");
+            Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication("ntdan19@gmail.com", "v p k m n g n p b j v t o i f l");// Put your email
+                    // id and
+                    // password here
+                }
+            });
+            // compose message
+            try {
+                MimeMessage message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(email));// change accordingly
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+                message.setSubject("Hello");
+                message.setText("Your OTP is: " + otpvalue);
+                // send message
+                Transport.send(message);
+                System.out.println("message sent successfully");
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
+            dispatcher = request.getRequestDispatcher("enter-otp.jsp");
+            request.setAttribute("message", "OTP is sent to your email id");
+            //request.setAttribute("connection", con);
+            mySession.setAttribute("otp", otpvalue);
+            mySession.setAttribute("email", email);
+            dispatcher.forward(request, response);
+            //request.setAttribute("status", "success");
         }
     }
 
@@ -126,6 +121,5 @@ public class RecoverController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 
 }

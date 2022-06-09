@@ -8,6 +8,14 @@
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>controller.home.LogoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ValidateOtpController</servlet-name>
+        <servlet-class>controller.home.ValidateOtpController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewPasswordController</servlet-name>
+        <servlet-class>controller.home.NewPasswordController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidateOtpController</servlet-name>
+        <url-pattern>/ValidateOtp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPasswordController</servlet-name>
+        <url-pattern>/NewPassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

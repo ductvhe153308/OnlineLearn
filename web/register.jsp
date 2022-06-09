@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Mentoring</title>
     <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
-
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
      <body class="account-page">
@@ -25,7 +22,7 @@
                                      <h3><span>Mentoring</span> Register</h3>
                                      <p class="text-muted">Access to our dashboard</p>
                                  </div>
-                                 <form action="register_controller" method="post">
+                                <form action="register_controller" method="post">
                                      <div class="row">
                                          <div class="col-lg-6">
                                              <div class="form-group">
@@ -43,8 +40,8 @@
                                      <div class="form-group">
                                           <label for="gender">Gender</label>
                                                  <select name="gender" id="gender" class="form-control">
-                                                       <option value="true">male</option>
-                                                     <option value="false">female</option>
+                                                       <option value="1">male</option>
+                                                     <option value="0">female</option>
                                                   </select>
                                      </div>
                                      <div class="form-group">
@@ -91,10 +88,8 @@
              </div>
          </div>
 
+         
 
-         <script src="assets/js/jquery-3.6.0.min.js"></script>
-         <script src="assets/js/bootstrap.bundle.min.js"></script>
-         <script src="assets/js/script.js"></script>
 </body>
 
 </html>
