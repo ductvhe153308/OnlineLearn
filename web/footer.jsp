@@ -70,7 +70,7 @@
                                     <ul>
                                         <li><a href="search.html">Search Mentors</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="register.jsp">Register</a></li>
                                         <li><a href="booking.html">Booking</a></li>
                                         <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
                                     </ul>
@@ -85,7 +85,7 @@
                                         <li><a href="appointments.html">Appointments</a></li>
                                         <li><a href="chat.html">Chat</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="register.jsp">Register</a></li>
                                         <li><a href="dashboard.html">Mentor Dashboard</a></li>
                                     </ul>
                                 </div>
