@@ -27,7 +27,7 @@
 
         <div class="main-wrapper">
 
-            <div class="bg-pattern-style">
+            <div class="bg-pattern-style" style="min-height: 100vh">
                 <div class="content">
 
                     <div class="account-content">
