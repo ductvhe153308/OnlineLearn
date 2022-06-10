@@ -34,9 +34,9 @@
                     <div class="col-md-8">
                         <div class="left-top">
                             <ul>
-                                <li><i class="fas fa-map-marker-alt top-icon"></i> 123, washington street, uk</li>
-                                <li><i class="fas fa-phone-volume top-icon"></i> +19 123-456-7890</li>
-                                <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">[email&#160;protected]</a></li>
+                                <li><i class="fas fa-map-marker-alt top-icon"></i> FPT University, Hoa Lac Hi-Tech Park, Hanoi</li>
+                                <li><i class="fas fa-phone-volume top-icon"></i> +84915021248</li>
+                                <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d606c64614d7462787f6962606c6463236e6260">truonghdhe140305</a></li>
                             </ul>
                         </div>
                     </div>
@@ -90,6 +90,9 @@
                         <ul class="main-nav">
                             <li class="active">
                                 <a href="home.jsp">Home</a>
+                            </li>
+                            <li>
+                                <a href="all-course.jsp">Course</a>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">Mentor <i class="fas fa-chevron-down"></i></a>
