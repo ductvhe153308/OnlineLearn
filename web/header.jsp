@@ -115,7 +115,7 @@
                                     <a class="nav-link header-register" href="login.jsp">Login</a>
                                 </li>
                         <li class="nav-item">
-                            <a class="nav-link header-login" href="register.html">Register</a>
+                            <a class="nav-link header-login" href="register.jsp">Register</a>
                         </li>
                     </ul>
                 </div>

@@ -111,7 +111,7 @@
                                         <li><a href="invoices.html">Invoices</a></li>
                                         <li><a href="profile-settings.html">Profile Settings</a></li>
                                         <li><a href="reviews.html">Reviews</a></li>
-                                        <li><a href="mentor-register.html">Mentor Register</a></li>
+                                        <li><a href="mentor-register.jsp">Mentor Register</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-submenu">
@@ -152,7 +152,7 @@
                                         </li>
                                         <li><a href="blank-page.html">Starter Page</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="register.jsp">Register</a></li>
                                         <li><a href="forgot-password.html">Forgot Password</a></li>
                                     </ul>
                                 </li>
@@ -543,7 +543,7 @@
                                     <ul>
                                         <li><a href="search.html">Search Mentors</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="register.jsp">Register</a></li>
                                         <li><a href="booking.html">Booking</a></li>
                                         <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
                                     </ul>
@@ -558,7 +558,7 @@
                                         <li><a href="appointments.html">Appointments</a></li>
                                         <li><a href="chat.html">Chat</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="register.jsp">Register</a></li>
                                         <li><a href="dashboard.html">Mentor Dashboard</a></li>
                                     </ul>
                                 </div>
