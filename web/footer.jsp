@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="copyright-text text-md-end">
-                                        <p>&copy; 2020 Mentoring. All rights reserved.</p>
+                                        <p>&copy; 2022 Mentoring. All rights reserved.</p>
                                     </div>
                                 </div>
                             </div>
