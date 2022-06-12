@@ -403,144 +403,149 @@
                                 <div class="card-body">
                                     <ul class="latest-posts">
                                         <li>
-                                            <div class=" d-flex flex-wrap">
-                                                <div class="popular-course">
-                                                    <div class="courses-head">
-                                                        <div class="courses-img-main">
-                                                            <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                            <a href="course-detail.jsp">
+                                                <div class=" d-flex flex-wrap">
+                                                    <div class="popular-course">
+                                                        <div class="courses-head">
+                                                            <div class="courses-img-main">
+                                                                <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="courses-aut-img">
+                                                                <img src="assets/img/user/user.png" alt="">
+                                                            </div>
                                                         </div>
-                                                        <div class="courses-aut-img">
-                                                            <img src="assets/img/user/user.png" alt="">
+                                                        <div class="courses-body">
+                                                            <div class="courses-ratings">
+                                                                <ul class="mb-1" style="display: flex; flex-direction: row" >
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star not-checked"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="mb-1">Hinata Hyuga</p>
+                                                                <h4 class="mb-0">
+                                                                    <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
+                                                                </h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="courses-body">
-                                                        <div class="courses-ratings">
-                                                            <ul class="mb-1" style="display: flex; flex-direction: row" >
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star not-checked"></i>
-                                                                </li>
-                                                            </ul>
-                                                            <p class="mb-1">Hinata Hyuga</p>
-                                                            <h4 class="mb-0">
-                                                                <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="courses-border"></div>
-                                                    <div class="courses-footer d-flex align-items-center">
-                                                        <div class="courses-count">
-                                                            <ul class="mb-0">
-                                                                <li><i class="fas fa-user-graduate me-1"></i> 215</li>
-                                                                <li><i class="far fa-file-alt me-1"></i>3</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="courses-amt ms-auto">
-                                                            <h3 class="mb-0">$350</h3>
+                                                        <div class="courses-border"></div>
+                                                        <div class="courses-footer d-flex align-items-center">
+                                                            <div class="courses-count">
+                                                                <ul class="mb-0">
+                                                                    <li><i class="fas fa-user-graduate me-1"></i> 215</li>
+                                                                    <li><i class="far fa-file-alt me-1"></i>3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="courses-amt ms-auto">
+                                                                <h3 class="mb-0">$350</h3>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
                                         <li>
-                                            <div class=" d-flex flex-wrap">
-                                                <div class="popular-course">
-                                                    <div class="courses-head">
-                                                        <div class="courses-img-main">
-                                                            <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                            <a href="course-detail.jsp">
+                                                <div class=" d-flex flex-wrap">
+                                                    <div class="popular-course">
+                                                        <div class="courses-head">
+                                                            <div class="courses-img-main">
+                                                                <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="courses-aut-img">
+                                                                <img src="assets/img/user/user.png" alt="">
+                                                            </div>
                                                         </div>
-                                                        <div class="courses-aut-img">
-                                                            <img src="assets/img/user/user.png" alt="">
+                                                        <div class="courses-body">
+                                                            <div class="courses-ratings">
+                                                                <ul class="mb-1" style="display: flex; flex-direction: row" >
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star not-checked"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="mb-1">Hinata Hyuga</p>
+                                                                <h4 class="mb-0">
+                                                                    <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
+                                                                </h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="courses-body">
-                                                        <div class="courses-ratings">
-                                                            <ul class="mb-1" style="display: flex; flex-direction: row" >
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star not-checked"></i>
-                                                                </li>
-                                                            </ul>
-                                                            <p class="mb-1">Hinata Hyuga</p>
-                                                            <h4 class="mb-0">
-                                                                <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="courses-border"></div>
-                                                    <div class="courses-footer d-flex align-items-center">
-                                                        <div class="courses-count">
-                                                            <ul class="mb-0">
-                                                                <li><i class="fas fa-user-graduate me-1"></i> 215</li>
-                                                                <li><i class="far fa-file-alt me-1"></i>3</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="courses-amt ms-auto">
-                                                            <h3 class="mb-0">$350</h3>
+                                                        <div class="courses-border"></div>
+                                                        <div class="courses-footer d-flex align-items-center">
+                                                            <div class="courses-count">
+                                                                <ul class="mb-0">
+                                                                    <li><i class="fas fa-user-graduate me-1"></i> 215</li>
+                                                                    <li><i class="far fa-file-alt me-1"></i>3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="courses-amt ms-auto">
+                                                                <h3 class="mb-0">$350</h3>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
                                         <li>
-                                            <div class=" d-flex flex-wrap">
-                                                <div class="popular-course">
-                                                    <div class="courses-head">
-                                                        <div class="courses-img-main">
-                                                            <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                            <a href="course-detail.jsp">
+                                                <div class=" d-flex flex-wrap">
+                                                    <div class="popular-course">
+                                                        <div class="courses-head">
+                                                            <div class="courses-img-main">
+                                                                <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="courses-aut-img">
+                                                                <img src="assets/img/user/user.png" alt="">
+                                                            </div>
                                                         </div>
-                                                        <div class="courses-aut-img">
-                                                            <img src="assets/img/user/user.png" alt="">
+                                                        <div class="courses-body">
+                                                            <div class="courses-ratings">
+                                                                <ul class="mb-1" style="display: flex; flex-direction: row" >
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star not-checked"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="mb-1">Hinata Hyuga</p>
+                                                                <h4 class="mb-0">
+                                                                    <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
+                                                                </h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="courses-body">
-                                                        <div class="courses-ratings">
-                                                            <ul class="mb-1" style="display: flex; flex-direction: row" >
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star not-checked"></i>
-                                                                </li>
-                                                            </ul>
-                                                            <p class="mb-1">Hinata Hyuga</p>
-                                                            <h4 class="mb-0">
-                                                                <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="courses-border"></div>
-                                                    <div class="courses-footer d-flex align-items-center">
-                                                        <div class="courses-count">
-                                                            <ul class="mb-0">
-                                                                <li><i class="fas fa-user-graduate me-1"></i> 215</li>
-                                                                <li><i class="far fa-file-alt me-1"></i>3</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="courses-amt ms-auto">
-                                                            <h3 class="mb-0">$350</h3>
+                                                        <div class="courses-border"></div>
+                                                        <div class="courses-footer d-flex align-items-center">
+                                                            <div class="courses-count">
+                                                                <ul class="mb-0">
+                                                                    <li><i class="fas fa-user-graduate me-1"></i> 215</li>
+                                                                    <li><i class="far fa-file-alt me-1"></i>3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="courses-amt ms-auto">
+                                                                <h3 class="mb-0">$350</h3>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>
