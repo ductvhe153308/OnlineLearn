@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <style>
-        .hearder-course-detail{
+        .header-course-detail{
             color: white !important;
         }
     </style>
@@ -36,40 +36,51 @@
 
             <div class="content">
                 <div class="container-fluid">
-                    <div class="row hearder-course-detail" style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149)); padding: 0 0 50px 100px">
-                        <div class="courses-body" style="color: white; text-align: start" >
+                    <div class="row header-course-detail" style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149)); padding: 0 0 50px 100px;">
+                        <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
+                            <div style="width: 60%">
                                 <h4 style="color: white; padding-bottom: 20px">
                                     Couse > Category 
                                 </h4>
-                            <h1 style="color: white;">
-                                From Zero to Hero with Nodejs
-                            </h1>
-                            <div class="courses-ratings">
-                                <ul class="mb-1">
-                                    <li> <i class="fas fa-star checked"></i>
-                                    </li>
-                                    <li> <i class="fas fa-star checked"></i>
-                                    </li>
-                                    <li> <i class="fas fa-star checked"></i>
-                                    </li>
-                                    <li> <i class="fas fa-star checked"></i>
-                                    </li>
-                                    <li> <i class="fas fa-star not-checked"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div style="display: flex; flex-direction: row; align-items: center; padding-top: 50px">
-                                <div>
-                                    <img style="border-radius: 50%;
-                                         width: 60px;
-                                         margin: auto;
-                                         height: 60px;" src="assets/img/user/user8.jpg" alt="">
+                                <h1 style="color: white;">
+                                    From Zero to Hero with Nodejs
+                                </h1>
+                                <div class="courses-ratings">
+                                    <ul class="mb-1">
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star not-checked"></i>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <p style="color: white; padding-left: 20px">Keny White</p>
+                                <div style="display: flex; flex-direction: row; align-items: center; padding-top: 50px">
+                                    <div>
+                                        <img style="border-radius: 50%;
+                                             width: 60px;
+                                             margin: auto;
+                                             height: 60px;" src="assets/img/user/user8.jpg" alt="">
+                                    </div>
+                                    <p style="color: white; padding-left: 20px">Keny White</p>
+                                </div>
                             </div>
+                            <div>
+                                <h4 style="color: white; padding-bottom: 20px">
+                                    Offered By
+                                </h4>
+                                <div class="navbar-brand logo" style="background-color: white; padding: 10px">
+                                    <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+                                </div>
+                            </div>
+
                         </div>
                         <div style="padding: 20px">
-                            <a class="btn btn-primary" style="background-color: #55acee; width: 200px" href="#!" role="button">                          
+                            <a class="btn btn-primary" style="background-color: #55acee; width: 200px" href="course-start-learning.jsp" role="button">                          
                                 <span style="display: block; font-size: 22px">
                                     Enroll 
                                 </span>
