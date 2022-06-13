@@ -5,6 +5,7 @@
  */
 package controller.home;
 
+import dal.AccountDAO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -69,21 +70,15 @@ public class NewPasswordController extends HttpServlet {
         String confPassword = request.getParameter("confPassword");
         RequestDispatcher dispatcher = null;
         if (newPassword != null && confPassword != null && newPassword.equals(confPassword)) {
-
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/onlinelearning?zeroDateTimeBehavior=convertToNull", "root",
-                        "trongan2000");
-                PreparedStatement pst = con.prepareStatement("update account set password = ? where email = ? ");
-                pst.setString(1, newPassword);
-                pst.setString(2, (String) session.getAttribute("email"));
-
-                int rowCount = pst.executeUpdate();
+                String email = (String) session.getAttribute("email");
+                AccountDAO a = new AccountDAO();
+                int rowCount = a.resetPassword(newPassword,email);
                 if (rowCount > 0) {
-                    request.setAttribute("status", "resetSuccess");
+                    request.setAttribute("status", "Reset Success");
                     dispatcher = request.getRequestDispatcher("login.jsp");
                 } else {
-                    request.setAttribute("status", "resetFailed");
+                    request.setAttribute("status", "Reset Failed");
                     dispatcher = request.getRequestDispatcher("login.jsp");
                 }
                 dispatcher.forward(request, response);

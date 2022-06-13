@@ -8,6 +8,8 @@ package dal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Account;
 import utils.DBContext;
 /**
@@ -38,5 +40,19 @@ public class AccountDAO {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    public int resetPassword(String newPassword,String email){
+        try {
+            String query = "update account set password = ? where email = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, newPassword);
+            ps.setString(2, email);
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return 0;
     }
 }
