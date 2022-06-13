@@ -32,26 +32,6 @@
             <footer class="footer">
                 <div class="footer-top">
                     <div class="container">
-                        <div class="subsccribe-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="subscribe-item">
-                                        <div class="section-title">
-                                            <h2>Sign Up For Newsletter</h2>
-                                            <p>Join 60.000+ Subscribers</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="subscribe-item">
-                                        <form class="newsletter-form">
-                                            <input type="email" class="form-control" placeholder="Enter your email" autocomplete="off">
-                                            <button class="btn cmn-btn" type="submit"><i class="fas fa-paper-plane me-2"></i>Subscribe Now</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-lg-3 col-md-6">
 
@@ -128,7 +108,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="copyright-text text-md-end">
-                                        <p>&copy; 2020 Mentoring. All rights reserved.</p>
+                                        <p>&copy; 2022 Mentoring. All rights reserved.</p>
                                     </div>
                                 </div>
                             </div>

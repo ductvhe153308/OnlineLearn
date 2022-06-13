@@ -23,185 +23,74 @@
 
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
+    <style>
+        .header-course-detail{
+            color: white !important;
+        }
+    </style>
     <body>
 
         <div class="main-wrapper">
 
-            <div class="header-top">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="left-top">
-                                <ul>
-                                    <li><i class="fas fa-map-marker-alt top-icon"></i> 123, washington street, uk</li>
-                                    <li><i class="fas fa-phone-volume top-icon"></i> +19 123-456-7890</li>
-                                    <li><i class="fas fa-envelope top-icon"></i> <a href="https://mentoring-html.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ce1ede5e0ccf5e3f9fee8e3e1ede5e2a2efe3e1">[email&#160;protected]</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="right-top">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fab fa-facebook-f top-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-instagram top-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-linkedin-in top-icons"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-twitter top-icons"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <%@include file="header.jsp" %>
 
-
-            <header class="header">
-                <nav class="navbar navbar-expand-lg header-nav">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a id="mobile_btn" href="javascript:void(0);">
-                                <span class="bar-icon">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </a>
-                            <a href="home.jsp" class="navbar-brand logo">
-                                <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
-                            </a>
-                        </div>
-                        <div class="main-menu-wrapper">
-                            <div class="menu-header">
-                                <a href="home.jsp" class="menu-logo">
-                                    <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
-                                </a>
-                                <a id="menu_close" class="menu-close" href="javascript:void(0);">
-                                    <i class="fas fa-times"></i>
-                                </a>
-                            </div>
-                            <ul class="main-nav">
-                                <li>
-                                    <a href="home.jsp">Home</a>
-                                </li>
-                                <li class="has-submenu active">
-                                    <a href="#">Mentor <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="dashboard.html">Mentor Dashboard</a></li>
-                                        <li><a href="bookings.html">Bookings</a></li>
-                                        <li><a href="schedule-timings.html">Schedule Timing</a></li>
-                                        <li><a href="mentee-list.html">Mentee List</a></li>
-                                        <li><a href="profile-mentee.html">Mentee Profile</a></li>
-                                        <li class="has-submenu active">
-                                            <a href="blog.html">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li class="active"><a href="blog-details.jsp">Blog View</a></li>
-                                                <li><a href="add-blog.html">Add Blog</a></li>
-                                                <li><a href="edit-blog.html">Edit Blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="chat.html">Chat</a></li>
-                                        <li><a href="invoices.html">Invoices</a></li>
-                                        <li><a href="profile-settings.html">Profile Settings</a></li>
-                                        <li><a href="reviews.html">Reviews</a></li>
-                                        <li><a href="mentor-register.jsp">Mentor Register</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Mentee <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu"> 
-                                        <li class="has-submenu">
-                                            <a href="#">Mentors</a>
-                                            <ul class="submenu">
-                                                <li><a href="map-grid.html">Map Grid</a></li>
-                                                <li><a href="map-list.html">Map List</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="search.html">Search Mentor</a></li>
-                                        <li><a href="profile.html">Mentor Profile</a></li>
-                                        <li><a href="bookings-mentee.html">Bookings</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="booking-success.html">Booking Success</a></li>
-                                        <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
-                                        <li><a href="favourites.html">Favourites</a></li>
-                                        <li><a href="chat-mentee.html">Chat</a></li>
-                                        <li><a href="profile-settings-mentee.html">Profile Settings</a></li>
-                                        <li><a href="change-password.html">Change Password</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="voice-call.html">Voice Call</a></li>
-                                        <li><a href="video-call.html">Video Call</a></li>
-                                        <li><a href="search.html">Search Mentors</a></li>
-                                        <li><a href="components.html">Components</a></li>
-                                        <li class="has-submenu">
-                                            <a href="invoices.html">Invoices</a>
-                                            <ul class="submenu">
-                                                <li><a href="invoices.html">Invoices</a></li>
-                                                <li><a href="invoice-view.html">Invoice View</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blank-page.html">Starter Page</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.jsp">Register</a></li>
-                                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu">
-                                    <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="blog-list.jsp">Blog List</a></li>
-                                        <li><a href="blog-grid.jsp">Blog Grid</a></li>
-                                        <li><a href="blog-details.jsp">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="admin/home.jsp" target="_blank">Admin</a>
-                                </li>
-                                <li class="login-link">
-                                    <a href="login.html">Login / Signup</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <ul class="nav header-navbar-rht">
-
-                            <li class="nav-item dropdown has-arrow logged-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                                    <span class="user-img">
-                                        <img class="rounded-circle me-2" src="assets/img/user/user.jpg" width="31" alt="Darren Elder">Jonathan Doe
-                                    </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <div class="user-header">
-                                        <div class="avatar avatar-sm">
-                                            <img src="assets/img/user/user.jpg" alt="User Image" class="avatar-img rounded-circle">
-                                        </div>
-                                        <div class="user-text">
-                                            <h6>Jonathan Doe</h6>
-                                            <p class="text-muted mb-0">Mentor</p>
-                                        </div>
-                                    </div>
-                                    <a class="dropdown-item" href="dashboard.html">Dashboard</a>
-                                    <a class="dropdown-item" href="profile-settings.html">Profile Settings</a>
-                                    <a class="dropdown-item" href="login.html">Logout</a>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                </nav>
-            </header>
             <div class="content">
                 <div class="container-fluid">
+                    <div class="row header-course-detail" style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149)); padding: 0 0 50px 100px;">
+                        <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
+                            <div style="width: 60%">
+                                <h4 style="color: white; padding-bottom: 20px">
+                                    Couse > Category 
+                                </h4>
+                                <h1 style="color: white;">
+                                    From Zero to Hero with Nodejs
+                                </h1>
+                                <div class="courses-ratings">
+                                    <ul class="mb-1">
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star checked"></i>
+                                        </li>
+                                        <li> <i class="fas fa-star not-checked"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex; flex-direction: row; align-items: center; padding-top: 50px">
+                                    <div>
+                                        <img style="border-radius: 50%;
+                                             width: 60px;
+                                             margin: auto;
+                                             height: 60px;" src="assets/img/user/user8.jpg" alt="">
+                                    </div>
+                                    <p style="color: white; padding-left: 20px">Keny White</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 style="color: white; padding-bottom: 20px">
+                                    Offered By
+                                </h4>
+                                <div class="navbar-brand logo" style="background-color: white; padding: 10px">
+                                    <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style="padding: 20px">
+                            <a class="btn btn-primary" style="background-color: #55acee; width: 200px" href="course-start-learning.jsp" role="button">                          
+                                <span style="display: block; font-size: 22px">
+                                    Enroll 
+                                </span>
+                                <span>
+                                    Start in Jun 12
+                                </span>
+                            </a>
+                            <span style="display: block; padding-top: 20px">1,234 already enrolled</span>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
                             <div class="blog-view">
@@ -403,144 +292,149 @@
                                 <div class="card-body">
                                     <ul class="latest-posts">
                                         <li>
-                                            <div class=" d-flex flex-wrap">
-                                                <div class="popular-course">
-                                                    <div class="courses-head">
-                                                        <div class="courses-img-main">
-                                                            <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                            <a href="course-detail.jsp">
+                                                <div class=" d-flex flex-wrap">
+                                                    <div class="popular-course">
+                                                        <div class="courses-head">
+                                                            <div class="courses-img-main">
+                                                                <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="courses-aut-img">
+                                                                <img src="assets/img/user/user.png" alt="">
+                                                            </div>
                                                         </div>
-                                                        <div class="courses-aut-img">
-                                                            <img src="assets/img/user/user.png" alt="">
+                                                        <div class="courses-body">
+                                                            <div class="courses-ratings">
+                                                                <ul class="mb-1" style="display: flex; flex-direction: row" >
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star not-checked"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="mb-1">Hinata Hyuga</p>
+                                                                <h4 class="mb-0">
+                                                                    <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
+                                                                </h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="courses-body">
-                                                        <div class="courses-ratings">
-                                                            <ul class="mb-1" style="display: flex; flex-direction: row" >
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star not-checked"></i>
-                                                                </li>
-                                                            </ul>
-                                                            <p class="mb-1">Hinata Hyuga</p>
-                                                            <h4 class="mb-0">
-                                                                <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="courses-border"></div>
-                                                    <div class="courses-footer d-flex align-items-center">
-                                                        <div class="courses-count">
-                                                            <ul class="mb-0">
-                                                                <li><i class="fas fa-user-graduate me-1"></i> 215</li>
-                                                                <li><i class="far fa-file-alt me-1"></i>3</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="courses-amt ms-auto">
-                                                            <h3 class="mb-0">$350</h3>
+                                                        <div class="courses-border"></div>
+                                                        <div class="courses-footer d-flex align-items-center">
+                                                            <div class="courses-count">
+                                                                <ul class="mb-0">
+                                                                    <li><i class="fas fa-user-graduate me-1"></i> 215</li>
+                                                                    <li><i class="far fa-file-alt me-1"></i>3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="courses-amt ms-auto">
+                                                                <h3 class="mb-0">$350</h3>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
                                         <li>
-                                            <div class=" d-flex flex-wrap">
-                                                <div class="popular-course">
-                                                    <div class="courses-head">
-                                                        <div class="courses-img-main">
-                                                            <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                            <a href="course-detail.jsp">
+                                                <div class=" d-flex flex-wrap">
+                                                    <div class="popular-course">
+                                                        <div class="courses-head">
+                                                            <div class="courses-img-main">
+                                                                <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="courses-aut-img">
+                                                                <img src="assets/img/user/user.png" alt="">
+                                                            </div>
                                                         </div>
-                                                        <div class="courses-aut-img">
-                                                            <img src="assets/img/user/user.png" alt="">
+                                                        <div class="courses-body">
+                                                            <div class="courses-ratings">
+                                                                <ul class="mb-1" style="display: flex; flex-direction: row" >
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star not-checked"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="mb-1">Hinata Hyuga</p>
+                                                                <h4 class="mb-0">
+                                                                    <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
+                                                                </h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="courses-body">
-                                                        <div class="courses-ratings">
-                                                            <ul class="mb-1" style="display: flex; flex-direction: row" >
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star not-checked"></i>
-                                                                </li>
-                                                            </ul>
-                                                            <p class="mb-1">Hinata Hyuga</p>
-                                                            <h4 class="mb-0">
-                                                                <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="courses-border"></div>
-                                                    <div class="courses-footer d-flex align-items-center">
-                                                        <div class="courses-count">
-                                                            <ul class="mb-0">
-                                                                <li><i class="fas fa-user-graduate me-1"></i> 215</li>
-                                                                <li><i class="far fa-file-alt me-1"></i>3</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="courses-amt ms-auto">
-                                                            <h3 class="mb-0">$350</h3>
+                                                        <div class="courses-border"></div>
+                                                        <div class="courses-footer d-flex align-items-center">
+                                                            <div class="courses-count">
+                                                                <ul class="mb-0">
+                                                                    <li><i class="fas fa-user-graduate me-1"></i> 215</li>
+                                                                    <li><i class="far fa-file-alt me-1"></i>3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="courses-amt ms-auto">
+                                                                <h3 class="mb-0">$350</h3>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
                                         <li>
-                                            <div class=" d-flex flex-wrap">
-                                                <div class="popular-course">
-                                                    <div class="courses-head">
-                                                        <div class="courses-img-main">
-                                                            <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                            <a href="course-detail.jsp">
+                                                <div class=" d-flex flex-wrap">
+                                                    <div class="popular-course">
+                                                        <div class="courses-head">
+                                                            <div class="courses-img-main">
+                                                                <img src="assets/img/course/c12.jpg" alt="" class="img-fluid w-100">
+                                                            </div>
+                                                            <div class="courses-aut-img">
+                                                                <img src="assets/img/user/user.png" alt="">
+                                                            </div>
                                                         </div>
-                                                        <div class="courses-aut-img">
-                                                            <img src="assets/img/user/user.png" alt="">
+                                                        <div class="courses-body">
+                                                            <div class="courses-ratings">
+                                                                <ul class="mb-1" style="display: flex; flex-direction: row" >
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star checked"></i>
+                                                                    </li>
+                                                                    <li> <i class="fas fa-star not-checked"></i>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="mb-1">Hinata Hyuga</p>
+                                                                <h4 class="mb-0">
+                                                                    <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
+                                                                </h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="courses-body">
-                                                        <div class="courses-ratings">
-                                                            <ul class="mb-1" style="display: flex; flex-direction: row" >
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star checked"></i>
-                                                                </li>
-                                                                <li> <i class="fas fa-star not-checked"></i>
-                                                                </li>
-                                                            </ul>
-                                                            <p class="mb-1">Hinata Hyuga</p>
-                                                            <h4 class="mb-0">
-                                                                <a href="course-detail.jsp">Become a PHP Master and Expertise</a>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="courses-border"></div>
-                                                    <div class="courses-footer d-flex align-items-center">
-                                                        <div class="courses-count">
-                                                            <ul class="mb-0">
-                                                                <li><i class="fas fa-user-graduate me-1"></i> 215</li>
-                                                                <li><i class="far fa-file-alt me-1"></i>3</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="courses-amt ms-auto">
-                                                            <h3 class="mb-0">$350</h3>
+                                                        <div class="courses-border"></div>
+                                                        <div class="courses-footer d-flex align-items-center">
+                                                            <div class="courses-count">
+                                                                <ul class="mb-0">
+                                                                    <li><i class="fas fa-user-graduate me-1"></i> 215</li>
+                                                                    <li><i class="far fa-file-alt me-1"></i>3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="courses-amt ms-auto">
+                                                                <h3 class="mb-0">$350</h3>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>

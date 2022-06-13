@@ -868,7 +868,7 @@
                                     </div>
                                     <h4><a href="blog-details.jsp">Contrary to popular belief, Lorem Ipsum is</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                                    <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
+                                    <a href="blog-details.jsp" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -885,7 +885,7 @@
                                     </div>
                                     <h4><a href="blog-details.jsp">The standard chunk of Lorem Ipsum used</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                                    <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
+                                    <a href="blog-details.jsp" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -902,7 +902,7 @@
                                     </div>
                                     <h4><a href="blog-details.jsp">The standard Lorem Ipsum passage, used</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                                    <a href="#" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
+                                    <a href="blog-details.jsp" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
                             </div>
                         </div>
