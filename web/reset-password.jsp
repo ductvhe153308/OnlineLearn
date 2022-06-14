@@ -84,7 +84,7 @@
                                 <div class="pt-2">
                                     <div class="row justify-content-center">
                                         <h5>
-                                            Don't have an Account?<span><a href="#"
+                                            Don't have an Account?<span><a href="register_controller"
                                                                            class="text-danger"> Register Now!</a></span>
                                         </h5>
                                     </div>
