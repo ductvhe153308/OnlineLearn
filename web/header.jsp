@@ -106,7 +106,7 @@
                                 <a href="admin/home.jsp" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
-                                <a href="login.html">Login / Signup</a>
+                                <a href="account">Login / Signup</a>
                             </li>
                         </ul>
                     </div>
