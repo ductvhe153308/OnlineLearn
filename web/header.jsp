@@ -112,10 +112,10 @@
                     </div>
                     <ul class="nav header-navbar-rht">
                         <li class="nav-item">
-                                    <a class="nav-link header-register" href="login.jsp">Login</a>
+                                    <a class="nav-link header-register" href="account">Login</a>
                                 </li>
                         <li class="nav-item">
-                            <a class="nav-link header-login" href="register.jsp">Register</a>
+                            <a class="nav-link header-login" href="register_controller">Register</a>
                         </li>
                     </ul>
                 </div>
