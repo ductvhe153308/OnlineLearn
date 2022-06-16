@@ -75,10 +75,10 @@ public class NewPasswordController extends HttpServlet {
                 AccountDAO a = new AccountDAO();
                 int rowCount = a.resetPassword(newPassword,email);
                 if (rowCount > 0) {
-                    request.setAttribute("status", "Reset Success");
+                    request.setAttribute("status", "Password resets successfully");
                     dispatcher = request.getRequestDispatcher("login.jsp");
                 } else {
-                    request.setAttribute("status", "Reset Failed");
+                    request.setAttribute("status", "Password failed to reset");
                     dispatcher = request.getRequestDispatcher("login.jsp");
                 }
                 dispatcher.forward(request, response);
