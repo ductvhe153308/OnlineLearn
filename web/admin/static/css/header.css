@@ -9,9 +9,9 @@ and open the template in the editor.
 */
 .header{
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
-    border-bottom: 1px solid #6c707b;
     width: 100%;
 }
 .header .header-left,.header .header-right,.header #search,.header #minimize,.header #appendix,.header #appendix div{
@@ -22,12 +22,15 @@ and open the template in the editor.
     width: 250px;
     padding: 10px 25px;
     box-sizing: border-box;
+    border-bottom: 1px solid #6c707b;
 }
 .header .header-right{
+    background-color: #ffffff;
     position: absolute;
-    height: 42px;
-    width: 78%;
+    height: 44px;
+    width: 82%;
     padding: 10px 20px;
+    border-bottom: 1px solid #6c707b;
 }
 .header-right svg{
     padding: 13px 0px;
@@ -48,7 +51,7 @@ and open the template in the editor.
 .header #appendix{
     padding: 10px 10px;
     position: absolute;
-    right: 10px;
+    right: 20px;
 }
 .header #search svg{
     position: absolute;

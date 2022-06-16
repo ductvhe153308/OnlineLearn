@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="http://localhost:8080/onlinelearn/admin/static/css/slide-bar.css">
+        <link rel="stylesheet" href="/onlinelearn/admin/static/css/slide-bar.css">
     </head>
     <body>
         <div class="slide-bar">
@@ -63,6 +63,6 @@
             <div class="pages"></div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="http://localhost:8080/onlinelearn/admin/static/js/slide-bar.js"></script>
+        <script src="/onlinelearn/admin/static/js/slide-bar.js"></script>
     </body>
 </html>

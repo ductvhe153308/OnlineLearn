@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -31,6 +32,8 @@ public class DashboardServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Account acc = new Account(0, "Hoang", "Duc", "duc@gmail.com", "asdasda", 0, 0);
+        request.getSession().setAttribute("acc", acc);
         request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     }
 
