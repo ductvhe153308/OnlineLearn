@@ -89,7 +89,7 @@
                         </div>
                         <ul class="main-nav">
                             <li class="active">
-                                <a href="home.jsp">Home</a>
+                                <a href="home">Home</a>
                             </li>
                             <li>
                                 <a href="all-course.jsp">Course</a>
@@ -103,7 +103,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="admin/home.jsp" target="_blank">Admin</a>
+                                <a href="admin/dashboard" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
                                 <a href="login.html">Login / Signup</a>
