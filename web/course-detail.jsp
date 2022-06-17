@@ -85,7 +85,9 @@
                                     Enroll 
                                 </span>
                                 <span>
-                                    Start in Jun 12
+                                    Start in
+                                    <span id="monthNow"></span>
+                                    <span id="dateNow"></span>
                                 </span>
                             </a>
                             <span style="display: block; padding-top: 20px">1,234 already enrolled</span>
@@ -613,6 +615,12 @@
         <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
 
         <script src="assets/js/script.js"></script>
+        <script>
+            var d = new Date();
+            var monthNow = d.toLocaleString('default', { month: 'long' });
+            document.getElementById("monthNow").innerHTML = monthNow;
+            document.getElementById("dateNow").innerHTML =d.getDate() ;
+        </script>
     </body>
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-details.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
