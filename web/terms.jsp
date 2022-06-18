@@ -163,6 +163,49 @@
                 such policies shall supplement these Terms and to the extent there is a conflict between such policies and these 
                 Terms, as between you and our Content Provider, our Content Provider’s policies shall govern.
             </p>
+            <p style="font-size: 20px">
+                Depending on the program, tuition and fee payments for these programs may be collected by Mentoring or our 
+                Content Partners. If your payment method fails or your account is past due, we or our Content Partners may 
+                collect tuition and fees using other collection mechanisms. Tuition and fees may vary based on your location and 
+                other factors, and Mentoring and its Content Partners reserve the right to change any tuition and fees for 
+                future semesters or equivalent payment periods at their sole discretion. Refunds may be available for paid 
+                Services as described in our Refund Policy below. You are encouraged to research and consider whether the tuition
+                and fees required for Content Offerings align with your professional and financial goals.
+            </p>
+            <p style="font-size: 20px">
+                Professional licensure, certification, and job requirements for various professions may vary in each state 
+                and country, and job requirements may vary by employer. Mentoring does not guarantee licensure, certification 
+                or qualification for any profession or job on the basis of your completion of a Content Offering on Mentoring. 
+                You are advised to research, understand and comply with the requirements in the applicable state and/or country 
+                in which you work or intend to work, and to investigate whether the Content Offering in which you intend to enroll 
+                meets your academic and/or professional needs before enrolling.
+            </p>
+        </div>
+        <br>
+        <div id="modifying-or-terminating">
+            <h2>Modifying or Terminating our Services</h2>
+            <p style="font-size: 20px">
+                We are constantly changing and improving our Services. We may add or remove functions, features, or requirements,
+                and we may suspend (to the extent allowed by applicable law) or stop part of our Services altogether. Accordingly, Mentoring
+                may terminate your use of any Service for any reason. If your use of a paid Service is terminated, a refund may be available
+                under our Refund Policy. We may not be able to deliver the Services to certain regions or countries for various reasons, 
+                including due to applicable export control requirements or internet access limitations and restrictions from governments.
+                None of Mentoring, its Content Providers and instructors, its contributors, sponsors, and other business partners, 
+                and their employees, contractors, and other agents (the "Mentoring Parties") shall have any liability to you for any such
+                action. You can stop using our Services at any time, although we'll be sorry to see you go.
+            </p>
+        </div>
+        <br>
+        <div id="disclaimers">
+            <h2>Disclaimers</h2>
+            <p style="font-size: 20px">
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICES AND ALL INCLUDED CONTENT ARE PROVIDED ON AN "AS IS" BASIS 
+                WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED. THE MENTORING PARTIES SPECIFICALLY DISCLAIM ANY AND ALL 
+                WARRANTIES AND CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT, AND ANY 
+                WARRANTIES ARISING OUT OF COURSE OF DEALING OR USAGE OF TRADE. THE MENTORING PARTIES FURTHER DISCLAIM ANY AND
+                ALL LIABILITY RELATED TO YOUR ACCESS OR USE OF THE SERVICES OR ANY RELATED CONTENT. YOU ACKNOWLEDGE AND AGREE 
+                THAT ANY ACCESS TO OR USE OF THE SERVICES OR SUCH CONTENT IS AT YOUR OWN RISK.
+            </p>
         </div>
         <%@include file="footer.jsp" %>
     </body>
