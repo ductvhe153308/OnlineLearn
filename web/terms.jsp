@@ -375,6 +375,39 @@
                 Our Content Providers and integrated service providers are third party beneficiaries of the 
                 Terms and may enforce those provisions of the Terms that relate to them.
             </p>
+            <h3>Notice for California Users</h3>
+            <p style="font-size: 20px">
+                Under California Civil Code Section 1789.3, California website users are entitled to the following specific 
+                consumer rights notice: The Complaint Assistance Unit of the Division of Consumer Services of the California Department
+                of Consumer Affairs may be contacted in writing at 1625 N. Market Blvd., Suite S-202, Sacramento, California 95834, 
+                or by telephone at (800) 952-5210.
+            </p>
+        </div>
+        <br>
+        <div id="referenced-policies">
+            <h2>Referenced Policies</h2>
+            <ol role="list" style="font-size: 16px">
+                <li>
+                    <a href="">
+                        Acceptable Use Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Copyright and Trademark Infringement Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Refund Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Honor Code
+                    </a>
+                </li>
+            </ol>
         </div>
         <%@include file="footer.jsp" %>
     </body>
