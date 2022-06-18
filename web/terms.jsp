@@ -332,14 +332,49 @@
                 notwithstanding any state law that may be applicable.
             </p>
             <p style="font-size: 20px">
-                
+                This arbitration agreement does not preclude you or us from seeking action by federal, state, or local government agencies. 
+                You and we also have the right to exercise self-help remedies, such as set-off, or to bring qualifying claims in small claims 
+                court so long as the matter remains in such court and advances only on an individual (non-class, non-representative) basis. 
+                In addition, you and we retain the right to apply to any court of competent jurisdiction for provisional or ancillary relief, 
+                including pre-arbitral attachments or preliminary injunctions, and any such request shall not be deemed incompatible with any of 
+                these Terms, nor a waiver of the right to have disputes submitted to arbitration as provided in this provision.
             </p>
             <p style="font-size: 20px">
-                
+                A court may sever any portion of this Binding Arbitration and Class Action Waiver Section that it finds to be 
+                unenforceable, except for the prohibitions on any Claim being handled on a class or representative basis, and the 
+                remaining portions of this arbitration provision will remain valid and enforceable. No waiver of any provision of this
+                Section will be effective or enforceable unless recorded in a writing signed by the party waiving such a right or 
+                requirement. Such a waiver shall not waive or affect any other portion of these Terms.
             </p>
             <p style="font-size: 20px">
-                
+                THIS BINDING ARBITRATION AND CLASS ACTION WAIVER SECTION LIMITS CERTAIN RIGHTS, INCLUDING THE RIGHT TO MAINTAIN A 
+                COURT ACTION, THE RIGHT TO A JURY TRIAL, THE RIGHT TO PARTICIPATE IN ANY FORM OF CLASS OR REPRESENTATIVE CLAIM, 
+                AND THE RIGHT TO ENGAGE IN DISCOVERY EXCEPT AS PROVIDED IN THE AAA RULES. OTHER RIGHTS THAT YOU OR MENTORING WOULD
+                HAVE IN COURT ALSO MAY NOT BE AVAILABLE IN ARBITRATION.
             </p>            
+        </div>
+        <br>
+        <div id="general-terms">
+            <h2>General Terms</h2>
+            <h3>Revisions to the Terms</h3>
+            <p style="font-size: 20px">
+                We reserve the right to revise the Terms at our sole discretion at any time. Any revisions to the Terms will 
+                be effective immediately upon posting by us. For any material changes to the Terms, we will take reasonable 
+                steps to notify you of such changes, via a banner on the website, email notification, another method, or 
+                combination of methods. In all cases, your continued use of the Services after publication of such changes, with 
+                or without notification, constitutes binding acceptance of the revised Terms.
+            </p>
+            <h3>Severability; Waiver</h3>
+            <p style="font-size: 20px">
+                If it turns out that a particular provision of these Terms is not enforceable, this will not affect any other
+                terms. If you do not comply with these Terms, and we do not take immediate action, this does not indicate that 
+                we relinquish any rights that we may have (such as taking action in the future).
+            </p>
+            <h3>Content Providers</h3>
+            <p style="font-size: 20px">
+                Our Content Providers and integrated service providers are third party beneficiaries of the 
+                Terms and may enforce those provisions of the Terms that relate to them.
+            </p>
         </div>
         <%@include file="footer.jsp" %>
     </body>
