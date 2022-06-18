@@ -252,6 +252,69 @@
                 effectively immediately if you are in breach of the obligations in this section.
             </p>
         </div>
+        <br>
+        <div id="indemnification">
+            <h2>Indemnification</h2>
+            <p style="font-size: 20px">
+                You agree to indemnify, defend, and hold harmless the Mentoring Parties from any and all claims, liabilities, 
+                expenses, and damages (to the extent attributable to you under the applicable law), including reasonable 
+                attorneys' fees and costs, made by any third party related to: (a) your use or attempted use of the Services in 
+                violation of these Terms; (b) your violation of any law or rights of any third party; or (c) User Content, 
+                including without limitation any claim of infringement or misappropriation of intellectual property or other 
+                proprietary rights.
+            </p>
+        </div>
+        <br>
+        <div id="governing-law-and-venue">
+            <h2>Governing Law and Venue</h2>
+            <p style="font-size: 20px">
+                Except as provided below, the Services are managed by Mentoring, Inc. which is located in Santa Clara County, 
+                California. You agree that these Terms will be governed by the laws of the State of California, excluding its
+                conflicts of law provisions. In the event of any dispute related to these Terms that is not subject to binding 
+                arbitration, you and Mentoring will submit to the personal jurisdiction of and exclusive venue in the federal and 
+                state courts located in and serving Santa Clara County, California as the legal forum for any such dispute.
+            </p>
+            <p style="font-size: 20px">
+                To the extent you are located in the European Union or the United Kingdom, the Services are managed by Mentoring 
+                Europe B.V. You agree that these Terms will be governed by the laws of the Netherlands, excluding its conflicts 
+                of law provisions.
+            </p>
+            <p style="font-size: 20px">
+                This section shall not deprive you of any mandatory consumer protections under the law of the country to which we direct 
+                Services to you, where you have your habitual residence.
+            </p>
+        </div>
+        <br>
+        <div id="binding-arbitration-and-class-action-waiver">
+            <h2>Binding Arbitration and Class Action Waiver</h2>
+            <p style="font-size: 20px">
+                You and Mentoring agree to submit to binding arbitration any and all disputes, claims, or controversies of any 
+                kind, whether based on statute, regulation, constitution, common law, equity, or any other legal basis or theory, 
+                and whether pre-existing, present, or future, that arise out of or relate to our Services, these Terms, and/or any
+                other relationship or dispute between you and us, including without limitation (i) the scope, applicability, 
+                or enforceability of these Terms and/or this arbitration provision, and (ii) relationships with third parties who
+                are not parties to these Terms or this arbitration provision to the fullest extent permitted by applicable law 
+                (each a “Claim,” and collectively the “Claims”).
+            </p>
+            <p style="font-size: 20px">
+                
+            </p>
+            <p style="font-size: 20px">
+                
+            </p>
+            <p style="font-size: 20px">
+                
+            </p>
+            <p style="font-size: 20px">
+                
+            </p>
+            <p style="font-size: 20px">
+                
+            </p>
+            <p style="font-size: 20px">
+                
+            </p>            
+        </div>
         <%@include file="footer.jsp" %>
     </body>
 </html>
