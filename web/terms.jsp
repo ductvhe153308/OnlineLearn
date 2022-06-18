@@ -141,7 +141,29 @@
             </p>
         </div>
         <br>
-        
+        <div id="paid-service">
+            <h2>Paid Services from Mentoring</h2>
+            <p style="font-size: 20px">
+                Mentoring offers paid Services (e.g., course certificates for certain courses) for a fee. 
+                Unless otherwise stated, all fees are quoted in U.S. Dollars. You are responsible for paying all fees charged by or 
+                for Mentoring and applicable taxes in a timely manner with a payment mechanism associated with the applicable paid 
+                Services. If your payment method fails or your account is past due, we may collect fees using other collection 
+                mechanisms. Fees may vary based on your location and other factors, and Mentoring reserves the right to change any 
+                fees at any time at its sole discretion. Any change, update, or modification will be effective immediately upon 
+                posting through the relevant Services. Refunds may be available for paid Services as described in our Refund Policy 
+                below.
+            </p>
+            <h3>Degree, MasterTrack, and University Certificate Programs</h3>
+            <p style="font-size: 20px">
+                The Services may allow you to enroll in Degree, MasterTrack, and University Certificate programs or 
+                similar programs offered by our Content Providers on the Mentoring platform. Our Content Providers serve as 
+                the distance education providers of these programs and determine admissions, refund, and graduation or completion
+                policies and requirements. Nothing in these Terms shall restrict the applicability to you of any institutional 
+                policies established by our Content Provider in connection with these programs (e.g., student codes of conduct); 
+                such policies shall supplement these Terms and to the extent there is a conflict between such policies and these 
+                Terms, as between you and our Content Provider, our Content Provider’s policies shall govern.
+            </p>
+        </div>
         <%@include file="footer.jsp" %>
     </body>
 </html>
