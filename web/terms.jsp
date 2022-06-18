@@ -77,6 +77,71 @@
                 Using our Services does not give you ownership of or any intellectual property rights in our Services or the content you access.
             </p>
         </div>
+        <br>
+        <div id="content-offer">
+            <h2>Content Offering</h2>
+            <h3>Changes to Content Offerings</h3>
+            <p style="font-size: 20px">
+                Mentoring offers courses and content ("Content Offerings") from universities and other providers ("Content Providers"). 
+                While we seek to provide world-class Content Offerings from our Content Providers, unexpected events do occur. 
+                Mentoring reserves the right to cancel, interrupt, reschedule, or modify any Content Offerings, or change the point value or weight
+                of any assignment, quiz, or other assessment, either solely, or in accordance with Content Provider instructions.
+                Content Offerings are subject to the Disclaimers and Limitation of Liability sections below.
+            </p>
+            <h3>No Academic Credit</h3>
+            <p style="font-size: 20px">
+                Mentoring does not grant academic credit for the completion of Content Offerings. 
+                Unless otherwise explicitly indicated by a credit-granting institution, participation in or completion of Content 
+                Offerings does not confer any academic credit. Even if credit is awarded by one institution, 
+                there is no presumption that other institutions will accept that credit. You agree not to accept credit for 
+                completing a Content Offering unless you have earned a course certificate or other equivalent documentation of 
+                your completion of the Content Offering. Mentoring, instructors, and the associated Content Providers have no 
+                obligation to have Content Offerings recognized by any educational institution or accreditation organization.
+            </p>
+            <h3>Disclaimer of Student-Content Provider Relationship</h3>
+            <p style="font-size: 20px">
+                Except as described in the Degree, MasterTrack, and University Certificate Programs section below, 
+                nothing in these Terms or otherwise with respect to your participation in any Content Offerings by
+                Content Providers : (a) establishes any relationship between you and any Content Provider; (b) enrolls or 
+                registers you in any Content Provider institution, or in any Content Offering offered by any Content Provider 
+                institution; or (c) entitles you to use the resources of any Content Provider institution beyond participation 
+                in the Content Offering.
+            </p>
+        </div>
+        <br>
+        <div id="security">
+        <h2>Security</h2>
+        <p style="font-size: 20px">
+            We care about the security of our users. While we work to protect the security of your account and related information,
+            Mentoring cannot guarantee that unauthorized third parties will not be able to defeat our security measures. 
+            Please notify us immediately of any compromise or unauthorized use of your account by emailing <b>security@mentoring.org</b> or
+            submitting via HackerOne.
+        </p>
+        </div>
+        <br>
+        <div id="third-party">
+            <h2>Third Party Content</h2>
+            <p style="font-size: 20px">
+                Through the Services, you will have the ability to access and/or use content provided by instructors, other users,
+                and/or other third parties and links to websites and services maintained by third parties. Mentoring cannot guarantee 
+                that such third party content, in the Services or elsewhere, will be free of material you may find objectionable or
+                otherwise inappropriate or of malware or other contaminants that may harm your computer, mobile device, or any files therein. 
+                Mentoring disclaims any responsibility or liability related to your access or use of, or inability to access or use, 
+                such third party content.
+            </p>
+        </div>
+        <br>
+        <div id="education-research">
+            <h2>Education Research</h2>
+            <p style="font-size: 20px">
+                Mentoring is committed to advancing the science of learning and teaching, and records of your participation in
+                courses may be used for education research. In the interest of this research, you may be exposed to variations in 
+                the Content Offerings. Research findings will typically be reported at the aggregate level. Your personal identity
+                will not be publicly disclosed in any research findings without your express consent.
+            </p>
+        </div>
+        <br>
+        
         <%@include file="footer.jsp" %>
     </body>
 </html>
