@@ -207,6 +207,51 @@
                 THAT ANY ACCESS TO OR USE OF THE SERVICES OR SUCH CONTENT IS AT YOUR OWN RISK.
             </p>
         </div>
+        <br>
+        <div id="limitation-of-liability">
+            <h2>Limitation of Liability</h2>
+            <p style="font-size: 20px">
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE MENTORING PARTIES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+                SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR 
+                INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM: (A) YOUR ACCESS TO OR 
+                USE OF OR INABILITY TO ACCESS OR USE THE SERVICES; (B) ANY CONDUCT OR CONTENT OF ANY PARTY OTHER THAN THE 
+                APPLICABLE MENTORING PARTY, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT; OR (C) 
+                UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR CONTENT OR INFORMATION. IN NO EVENT SHALL MENTORING'S AGGREGATE 
+                LIABILITY FOR ALL CLAIMS RELATED TO THE SERVICES EXCEED TWENTY U.S. DOLLARS ($20) OR THE TOTAL AMOUNT OF FEES 
+                RECEIVED BY MENTORING FROM YOU FOR THE USE OF PAID SERVICES DURING THE PAST SIX MONTHS, WHICHEVER IS GREATER.
+            </p>
+            <p style="font-size: 20px">
+                YOU ACKNOWLEDGE AND AGREE THAT THE DISCLAIMERS AND THE LIMITATIONS OF LIABILITY SET FORTH IN THIS TERMS OF USE 
+                REFLECT A REASONABLE AND FAIR ALLOCATION OF RISK BETWEEN YOU AND THE MENTORING PARTIES, AND THAT THESE LIMITATIONS
+                ARE AN ESSENTIAL BASIS TO MENTORING'S ABILITY TO MAKE THE SERVICES AVAILABLE TO YOU ON AN ECONOMICALLY FEASIBLE 
+                BASIS.
+            </p>
+            <p style="font-size: 20px">
+                YOU AGREE THAT ANY CAUSE OF ACTION RELATED TO THE SERVICES MUST COMMENCE WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES. 
+                OTHERWISE, SUCH CAUSE OF ACTION IS PERMANENTLY BARRED.
+            </p>
+        </div>
+        <br>
+        <div id="export-controls">
+            <h2>Export Controls</h2>
+            <p style="font-size: 20px">
+                You warrant that you are not located in, or ordinarily reside in, any country that is subject to applicable U.S. 
+                laws and regulations preventing Mentoring from providing you access to the Services. Your location is determined 
+                by your physical location. Use of a virtual private network service, IP routing services, or other similar service
+                for the purpose of circumventing these laws is strictly prohibited.
+            </p>
+            <p style="font-size: 20px">
+                You warrant that you are not named on any government prohibited, denied, unverified-party, sanctions, debarment, 
+                or exclusion list or export-controlled related restricted party list (collectively, “Sanctions Lists”).
+                You will immediately discontinue your use of the Services if you are placed on any Sanctions List.
+                You also warrant that you will not export, re-export, or transfer the Services to an entity on any Sanctions List
+                or otherwise use the services in a manner that would be in violation of applicable laws.
+            </p>
+            <p style="font-size: 20px">
+                Notwithstanding anything to the contrary in these Terms, Mentoring may terminate any further obligations to you, 
+                effectively immediately if you are in breach of the obligations in this section.
+            </p>
+        </div>
         <%@include file="footer.jsp" %>
     </body>
 </html>
