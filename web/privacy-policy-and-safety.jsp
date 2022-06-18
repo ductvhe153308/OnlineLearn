@@ -142,9 +142,106 @@
             <h2>How We Use the Information</h2>
             <ol style="font-size: 16px">
                 <li>
-                    
+                    <b>Information relating to your use of our Site.</b> We use information relating to your use of the Site 
+                    to build higher quality, more useful Services by performing statistical analyses of the collective 
+                    characteristics and behavior of our users, and by measuring demographics and interests regarding specific 
+                    areas of our Site. We may also use this information to ensure the security of our Services and the Site.
+                </li>
+                <li>
+                    <b>Personally Identifiable Information provided directly by you or via third parties.</b> Except as set forth
+                    in this Privacy Notice or as specifically agreed to by you, Mentoring will not disclose any of your Personal
+                    Data. In addition to the other uses set forth in this Privacy Notice, we may disclose and otherwise use Personal
+                    Data as described below.
                 </li>
             </ol>
+            <p style="font-size: 20px">
+                Forums. You should not post any personally identifiable information or other information of a personal or sensitive nature, 
+                whether relating to you or another person, within a Forum post. If you choose to post personally identifiable information, 
+                such personally identifiable information may be collected during your use of the Forums. We may publish this information via 
+                extensions of our platform that use third-party services, like mobile applications. We reserve the right to reuse Forum posts 
+                that contain personally identifiable information in future versions of the Content Offerings, and to enhance future Content
+                Offerings. We may archive this information and/or use it for future communications with you and/or your designee(s), and/or 
+                provide it to the Content Provider, business partners, or the instructor(s) associated with the courses you have taken. We may
+                also use or publish posts submitted on the Forums without using personally identifiable information.
+            </p>
+            <p style="font-size: 20px">
+                Participation in Content Offerings. We use the Personal Data that we collect from you when you participate in a 
+                Content Offering through the Site for processing purposes, including but not limited to tracking attendance, 
+                progress, and completion of the Content Offerings. We may also share your Personal Data and your performance in 
+                a given Content Offering with the instructor or instructors who taught it, with teaching assistants or other 
+                individuals designated by the instructor or instructors to assist with the creation, modification, or operation of
+                the Content Offering, and with the Content Provider(s) with which they are affiliated. We may also use the 
+                information generated when taking a Content Offering or using the Services for predictive analysis of your 
+                performance in the Content Offerings. Also, we may archive this information and/or use it for future communications
+                with you, where we are legally entitled to do so.
+            </p>
+            <p style="font-size: 20px">
+                Disclosure to Mentoring Operations and Maintenance Contractors. We use various service providers, vendors, and contractors 
+                (collectively, "Contractors") to assist us in providing our Services to you. Our Contractors may have limited access to your
+                Personal Data in the course of providing their products or services to us, so that we in turn can provide our Services to you. 
+                These Contractors may include vendors and suppliers that provide us with technology, services, and/or content related to the 
+                operation and maintenance of the Site or the Content Offerings. Access to your Personal Data by these Contractors is limited 
+                to the information reasonably necessary for the Contractor to perform its limited function for us.
+            </p>
+        </div>
+        <div id="external-links">
+            <h2>External Links</h2>
+            <p style="font-size: 20px">
+                For your convenience we may provide links to sites operated by organizations other than Mentoring 
+                ("Third Party Sites") that we believe may be of interest to you. We do not disclose your Personal Data to 
+                these Third Party Sites unless we have a lawful basis on which to do so. We do not endorse and are not responsible
+                for the privacy practices of these Third Party Sites. If you choose to click on a link to one of these Third Party 
+                Sites, you should review the privacy policy posted on the other site to understand how that Third Party Site collects
+                and uses your Personal Data.
+            </p>
+        </div>
+        <div id="retention-of-personally-identifiable-information">
+            <h2>Retention of Personally Identifiable Information</h2>
+            <p style="font-size: 20px">
+                We keep your Personal Data for no longer than necessary for the purposes for which the Personal Data is 
+                collected and processed. The length of time we retain Personal Data for depends on the purposes for which we 
+                collect and use it and/or as required to comply with applicable laws and to establish, exercise, or defend our 
+                legal rights.
+            </p>
+        </div>
+        <div id="confidentiality-security-of-personally-identifiable-information">
+            <h2>Confidentiality & Security of Personally Identifiable Information</h2>
+            <p style="font-size: 20px">
+                We will use industry standard physical, technical, and administrative security measures to keep your Personal 
+                confidential and secure, and will not share it with third parties, except as otherwise provided in this Privacy 
+                Notice, or unless such disclosure is necessary in special cases, such as a physical threat to you or others, as 
+                permitted by applicable law. Because the Internet is not a 100% secure environment, we cannot guarantee the 
+                security of Personal Data, and there is some risk that an unauthorized third party may find a way to circumvent 
+                our security systems or that transmission of your information over the Internet will be intercepted. It is your 
+                responsibility to protect the security of your login information. Please note that e-mail communications are 
+                typically not encrypted and should not be considered secure.
+            </p>
+        </div>
+        <div id="updating-or-deleting-your-personal-data">
+            <h2>Updating or Deleting Your Personal Data</h2>
+            <p style="font-size: 20px">
+                You have certain rights in relation to your Personal Data. You can access your Personal Data and confirm 
+                that it remains correct and up-to-date, choose whether or not you wish to receive material from us or some 
+                of our partners, and request that we delete or provide you with a copy of your personal data by logging into 
+                the Site, selecting ‘Settings’ from the dropdown in the top right, and scrolling down to find the appropriate 
+                option. The ability to delete an account may be disabled for some users, particularly those who are enrolled in 
+                for-credit offerings such as degrees, MasterTrack certificate programs, and other similar offerings.
+            </p>
+            <p style="font-size: 20px">
+                If you would like further information in relation to your rights or would like to exercise any of them, 
+                you may also contact us via <b>privacy@mentoring.org</b>. If you reside or are located in the EEA, United Kingdom,
+                Switzerland, or other region that offers similar protections, you have the right to request that we provide
+                access to any Personal Data we hold about you.
+            </p>
+            <p style="font-size: 20px">
+                We try to answer every request promptly where possible, and provide our response within the time period 
+                stated by applicable law. Keep in mind, however, that when deleting your Personal Data there may be residual
+                information that will remain within our databases, access logs, and other records, which may or may not contain
+                your Personal Data. Please also note that certain Personal Data may be exempt from such requests in certain 
+                circumstances, which may include if we need to retain your Personal Data to comply with a legal obligation. When 
+                you email us with a request, we may ask that you provide us with information necessary to confirm your identity.
+                If you are a resident of California, please also see our <u>CCPA Notice.</u>
+            </p>
         </div>
         <%@include file="footer.jsp" %>
     </body>
