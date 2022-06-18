@@ -297,13 +297,39 @@
                 (each a “Claim,” and collectively the “Claims”).
             </p>
             <p style="font-size: 20px">
-                
+                Any and all Claims shall be submitted for binding arbitration in accordance with the Consumer Arbitration Rules of the 
+                American Arbitration Association (the “AAA Rules”), as amended, in effect at the time arbitration is initiated. 
+                The AAA Rules are available online at www.adr.org or by calling (800) 778-7879, and are hereby incorporated by 
+                reference. In the event of any inconsistency between this arbitration provision and the AAA Rules, such inconsistency 
+                shall be resolved in favor of this provision. If you decide to initiate arbitration, you agree to pay the initiation 
+                fee of $200 (or the amount otherwise required by the AAA Rules), and we agree to pay the remaining arbitration 
+                initiation fee and any additional deposit required by AAA to initiate your arbitration. We will pay the costs of the 
+                arbitration proceeding, including the arbitrator’s fees; however, other fees, such as attorney’s fees and expenses of 
+                travel to the arbitration, shall be paid in accordance with the AAA Rules and applicable law. We will pay all costs 
+                associated with any arbitration that we commence. A single, neutral arbitrator selected in accordance with the AAA 
+                Rules shall decide all Claims.
             </p>
             <p style="font-size: 20px">
-                
+                The arbitrator shall be an active member in good standing of the bar for any state in the continental United States and shall
+                be either actively engaged in the practice of law for at least five years or a retired judge. The arbitrator shall honor claims
+                of privilege recognized at law. Unless inconsistent with applicable law, and except as otherwise provided herein, each party
+                shall bear the expense of its respective attorney, expert, and witness fees, regardless of which party prevails in the 
+                arbitration. Any arbitration proceedings shall be conducted in the federal judicial district of your residence, and you will
+                be given the opportunity to attend the proceeding and be heard. The arbitrator’s decision will be final and binding upon the 
+                parties and may be enforced in any federal or state court that has jurisdiction. You and we agree that the arbitration shall be 
+                kept confidential and that the existence of the proceeding and any element of it (including, without limitation, any pleadings,
+                briefs or other documents submitted or exchanged and any testimony or other oral submissions and awards) will not be disclosed
+                beyond the arbitration proceedings, except as may lawfully be required in judicial proceedings relating to the arbitration or 
+                by applicable disclosure rules and regulations of governmental agencies.
             </p>
             <p style="font-size: 20px">
-                
+                Neither you nor Mentoring may act as a class representative, nor participate as a member of a class of claimants, 
+                with respect to any Claim. The Claims may not be arbitrated on a class or representative basis. The arbitrator 
+                can decide only your and/or Mentoring individual Claims. The arbitrator may not consolidate or join the claims of 
+                other persons or parties who may be similarly situated. Accordingly, you and we agree that the AAA Supplementary 
+                Rules for Class Arbitrations do not apply to our arbitration. This arbitration provision and the procedures 
+                applicable to the arbitration contemplated by this provision are governed by the Federal Arbitration Act, 
+                notwithstanding any state law that may be applicable.
             </p>
             <p style="font-size: 20px">
                 
