@@ -103,7 +103,49 @@
                 our Services to you.
             </p>
         </div>
-
+        <div id="what-information-we-collect">
+            <h2>What Information We Collect</h2>
+            <p style="font-size: 20px">
+                We gather the following types of information about users through the Site:
+            </p>
+            <ol style="font-size: 16px">
+                <li>
+                    <b>Information relating to your use of our Site</b>. When users come to our Site, we may track, collect, and 
+                    aggregate information indicating, among other things, which pages of our Site were visited, the order in
+                    which they were visited, when they were visited, and which hyperlinks were clicked. We also collect information
+                    from the URLs from which you linked to our Site. Collecting such information may involve logging the IP address,
+                    operating system, and browser software used by each user of the Site. We may be able to determine from an IP
+                    address a user’s Internet Service Provider and the geographic location of their point of connectivity. Location 
+                    data may be used to route your traffic to the nearest regional server to reduce latency and improve your 
+                    experience. We may also use cookies and web beacons when you visit our Site. For more information on our use of 
+                    cookies and web beacons, please refer to our Cookies Policy.
+                </li>
+                <li>
+                    <b>Personal Data provided directly by you or via third parties</b>. We collect Personal Data that you provide
+                    to us when you register for an account, update or change information for your account, purchase products or 
+                    Services, complete a survey, sign-up for email updates, participate in our public forums, send us email 
+                    messages, and/or participate in Content Offerings or other Services on our Site. We may use the Personal Data 
+                    that you provide to respond to your questions, provide you the specific Content Offering and/or Services you 
+                    select, send you updates about Content Offerings or other Mentoring events, and send you email messages about 
+                    Site maintenance or updates.
+                </li>
+            </ol>
+            <p style="font-size: 20px">
+                If you participate in a Content Offering, we may collect certain user-generated content, such as assignments you 
+                submit, peer-graded assignments, and peer grading feedback. We also collect course data, such as responses to
+                in-video quizzes, standalone quizzes, exams, and surveys. You should not include any Personal Data or other 
+                information of a personal or sensitive nature, whether relating to you or another person, on assignments, exams, 
+                or surveys, except for information required to participate in or submit such assignments, exams, or surveys.
+            </p>
+        </div>
+        <div id="how-we-use-the-information">
+            <h2>How We Use the Information</h2>
+            <ol style="font-size: 16px">
+                <li>
+                    
+                </li>
+            </ol>
+        </div>
         <%@include file="footer.jsp" %>
     </body>
 </html>
