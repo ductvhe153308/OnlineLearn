@@ -16,7 +16,7 @@
                 <div class="big-field">
                     Main
                 </div>
-                <div class="menu-item url active" data-url="admin/dashboard">
+                <div class="menu-item url active" data-url="admin/dashboard" id="dashboard">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-house-door" viewBox="0 0 16 16">
                     <path
@@ -24,7 +24,7 @@
                     </svg>
                     <div class="item-title">Dashboard</div>
                 </div>
-                <div class="menu-item url" data-url="admin/mentor">
+                <div class="menu-item url" data-url="admin/mentor" id="mentor">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-person" viewBox="0 0 16 16">
                     <path
@@ -32,7 +32,7 @@
                     </svg>
                     <div class="item-title">Mentor</div>
                 </div>
-                <div class="menu-item url" data-url="admin/mentee">
+                <div class="menu-item url" data-url="admin/mentee" id="mentee">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-people" viewBox="0 0 16 16">
                     <path
@@ -40,7 +40,7 @@
                     </svg>
                     <div class="item-title">Mentee</div>
                 </div>
-                <div class="menu-item url" data-url="admin/booking">
+                <div class="menu-item url" data-url="admin/booking" id="booking">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-list-task" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -52,7 +52,7 @@
                     </svg>
                     <div class="item-title">Booking List</div>
                 </div>
-                <div class="menu-item url" data-url="admin/categories">
+                <div class="menu-item url" data-url="admin/categories" id="categories">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-record-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -60,7 +60,7 @@
                     </svg>
                     <div class="item-title">Categories</div>
                 </div>
-                <div class="menu-item url" data-url="admin/transaction">
+                <div class="menu-item url" data-url="admin/transaction" id="transaction">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-coin" viewBox="0 0 16 16">
                     <path

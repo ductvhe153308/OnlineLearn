@@ -1,7 +1,7 @@
 <%-- 
-    Document   : home
-    Created on : 16-06-2022, 20:46:01
-    Author     : DELL
+    Document   : transaction
+    Created on : Jun 19, 2022, 3:51:22 PM
+    Author     : Dell
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mentoring - Dashboard</title>
+        <title>Mentoring - Transaction Page</title>
         <link rel="icon" href="/onlinelearn/assets/img/favicon.png">
         <link rel="stylesheet" href="/onlinelearn/admin/static/css/page.css">
         <link rel="stylesheet" href="/onlinelearn/assets/css/table.css">
@@ -21,9 +21,9 @@
 
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="static/js/dashboard.js"></script>
+        <script src="static/js/transaction.js"></script>
         <script>
-            Dashboard.init();
+            Transaction.init();
         </script>
     </body>
 </html>

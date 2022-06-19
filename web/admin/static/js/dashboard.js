@@ -82,7 +82,7 @@ init: function () {
          * Menter List
          */
         menter: function () {
-        $("#mentor").css("height", "365px");
+        $("#page #mentor").css("height", "365px");
                 var table_name = 'Mentor List';
                 var header = ['Mentor Name', 'Course', 'Earned', 'Reviews'];
                 var colgroup = [70, 90, 50, 100];
@@ -95,13 +95,13 @@ init: function () {
                         <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
                     </div>`;
                 }, colgroup);
-                $("#mentor").html(table);
+                $("#page #mentor").html(table);
         },
         /**
          * Mentee List
          */
         mentee: function () {
-        $("#mentee").css("height", "365px");
+        $("#page #mentee").css("height", "365px");
                 var table_name = 'Mentee List';
                 var header = ['Mentee Name', 'Phone', 'Last Visit', 'Paid'];
                 var colgroup = [70, 90, 50, 100];
@@ -114,7 +114,7 @@ init: function () {
                         <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
                     </div>`;
                 }, colgroup);
-                $("#mentee").html(table);
+                $("#page #mentee").html(table);
         },
         /**
          * Booking List
@@ -134,6 +134,6 @@ init: function () {
                         <div class="table-data" style="width:${colgroup[5]}px">${index}</div>
                     </div>`;
                 }, colgroup);
-                $("#booking").html(table);
+                $("#page #booking").html(table);
         }
 };

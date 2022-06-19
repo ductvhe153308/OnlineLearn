@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-$('.menu-item').click(function (){
-    $('.menu-item').removeClass('active');
-    $(this).addClass('active');
+$('.url').click(function () {
+    window.location = '../'+$(this).data('url');
 });
