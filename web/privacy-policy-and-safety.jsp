@@ -29,8 +29,8 @@
     <body>
         <%@include file="header.jsp" %>
         <section class="privacy">
-            <div class="container">
-                <h1 align="center">Mentoring Terms of Use</h1>
+            <div class="container" style="padding-top: 80px">
+                <h1 align="center">Privacy Notice</h1>
                 <br>
                 <hr>
                 <div id="purpose">
