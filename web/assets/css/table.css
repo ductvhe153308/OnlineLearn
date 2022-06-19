@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 18, 2022, 10:39:27 PM
+    Author     : Dell
+*/
+
+.table .table-name {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+.table .table-header,
+.table .table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0.75rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-size: 15px;
+}
+
+.table .table-row:hover {
+    background-color: #f7f7f7;
+}
+
+.table .table-header {
+    background-color: #f8f9fa;
+}
+
+.table .table-row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table .table-data {
+    display: inline-block;
+}
+.component .table .table-row:last-child{
+    border-bottom: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

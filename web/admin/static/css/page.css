@@ -7,65 +7,78 @@ and open the template in the editor.
     Created on : Jun 17, 2022, 12:02:25 AM
     Author     : Dell
 */
-#page{
-    position: relative;
+#page {
+    position: absolute;
     background-color: #f8f8fb;
     z-index: 1;
     top: 0px;
-    left: 234px;
-    width: calc(100vw - 260px);
-    height: 100%;
-    padding: 20px;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 200%;
+    padding: 10px;
     padding-top: 70px;
     box-sizing: border-box;
 }
-#page .component{
+
+#page .component {
     display: inline-block;
     border-radius: 20px;
     box-shadow: 0 8px 13px 0 rgb(82 63 105 / .05);
     min-height: 150px;
     min-width: 260px;
-    background-color: #009DA6;
+    background-color: #fff;
+    margin: 10px;
 }
-#page .row div{
-    display: inline-block;
+
+#page .row {
+    display: flex;
 }
-#page .col div{
-    display: block;
+
+
+#page .col-1 {
+    width: calc(100% / 12 * 1 - 5px);
 }
-#page .col-1{
-    width: calc(100% / 12 * 1 - 2px);
+
+#page .col-2 {
+    width: calc(100% / 12 * 2 - 5px);
 }
-#page .col-2{
-    width: calc(100% / 12 * 2 - 2px);
+
+#page .col-3 {
+    width: calc(100% / 12 * 3 - 5px);
 }
-#page .col-3{
-    width: calc(100% / 12 * 3 - 2px);
+
+#page .col-4 {
+    width: calc(100% / 12 * 4 - 5px);
 }
-#page .col-4{
-    width: calc(100% / 12 * 4 - 2px);
+
+#page .col-5 {
+    width: calc(100% / 12 * 5 - 5px);
 }
-#page .col-5{
-    width: calc(100% / 12 * 5 - 2px);
+
+#page .col-6 {
+    width: calc(100% / 12 * 6 - 5px);
 }
-#page .col-6{
-    width: calc(100% / 12 * 6 - 2px);
+
+#page .col-7 {
+    width: calc(100% / 12 * 7 - 5px);
 }
-#page .col-7{
-    width: calc(100% / 12 * 7 - 2px);
+
+#page .col-8 {
+    width: calc(100% / 12 * 8 - 5px);
 }
-#page .col-8{
-    width: calc(100% / 12 * 8 - 2px);
+
+#page .col-9 {
+    width: calc(100% / 12 * 9 - 5px);
 }
-#page .col-9{
-    width: calc(100% / 12 * 9 - 2px);
+
+#page .col-10 {
+    width: calc(100% / 12 * 10 - 5px);
 }
-#page .col-10{
-    width: calc(100% / 12 * 10 - 2px);
+
+#page .col-11 {
+    width: calc(100% / 12 * 11 - 5px);
 }
-#page .col-11{
-    width: calc(100% / 12 * 11 - 2px);
-}
-#page .col-12{
-    width: 100%;
+
+#page .col-12 {
+    width: calc(100% - 10px);
 }
