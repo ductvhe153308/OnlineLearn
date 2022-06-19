@@ -95,7 +95,7 @@
                                 <a href="all-course.jsp">Course</a>
                             </li>
                             <li>
-                                <a href="home">Mentor</a>
+                                <a href="all-mentor.jsp">Mentor</a>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
