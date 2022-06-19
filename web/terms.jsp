@@ -24,7 +24,7 @@
     <body>        
         <%@include file="header.jsp" %>
         <section class="terms">
-            <div class="container">
+            <div class="container" style="padding-top: 80px">
                 <h1 align="center">Mentoring Terms of Use</h1>
                 <h2 align="center">Legal Information & Notices</h2>
                 <hr>
