@@ -103,6 +103,7 @@
                                     <li><a href="blog-list.jsp">Blog List</a></li>
                                     <li><a href="blog-grid.jsp">Blog Grid</a></li>
                                     <li><a href="blog-details.jsp">Blog Details</a></li>
+                                    <li><a href="blog-create.jsp">Blog Create New</a></li>
                                 </ul>
                             </li>
                             <li>
