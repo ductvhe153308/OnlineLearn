@@ -94,6 +94,9 @@
                             <li>
                                 <a href="all-course.jsp">Course</a>
                             </li>
+                            <li>
+                                <a href="home">Mentor</a>
+                            </li>
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
