@@ -22,6 +22,7 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="static/js/dashboard.js"></script>
+        <script src="static/js/mentor.js"></script>
         <script>
             Dashboard.init();
         </script>

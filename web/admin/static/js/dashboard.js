@@ -10,7 +10,7 @@ var Dashboard = {
  * Master layout for dashboard.
  */
 init: function () {
-        $('#page').html(`
+$('#page').html(`
             <div class="row">
                 <div class="col col-4">
                     <div class="row">
@@ -47,7 +47,7 @@ init: function () {
         this.menter();
         this.mentee();
         this.booking();
-        },
+},
         /**
          * Admin profile
          */
@@ -82,27 +82,13 @@ init: function () {
          * Menter List
          */
         menter: function () {
-        $("#page #mentor").css("height", "365px");
-                var table_name = 'Mentor List';
-                var header = ['Mentor Name', 'Course', 'Earned', 'Reviews'];
-                var colgroup = [70, 90, 50, 100];
-                var data = [1, 2, 3, 4, 5];
-                var table = AP.tableRender(table_name, header, data, function (index) {
-                return `<div class="table-row">
-                        <div class="table-data" style="width:${colgroup[0]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[1]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[2]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
-                    </div>`;
-                }, colgroup);
-                $("#page #mentor").html(table);
+            Mentor.board.dashboard('mentor',1,5);
         },
         /**
          * Mentee List
          */
         mentee: function () {
-        $("#page #mentee").css("height", "365px");
-                var table_name = 'Mentee List';
+        var table_name = 'Mentee List';
                 var header = ['Mentee Name', 'Phone', 'Last Visit', 'Paid'];
                 var colgroup = [70, 90, 50, 100];
                 var data = [1, 2, 3, 4, 5];
