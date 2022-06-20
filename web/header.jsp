@@ -89,10 +89,13 @@
                         </div>
                         <ul class="main-nav">
                             <li class="active">
-                                <a href="home.jsp">Home</a>
+                                <a href="home">Home</a>
                             </li>
                             <li>
                                 <a href="all-course.jsp">Course</a>
+                            </li>
+                            <li>
+                                <a href="all-mentor.jsp">Mentor</a>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
@@ -100,22 +103,23 @@
                                     <li><a href="blog-list.jsp">Blog List</a></li>
                                     <li><a href="blog-grid.jsp">Blog Grid</a></li>
                                     <li><a href="blog-details.jsp">Blog Details</a></li>
+                                    <li><a href="blog-create.jsp">Blog Create New</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="admin/home.jsp" target="_blank">Admin</a>
+                                <a href="admin/dashboard" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
-                                <a href="login.html">Login / Signup</a>
+                                <a href="account">Login / Signup</a>
                             </li>
                         </ul>
                     </div>
                     <ul class="nav header-navbar-rht">
                         <li class="nav-item">
-                                    <a class="nav-link header-register" href="login.jsp">Login</a>
+                                    <a class="nav-link header-register" href="account">Login</a>
                                 </li>
                         <li class="nav-item">
-                            <a class="nav-link header-login" href="register.jsp">Register</a>
+                            <a class="nav-link header-login" href="register_controller">Register</a>
                         </li>
                     </ul>
                 </div>

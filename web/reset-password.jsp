@@ -6,103 +6,71 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+    <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/home.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
-        <meta charset='utf-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <title>Snippet - BBBootstrap</title>
-        <link
-            href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
-            rel='stylesheet'>
-        <link
-            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'
-            rel='stylesheet'>
-        <script type='text/javascript'
-        src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-        <style>
-            .placeicon {
-                font-family: fontawesome
-            }
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Mentoring</title>
 
-            .custom-control-label::before {
-                background-color: #dee2e6;
-                border: #dee2e6
-            }
-        </style>
+        <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
-    <body oncontextmenu='return false' class='snippet-body bg-info'>
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-        <div>
-            <!-- Container containing all contents -->
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-9 col-lg-7 col-xl-6 mt-5">
-                        <!-- White Container -->
-                        <div class="container bg-white rounded mt-2 mb-2 px-0">
-                            <!-- Main Heading -->
-                            <div class="row justify-content-center align-items-center pt-3">
-                                <h1>
-                                    <strong>Reset Password</strong>
-                                </h1>
-                            </div>
-                            <div class="pt-3 pb-3">
-                                <form class="form-horizontal" action="NewPassword" method="POST">
-                                    <!-- User Name Input -->
-                                    <div class="form-group row justify-content-center px-3">
-                                        <div class="col-9 px-0">
-                                            <input type="text" name="password" placeholder="&#xf084; &nbsp; New Password"
-                                                   class="form-control border-info placeicon">
-                                        </div>
-                                    </div>
-                                    <!-- Password Input -->
-                                    <div class="form-group row justify-content-center px-3">
-                                        <div class="col-9 px-0">
-                                            <input type="password" name="confPassword"
-                                                   placeholder="&#xf084; &nbsp; Confirm New Password"
-                                                   class="form-control border-info placeicon">
-                                        </div>
-                                    </div>
+    <body class="account-page">
 
-                                    <!-- Log in Button -->
-                                    <div class="form-group row justify-content-center">
-                                        <div class="col-3 px-3 mt-3">
-                                            <input type="submit" value="Reset"
-                                                   class="btn btn-block btn-info">
+        <div class="main-wrapper">
+
+            <div class="bg-pattern-style" style="min-height: 100vh">
+                <div class="content">
+
+                    <div class="account-content">
+                        <div class="account-box">
+                            <div class="login-right">
+                                <div class="login-header">
+                                    <h3>RESET PASSWORD <span>Mentoring</span></h3>
+                                    <p class="text-muted">Access to our dashboard</p>
+                                </div>
+                                <form action="NewPassword" method="POST">
+                                    <div class="form-group">
+                                        <label class="form-control-label">New Password</label>
+                                        <div class="pass-group">
+                                            <input type="password" name="password" class="form-control pass-input">
+                                            <span class="fas fa-eye toggle-password"></span>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-control-label">Confirm New Password</label>
+                                        <div class="pass-group">
+                                            <input type="password" name="confPassword" class="form-control pass-input">
+                                            <span class="fas fa-eye toggle-password"></span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary login-btn" type="submit">Reset</button>
+                                    <div class="text-center dont-have">Don’t have an account? <a href="register_controller">Register</a></div>
+                                    <div style="color: red">
+                                        ${status}
                                     </div>
                                 </form>
                             </div>
-                            <!-- Alternative Login -->
-                            <div class="mx-0 px-0 bg-light">
-
-                                <!-- Horizontal Line -->
-                                <div class="px-4 pt-5">
-                                    <hr>
-                                </div>
-                                <!-- Register Now -->
-                                <div class="pt-2">
-                                    <div class="row justify-content-center">
-                                        <h5>
-                                            Don't have an Account?<span><a href="#"
-                                                                           class="text-danger"> Register Now!</a></span>
-                                        </h5>
-                                    </div>
-                                    <div
-                                        class="row justify-content-center align-items-center pt-4 pb-5">
-                                        <div class="col-4">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </div>
-        <script type='text/javascript'
-        src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
 
+
+        <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="assets/js/script.js"></script>
     </body>
+
 </html>

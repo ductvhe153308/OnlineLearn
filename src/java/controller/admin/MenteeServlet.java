@@ -3,28 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller.admin;
 
-import dal.AccountDAO;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-
-import javax.servlet.RequestDispatcher;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ADMIN
+ * @author Dell
  */
-public class NewPasswordController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+@WebServlet(name = "MenteeServlet", urlPatterns = {"/admin/mentee"})
+public class MenteeServlet extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,7 +31,7 @@ public class NewPasswordController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        request.getRequestDispatcher("mentee.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,27 +60,7 @@ public class NewPasswordController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String newPassword = request.getParameter("password");
-        String confPassword = request.getParameter("confPassword");
-        RequestDispatcher dispatcher = null;
-        if (newPassword != null && confPassword != null && newPassword.equals(confPassword)) {
-            try {
-                String email = (String) session.getAttribute("email");
-                AccountDAO a = new AccountDAO();
-                int rowCount = a.resetPassword(newPassword,email);
-                if (rowCount > 0) {
-                    request.setAttribute("status", "Password resets successfully");
-                    dispatcher = request.getRequestDispatcher("login.jsp");
-                } else {
-                    request.setAttribute("status", "Password failed to reset");
-                    dispatcher = request.getRequestDispatcher("login.jsp");
-                }
-                dispatcher.forward(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        processRequest(request, response);
     }
 
     /**

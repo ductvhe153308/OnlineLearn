@@ -38,6 +38,13 @@ public class Account {
         this.count = count;
     }
 
+    public Account(int aid, String first_name, String last_name, String pfp) {
+        this.aid = aid;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.pfp = pfp;
+    }
+
     public Account(String email, String password) {
         this.email = email;
         this.password = password;
@@ -65,7 +72,7 @@ public class Account {
         this.phone = phone;
     }
 
-    public Account(int aid, String firstname,String last_name, String email, String password, int phone) {
+    public Account(int aid, String first_name,String last_name, String email, String password, int phone) {
         this.aid = aid;
          this.first_name = first_name;
         this.last_name = last_name;
@@ -74,7 +81,7 @@ public class Account {
         this.phone = phone;
     }
 
-    public Account(int aid, String firstname,String last_name, String email, String password, int phone, int role_id) {
+    public Account(int aid, String first_name,String last_name, String email, String password, int phone, int role_id) {
         this.aid = aid;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -98,6 +105,25 @@ public class Account {
         this.gender = gender;
         this.dob = dob;
     }
+
+    public Account(int aid, String first_name, String last_name, String address, String email, String password, int phone, int role_id, String token, int enabled, String user_title, LocalDateTime created_at, int gender, LocalDateTime dob, String pfp) {
+        this.aid = aid;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.role_id = role_id;
+        this.token = token;
+        this.enabled = enabled;
+        this.user_title = user_title;
+        this.created_at = created_at;
+        this.gender = gender;
+        this.dob = dob;
+        this.pfp = pfp;
+    }
+    
 
     public int getCount() {
         return count;

@@ -1,4 +1,4 @@
-<%-- 
+ <%-- 
     Document   : login
     Created on : 05-06-2022, 22:22:43
     Author     : admin
@@ -54,6 +54,9 @@
                                     </div>
                                     <button class="btn btn-primary login-btn" type="submit">Login</button>
                                     <div class="text-center dont-have">Don’t have an account? <a href="register.jsp">Register</a></div>
+                                    <div style="color: red">
+                                        ${status}
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -61,8 +64,6 @@
 
                 </div>
             </div>
-
-        </div>
 
 
         <script src="assets/js/jquery-3.6.0.min.js"></script>
