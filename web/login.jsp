@@ -34,7 +34,7 @@
                         <div class="account-box">
                             <div class="login-right">
                                 <div class="login-header">
-                                    <h3>Login <span>Mentoring</span></h3>
+                                    <h3>Sign in <span>Mentoring</span></h3>
                                     <p class="text-muted">Access to our dashboard</p>
                                 </div>
                                 <form action="account" method="post">
@@ -52,7 +52,7 @@
                                     <div class="text-end">
                                         <a class="forgot-link" href="recover.jsp">Forgot Password ?</a>
                                     </div>
-                                    <button class="btn btn-primary login-btn" type="submit">Login</button>
+                                    <button class="btn btn-primary login-btn" type="submit">Sign in</button>
                                     <div class="text-center dont-have">Don’t have an account? <a href="register.jsp">Register</a></div>
                                     <div style="color: red">
                                         ${status}

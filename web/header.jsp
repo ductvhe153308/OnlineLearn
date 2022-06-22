@@ -3,6 +3,7 @@
     Created on : Jun 6, 2022, 7:50:00 PM
     Author     : ADMIN
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,14 +111,23 @@
                                 <a href="admin/dashboard" target="_blank">Admin</a>
                             </li>
                             <li class="login-link">
-                                <a href="account">Login / Signup</a>
+                                <a href="account">Login / Sign up</a>
                             </li>
                         </ul>
                     </div>
                     <ul class="nav header-navbar-rht">
-                        <li class="nav-item">
-                                    <a class="nav-link header-register" href="account">Login</a>
+                        <c:choose>
+                            <c:when test="${sessionScope.user != null}">
+                                <li class="nav-item">
+                                    <a class="nav-link header-register" href="logout">Sign out</a>
                                 </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="nav-item">
+                                    <a class="nav-link header-register" href="account">Sign in</a>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
                         <li class="nav-item">
                             <a class="nav-link header-login" href="register_controller">Register</a>
                         </li>
