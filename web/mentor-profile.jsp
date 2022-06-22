@@ -65,12 +65,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="user-info-right d-flex align-items-end flex-wrap">
-                                    <div class="hireme-btn text-center">
-                                        <span class="hire-rate">$500 / Hour</span>
-                                        <a class="blue-btn-radius" href="booking.html">Hire Me</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
