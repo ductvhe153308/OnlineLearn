@@ -3,7 +3,7 @@
     Created on : Jun 6, 2022, 7:50:00 PM
     Author     : ADMIN
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,11 +126,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link header-register" href="account">Sign in</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link header-login" href="register_controller">Register</a>
+                                </li>
                             </c:otherwise>
                         </c:choose>
-                        <li class="nav-item">
-                            <a class="nav-link header-login" href="register_controller">Register</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
