@@ -92,7 +92,7 @@ DateTimeFormatter fmt = new DateTimeFormatterBuilder()
                 newAccount.setLast_name(lastname);
                 newAccount.setEmail(email);
                 newAccount.setPassword(pass);
-                newAccount.setPhone(Integer.parseInt(phone));
+                newAccount.setPhone(phone);
                 newAccount.setGender(Integer.parseInt(gender));
                 if (gender.equals("1")) {
                     newAccount.setUser_title("Mr");

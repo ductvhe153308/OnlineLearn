@@ -37,7 +37,7 @@ public class RegisterDAO {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getInt(6));
+                        rs.getString(6));
             }
         } catch (Exception e) {
 
@@ -69,7 +69,7 @@ public class RegisterDAO {
             ps.setString(2, a.getLast_name());
             ps.setString(3, a.getEmail());
             ps.setString(4, a.getPassword());
-            ps.setInt(5, a.getPhone());
+            ps.setString(5, a.getPhone());
             ps.setString(6, a.getUser_title());
             ps.setString(7, LocalDateTime.now().toString());
             ps.setInt(8, a.getGender());

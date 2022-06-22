@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 22, 2022, 3:24:05 PM
+    Author     : Dell
+*/
+.mini-user-ava{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.user-name{
+    cursor: pointer;
+}
+.user-name:hover{
+    color: #009da6;
+    transition-duration: 1.2s;
+}
+.rating-star>div{
+    display: inline;
+}
+.rating-star, .money{
+  padding-left: 0px !important;
+}
+.url{
+    cursor: pointer;
+}

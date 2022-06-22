@@ -13,14 +13,22 @@
         <link rel="icon" href="/onlinelearn/assets/img/favicon.png">
         <link rel="stylesheet" href="/onlinelearn/admin/static/css/page.css">
         <link rel="stylesheet" href="/onlinelearn/assets/css/table.css">
+        <link rel="stylesheet" href="/onlinelearn/assets/css/account.properties.css">
     </head>
     <body>
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-
+            <div class="page-title">List of Mentor</div>
+            <div class="page-navigation">
+                <div class="url" data-url="admin/dashboard">Dashboard</div> / 
+                <div>User</div> / 
+                <div class="dist">Mentor</div>
+            </div> 
+            <div class="component col-12" id="mentor"></div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/onlinelearn/assets/js/url.js"></script>
         <script src="static/js/mentor.js"></script>
         <script>
             Mentor.init();

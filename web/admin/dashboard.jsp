@@ -13,6 +13,7 @@
         <link rel="icon" href="/onlinelearn/assets/img/favicon.png">
         <link rel="stylesheet" href="/onlinelearn/admin/static/css/page.css">
         <link rel="stylesheet" href="/onlinelearn/assets/css/table.css">
+        <link rel="stylesheet" href="/onlinelearn/assets/css/account.properties.css">
     </head>
     <body>
         <jsp:include page="static/layout/header.jsp" />
@@ -21,8 +22,10 @@
 
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/onlinelearn/assets/js/url.js"></script>
         <script src="static/js/dashboard.js"></script>
         <script src="static/js/mentor.js"></script>
+        <script src="static/js/mentee.js"></script>
         <script>
             Dashboard.init();
         </script>

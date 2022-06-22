@@ -44,8 +44,8 @@ $('#page').html(`
         this.profile();
         this.invoice();
         this.sale();
-        this.menter();
-        this.mentee();
+        Mentor.board.dashboard('mentor',1,5);
+        Mentee.board.dashboard('mentee',1,5);
         this.booking();
 },
         /**
@@ -77,30 +77,6 @@ $('#page').html(`
          */
         sale: function () {
         $("#sale").css("height", "550px");
-        },
-        /**
-         * Menter List
-         */
-        menter: function () {
-            Mentor.board.dashboard('mentor',1,5);
-        },
-        /**
-         * Mentee List
-         */
-        mentee: function () {
-        var table_name = 'Mentee List';
-                var header = ['Mentee Name', 'Phone', 'Last Visit', 'Paid'];
-                var colgroup = [70, 90, 50, 100];
-                var data = [1, 2, 3, 4, 5];
-                var table = AP.tableRender(table_name, header, data, function (index) {
-                return `<div class="table-row">
-                        <div class="table-data" style="width:${colgroup[0]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[1]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[2]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
-                    </div>`;
-                }, colgroup);
-                $("#page #mentee").html(table);
         },
         /**
          * Booking List

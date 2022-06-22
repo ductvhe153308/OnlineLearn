@@ -74,8 +74,6 @@
             </div>
             <div class="pages"></div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="/onlinelearn/admin/static/js/slide-bar.js"></script>
     </body>
 
 </html>

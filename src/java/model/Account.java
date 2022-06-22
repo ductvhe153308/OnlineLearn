@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+
 import java.time.LocalDateTime;
 
 /**
@@ -18,7 +19,7 @@ public class Account {
     private String address;
     private String email;
     private String password;
-    private int phone;
+    private String phone;
     private int role_id;
     private String token;
     private int enabled;
@@ -32,7 +33,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(String first_name,String last_name, int count) {
+    public Account(String first_name, String last_name, int count) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.count = count;
@@ -50,7 +51,7 @@ public class Account {
         this.password = password;
     }
 
-    public Account(int aid, String email, String first_name,String last_name, int phone) {
+    public Account(int aid, String email, String first_name, String last_name, String phone) {
         this.aid = aid;
         this.email = email;
         this.first_name = first_name;
@@ -64,7 +65,7 @@ public class Account {
         this.password = password;
     }
 
-    public Account(String first_name,String last_name, String email, String password, int phone) {
+    public Account(String first_name, String last_name, String email, String password, String phone) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -72,16 +73,16 @@ public class Account {
         this.phone = phone;
     }
 
-    public Account(int aid, String first_name,String last_name, String email, String password, int phone) {
+    public Account(int aid, String first_name, String last_name, String email, String password, String phone) {
         this.aid = aid;
-         this.first_name = first_name;
+        this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.password = password;
         this.phone = phone;
     }
 
-    public Account(int aid, String first_name,String last_name, String email, String password, int phone, int role_id) {
+    public Account(int aid, String first_name, String last_name, String email, String password, String phone, int role_id) {
         this.aid = aid;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -91,7 +92,7 @@ public class Account {
         this.role_id = role_id;
     }
 
-    public Account(int aid, String first_name,String last_name, String email, String password, int phone, int role_id, String token, String user_title, LocalDateTime created_at, int gender, LocalDateTime dob) {
+    public Account(int aid, String first_name, String last_name, String email, String password, String phone, int role_id, String token, String user_title, LocalDateTime created_at, int gender, LocalDateTime dob) {
         this.aid = aid;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -106,24 +107,15 @@ public class Account {
         this.dob = dob;
     }
 
-    public Account(int aid, String first_name, String last_name, String address, String email, String password, int phone, int role_id, String token, int enabled, String user_title, LocalDateTime created_at, int gender, LocalDateTime dob, String pfp) {
+    public Account(int aid, String first_name, String last_name, String phone, int role_id,int gender, String pfp) {
         this.aid = aid;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.address = address;
-        this.email = email;
-        this.password = password;
         this.phone = phone;
         this.role_id = role_id;
-        this.token = token;
-        this.enabled = enabled;
-        this.user_title = user_title;
-        this.created_at = created_at;
         this.gender = gender;
-        this.dob = dob;
         this.pfp = pfp;
     }
-    
 
     public int getCount() {
         return count;
@@ -157,9 +149,6 @@ public class Account {
         this.last_name = last_name;
     }
 
-    
-    
-
     public String getAddress() {
         return address;
     }
@@ -176,11 +165,11 @@ public class Account {
         this.user_title = user_title;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -258,8 +247,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" + "aid=" + aid + "| fullname=" + first_name+ " "+last_name + "| email=" + email + "| password=" + password + "| phone=" + phone + "| role_id=" + role_id + "| token=" + token + "| enabled=" + enabled + "| user_title=" + user_title + "| created_at=" + created_at + "| gender=" + gender + "| dob=" + dob + "| pfp=" + pfp + "| count=" + count + '}';
+        return "Account{" + "aid=" + aid + "| fullname=" + first_name + " " + last_name + "| email=" + email + "| password=" + password + "| phone=" + phone + "| role_id=" + role_id + "| token=" + token + "| enabled=" + enabled + "| user_title=" + user_title + "| created_at=" + created_at + "| gender=" + gender + "| dob=" + dob + "| pfp=" + pfp + "| count=" + count + '}';
     }
 
 }
-

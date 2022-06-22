@@ -21,6 +21,7 @@
 
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/onlinelearn/assets/js/url.js"></script>
         <script src="static/js/booking.js"></script>
         <script>
             Booking.init();

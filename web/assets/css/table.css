@@ -14,7 +14,6 @@ and open the template in the editor.
     font-weight: 600;
     font-size: 20px;
     color: #000000;
-    font-family: 'Source Sans Pro', sans-serif;
     padding: 20px 30px;
     box-sizing: border-box;
 }
@@ -35,6 +34,8 @@ and open the template in the editor.
 
 .table .table-header {
     background-color: #f8f9fa;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .table .table-row {
@@ -43,6 +44,13 @@ and open the template in the editor.
 
 .table .table-data {
     display: inline-block;
+}
+.table .table-data > div{
+    position: absolute;
+    display: inline;
+    padding-top: 15px;
+    padding-left: 5px;
+    font-weight: 500;
 }
 .component .table .table-row:last-child{
     border-bottom: none;

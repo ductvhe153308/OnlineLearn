@@ -32,7 +32,7 @@ public class DashboardServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Account acc = new Account(0, "Hoang", "Duc", "duc@gmail.com", "asdasda", 0, 0);
+        Account acc = new Account(0, "Hoang", "Duc", "duc@gmail.com", "asdasda", "", 0);
         request.getSession().setAttribute("acc", acc);
         request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     }
