@@ -111,11 +111,11 @@
                                                 <div class="card-body">
                                                     <div class="pro-widget-content">
                                                         <div class="profile-info-widget">
-                                                            <a href="profile-mentee.html" class="booking-user-img">
+                                                            <a href="mentor-profile.jsp" class="booking-user-img">
                                                                 <img src="assets/img/user/user.jpg" alt="User Image">
                                                             </a>
                                                             <div class="profile-det-info">
-                                                                <h3><a href="profile-mentee.html">Richard Wilson</a></h3>
+                                                                <h3><a href="mentor-profile.jsp">Richard Wilson</a></h3>
                                                                 <div class="mentee-details">
                                                                     <h5><b>Mentee ID :</b> 16</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
@@ -138,11 +138,11 @@
                                                 <div class="card-body">
                                                     <div class="pro-widget-content">
                                                         <div class="profile-info-widget">
-                                                            <a href="profile-mentee.html" class="booking-user-img">
+                                                            <a href="mentor-profile.jsp" class="booking-user-img">
                                                                 <img src="assets/img/user/user1.jpg" alt="User Image">
                                                             </a>
                                                             <div class="profile-det-info">
-                                                                <h3><a href="profile-mentee.html">Charlene Reed</a></h3>
+                                                                <h3><a href="mentor-profile.jsp">Charlene Reed</a></h3>
                                                                 <div class="mentee-details">
                                                                     <h5><b>Mentee ID :</b> 01</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> North Carolina, USA</h5>
