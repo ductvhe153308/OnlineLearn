@@ -23,7 +23,7 @@ var Mentee = {
                     var header = ['Mentee Name', 'Phone', 'Last visit', 'Paid'];
                     var colgroup = [150, 90, 50, 130];
                     var data = JSON.parse(response);
-                    var table = AP.tableRender(table_name, header, data, function (index) {
+                    var table = AP.table.render(table_name, header, data, function (index) {
                         var mentee = JSON.parse(data[index]['account']);
                         var img = mentee['pfp'];
                         if (img == null) {

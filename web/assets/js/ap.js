@@ -31,22 +31,57 @@ var AP = {
      * @param {Function} handle Callback function to handling rendering table row.
      * @returns {String} 
      */
-    tableRender: function (name, header, data, handle, colgroup = null, sorting = false, paging = false) {
-        if (colgroup == null) {
-            colgroup = Array(header.length).fill(100);
-        }
-        return `
-            <div class="table">
-                <div class="table-name">${name}</div>
-                <div class="table-header">
-                    ${AP.render(header, function (i) {
-                        return `<div class="table-data" style="width: ${colgroup[i]}px;">${header[i]} ${sorting ? AP.sort() : ''}</div>`;
-                    })}
+    table: {
+        render: function (name, header, data, handle, height, colgroup = null, sorting = null, paging = false) {
+            this.num = height;
+            this.sorter = sorting;
+            if (colgroup == null) {
+                colgroup = Array(header.length).fill(100);
+            }
+
+            this.view = `<div class="table">
+                        <div class="table-name">${name}</div>
+                        <div class="table-header">${AP.render(header, function (i) {
+                var sort = sorting ? `<div class="sorting" id="sort-${i}" onclick="AP.table.sort(this);">
+                    <svg class="sorting-asc" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#cdcecf" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                    </svg>
+                    <svg class="sorting-desc" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#cdcecf" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                    </svg>
+                </div>` : ``;
+                return `<div class="table-data" style="width: ${colgroup[i]}px;">${header[i]} ${sort}</div>`;
+            })}
                 </div>
-                ${AP.render(data, handle)}
+                <div class="table-body">                
+                    ${AP.render(data, handle)}
+                </div>
             </div>
-            ${paging?AP.paging():''}
+            ${paging ? AP.paging() : ''}
         `;
+            return this.view;
+        },
+        sort: function (param) {
+            var asc = $(param).find('.sorting-asc');
+            var desc = $(param).find('.sorting-desc');
+            var id = $(param).closest('.component').attr('id');
+            var index = param.id.split('-')[1];
+            if (!asc.hasClass('sorted') && !desc.hasClass('sorted')) {
+                this.sorter(id, 1, this.num, this.sorter, index, true);
+                asc.addClass('sorted');
+            } else if (asc.hasClass('sorted')) {
+                this.sorter(id, 1, this.height, this.sorter, index, false);
+                this.sorter(param, 'desc');
+                asc.removeClass('sorted');
+                desc.addClass('sorted');
+            } else if (desc.hasClass('sorted')) {
+                this.sorter(id, 1, this.height, this.sorter, index, true);
+                this.sorter(param, 'asc');
+                desc.removeClass('sorted');
+                asc.addClass('sorted');
+            }
+            $(param).closest('.table').find('.table-body').html(AP.render(this.data, this.handle));
+        }
     },
     rate: {
         star: function (num) {
@@ -69,11 +104,8 @@ var AP = {
             return `<div class="money">$${num}.00</div>`;
         }
     },
-    sort: function (){
-        
-    },
-    paging: function (){
-        
+    paging: function () {
+
     }
 };
 

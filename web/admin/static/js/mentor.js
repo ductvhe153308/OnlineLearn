@@ -30,7 +30,7 @@ var Mentor = {
                     var header = ['Mentor Name', 'Course', 'Earned', 'Reviews'];
                     var colgroup = [150, 90, 50, 130];
                     var data = JSON.parse(response);
-                    var table = AP.tableRender(table_name, header, data, function (index) {
+                    var table = AP.table.render(table_name, header, data, function (index) {
                         var mentor = JSON.parse(data[index]['account']);
                         var course = JSON.parse(data[index]['course']);
                         var img = mentor['pfp'];
@@ -56,20 +56,22 @@ var Mentor = {
                 }
             });
         },
-        full: function (id, page, num_objs) {
+        full: function (id, page, num_objs, sort = null, asc = true) {
             $.ajax({
                 type: 'POST',
                 url: "../admin/mentor",
                 data: {
                     page: page,
-                    num_objs: num_objs
+                    num_objs: num_objs,
+                    sort: sort,
+                    asc: asc
                 },
                 success: function (response) {
                     var table_name = 'Mentor List';
-                    var header = ['Mentor Name', 'Course','Menber Since', 'Earned', 'Account Status'];
-                    var colgroup = [150, 90,70, 50, 130];
+                    var header = ['Mentor Name', 'Course', 'Menber Since', 'Earned', 'Account Status'];
+                    var colgroup = [150, 90, 70, 50, 150];
                     var data = JSON.parse(response);
-                    var table = AP.tableRender(table_name, header, data, function (index) {
+                    var table = AP.table.render(table_name, header, data, function (index) {
                         var mentor = JSON.parse(data[index]['account']);
                         var course = JSON.parse(data[index]['course']);
                         var img = mentor['pfp'];
@@ -89,7 +91,7 @@ var Mentor = {
                         <div class="table-data" style="width:${colgroup[4]}px">
                             </div>
                     </div>`;
-                    }, colgroup);
+                    }, num_objs, colgroup, Mentor.board.full);
                     $("#page #" + id).html(table);
                 },
                 error: function (xhr) {
