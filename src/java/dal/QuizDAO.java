@@ -5,6 +5,9 @@
  */
 package dal;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Choice;
 import model.Question;
+import model.QuestionChoice;
 import utils.DBContext;
 
 /**
@@ -132,4 +136,123 @@ public class QuizDAO {
         }
         return choices;
     }
+    public QuizType getQuizType(int id) throws ClassNotFoundException {
+        QuizType quizType = new QuizType();
+        
+        try {
+            this.conn = new DBContext().getConnection();
+            ps = conn.prepareStatement("SELECT * FROM quizdb.quiztype WHERE Id=?");
+            ps.setInt(1, id);
+
+             rs = ps.executeQuery();
+            if (rs.next()) {
+                quizType.setQuizTypeId(rs.getInt("Id"));
+                quizType.setName(rs.getString("Name"));
+                quizType.setDescription(rs.getString("Description"));
+                quizType.setImageUrl(rs.getString("ImageURL"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return quizType;
+    }
+    public List<QuizType> getQuizTypes() throws ClassNotFoundException {
+        List<QuizType> quizTypes = new ArrayList<>();
+        
+        try {
+            conn =  new DBContext().getConnection();
+            ps = conn.prepareStatement("SELECT * FROM quizdb.quiztype");
+
+             rs = ps.executeQuery();
+            while (rs.next()) {
+                QuizType qt = new QuizType();
+                qt.setQuizTypeId(rs.getInt("Id"));
+                qt.setName(rs.getString("Name"));
+                qt.setDescription(rs.getString("Description"));
+                qt.setImageUrl(rs.getString("ImageURL"));
+
+                quizTypes.add(qt);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return quizTypes;
+    }
+    public Quiz Json(int id) throws ClassNotFoundException {
+        Quiz quiz = new Quiz();
+        quiz.setQuizType(getQuizType(id));
+        List<Question> questions = getTenRandomQuestions(id);
+
+        for (int i=0; i < questions.size(); i++) {
+            int questionId = questions.get(i).getQuestionId();
+            List<Choice> choices;
+            choices = getChoices(questionId);
+            Gson gson = new Gson();
+            JsonArray jarray = gson.toJsonTree(choices).getAsJsonArray();
+            System.out.println(jarray);
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.add("choices", jarray);
+
+            questions.get(i).setChoicesJson(jsonObject.get("choices").toString());
+        }
+
+        Gson gson = new Gson();
+        JsonArray jarray = gson.toJsonTree(questions).getAsJsonArray();
+        System.out.println(jarray);
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.add("questions", jarray);
+        quiz.setQuestionsJson(jsonObject.get("questions").toString());
+
+
+        return quiz;
+    }
+    public List<QuestionChoice> getTenRandomQuestionsWithChoices(int id) throws ClassNotFoundException {
+        List<QuestionChoice> questions = new ArrayList<>();
+        
+        try {
+            this.conn = new DBContext().getConnection();
+            ps = conn.prepareStatement("SELECT qu.Id AS QuestionId, qu.Description AS QuestionDescription, c.Id AS ChoiceId, c.Description AS ChoiceDescription, c.IsAnswer AS ChoiceIsAnswer FROM quizdb.quiztype AS qt INNER JOIN quizdb.question AS qu ON qt.Id=Fk_QuizTypeId_Question INNER JOIN quizdb.choice AS c ON qu.Id=c.Fk_QuestionId_Choice WHERE qt.Id=? ORDER BY RAND() LIMIT 50");
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                QuestionChoice qu = new QuestionChoice();
+                qu.setQuestionId(rs.getInt("QuestionId"));
+                qu.setQuestionDescription(rs.getString("QuestionDescription"));
+                qu.setChoiceId(rs.getInt("ChoiceId"));
+                qu.setChoiceDescription(rs.getString("ChoiceDescription"));
+                qu.setChoiceIsAnswer(rs.getInt("ChoiceIsAnswer"));
+                qu.setIsSelected(0);
+                questions.add(qu);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return questions;
+    }
+    
 }
