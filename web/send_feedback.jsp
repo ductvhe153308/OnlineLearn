@@ -50,6 +50,41 @@
                                 </select>
                             </td>    
                         </tr>
+
+                        <tr  style="margin-top: 10px">
+                            <td align="center"><b>How would you rate my website:</b></td> 
+                            <TD ALIGN="CENTER"> 
+                                <INPUT TYPE="radio" NAME = "rating" VALUE = "Excellent"> Excellent 
+                                <INPUT TYPE="radio" NAME = "rating" VALUE = "Good"> Good 
+                                <INPUT TYPE="radio" NAME = "rating" VALUE = "Average" CHECKED> Average 
+                                <INPUT TYPE="radio" NAME = "rating" VALUE = "Poor"> Poor 
+                                <INPUT TYPE="radio" NAME = "rating" VALUE = "Overhaul"> Needs an Overhaul
+                            </TD>
+                        </tr>
+
+                        <TR>
+                            <TD ALIGN="CENTER"><B>Comments or Suggestions:</B></TD> 
+                            <TD ALIGN="CENTER"> 
+                                <TEXTAREA ROWS="6" COLS="40" WRAP="PHYSICAL" Name="suggestions" placeholder="Enter any comments or suggestions you have"></TEXTAREA>
+    </TD>
+    </TR>
+    
+    <TR>
+    <TD ALIGN="CENTER"><B>Do you think this form looks nice?</B></TD> 
+    <TD ALIGN="CENTER"> 
+    <INPUT TYPE="CHECKBOX" NAME="formrating" VALUE="yes">
+    </TD>
+    </TR>
+   
+    <TR>
+    
+    <TD ALIGN="LEFT">
+    
+    <INPUT TYPE="SUBMIT" VALUE="Send Comments" ALIGN="MIDDLE">  &nbsp; &nbsp;
+    <INPUT TYPE="RESET" VALUE="Clear Form" ALIGN="MIDDLE"> 
+    
+    </TD>
+    </TR>
 </table>
 </FORM>
             </div>
