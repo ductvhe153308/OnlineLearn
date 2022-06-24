@@ -36,8 +36,8 @@
                                 <div class="col-md-12 col-12">
                                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Add Blog</li>
+                                            <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
+<!--                                            <li class="breadcrumb-item active" aria-current="page">Add Blog</li>-->
                                         </ol>
                                     </nav>
                                     <h2 class="breadcrumb-title">Add Blog</h2>
