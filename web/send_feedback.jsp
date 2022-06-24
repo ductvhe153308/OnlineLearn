@@ -35,7 +35,23 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div> 
+                <FORM style="padding-top: 50px" name="ParameterPost" action="/servlets-examples/PrintFormParams" method="post">
+                    <table align="center" border="0">
+                        <tr>
+                            <td align="center"><B>How did you find this site?</B></td> 
+                            <td align="center"> 
+                                <select name="from" size="1">
+                                    <option value = "Website" selected>Another Website</option>
+                                    <option value = "search engine">A search engine</option>
+                                    <option value = "friend">A friend told you</option>
+                                    <option value = "email">From an email</option>
+                                    <option value = "unlisted">Another way not listed here</option>
+                                </select>
+                            </td>    
+                        </tr>
+</table>
+</FORM>
             </div>
         </section>
         <%@include file="footer.jsp" %>
