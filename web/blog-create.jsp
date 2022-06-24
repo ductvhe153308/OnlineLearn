@@ -61,7 +61,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Blog Title <span class="text-danger">*</span></label>
-                                                                        <input class="form-control" type="text" value="Abacus Study for beginner - Part I">
+                                                                        <input class="form-control" type="text"  placeholder="Abacus Study for beginner - Part I">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -97,7 +97,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Descriptions <span class="text-danger">*</span></label>
-                                                                        <textarea id="about" class="form-control service-desc" name="about">note.</textarea>
+                                                                        <textarea id="about" class="form-control service-desc" name="about" placeholder="note"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
