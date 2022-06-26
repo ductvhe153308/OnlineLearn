@@ -4,6 +4,7 @@
     Author     : DuongHoangLe
 --%>
 
+<%@page import="model.Course"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -85,17 +86,11 @@
                                 </div>
                                 <div class="courses-body">
                                     <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li><i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li><i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li><i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li><i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li><i class="fas fa-star not-checked"></i>
-                                            </li>
+                                        <ul class="mb-1"> 
+                                            <c:forEach begin = "1" end = "${x.rated_star}">
+                                                <li><i class="fas fa-star checked"></i>
+                                                </li> 
+                                            </c:forEach>
                                         </ul>
                                         <p class="mb-1">${x.last_name} ${x.first_name}</p>
                                         <h4 class="mb-0">
