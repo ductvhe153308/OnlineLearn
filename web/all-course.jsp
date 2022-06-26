@@ -81,7 +81,7 @@
                                         <img src="assets/img/course/c15.jpg" alt="" class="img-fluid w-100">
                                     </div>
                                     <div class="courses-aut-img">
-                                        <img src="assets/img/user/user3.jpg" alt="">
+                                        <img src="assets/img/user/truong.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="courses-body">
