@@ -36,8 +36,8 @@
                                 <div class="col-md-12 col-12">
                                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Add Blog</li>
+                                            <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
+<!--                                            <li class="breadcrumb-item active" aria-current="page">Add Blog</li>-->
                                         </ol>
                                     </nav>
                                     <h2 class="breadcrumb-title">Add Blog</h2>
@@ -61,7 +61,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Blog Title <span class="text-danger">*</span></label>
-                                                                        <input class="form-control" type="text" value="Abacus Study for beginner - Part I">
+                                                                        <input class="form-control" type="text"  placeholder="Abacus Study for beginner - Part I">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -97,7 +97,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Descriptions <span class="text-danger">*</span></label>
-                                                                        <textarea id="about" class="form-control service-desc" name="about">note.</textarea>
+                                                                        <textarea id="about" class="form-control service-desc" name="about" placeholder="note"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
