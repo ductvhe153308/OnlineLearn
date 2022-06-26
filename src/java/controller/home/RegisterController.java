@@ -99,7 +99,7 @@ public class RegisterController extends HttpServlet {
                 dao.register(newAccount);
 
                 request.setAttribute("mess1", "Register Successfully!");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("home.jsp").forward(request, response);
 
             } else {
 

@@ -56,7 +56,6 @@
                                     <div class="text-center dont-have">Don’t have an account? <a href="register.jsp">Register</a></div>
                                     <div style="color: red">
                                         ${status}
-                                        ${mess1}
                                     </div>
                                 </form>
                             </div>
