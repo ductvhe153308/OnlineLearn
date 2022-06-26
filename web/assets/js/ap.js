@@ -20,18 +20,18 @@ var AP = {
         return result;
     },
 
-    /**
-     * Render a table from your config and data.
-     * @param {String} name Table name
-     * @param {Array} header 
-     * @param {Array} colgroup Config col width for table. Default : 100px
-     * @param {Bool} sorting Allow sorting.
-     * @param {Bool} paging Allow paging
-     * @param {Array} data Data for table.
-     * @param {Function} handle Callback function to handling rendering table row.
-     * @returns {String} 
-     */
     table: {
+        /**
+         * Render a table from your config and data.
+         * @param {String} name Table name
+         * @param {Array} header 
+         * @param {Array} colgroup Config col width for table. Default : 100px
+         * @param {Bool} sorting Allow sorting.
+         * @param {Bool} paging Allow paging
+         * @param {Array} data Data for table.
+         * @param {Function} handle Callback function to handling the rendering table row.
+         * @returns {String} HTML code of table.
+         */
         render: function (name, header, data, handle, colgroup = null, sorting = null, paging = null) {
             this.sorter = sorting;
             this.builder = handle;
@@ -61,24 +61,47 @@ var AP = {
         `;
             return this.view;
         },
+        /**
+         * Sort table with your handle.
+         * @param {HTML Object} param header of column need to sort.
+         */
         sort: function (param) {
             var asc = $(param).find('.sorting-asc');
             var desc = $(param).find('.sorting-desc');
             if (!asc.hasClass('sorted') && !desc.hasClass('sorted')) {
+                $('.sorting-asc').removeClass('sorted');
+                $('.sorting-desc').removeClass('sorted');
                 asc.addClass('sorted');
             } else if (asc.hasClass('sorted')) {
+                $('.sorting-asc').removeClass('sorted');
+                $('.sorting-desc').removeClass('sorted');
                 asc.removeClass('sorted');
                 desc.addClass('sorted');
             } else if (desc.hasClass('sorted')) {
+                $('.sorting-asc').removeClass('sorted');
+                $('.sorting-desc').removeClass('sorted');
                 desc.removeClass('sorted');
                 asc.addClass('sorted');
             }
         },
+        /**
+         * Changing data of table without header and another config (for paging).
+         * @param {String} id Id of table.
+         * @param {Array} data New data for change.
+         */
         change: function (id, data) {
             $('#' + id).find('.table-data').html(AP.render(data, this.builder));
         }
     },
+    /**
+     * Making a rating field.
+     */
     rate: {
+        /**
+         * Rating by star.
+         * @param {type} num number of star.(0-5)
+         * @returns {String} HTML code of rating.
+         */
         star: function (num) {
             if (num < 0)
                 num = 0;
@@ -107,6 +130,12 @@ var AP = {
                 <div class="page-next">Next</div>
             </div>`;
     },
+    /**
+     * Make a status on/off for an element with id
+     * @param {type} id Id of element
+     * @param {type} type default on
+     * @returns {String} HTML code for status.
+     */
     status: function (id, type = true) {
         if (type) {
             return `<div class="status" for="${id}"><input type="hidden" id="${id}" value="1"><div class="status-circle"></div></div>`;

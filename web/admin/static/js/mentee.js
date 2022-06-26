@@ -3,14 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
+ * Mentee object for project, include CRUD of mentor.
+ * @type Object
+ */
 var Mentee = {
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #mentee').addClass('active');
         Mentee.board.full('mentee', 1, 10);
     },
+    /**
+     * Handling show objects in list.
+     */
     board: {
+        /**
+         * Display list of mentees in dashboard.
+         * @param {String} id Id of component to show.
+         * @param {Int} page current page in paginate
+         * @param {Int} num_objs number of mentee in page.
+         */
         dashboard: function (id, page, num_objs) {
             $.ajax({
                 type: 'POST',
@@ -49,6 +61,12 @@ var Mentee = {
                 }
             });
         },
+        /**
+         * Display list of mentors in mentor list page.
+         * @param {String} id Id of component to show.
+         * @param {Int} page current page in paginate
+         * @param {Int} num_objs number of mentor in page.
+         */
         full: function (id, page, num_objs, sort = null, asc = true) {
             $.ajax({
                 type: 'POST',
@@ -104,7 +122,7 @@ var Mentee = {
                         });
                     }, true);
                     $("#page #" + id).html(table);
-                    
+
                     $('.status').click(
                             function () {
                                 var st = $(this);
@@ -123,9 +141,17 @@ var Mentee = {
             });
         }
     },
+    /**
+     * Handling show an Mentee
+     * @type type
+     */
     display: {
 
     },
+    /**
+     * Handing edit, add mentee
+     * @type type
+     */
     form: {
 
     }

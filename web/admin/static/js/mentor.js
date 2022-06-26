@@ -3,20 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
+ * Mentor object for project, include CRUD of mentor.
+ * @type Object
+ */
 var Mentor = {
+    /**
+     * Build mentor list page.
+     */
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #mentor').addClass('active');
         Mentor.board.full('mentor', 1, 10);
     },
-    /**
-     * Display list of mentor.
-     * @param {Int} page current page in paginate
-     * @param {Int} num_objs number of mentor in page.
-     * @returns {undefined}
-     */
     board: {
+        /**
+         * Display list of mentors in dashboard.
+         * @param {String} id Id of component to show.
+         * @param {Int} page current page in paginate
+         * @param {Int} num_objs number of mentor in page.
+         */
         dashboard: function (id, page, num_objs) {
             $.ajax({
                 type: 'POST',
@@ -25,7 +31,7 @@ var Mentor = {
                     page: page,
                     num_objs: num_objs
                 },
-                success: function (response) {
+                success: function (response) { // Kieu String
                     var table_name = 'Mentor List';
                     var header = ['Mentor Name', 'Course', 'Earned', 'Reviews'];
                     var colgroup = [150, 90, 50, 130];
@@ -56,6 +62,14 @@ var Mentor = {
                 }
             });
         },
+        /**
+         * Make a list of mentor for an element.
+         * @param {type} id element id.
+         * @param {type} page page number of list (for paging).
+         * @param {type} num_objs number of mentors in page.
+         * @param {type} sort Allow sorting table.
+         * @param {type} asc Type of sorting.
+         */
         full: function (id, page, num_objs, sort = null, asc = true) {
             $.ajax({
                 type: 'POST',
@@ -131,9 +145,15 @@ var Mentor = {
             });
         }
     },
+    /**
+     * Handling show an mentor
+     */
     display: {
 
     },
+    /**
+     * Handling add, update, delete mentor.
+     */
     form: {
 
     }

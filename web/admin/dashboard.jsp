@@ -19,7 +19,7 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-
+            <!--html của #page-->
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="/onlinelearn/assets/js/url.js"></script>
