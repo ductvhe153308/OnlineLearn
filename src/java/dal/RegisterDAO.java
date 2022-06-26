@@ -24,7 +24,7 @@ public class RegisterDAO {
     ResultSet rs = null;
 
     public Account checkAccountExist(String email) {
-        String query = "select * from swp391.account where email = ?";
+        String query = "select * from onlinelearning.account where email = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -46,22 +46,8 @@ public class RegisterDAO {
     }
 
     public void register(Account a) {
-        String query = "INSERT INTO `swp391`.`account`\n"
-                + "(`first_name`,\n"
-                + "`last_name`,\n"
-                + "`email`,\n"
-                + "`password`,\n"
-                + "`phone`,\n"
-                + "`role_id`,\n"
-                + "`status`,\n"
                 + "`token`,\n"
-                + "`enabled`,\n"
-                + "`usertitle`,\n"
-                + "`created_at`,\n"
-                + "`gender`,\n"
-                + "`date_of_birth`)\n"
-                + "`address`)\n"
-                + "VALUES (?,?,?,?,?,5,'normal',null,1,?,?,?,??,);";
+        String query = "";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
