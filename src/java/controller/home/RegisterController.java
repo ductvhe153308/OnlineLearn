@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controller.home;
+
 import dal.RegisterDAO;
 import model.Account;
 import java.io.IOException;
@@ -22,7 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author admin
  */
 public class RegisterController extends HttpServlet {
-DateTimeFormatter fmt = new DateTimeFormatterBuilder()
+
+    DateTimeFormatter fmt = new DateTimeFormatterBuilder()
             .appendPattern("yyyy-MM-dd")
             .optionalStart()
             .appendPattern(" HH:mm")
@@ -30,6 +32,7 @@ DateTimeFormatter fmt = new DateTimeFormatterBuilder()
             .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
             .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
             .toFormatter();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,8 +42,6 @@ DateTimeFormatter fmt = new DateTimeFormatterBuilder()
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -74,45 +75,40 @@ DateTimeFormatter fmt = new DateTimeFormatterBuilder()
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
         String repass = request.getParameter("password_confirmation");
-        String phone = request.getParameter("phone");
         String gender = request.getParameter("gender");
-        String title = request.getParameter("title");
-        String address = request.getParameter("address");
         String dob = request.getParameter("dob");
-        
-        
+
         if (!pass.equals(repass)) {
-                response.sendRedirect("register.jsp");
-                    } else {
+            response.sendRedirect("register.jsp");
+        } else {
             Account checkaccount = dao.checkAccountExist(email);
-            
+
             if (checkaccount == null) {
                 Account newAccount = new Account();
                 newAccount.setFirst_name(firstname);
                 newAccount.setLast_name(lastname);
                 newAccount.setEmail(email);
                 newAccount.setPassword(pass);
-                newAccount.setPhone(phone);
                 newAccount.setGender(Integer.parseInt(gender));
-                if (gender.equals("1")) {
-                    newAccount.setUser_title("Mr");
-                } else if(gender.equals("0")){
-                    newAccount.setUser_title("Mrs");
-                }
+//                if (gender.equals("1")) {
+//                    newAccount.setUser_title("Mr");
+//                } else if(gender.equals("0")){
+//                    newAccount.setUser_title("Mrs");
+//                }
                 newAccount.setDob(LocalDateTime.parse(dob, fmt));
                 dao.register(newAccount);
-                
-                request.setAttribute("mess3", "Register Successfully!");
+
+                request.setAttribute("mess1", "Register Successfully!");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
-                
-            }
-            else {
-                
-                request.setAttribute("mess", "gmail is alredy exist!");
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+
+            } else {
+
+                request.setAttribute("mess2", "Register Failed");
+                request.getRequestDispatcher("register.jsp").forward(request, response);
             }
         }
     }
+
     @Override
     public String getServletInfo() {
         return "Short description";

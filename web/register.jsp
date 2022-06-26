@@ -40,13 +40,13 @@
                                      <div class="form-group">
                                           <label for="gender">Gender</label>
                                                  <select name="gender" id="gender" class="form-control">
-                                                       <option value="1">male</option>
-                                                     <option value="0">female</option>
+                                                       <option value="1">Male</option>
+                                                     <option value="0">Female</option>
                                                   </select>
                                      </div>
                                      <div class="form-group">
                                          <label class="form-control-label">Email Address</label>
-                                         <input id="email" type="email" class="form-control">
+                                         <input id="email" type="email" class="form-control" name="email">
                                      </div>
                                      <div class="row">
                                          <div class="col-lg-6">
@@ -63,22 +63,17 @@
                                          </div>
                                      </div>
                                      <div class="form-group">
-                                         <label class="form-control-label">Address</label>
-                                         <input id="email" type="address" class="form-control">
-                                     </div>
-                                     <div class="form-group">
-                                         <label class="form-control-label">Phone</label>
-                                         <input type="number" name="phone" placeholder="Enter Phone" class="form-control"><br>
-                                     </div>
-                                     <div class="form-group">
                                          <label class="form-control-label">Date of Birth</label>
                                           <input type="date" name="dob" placeholder="Date Of Birth"class="form-control"><br>
                                      </div>
                                      
                                     
                                      <button class="btn btn-primary login-btn" type="submit">Create Account</button>
-                                     <div class="account-footer text-center mt-3">Already have an account? <a class="forgot-link mb-0" href="login.jsp">Login</a>
+                                     <div class="account-footer text-center mt-3">Already have an account? <a class="forgot-link mb-0" href="account">Login</a>
                                      </div>
+                                     <div style="color: red">
+                                        ${mess2}
+                                    </div>
                                  </form>
 
                              </div>

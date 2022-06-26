@@ -46,21 +46,18 @@ public class RegisterDAO {
     }
 
     public void register(Account a) {
-                + "`token`,\n"
-        String query = "";
+        String query = "INSERT INTO `onlinelearning`.`account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `gender`, `date_of_birth`) "
+                + "VALUES (?,?,?,?,?,?,?);";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, a.getFirst_name());
-            ps.setString(2, a.getLast_name());
+            ps.setString(1, a.getLast_name());
+            ps.setString(2, a.getFirst_name());
             ps.setString(3, a.getEmail());
             ps.setString(4, a.getPassword());
-            ps.setString(5, a.getPhone());
-            ps.setString(6, a.getUser_title());
-            ps.setString(7, LocalDateTime.now().toString());
-            ps.setInt(8, a.getGender());
-            ps.setString(9, a.getDob().toString());
-            ps.setString(10, a.getAddress().toString());
+            ps.setString(5, LocalDateTime.now().toString());
+            ps.setInt(6, a.getGender());
+            ps.setString(7, a.getDob().toString());
             ps.executeUpdate();
         } catch (Exception e) {
         }

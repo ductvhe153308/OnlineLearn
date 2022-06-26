@@ -107,7 +107,7 @@
                                         </ul>
                                     </div>
                                     <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">${x.price}</h3>
+                                        <h3 class="mb-0">$ ${x.price}</h3>
                                     </div>
                                 </div>
                             </div>
