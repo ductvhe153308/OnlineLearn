@@ -62,8 +62,6 @@
                 </div>
             </div>
         </div>
-
-
         <header class="header">
             <nav class="navbar navbar-expand-lg header-nav">
                 <div class="container-fluid">
@@ -115,23 +113,36 @@
                             </li>
                         </ul>
                     </div>
-                    <ul class="nav header-navbar-rht">
-                        <c:choose>
-                            <c:when test="${sessionScope.user != null}">
-                                <li class="nav-item">
-                                    <a class="nav-link header-register" href="logout">Sign out</a>
-                                </li>
-                            </c:when>
-                            <c:otherwise>
+
+                    <c:choose>
+                        <c:when test="${sessionScope.user != null}"> 
+
+                            <div class="main-menu-wrapper">
+                                <ul class="main-nav">
+                                    <li class="has-submenu">
+                                        <a> <image src="assets/img/user/default.jpg" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
+                                            ${user.email}<i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="">My profile</a></li>
+                                            <li><a href="">My course</a></li>
+                                            <li><a href="">My purchase</a></li>
+                                            <li><a href="logout">Sign out</a></li>
+                                        </ul> 
+                                    </li>
+                                </ul>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <ul class="nav header-navbar-rht">
                                 <li class="nav-item">
                                     <a class="nav-link header-register" href="account">Sign in</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link header-login" href="register_controller">Register</a>
                                 </li>
-                            </c:otherwise>
-                        </c:choose>
-                    </ul>
+                            </ul>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </nav>
         </header>
