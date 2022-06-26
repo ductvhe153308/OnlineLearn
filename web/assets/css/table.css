@@ -65,6 +65,41 @@ and open the template in the editor.
 }
 .component .table .table-row:last-child{
     border-bottom: none;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+}
+.paging{
+    display: flex;
+    align-items: center;
+}
+.paging>div{
+    height: 20px;
+    min-width: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.1);    
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+}
+.paging .page-prev{
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.paging .page-next{
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+.paging .page-next:hover,.paging .page-prev:hover{
+    color: #009da6;
+    border-color: #009da6;
+}
+.paging .page-current{
+    color: #f8f9fa;
+    background-color: #009da6;
+}
+.paging{
+    float: right;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #c7c7d7;
 }

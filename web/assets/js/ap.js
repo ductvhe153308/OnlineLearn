@@ -32,9 +32,9 @@ var AP = {
      * @returns {String} 
      */
     table: {
-        render: function (name, header, data, handle, height, colgroup = null, sorting = null, paging = false) {
-            this.num = height;
+        render: function (name, header, data, handle, colgroup = null, sorting = null, paging = null) {
             this.sorter = sorting;
+            this.builder = handle;
             if (colgroup == null) {
                 colgroup = Array(header.length).fill(100);
             }
@@ -64,23 +64,18 @@ var AP = {
         sort: function (param) {
             var asc = $(param).find('.sorting-asc');
             var desc = $(param).find('.sorting-desc');
-            var id = $(param).closest('.component').attr('id');
-            var index = param.id.split('-')[1];
             if (!asc.hasClass('sorted') && !desc.hasClass('sorted')) {
-                this.sorter(id, 1, this.num, this.sorter, index, true);
                 asc.addClass('sorted');
             } else if (asc.hasClass('sorted')) {
-                this.sorter(id, 1, this.height, this.sorter, index, false);
-                this.sorter(param, 'desc');
                 asc.removeClass('sorted');
                 desc.addClass('sorted');
             } else if (desc.hasClass('sorted')) {
-                this.sorter(id, 1, this.height, this.sorter, index, true);
-                this.sorter(param, 'asc');
                 desc.removeClass('sorted');
                 asc.addClass('sorted');
             }
-            $(param).closest('.table').find('.table-body').html(AP.render(this.data, this.handle));
+        },
+        change: function (id, data) {
+            $('#' + id).find('.table-data').html(AP.render(data, this.builder));
         }
     },
     rate: {
@@ -105,7 +100,18 @@ var AP = {
         }
     },
     paging: function () {
-
+        return `
+            <div class="paging">
+                <div class="page-prev">Previous</div>
+                <div class="page-current">1</div>
+                <div class="page-next">Next</div>
+            </div>`;
+    },
+    status: function (id, type = true) {
+        if (type) {
+            return `<div class="status" for="${id}"><input type="hidden" id="${id}" value="1"><div class="status-circle"></div></div>`;
+        }
+        return `<div class="status disabled" for="${id}"><input type="hidden" id="${id}" value="0"><div class="status-circle"></div></div>`;
     }
 };
 

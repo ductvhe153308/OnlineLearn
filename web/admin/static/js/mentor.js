@@ -89,10 +89,41 @@ var Mentor = {
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">
+                            ${AP.status(mentor['aid'])}
                             </div>
                     </div>`;
-                    }, num_objs, colgroup, Mentor.board.full);
+                    }, colgroup, function (id, sort = null, asc = true) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "../admin/mentor",
+                            data: {
+                                page: page,
+                                num_objs: num_objs,
+                                sort: sort,
+                                asc: asc
+                            },
+                            success: function (response) {
+                                var data = JSON.parse(response);
+                                AP.table.change(id, data);
+                            },
+                            error: function (xhr) {
+
+                            }
+                        });
+                    }, true);
                     $("#page #" + id).html(table);
+
+                    $('.status').click(
+                            function () {
+                                var st = $(this);
+                                if (st.hasClass('disabled')) {
+                                    st.find('input').val(1);
+                                    return st.removeClass('disabled');
+                                }
+                                st.find('input').val(0);
+                                return st.addClass('disabled');
+                            }
+                    );
                 },
                 error: function (xhr) {
 

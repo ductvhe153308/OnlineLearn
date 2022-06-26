@@ -24,8 +24,37 @@ and open the template in the editor.
     display: inline;
 }
 .rating-star, .money{
-  padding-left: 0px !important;
+    padding-left: 0px !important;
 }
 .url{
     cursor: pointer;
+}
+.status{
+    width: 40px;
+    height: 20px;
+    background-color: #009da6;    
+    padding:0px!important;
+    margin-top: 15px;
+    margin-left: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #009da6; 
+}
+.status-circle{
+    margin: 0px 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+}
+.table-data .disabled{
+    justify-content: flex-start; 
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.table-data .disabled .status-circle{
+    background-color: rgba(0, 0, 0, 0.25);
 }
