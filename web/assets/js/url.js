@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
+ * Active a url, redirect to data-url of element.
+ */
 $('.url').click(function () {
     window.location = '../'+$(this).data('url');
 });
