@@ -25,12 +25,13 @@ public class Course {
     private String introduction;
     private String status;
     private int total_register_number;
-    private String author;
+    private String first_name;
+    private String last_name;
     
     public Course() {
     }
 
-    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String author) {
+    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name) {
         this.course_id = course_id;
         this.title = title;
         this.rated_star = rated_star;
@@ -38,7 +39,8 @@ public class Course {
         this.thumnail = thumnail;
         this.introduction = introduction;
         this.total_register_number = total_register_number;
-        this.author = author;
+        this.first_name = first_name;
+        this.last_name = last_name;
     }
     
     public Course(int course_id, int aid, String title, int rated_star, double price, int sale_price_id, int total_register_number) {
@@ -164,12 +166,22 @@ public class Course {
         this.total_register_number = total_register_number;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    
     
 }

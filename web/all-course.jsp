@@ -97,7 +97,7 @@
                                             <li><i class="fas fa-star not-checked"></i>
                                             </li>
                                         </ul>
-                                        <p class="mb-1">${x.author}</p>
+                                        <p class="mb-1">${x.last_name} ${x.first_name}</p>
                                         <h4 class="mb-0">
                                             <a href="course-detail.jsp">${x.title}</a>
                                         </h4>

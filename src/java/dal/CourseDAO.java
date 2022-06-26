@@ -19,11 +19,11 @@ import utils.DBContext;
  * @author Dell
  */
 public class CourseDAO {
-
+    
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
-
+    
     public ArrayList<Course> getAllCourseBySomeMentor(ArrayList<Account> mentors) {
         ArrayList<Course> courses = new ArrayList<>();
         StringBuilder ids = new StringBuilder();
@@ -52,7 +52,7 @@ public class CourseDAO {
         }
         return courses;
     }
-
+    
     public List<Course> getAllCourse() {
         List<Course> list = new ArrayList<>();
         try {
@@ -63,14 +63,15 @@ public class CourseDAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Course c = new Course(rs.getInt(1), 
-                        rs.getString(2), 
-                        rs.getInt(3), 
-                        rs.getDouble(4), 
-                        rs.getString(5), 
-                        rs.getString(6), 
-                        rs.getInt(7), 
-                        rs.getString(8));
+                Course c = new Course(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9));
                 list.add(c);
             }
             return list;
