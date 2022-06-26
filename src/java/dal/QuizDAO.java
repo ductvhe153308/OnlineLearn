@@ -5,9 +5,7 @@
  */
 package dal;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +15,8 @@ import java.util.List;
 import model.Choice;
 import model.Question;
 import model.QuestionChoice;
+import model.Quiz;
+import model.QuizType;
 import utils.DBContext;
 
 /**
