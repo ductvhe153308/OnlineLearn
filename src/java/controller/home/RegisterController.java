@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -97,7 +98,8 @@ public class RegisterController extends HttpServlet {
 //                }
                 newAccount.setDob(LocalDateTime.parse(dob, fmt));
                 dao.register(newAccount);
-
+                HttpSession session = request.getSession();
+                session.setAttribute("user", newAccount);
                 request.setAttribute("mess1", "Register Successfully!");
                 request.getRequestDispatcher("home.jsp").forward(request, response);
 
