@@ -115,22 +115,24 @@
                     </div>
 
                     <c:choose>
-                        <c:when test="${sessionScope.user != null}"> 
-
-                            <div class="main-menu-wrapper">
-                                <ul class="main-nav">
-                                    <li class="has-submenu">
-                                        <a> <image src="assets/img/user/default.jpg" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
-                                            ${user.email}<i class="fas fa-chevron-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="user-profile.jsp">My profile</a></li>
-                                            <li><a href="">My course</a></li>
-                                            <li><a href="">My purchase</a></li>
-                                            <li><a href="logout">Sign out</a></li>
-                                        </ul> 
-                                    </li>
-                                </ul>
-                            </div>
+                        <c:when test="${sessionScope.user != null}">
+                            <ul class="nav header-navbar-rht">
+                                <div class="main-menu-wrapper">
+                                    <ul class="main-nav">
+                                        <li class="has-submenu">
+                                            <a> <image src="assets/img/user/default.jpg" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
+                                                ${user.email}<i class="fas fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="user-profile.jsp">My profile</a></li>
+                                                <li><a href="">My course</a></li>
+                                                <li><a href="">My purchase</a></li>
+                                                <li><a href="recover">Change password</a></li>
+                                                <li><a href="logout">Sign out</a></li>
+                                            </ul> 
+                                        </li>
+                                    </ul>
+                                </div>   
+                            </ul>
                         </c:when>
                         <c:otherwise>
                             <ul class="nav header-navbar-rht">
