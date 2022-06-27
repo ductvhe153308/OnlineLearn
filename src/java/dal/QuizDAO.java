@@ -195,34 +195,34 @@ public class QuizDAO {
         }
         return quizTypes;
     }
-    public Quiz Json(int id) throws ClassNotFoundException {
-        Quiz quiz = new Quiz();
-        quiz.setQuizType(getQuizType(id));
-        List<Question> questions = getTenRandomQuestions(id);
-
-        for (int i=0; i < questions.size(); i++) {
-            int questionId = questions.get(i).getQuestionId();
-            List<Choice> choices;
-            choices = getChoices(questionId);
-            Gson gson = new Gson();
-            JsonArray jarray = gson.toJsonTree(choices).getAsJsonArray();
-            System.out.println(jarray);
-            JsonObject jsonObject = new JsonObject();
-            jsonObject.add("choices", jarray);
-
-            questions.get(i).setChoicesJson(jsonObject.get("choices").toString());
-        }
-
-        Gson gson = new Gson();
-        JsonArray jarray = gson.toJsonTree(questions).getAsJsonArray();
-        System.out.println(jarray);
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.add("questions", jarray);
-        quiz.setQuestionsJson(jsonObject.get("questions").toString());
-
-
-        return quiz;
-    }
+//    public Quiz Json(int id) throws ClassNotFoundException {
+//        Quiz quiz = new Quiz();
+//        quiz.setQuizType(getQuizType(id));
+//        List<Question> questions = getTenRandomQuestions(id);
+//
+//        for (int i=0; i < questions.size(); i++) {
+//            int questionId = questions.get(i).getQuestionId();
+//            List<Choice> choices;
+//            choices = getChoices(questionId);
+//            Gson gson = new Gson();
+//            JsonArray jarray = gson.toJsonTree(choices).getAsJsonArray();
+//            System.out.println(jarray);
+//            JsonObject jsonObject = new JsonObject();
+//            jsonObject.add("choices", jarray);
+//
+//            questions.get(i).setChoicesJson(jsonObject.get("choices").toString());
+//        }
+//
+//        Gson gson = new Gson();
+//        JsonArray jarray = gson.toJsonTree(questions).getAsJsonArray();
+//        System.out.println(jarray);
+//        JsonObject jsonObject = new JsonObject();
+//        jsonObject.add("questions", jarray);
+//        quiz.setQuestionsJson(jsonObject.get("questions").toString());
+//
+//
+//        return quiz;
+//    }
     public List<QuestionChoice> getTenRandomQuestionsWithChoices(int id) throws ClassNotFoundException {
         List<QuestionChoice> questions = new ArrayList<>();
         
