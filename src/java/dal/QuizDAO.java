@@ -76,7 +76,7 @@ public class QuizDAO {
                     "WHERE qt.Id=? " +
                     "ORDER BY RAND() LIMIT 10");
             ps.setInt(1,id);
-            ResultSet rs = ps.executeQuery();
+             rs = ps.executeQuery();
             int count = 1;
             while (rs.next()) {
                
@@ -115,7 +115,7 @@ public class QuizDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement("SELECT c.Id AS ChoiceId, c.Description AS ChoiceDescription, c.IsAnswer AS ChoiceIsAnswer FROM quizdb.choice AS c INNER JOIN quizdb.question AS qu ON qu.Id=c.Fk_QuestionId_Choice  where qu.id = ;");
             ps.setInt(1,id);
-            ResultSet rs = ps.executeQuery();
+             rs = ps.executeQuery();
             while (rs.next()) {
                 Choice c = new Choice();
                 c.setChoiceId(rs.getInt("ChoiceId"));
