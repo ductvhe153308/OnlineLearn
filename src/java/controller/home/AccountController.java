@@ -69,6 +69,7 @@ public class AccountController extends HttpServlet {
             AccountDAO accountDAO = new AccountDAO();
             Account a = accountDAO.checkLogin(email, password);
             if (a == null) {
+                request.setAttribute("mess", "Username or password incorrect");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
             if (a != null) {
