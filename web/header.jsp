@@ -126,7 +126,7 @@
                                                 <li><a href="user-profile.jsp">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
-                                                <li><a href="recover">Change password</a></li>
+                                                <li><a href="change-password.jsp">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
                                             </ul> 
                                         </li>
