@@ -38,6 +38,7 @@ var Mentee = {
                     var data = JSON.parse(response);
                     var table = AP.table.render(table_name, header, data, function (index) {
                         var mentee = JSON.parse(data[index]['account']);
+                        console.log(mentee)
                         var img = mentee['pfp'];
                         if (img == null) {
                             img = 'default.jpg';
@@ -49,11 +50,11 @@ var Mentee = {
                         <div class="table-data" style="width:${colgroup[1]}px">
                             <div>${mentee['phone']}</div></div>
                         <div class="table-data" style="width:${colgroup[2]}px">
-                            None</div>
+                            ${mentee['created_at']}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(100)}</div>
                     </div>`;
-                    }, colgroup, true, true);
+                    }, colgroup);
                     $("#page #" + id).html(table);
                 },
                 error: function (xhr) {
@@ -95,7 +96,7 @@ var Mentee = {
                         <div class="table-data" style="width:${colgroup[1]}px">
                             <div>${mentee['phone']}</div></div>
                         <div class="table-data" style="width:${colgroup[2]}px">
-                            </div>
+                            ${mentee['created_at']}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(210)}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">
@@ -120,7 +121,7 @@ var Mentee = {
 
                             }
                         });
-                    }, true);
+                    }, true, true);
                     $("#page #" + id).html(table);
 
                     $('.status').click(

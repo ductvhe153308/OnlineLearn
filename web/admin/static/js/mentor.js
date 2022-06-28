@@ -99,7 +99,7 @@ var Mentor = {
                         <div class="table-data" style="width:${colgroup[1]}px">
                             <div>${course['title']}</div></div>
                         <div class="table-data" style="width:${colgroup[2]}px">
-                            </div>
+                            ${mentor['created_at']}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">
