@@ -34,11 +34,11 @@
                                 <div class="col-md-8 col-12">
                                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Mentee List</li>
+                                            <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
+<!--                                            <li class="breadcrumb-item active" aria-current="page">Mentor List</li>-->
                                         </ol>
                                     </nav>
-                                    <h2 class="breadcrumb-title">Mentee List</h2>
+                                    <h2 class="breadcrumb-title">Mentor List</h2>
                                 </div>
                             </div>
                         </div>
