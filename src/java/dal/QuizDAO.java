@@ -45,11 +45,11 @@ public class QuizDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement("SELECT qu.Id AS QuestionId, qu.Description AS QuestionDescription FROM quizdb.quiztype AS qt INNER JOIN quizdb.question AS qu ON qt.Id=Fk_QuizTypeId_Question WHERE qt.Id=?");
             ps.setInt(1,id);
-            ResultSet rs = ps.executeQuery();
+             rs = ps.executeQuery();
             while (rs.next()) {
                 Question qu = new Question();
-                qu.setQuestionId(rs.getInt("QuestionId"));
-                qu.setDescription(rs.getString("QuestionDescription"));
+                qu.setQuestionId(rs.getInt("Id"));
+                qu.setDescription(rs.getString("Description"));
                 questions.add(qu);
             }
         } catch (SQLException e) {
@@ -113,7 +113,7 @@ public class QuizDAO {
         
         try {
             conn = new DBContext().getConnection();
-            ps = conn.prepareStatement("SELECT c.Id AS ChoiceId, c.Description AS ChoiceDescription, c.IsAnswer AS ChoiceIsAnswer FROM quizdb.choice AS c INNER JOIN quizdb.question AS qu ON qu.Id=c.Fk_QuestionId_Choice  where qu.id = ;");
+            ps = conn.prepareStatement("SELECT c.Id AS ChoiceId, c.Description AS ChoiceDescription, c.IsAnswer AS ChoiceIsAnswer FROM quizdb.choice AS c INNER JOIN quizdb.question AS qu ON qu.Id=c.Fk_QuestionId_Choice  where qu.id = ?;");
             ps.setInt(1,id);
              rs = ps.executeQuery();
             while (rs.next()) {

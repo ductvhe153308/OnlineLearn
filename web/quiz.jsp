@@ -55,7 +55,7 @@
                 <c:out value="${qz.questions[p-1].choices[2].choiceId}"></c:out>
                 <br>
                 <input type="radio" id="${qz.questions[p-1].choices[j].choiceId}" name="${qz.questions[p-1].questionId}" value="${qz.questions[p-1].choices[3].choiceId}">
-                <label for="${qz.questions[p-1].choices[j].choiceId}"><c:out value="${qz.questions[p-1].choices[3].description}"></c:out></label>
+                <label for="${qz.questions[p-1].choices[3].choiceId}"><c:out value="${qz.questions[p-1].choices[3].description}"></c:out></label>
                 <c:out value="${qz.questions[p-1].choices[3].choiceId}"></c:out>
                 <br>
             <c:if test="${p > 1}">
