@@ -48,8 +48,8 @@ public class QuizDAO {
              rs = ps.executeQuery();
             while (rs.next()) {
                 Question qu = new Question();
-                qu.setQuestionId(rs.getInt("QuestionId"));
-                qu.setDescription(rs.getString("QuestionDescription"));
+                qu.setQuestionId(rs.getInt("Id"));
+                qu.setDescription(rs.getString("Description"));
                 questions.add(qu);
             }
         } catch (SQLException e) {
