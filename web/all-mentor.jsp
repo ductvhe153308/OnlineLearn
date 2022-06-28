@@ -116,7 +116,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3><a href="mentor-profile.jsp">Richard Wilson</a></h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 16</h5>
+                                                                    <h5><b>Mentor ID :</b> 16</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
                                                                 </div>
                                                             </div>
@@ -143,7 +143,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3><a href="mentor-profile.jsp">Charlene Reed</a></h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 01</h5>
+                                                                    <h5><b>Mentor ID :</b> 01</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> North Carolina, USA</h5>
                                                                 </div>
                                                             </div>
@@ -170,7 +170,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Travis Trimble </h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 02</h5>
+                                                                    <h5><b>Mentor ID :</b> 02</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Maine, USA</h5>
                                                                 </div>
                                                             </div>
@@ -197,7 +197,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Carl Kelly</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 03</h5>
+                                                                    <h5><b>Mentor ID :</b> 03</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Indiana, USA</h5>
                                                                 </div>
                                                             </div>
@@ -224,7 +224,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Michelle Fairfax</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 04</h5>
+                                                                    <h5><b>Mentor ID :</b> 04</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Indiana, USA</h5>
                                                                 </div>
                                                             </div>
@@ -251,7 +251,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Gina Moore</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 05</h5>
+                                                                    <h5><b>Mentor ID :</b> 05</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Florida, USA</h5>
                                                                 </div>
                                                             </div>
@@ -278,7 +278,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Elsie Gilley</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 06</h5>
+                                                                    <h5><b>Mentor ID :</b> 06</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Kentucky, USA</h5>
                                                                 </div>
                                                             </div>
@@ -305,7 +305,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Joan Gardner</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 07</h5>
+                                                                    <h5><b>Mentor ID :</b> 07</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> California, USA</h5>
                                                                 </div>
                                                             </div>
@@ -359,7 +359,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Walter Roberson</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 09</h5>
+                                                                    <h5><b>Mentor ID :</b> 09</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Florida, USA</h5>
                                                                 </div>
                                                             </div>
@@ -386,7 +386,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Robert Rhodes</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 10</h5>
+                                                                    <h5><b>Mentor ID :</b> 10</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> California, USA</h5>
                                                                 </div>
                                                             </div>
@@ -413,7 +413,7 @@
                                                             <div class="profile-det-info">
                                                                 <h3>Harry Williams</h3>
                                                                 <div class="mentee-details">
-                                                                    <h5><b>Mentee ID :</b> 11</h5>
+                                                                    <h5><b>Mentor ID :</b> 11</h5>
                                                                     <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Colorado, USA</h5>
                                                                 </div>
                                                             </div>
