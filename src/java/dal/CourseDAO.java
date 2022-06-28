@@ -19,11 +19,11 @@ import utils.DBContext;
  * @author Dell
  */
 public class CourseDAO {
-    
+
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
-    
+
     public ArrayList<Course> getAllCourseBySomeMentor(ArrayList<Account> mentors) {
         ArrayList<Course> courses = new ArrayList<>();
         StringBuilder ids = new StringBuilder();
@@ -52,11 +52,11 @@ public class CourseDAO {
         }
         return courses;
     }
-    
+
     public List<Course> getAllCourse() {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name\n"
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name,account.profile_picture\n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id;";
             conn = new DBContext().getConnection();
@@ -71,7 +71,8 @@ public class CourseDAO {
                         rs.getString(6),
                         rs.getInt(7),
                         rs.getString(8),
-                        rs.getString(9));
+                        rs.getString(9),
+                        rs.getString(10));
                 list.add(c);
             }
             return list;

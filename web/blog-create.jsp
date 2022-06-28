@@ -54,7 +54,7 @@
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h3 class="pb-3">Add Blog</h3>
-                                                    <form action="https://mentoring-html.dreamguystech.com/template-1/blog.html">
+                                                    <form action="">
                                                         <div class="service-fields mb-3">
                                                             <h4 class="heading-2">Service Information</h4>
                                                             <div class="row">
