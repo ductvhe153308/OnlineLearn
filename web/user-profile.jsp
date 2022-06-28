@@ -50,7 +50,7 @@
 
             <div class="content">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row" style="display: flex; justify-content: center">
                         <div class="col-md-7 col-lg-8 col-xl-9">
                             <div class="card">
                                 <div class="card-body">
@@ -61,7 +61,7 @@
                                                 <div class="form-group">
                                                     <div class="change-avatar">
                                                         <div class="profile-img">
-                                                            <img src="assets/img/user/truong.jpg" alt="User Image">
+                                                            <img src="assets/img/user/default.jpg" alt="User Image">
                                                         </div>
                                                         <div class="upload-img">
                                                             <div class="change-photo-btn">

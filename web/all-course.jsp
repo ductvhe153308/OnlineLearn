@@ -31,7 +31,6 @@
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
                         <h2><span class="text-weight">All</span> Courses <span class="header-right"></span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +45,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="suggest" >
+                        <div id="suggest" style="display: none">
                             <div class="card category-widget">
                                 <div class="card-header">
                                     <h4 class="card-title">Course Categories</h4>
