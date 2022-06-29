@@ -103,25 +103,7 @@ var Mentee = {
                             ${AP.status(mentee['aid'])}
                             </div>
                     </div>`;
-                    }, colgroup, function (id, sort = null, asc = true) {
-                        $.ajax({
-                            type: 'POST',
-                            url: "../admin/mentee",
-                            data: {
-                                page: page,
-                                num_objs: num_objs,
-                                sort: sort,
-                                asc: asc
-                            },
-                            success: function (response) {
-                                var data = JSON.parse(response);
-                                AP.table.change(id, data);
-                            },
-                            error: function (xhr) {
-
-                            }
-                        });
-                    }, true, true);
+                    }, colgroup, true, true);
                     $("#page #" + id).html(table);
 
                     $('.status').click(
@@ -135,6 +117,49 @@ var Mentee = {
                                 return st.addClass('disabled');
                             }
                     );
+
+                    $('.sorting').click(function () {
+                        var sorted = $(this).find('.sorted');
+                        var asc = sorted.hasClass('sorting-asc');
+                        var index = $(this).attr("id").split("-")[1];
+                        $.ajax({
+                            type: 'POST',
+                            url: '../admin/ajax/mentee/sort',
+                            data: {
+                                index: index,
+                                asc: asc
+                            },
+                            success: function (response) {
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                var new_table = AP.render(data, function (index) {
+                                    var mentee = JSON.parse(data[index]['account']);
+                                    console.log(mentee)
+                                    var img = mentee['pfp'];
+                                    if (img == null) {
+                                        img = 'default.jpg';
+                                    }
+                                    return `<div class="table-row">
+                                                <div class="table-data" style="width:${colgroup[0]}px">
+                                                    <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${img}"/>
+                                                <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div></div>
+                                                <div class="table-data" style="width:${colgroup[1]}px">
+                                                    <div>${mentee['phone']}</div></div>
+                                                <div class="table-data" style="width:${colgroup[2]}px">
+                                                    ${mentee['created_at']}</div>
+                                                <div class="table-data" style="width:${colgroup[3]}px">
+                                                    ${AP.money.dollar(210)}</div>
+                                                <div class="table-data" style="width:${colgroup[4]}px">
+                                                    ${AP.status(mentee['aid'])}
+                                                    </div>
+                                            </div>`;
+                                });
+                                console.log(new_table);
+                                $('.table-body').html(new_table);
+                            }
+                        });
+
+                    });
                 },
                 error: function (xhr) {
 
