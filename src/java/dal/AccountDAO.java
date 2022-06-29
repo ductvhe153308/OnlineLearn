@@ -11,6 +11,7 @@ import com.google.gson.JsonObject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -72,7 +73,7 @@ public class AccountDAO {
     public JsonArray getListMentor(int page, int num_objs) {
         JsonArray mentors = new JsonArray();
         try {
-            String query = "select a.account_id, a.last_name, a.first_name, a.profile_picture, c.course_id, c.title, c.rated_star, c.price, c.total_register_number  \n"
+            String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number  \n"
                     + "     from account a, course c\n"
                     + "     where a.`role_id` = 2 and a.account_id = c.aid\n"
                     + "     limit ? , ? ;";
@@ -81,24 +82,9 @@ public class AccountDAO {
             ps.setInt(1, (page - 1) * num_objs);
             ps.setInt(2, num_objs);
             rs = ps.executeQuery();
-            Account a;
-            Course s;
             JsonObject mentor;
-            Gson gson = new Gson();
             while (rs.next()) {
-                a = new Account(rs.getInt("account_id"),
-                        rs.getString("last_name"),
-                        rs.getString("first_name"),
-                        rs.getString("profile_picture"));
-                s = new Course(rs.getInt("course_id"),
-                        rs.getInt("account_id"),
-                        rs.getString("title"),
-                        rs.getInt("rated_star"),
-                        rs.getDouble("price"),
-                        rs.getInt("total_register_number"));
-                mentor = new JsonObject();
-                mentor.addProperty("account", gson.toJson(a));
-                mentor.addProperty("course", gson.toJson(s));
+                mentor = getMentor(rs);
                 mentors.add(mentor);
             }
             System.out.println(rs);
@@ -107,7 +93,7 @@ public class AccountDAO {
         }
         return mentors;
     }
-    
+
     /**
      *
      * @param page index of page
@@ -128,17 +114,8 @@ public class AccountDAO {
             rs = ps.executeQuery();
             Account a;
             JsonObject mentee;
-            Gson gson = new Gson();
             while (rs.next()) {
-                a = new Account(rs.getInt("account_id"),
-                        rs.getString("last_name"),
-                        rs.getString("first_name"),
-                        rs.getString("phone"),
-                        rs.getInt("role_id"),
-                        rs.getInt("gender"),
-                        rs.getString("profile_picture"));
-                mentee = new JsonObject();
-                mentee.addProperty("account", gson.toJson(a));
+                mentee = getMentee(rs);
                 mentees.add(mentee);
             }
             System.out.println(rs);
@@ -146,5 +123,216 @@ public class AccountDAO {
             e.printStackTrace();
         }
         return mentees;
+    }
+
+    public JsonArray getSortedListMentee0(boolean asc) {
+        JsonArray mentees = new JsonArray();
+        try {
+            String query = "select a.* \n"
+                    + "     from account a\n"
+                    + "     where a.`role_id` = 3\n"
+                    + "     order by first_name " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            Account a;
+            JsonObject mentee;
+            while (rs.next()) {
+                mentee = getMentee(rs);
+                mentees.add(mentee);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentees;
+    }
+
+    public JsonArray getSortedListMentee1(boolean asc) {
+        JsonArray mentees = new JsonArray();
+        try {
+            String query = "select a.* \n"
+                    + "     from account a\n"
+                    + "     where a.`role_id` = 3\n"
+                    + "     order by phone " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            Account a;
+            JsonObject mentee;
+            while (rs.next()) {
+                mentee = getMentee(rs);
+                mentees.add(mentee);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentees;
+    }
+
+    public JsonArray getSortedListMentee2(boolean asc) {
+        JsonArray mentees = new JsonArray();
+        try {
+            String query = "select a.* \n"
+                    + "     from account a\n"
+                    + "     where a.`role_id` = 3\n"
+                    + "     order by created_at " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            Account a;
+            JsonObject mentee;
+            while (rs.next()) {
+                mentee = getMentee(rs);
+                mentees.add(mentee);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentees;
+    }
+
+    public JsonArray getSortedListMentor0(boolean asc) {
+        JsonArray mentors = new JsonArray();
+        try {
+            String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
+                    + "     from account a, course c\n"
+                    + "     where a.`role_id` = 2 and a.account_id = c.aid\n"
+                    + "     order by a.first_name " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            JsonObject mentor;
+            while (rs.next()) {
+                mentor = getMentor(rs);
+                mentors.add(mentor);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentors;
+    }
+
+    public JsonArray getSortedListMentor1(boolean asc) {
+        JsonArray mentors = new JsonArray();
+        try {
+            String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
+                    + "     from account a, course c\n"
+                    + "     where a.`role_id` = 2 and a.account_id = c.aid\n"
+                    + "     order by c.title " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            JsonObject mentor;
+            while (rs.next()) {
+                mentor = getMentor(rs);
+                mentors.add(mentor);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentors;
+    }
+
+    public JsonArray getSortedListMentor2(boolean asc) {
+        JsonArray mentors = new JsonArray();
+        try {
+            String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
+                    + "     from account a, course c\n"
+                    + "     where a.`role_id` = 2 and a.account_id = c.aid\n"
+                    + "     order by a.created_at " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            JsonObject mentor;
+            while (rs.next()) {
+                mentor = getMentor(rs);
+                mentors.add(mentor);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentors;
+    }
+
+    public JsonArray getSortedListMentor3(boolean asc) {
+        JsonArray mentors = new JsonArray();
+        try {
+            String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
+                    + "     from account a, course c\n"
+                    + "     where a.`role_id` = 2 and a.account_id = c.aid\n"
+                    + "     order by earned " + (asc ? "asc" : "desc")
+                    + "     limit 0 , 10 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            JsonObject mentor;
+            while (rs.next()) {
+                mentor = getMentor(rs);
+                mentors.add(mentor);
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mentors;
+    }
+
+    private JsonObject getMentor(ResultSet rs) throws SQLException {
+        Gson gson = new Gson();
+        Account a = new Account(rs.getInt("account_id"),
+                rs.getString("last_name"),
+                rs.getString("first_name"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getString("phone"),
+                rs.getInt("role_id"),
+                rs.getString("token"),
+                "",
+                rs.getDate("created_at"),
+                rs.getInt("gender"),
+                rs.getDate("date_of_birth"),
+                rs.getString("profile_picture"));
+        Course s = new Course(rs.getInt("course_id"),
+                rs.getInt("account_id"),
+                rs.getString("title"),
+                rs.getInt("rated_star"),
+                rs.getDouble("price"),
+                rs.getInt("total_register_number"));
+        JsonObject mentor = new JsonObject();
+        mentor.addProperty("account", gson.toJson(a));
+        mentor.addProperty("course", gson.toJson(s));
+        return mentor;
+    }
+
+    private JsonObject getMentee(ResultSet rs) throws SQLException {
+        Gson gson = new Gson();
+        Account a = new Account(rs.getInt("account_id"),
+                rs.getString("last_name"),
+                rs.getString("first_name"),
+                rs.getString("email"),
+                rs.getString("password"),
+                rs.getString("phone"),
+                rs.getInt("role_id"),
+                rs.getString("token"),
+                "",
+                rs.getDate("created_at"),
+                rs.getInt("gender"),
+                rs.getDate("date_of_birth"),
+                rs.getString("profile_picture"));
+        JsonObject mentee = new JsonObject();
+        mentee.addProperty("account", gson.toJson(a));
+        return mentee;
     }
 }
