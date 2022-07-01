@@ -52,21 +52,24 @@
                                     <div class="row">
                                         <div class="col-md-12 col-lg-6">
 
-                                            <form>
+                                            <form action = "changePassword">
                                                 <div class="form-group">
                                                     <label>Old Password</label>
-                                                    <input type="password" class="form-control">
+                                                    <input type="oldPass" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>New Password</label>
-                                                    <input type="password" class="form-control">
+                                                    <input type="newPass" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
-                                                    <input type="password" class="form-control">
+                                                    <input type="rePass" class="form-control">
                                                 </div>
                                                 <div class="submit-section">
                                                     <button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
+                                                </div>
+                                                <div style="color: red">
+                                                  ${changePasswordStatus}                                        
                                                 </div>
                                             </form>
 
