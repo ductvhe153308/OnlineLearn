@@ -131,6 +131,7 @@
                                                 <li><a href="user-profile.jsp">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
+                                                <li><a href="">My blog</a></li>
                                                 <li><a href="changePassword">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
                                             </ul> 
