@@ -34,7 +34,7 @@
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-<!--                                    <li class="breadcrumb-item">Profile Settings</li>-->
+                                    <!--                                    <li class="breadcrumb-item">Profile Settings</li>-->
                                 </ol>
                             </nav>
                             <h2 class="breadcrumb-title">Mentor register</h2>
@@ -62,7 +62,12 @@
                                                 <input type="password" class="form-control floating">
                                                 <label class="focus-label">Your phone</label>
                                             </div>
-                                            
+                                            <div class="form-group">
+                                                <div class="form-check form-check-xs form-checkbox">
+                                                    <input type="checkbox" class="form-check-input" name="agreeCheckboxUser" id="agree_checkbox_user">
+                                                    <label class="form-check-label" for="agree_checkbox_user">I agree to Mentoring</label> <a tabindex="-1" href="privacy-policy-and-safety.jsp">Privacy Policy</a> &amp; <a tabindex="-1" href="terms.jsp"> Terms.</a>
+                                                </div>
+                                            </div>
                                             <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Become a mentor</button>
                                         </form>
 
