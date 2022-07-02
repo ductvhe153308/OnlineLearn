@@ -91,8 +91,13 @@
                             <li class="active">
                                 <a href="home">Home</a>
                             </li>
-                            <li>
-                                <a href="all-course.jsp">Course</a>
+                             <li class="has-submenu">
+                                <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="all-course.jsp">Course list</a></li>
+                                    <li><a href="all-course.jsp">Course trending</a></li>
+                                     <li><a href="all-course.jsp">Course best rate</a></li>
+                                </ul>
                             </li>
                             <li class="has-submenu">
                                 <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
