@@ -98,7 +98,7 @@
                                 <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="all-mentor.jsp">Mentor list</a></li>
-                                    <li><a href="blog-grid.jsp">Mentor register</a></li>
+                                    <li><a href="mentor-register.jsp">Mentor register</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
