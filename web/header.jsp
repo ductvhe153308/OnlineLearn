@@ -96,7 +96,7 @@
                                 <ul class="submenu">
                                     <li><a href="all-course.jsp">Course list</a></li>
                                     <li><a href="all-course.jsp">Course trending</a></li>
-                                     <li><a href="all-course.jsp">Course best rate</a></li>
+                                    <li><a href="all-course.jsp">Course best rate</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
@@ -104,6 +104,7 @@
                                 <ul class="submenu">
                                     <li><a href="all-mentor.jsp">Mentor list</a></li>
                                     <li><a href="mentor-register.jsp">Mentor register</a></li>
+                                    <li><a href="mentor-register.jsp">Mentor best rate</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
