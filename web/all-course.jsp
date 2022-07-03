@@ -74,41 +74,44 @@
                 <div class="row">  
                     <c:forEach items="${c.allCourse}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                            <div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c15.jpg" alt="" class="img-fluid w-100">
+
+                            <div class="popular-course" style="cursor: pointer">
+                                <a href="course-detail.jsp">
+                                    <div class="courses-head">
+                                        <div class="courses-img-main">
+                                            <img src="assets/img/course/c15.jpg" alt="" class="img-fluid w-100">
+                                        </div>
+                                        <div class="courses-aut-img">
+                                            <img src="assets/img/user/truong.jpg" alt="">
+                                        </div>
                                     </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/truong.jpg" alt="">
+                                    <div class="courses-body">
+                                        <div class="courses-ratings">
+                                            <ul class="mb-1"> 
+                                                <c:forEach begin = "1" end = "${x.rated_star}">
+                                                    <li><i class="fas fa-star checked"></i>
+                                                    </li> 
+                                                </c:forEach>
+                                            </ul>
+                                            <p class="mb-1">${x.last_name} ${x.first_name}</p>
+                                            <h4 class="mb-0">
+                                                <a>${x.title}</a>
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1"> 
-                                            <c:forEach begin = "1" end = "${x.rated_star}">
-                                                <li><i class="fas fa-star checked"></i>
-                                                </li> 
-                                            </c:forEach>
-                                        </ul>
-                                        <p class="mb-1">${x.last_name} ${x.first_name}</p>
-                                        <h4 class="mb-0">
-                                            <a href="course-detail.jsp">${x.title}</a>
-                                        </h4>
+                                    <div class="courses-border"></div>
+                                    <div class="courses-footer d-flex align-items-center">
+                                        <div class="courses-count">
+                                            <ul class="mb-0">
+                                                <li><i class="fas fa-user-graduate me-1"></i> ${x.total_register_number}</li>
+                                                <li><i class="far fa-file-alt me-1"></i>2</li>
+                                            </ul>
+                                        </div>
+                                        <div class="courses-amt ms-auto">
+                                            <h3 class="mb-0">$ ${x.price}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> ${x.total_register_number}</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$ ${x.price}</h3>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </c:forEach>
