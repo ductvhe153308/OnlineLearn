@@ -52,18 +52,18 @@
                                     <div class="row">
                                         <div class="col-md-12 col-lg-6">
 
-                                            <form action = "changePassword">
+                                            <form action = "changePassword" method="POST">
                                                 <div class="form-group">
                                                     <label>Old Password</label>
-                                                    <input type="oldPass" class="form-control">
+                                                    <input type="password" name="oldPass" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>New Password</label>
-                                                    <input type="newPass" class="form-control">
+                                                    <input type="password" name="newPass" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Confirm Password</label>
-                                                    <input type="rePass" class="form-control">
+                                                    <input type="password" name="rePass" class="form-control">
                                                 </div>
                                                 <div class="submit-section">
                                                     <button type="submit" class="btn btn-primary submit-btn">Save Changes</button>
