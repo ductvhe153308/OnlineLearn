@@ -91,19 +91,29 @@
                             <li class="active">
                                 <a href="home">Home</a>
                             </li>
-                            <li>
-                                <a href="all-course.jsp">Course</a>
+                             <li class="has-submenu">
+                                <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="all-course.jsp">Course list</a></li>
+                                    <li><a href="all-course.jsp">Course trending</a></li>
+                                    <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                </ul>
                             </li>
-                            <li>
-                                <a href="all-mentor.jsp">Mentor</a>
+                            <li class="has-submenu">
+                                <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="all-mentor.jsp">Mentor list</a></li>
+                                    <li><a href="mentor-register.jsp">Mentor register</a></li>
+                                    <li><a href="all-mentor.jsp">Mentor best rate</a></li>
+                                </ul>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="blog-list.jsp">Blog List</a></li>
-                                    <li><a href="blog-grid.jsp">Blog Grid</a></li>
-                                    <li><a href="blog-details.jsp">Blog Details</a></li>
-                                    <li><a href="blog-create.jsp">Blog Create New</a></li>
+                                    <li><a href="blog-list.jsp">Blog list</a></li>
+                                    <li><a href="blog-grid.jsp">Blog grid</a></li>
+                                    <li><a href="blog-details.jsp">Blog details</a></li>
+                                    <li><a href="blog-create.jsp">Blog create new</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -116,18 +126,19 @@
                     </div>
 
                     <c:choose>
-                        <c:when test="${sessionScope.user != null}">
+                        <c:when test="${sessionScope.email != null}">
                             <ul class="nav header-navbar-rht">
                                 <div class="main-menu-wrapper">
                                     <ul class="main-nav">
                                         <li class="has-submenu">
                                             <a> <image src="assets/img/user/default.jpg" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
-                                                ${user.email}<i class="fas fa-chevron-down"></i></a>
+                                                ${email}<i class="fas fa-chevron-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="user-profile.jsp">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
-                                                <li><a href="change-password.jsp">Change password</a></li>
+                                                <li><a href="">My blog</a></li>
+                                                <li><a href="changePassword">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
                                             </ul> 
                                         </li>

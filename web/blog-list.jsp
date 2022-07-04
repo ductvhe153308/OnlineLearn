@@ -3,29 +3,30 @@
     Created on : Jun 5, 2022, 11:26:10 PM
     Author     : dell
 --%>
-
+<%@page import="model.Blog"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Mentoring</title>
+        <jsp:useBean id="b" class="dal.BlogDAO" scope="request"></jsp:useBean>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+            <title>Mentoring</title>
 
-        <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+            <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+            <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+            <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
+            <link rel="stylesheet" href="assets/css/style.css">
+        </head>
+        <body>
 
-        <div class="main-wrapper">
+            <div class="main-wrapper">
 
             <%@include file="header.jsp" %>
 
@@ -36,7 +37,7 @@
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-<!--                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>-->
+                                    <!--                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>-->
                                 </ol>
                             </nav>
                             <h2 class="breadcrumb-title">Blog List</h2>
@@ -50,115 +51,32 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-01.jpg" alt="Post Image"></a>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user.jpg" alt="Post Author"> <span>Ruby Perrin</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>4 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>12 Comments</li>
-                                            <li><i class="fa fa-tags"></i>HTML</li>
-                                        </ul>
+                            <c:forEach items="${b.allBlog}" var="x">
+                                <div class="blog">
+                                    <div class="blog-image">
+                                        <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
+                                    </div>
+                                    <h3 class="blog-title"><a href="blog-details.jsp">${x.title}</a></h3>
+                                    <div class="blog-info clearfix">
+                                        <div class="post-left">
+                                            <ul>
+                                                <li>
+                                                    <div class="post-author">
+                                                        <a href="profile.html"><img src="assets/img/user/user.jpg" alt="Post Author"> <span>Ruby Perrin</span></a>
+                                                    </div>
+                                                </li>
+                                                <li><i class="far fa-clock"></i>${x.created_date}</li>
+                                                <li><i class="far fa-comments"></i>12 Comments</li>
+                                                <li><i class="fa fa-tags"></i>HTML</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content">
+                                        <p>${x.short_detail}</p>
+                                        <a href="blog-details.jsp" class="read-more">Read More</a>
                                     </div>
                                 </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/blog-02.jpg" alt=""></a>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">1914 translation by H. Rackham</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user1.jpg" alt="Post Author"> <span>Darren Elder</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>3 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>7 Comments</li>
-                                            <li><i class="fa fa-tags"></i>Java Script</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <div class="video">
-                                        <iframe width="940" src="https://www.youtube.com/embed/ZMty6R0Bn0I" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">The standard Lorem Ipsum passage, used since the</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user2.jpg" alt="Post Author"> <span>Deborah Angel</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>3 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>2 Comments</li>
-                                            <li><i class="fa fa-tags"></i>C++</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
-                            <div class="blog">
-                                <div class="blog-image">
-                                    <div class="video">
-                                        <iframe width="940" src="https://www.youtube.com/embed/svmGQhQLuBQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <h3 class="blog-title"><a href="blog-details.jsp">Section 1.10.32 of "de Finibus Bonorum et Malorum</a></h3>
-                                <div class="blog-info clearfix">
-                                    <div class="post-left">
-                                        <ul>
-                                            <li>
-                                                <div class="post-author">
-                                                    <a href="profile.html"><img src="assets/img/user/user3.jpg" alt="Post Author"> <span>Sofia Brient</span></a>
-                                                </div>
-                                            </li>
-                                            <li><i class="far fa-clock"></i>2 Dec 2019</li>
-                                            <li><i class="far fa-comments"></i>41 Comments</li>
-                                            <li><i class="fa fa-tags"></i>Css</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="blog-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <a href="blog-details.jsp" class="read-more">Read More</a>
-                                </div>
-                            </div>
-
-
+                            </c:forEach>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="blog-pagination">
