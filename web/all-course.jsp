@@ -79,10 +79,10 @@
                                 <a href="course-detail.jsp">
                                     <div class="courses-head">
                                         <div class="courses-img-main">
-                                            <img src="assets/img/course/c15.jpg" alt="" class="img-fluid w-100">
+                                            <img src="assets/img/course/${x.thumnail}" alt="" class="img-fluid w-100">
                                         </div>
                                         <div class="courses-aut-img">
-                                            <img src="assets/img/user/truong.jpg" alt="">
+                                            <img src="assets/img/user/${x.profile_picture}" alt="">
                                         </div>
                                     </div>
                                     <div class="courses-body">
@@ -95,7 +95,7 @@
                                             </ul>
                                             <p class="mb-1">${x.last_name} ${x.first_name}</p>
                                             <h4 class="mb-0">
-                                                <a>${x.title}</a>
+                                                <a>${x.title} ${x.thumnail} </a>
                                             </h4>
                                         </div>
                                     </div>
