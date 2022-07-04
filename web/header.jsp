@@ -96,7 +96,7 @@
                                 <ul class="submenu">
                                     <li><a href="all-course.jsp">Course list</a></li>
                                     <li><a href="all-course.jsp">Course trending</a></li>
-                                    <li><a href="all-course.jsp">Course best rate</a></li>
+                                    <li><a href="course-top-rated.jsp">Course top rated</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
