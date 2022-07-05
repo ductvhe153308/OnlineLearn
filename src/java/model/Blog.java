@@ -23,8 +23,18 @@ public class Blog {
     private int comment_id;
     private int blog_category_id;
     private String short_detail;
-
+    private String first_name;
+    private String last_name;
+    private String profile_picture;
+    
     public Blog() {
+    }
+    
+    public Blog(int id, String title,String image, Date created_date) {
+        this.id = id;
+        this.title = title;
+        this.image = image;
+        this.created_date = created_date;
     }
     
     public Blog(int id, String detail, int account_id, String title, LocalDateTime updated_date, String image, Date created_date, int comment_id, int blog_category_id, String short_detail) {
@@ -40,6 +50,19 @@ public class Blog {
         this.short_detail = short_detail;
     }
 
+    public Blog(int id, String detail, String title, LocalDateTime updated_date, String image, Date created_date, String short_detail, String first_name, String last_name, String profile_picture) {
+        this.id = id;
+        this.detail = detail;
+        this.title = title;
+        this.updated_date = updated_date;
+        this.image = image;
+        this.created_date = created_date;
+        this.short_detail = short_detail;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.profile_picture = profile_picture;
+    }
+    
     public int getId() {
         return id;
     }
@@ -118,6 +141,30 @@ public class Blog {
 
     public void setShort_detail(String short_detail) {
         this.short_detail = short_detail;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(String profile_picture) {
+        this.profile_picture = profile_picture;
     }
     
 }
