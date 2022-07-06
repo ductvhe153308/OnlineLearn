@@ -17,7 +17,9 @@ $('#page').html(`
                         <div class="col-12 component" id="profile"></div>
                     </div>
                     <div class="row">
-                        <div class="col-12 component" id="invoice"></div>
+                        <div class="col-12 component">
+                            <canvas id="invoice"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="col col-8">
@@ -97,13 +99,13 @@ $('#page').html(`
         Mentor.board.dashboard('mentor', 1, 5);
         Mentee.board.dashboard('mentee', 1, 5);
         this.booking();
-        }
-/**
- * Admin profile
- */
-this.profile = function () {
-var profile = $("#profile");
-        profile.html(`
+        };
+        /**
+         * Admin profile
+         */
+        this.profile = function () {
+        var profile = $("#profile");
+                profile.html(`
                 <div class="row profile-header">
                     <div class="col-7">
                         <h5>Welcome Back !</h5>
@@ -132,42 +134,78 @@ var profile = $("#profile");
                     </div>
                 </div>
             `);
-        $.ajax({type: 'POST',
-                url: '',
-                data: {
+                $.ajax({type: 'POST',
+                        url: '../admin/ajax/admin/profile',
+                        data: {
+                        },
+                        dataType: 'json',
+                        success: function (response) {
+                        var admin = response;
+                                $('#admin-ava img').attr('src', `/onlinelearn/assets/img/user/${admin.pfp}`);
+                                $("#admin-name").html(admin.last_name + " " + admin.first_name);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+
+                        }
+                });
+        };
+        /**
+         * Invoice Chart 
+         */
+        this.invoice = function () {
+        $.ajax({
+        type: 'post',
+                url: '../admin/ajax/admin/invoice',
+                data:{
 
                 },
                 dataType: 'json',
                 success: function (response) {
-
+                alert("an");
+                        var config = {
+                        type: 'doughnut',
+                                data:  {
+                                labels: [
+                                        'Red',
+                                        'Blue',
+                                        'Yellow'
+                                ],
+                                        datasets: [
+                                        {
+                                        label: 'My First Dataset',
+                                                data: [300, 50, 100],
+                                                backgroundColor: [
+                                                        'rgb(255, 99, 132)',
+                                                        'rgb(54, 162, 235)',
+                                                        'rgb(255, 205, 86)'
+                                                ],
+                                                hoverOffset: 4
+                                        }]
+                                }
+                        };
+                        var myChart = new Chart($('#invoice'), config);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
 
                 }
         });
-}
-/**
- * Invoice Chart 
- */
-this.invoice = function () {
-$("#invoice").css("height", "440px");
-}
-/**
- * Sale Chart
- */
-this.sale = function () {
-$("#sale").css("height", "550px");
-}
-/**
- * Booking List
- */
-this.booking = function () {
-var table_name = 'Booking List';
-        var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount'];
-        var colgroup = [100, 60, 90, 70, 50, 70];
-        var data = [1, 2, 3, 4, 5];
-        var table = AP.table.render(table_name, header, data, function (index) {
-        return `<div class="table-row">
+        };
+        /**
+         * Sale Chart
+         */
+        this.sale = function () {
+        $("#sale").css("height", "550px");
+        };
+        /**
+         * Booking List
+         */
+        this.booking = function () {
+        var table_name = 'Booking List';
+                var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount'];
+                var colgroup = [100, 60, 90, 70, 50, 70];
+                var data = [1, 2, 3, 4, 5];
+                var table = AP.table.render(table_name, header, data, function (index) {
+                return `<div class="table-row">
                         <div class="table-data" style="width:${colgroup[0]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[1]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[2]}px">${index}</div>
@@ -175,7 +213,7 @@ var table_name = 'Booking List';
                         <div class="table-data" style="width:${colgroup[4]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[5]}px">${index}</div>
                     </div>`;
-        }, colgroup);
-        $("#page #booking").html(table);
-}
-};
+                }, colgroup);
+                $("#page #booking").html(table);
+        };
+        };
