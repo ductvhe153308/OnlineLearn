@@ -62,7 +62,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="post-author">
-                                                        <a href="profile.html"><img src="assets/img/user/user.jpg" alt="Post Author"> <span>Ruby Perrin</span></a>
+                                                        <a href="profile.html"><img src="assets/img/user/${x.profile_picture}" alt="Post Author"> <span>${x.last_name} ${x.first_name}</span></a>
                                                     </div>
                                                 </li>
                                                 <li><i class="far fa-clock"></i>${x.created_date}</li>
@@ -125,71 +125,21 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="latest-posts">
-                                        <li>
+                                        <c:forEach items="${b.latestBlog}" var="z">
+                                            <li>
                                             <div class="post-thumb">
                                                 <a href="blog-details.jsp">
-                                                    <img class="img-fluid" src="assets/img/blog/blog-thumb-01.jpg" alt="">
+                                                    <img class="img-fluid" src="assets/img/blog/${z.image}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
                                                 <h4>
-                                                    <a href="blog-details.jsp">Lorem Ipsum is simply dummy text of the printing</a>
+                                                    <a href="blog-details.jsp">${z.title}</a>
                                                 </h4>
-                                                <p>4 Dec 2019</p>
+                                                <p>${z.created_date}</p>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="post-thumb">
-                                                <a href="blog-details.jsp">
-                                                    <img class="img-fluid" src="assets/img/blog/blog-thumb-02.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <h4>
-                                                    <a href="blog-details.jsp">It is a long established fact that a reader will be</a>
-                                                </h4>
-                                                <p>3 Dec 2019</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post-thumb">
-                                                <a href="blog-details.jsp">
-                                                    <img class="img-fluid" src="assets/img/blog/blog-thumb-03.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <h4>
-                                                    <a href="blog-details.jsp">here are many variations of passages of Lorem Ipsum</a>
-                                                </h4>
-                                                <p>3 Dec 2019</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post-thumb">
-                                                <a href="blog-details.jsp">
-                                                    <img class="img-fluid" src="assets/img/blog/blog-thumb-04.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <h4>
-                                                    <a href="blog-details.jsp">The standard chunk of Lorem Ipsum used since the</a>
-                                                </h4>
-                                                <p>2 Dec 2019</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post-thumb">
-                                                <a href="blog-details.jsp">
-                                                    <img class="img-fluid" src="assets/img/blog/blog-thumb-05.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <h4>
-                                                    <a href="blog-details.jsp">generate Lorem Ipsum which looks reasonable</a>
-                                                </h4>
-                                                <p>1 Dec 2019</p>
-                                            </div>
-                                        </li>
+                                        </c:forEach>
                                     </ul>
                                 </div>
                             </div>
