@@ -28,7 +28,6 @@
         <div class="main-wrapper">
 
             <%@include file="header.jsp" %>
-
             <div class="breadcrumb-bar">
                 <div class="container-fluid">
                     <div class="row align-items-center">
@@ -44,48 +43,47 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="">
                 <div style="width: 100%; height: fit-content; padding: 30px 200px">
-                    <div style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149))">
-                        <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
-                            <div style="width: 80%">
-                                <h1 style="color: white;">
-                                    From Zero to Hero with Nodejs
-                                </h1>
-                                <div class="courses-ratings">
-                                    <ul class="mb-1">
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star not-checked"></i>
-                                        </li>
-                                    </ul>
+                    <a href="certificate.jsp">
+                        <div style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149))">
+                            <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
+                                <div style="width: 80%">
+                                    <h1 style="color: white;">
+                                        From Zero to Hero with Nodejs
+                                    </h1>
+                                    <div class="courses-ratings">
+                                        <ul class="mb-1">
+                                            <li> <i class="fas fa-star checked"></i>
+                                            </li>
+                                            <li> <i class="fas fa-star checked"></i>
+                                            </li>
+                                            <li> <i class="fas fa-star checked"></i>
+                                            </li>
+                                            <li> <i class="fas fa-star checked"></i>
+                                            </li>
+                                            <li> <i class="fas fa-star not-checked"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div style="padding-top: 20px"> Finish in July 7, 2022</div>
                                 </div>
-                                <div style="padding-top: 20px"> Finish in July 7, 2022</div>
-                            </div>
-                            <div>
-                                <h4 style="color: white; padding-bottom: 20px">
-                                    Offered By
-                                </h4>
-                                <div class="navbar-brand logo" style="background-color: white; padding: 10px">
-                                    <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+                                <div>
+                                    <h4 style="color: white; padding-bottom: 20px">
+                                        Offered By
+                                    </h4>
+                                    <div class="navbar-brand logo" style="background-color: white; padding: 10px">
+                                        <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+                                    </div>
                                 </div>
-                            </div>
 
-                        </div>
-                    </div>
+                            </div>
+                        </div> 
+                    </a>
+
 
                 </div>
             </div>
-
-
             <%@include file="footer.jsp" %>
 
         </div>
