@@ -54,9 +54,9 @@
                             <c:forEach items="${b.allBlog}" var="x">
                                 <div class="blog">
                                     <div class="blog-image">
-                                        <a href="blog-details.jsp"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
+                                        <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
                                     </div>
-                                    <h3 class="blog-title"><a href="blog-details.jsp">${x.title}</a></h3>
+                                    <h3 class="blog-title"><a href="BlogDetail?id=${x.id}">${x.title}</a></h3>
                                     <div class="blog-info clearfix">
                                         <div class="post-left">
                                             <ul>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="blog-content">
                                         <p>${x.short_detail}</p>
-                                        <a href="blog-details.jsp" class="read-more">Read More</a>
+                                        <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
                                     </div>
                                 </div>
                             </c:forEach>
@@ -127,18 +127,18 @@
                                     <ul class="latest-posts">
                                         <c:forEach items="${b.latestBlog}" var="z">
                                             <li>
-                                            <div class="post-thumb">
-                                                <a href="blog-details.jsp">
-                                                    <img class="img-fluid" src="assets/img/blog/${z.image}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <h4>
-                                                    <a href="blog-details.jsp">${z.title}</a>
-                                                </h4>
-                                                <p>${z.created_date}</p>
-                                            </div>
-                                        </li>
+                                                <div class="post-thumb">
+                                                    <a href="blog-details.jsp">
+                                                        <img class="img-fluid" src="assets/img/blog/${z.image}" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="post-info">
+                                                    <h4>
+                                                        <a href="BlogDetail?id=${z.id}">${z.title}</a>
+                                                    </h4>
+                                                    <p>${z.created_date}</p>
+                                                </div>
+                                            </li>
                                         </c:forEach>
                                     </ul>
                                 </div>
