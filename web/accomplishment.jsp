@@ -66,6 +66,15 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div style="display: flex; flex-direction: row; align-items: center; padding-top: 20px">
+                                        <div>
+                                            <img style="border-radius: 50%;
+                                                 width: 60px;
+                                                 margin: auto;
+                                                 height: 60px;" src="assets/img/user/user8.jpg" alt="">
+                                        </div>
+                                        <p style="color: white; padding-left: 20px">Keny White</p>
+                                    </div>
                                     <div style="padding-top: 20px"> Finish in July 7, 2022</div>
                                 </div>
                                 <div>
