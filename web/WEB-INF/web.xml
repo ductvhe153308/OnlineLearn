@@ -24,6 +24,10 @@
         <servlet-name>ChangePasswordController</servlet-name>
         <servlet-class>controller.home.ChangePasswordController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BlogDetailController</servlet-name>
+        <servlet-class>controller.home.BlogDetailController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ChangePasswordController</servlet-name>
         <url-pattern>/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogDetailController</servlet-name>
+        <url-pattern>/BlogDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
