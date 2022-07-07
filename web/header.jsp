@@ -91,7 +91,7 @@
                             <li class="active">
                                 <a href="home">Home</a>
                             </li>
-                             <li class="has-submenu">
+                            <li class="has-submenu">
                                 <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="all-course.jsp">Course list</a></li>
@@ -138,6 +138,7 @@
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
                                                 <li><a href="">My blog</a></li>
+                                                <li><a href="">Accomplishment</a></li>
                                                 <li><a href="changePassword">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
                                             </ul> 
