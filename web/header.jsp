@@ -95,7 +95,7 @@
                                 <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="all-course.jsp">Course list</a></li>
-                                    <li><a href="all-course.jsp">Course trending</a></li>
+                                    <li><a href="course-trending.jsp">Course trending</a></li>
                                     <li><a href="course-top-rated.jsp">Course top rated</a></li>
                                 </ul>
                             </li>
@@ -111,7 +111,6 @@
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="blog-list.jsp">Blog list</a></li>
-                                    <li><a href="blog-grid.jsp">Blog grid</a></li>
                                     <li><a href="blog-details.jsp">Blog details</a></li>
                                     <li><a href="blog-create.jsp">Blog create new</a></li>
                                 </ul>
@@ -126,18 +125,18 @@
                     </div>
 
                     <c:choose>
-                        <c:when test="${sessionScope.email != null}">
+                        <c:when test="${sessionScope.user != null}">
                             <ul class="nav header-navbar-rht">
                                 <div class="main-menu-wrapper">
                                     <ul class="main-nav">
                                         <li class="has-submenu">
                                             <a> <image src="assets/img/user/default.jpg" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
-                                                ${email}<i class="fas fa-chevron-down"></i></a>
+                                                ${user.email}<i class="fas fa-chevron-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="user-profile.jsp">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
-                                                <li><a href="">My blog</a></li>
+                                                <li><a href="BlogByAuthor">My blog</a></li>
                                                 <li><a href="accomplishment.jsp">Accomplishment</a></li>
                                                 <li><a href="changePassword">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
