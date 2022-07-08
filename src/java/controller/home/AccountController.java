@@ -74,6 +74,7 @@ public class AccountController extends HttpServlet {
             }
             if (a != null) {
                 HttpSession session = request.getSession();
+                session.setAttribute("user", a);
                 session.setAttribute("email", email);
                 session.setAttribute("password", password);
                 response.sendRedirect("home.jsp");
