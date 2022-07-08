@@ -111,8 +111,7 @@
                                 <a href="#">Blog <i class="fas fa-chevron-down"></i></a>
                                 <ul class="submenu">
                                     <li><a href="blog-list.jsp">Blog list</a></li>
-                                    <li><a href="blog-details.jsp">Blog details</a></li>
-                                    <li><a href="blog-create.jsp">Blog create new</a></li>
+                                    <li><a href="blog-create.jsp">New blog</a></li>
                                 </ul>
                             </li>
                             <li>
