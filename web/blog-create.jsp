@@ -79,14 +79,15 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-lg-6">
+                                                            </div>
+                                                        </div>
+                                                        <div class="service-fields mb-3">
+                                                            <h4 class="heading-2">Blog Short Detail</h4>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
                                                                     <div class="form-group">
-                                                                        <label>Sub Category <span class="text-danger">*</span></label>
-                                                                        <select class="form-control select" name="subcategory">
-                                                                            <option value="1">Abacus Study for experienced - Part I</option>
-                                                                            <option value="2" selected="selected">Abacus Study for experienced - Part II</option>
-                                                                            <option value="3">Abacus Study for experienced - Part III</option>
-                                                                        </select>
+                                                                        <label>Short Detail <span class="text-danger">*</span></label>
+                                                                        <textarea id="about" class="form-control service-desc" name="about" placeholder="note"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
