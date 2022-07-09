@@ -8,27 +8,28 @@
 <html lang="en">
 
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Mentoring</title>
+        <jsp:useBean id="m" class="dal.AccountDAO" scope="request"></jsp:useBean>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+            <title>Mentoring</title>
 
-        <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+            <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+            <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+            <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
-        <style>
-            .info{
-                text-transform: none !important;
-            }
-        </style>
-    </head>
-    <body>
+            <link rel="stylesheet" href="assets/css/style.css">
+            <style>
+                .info{
+                    text-transform: none !important;
+                }
+            </style>
+        </head>
+        <body>
 
-        <div class="main-wrapper">
+            <div class="main-wrapper">
 
             <%@include file="header.jsp" %>
             <section class="popular-course-section">
@@ -110,33 +111,35 @@
                             <div class="row">
                                 <div style="width: 100%">
                                     <div class="row row-grid">
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                            <div class="card widget-profile user-widget-profile">
-                                                <div class="card-body">
-                                                    <div class="pro-widget-content">
-                                                        <div class="profile-info-widget">
-                                                            <a href="mentor-profile.jsp" class="booking-user-img">
-                                                                <img src="assets/img/user/user.jpg" alt="User Image">
-                                                            </a>
-                                                            <div class="profile-det-info">
-                                                                <h3><a href="mentor-profile.jsp">Richard Wilson</a></h3>
-                                                                <div class="mentee-details">
-                                                                    <h5><b>Mentor ID :</b> 16</h5>
-                                                                    <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
+                                        <c:forEach items="${m.allMentor}" var="x">
+                                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div class="card widget-profile user-widget-profile">
+                                                    <div class="card-body">
+                                                        <div class="pro-widget-content">
+                                                            <div class="profile-info-widget">
+                                                                <a href="mentor-profile.jsp" class="booking-user-img">
+                                                                    <img src="assets/img/user/user.jpg" alt="User Image">
+                                                                </a>
+                                                                <div class="profile-det-info">
+                                                                    <h3><a href="mentor-profile.jsp">${x.first_name} ${x.last_name}</a></h3>
+                                                                    <div class="mentee-details">
+                                                                        <h5><b>Mentor ID :</b> ${x.aid}</h5>
+                                                                        <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="mentee-info">
-                                                        <ul style="text-transform:none">
-                                                            <li>Phone <span>0915021248</span></li>
-                                                            <li>Age <span>24 Years, Male</span></li>
-                                                            <li>Email <span class="info">truonghdhe140305@fpt.edu.vn</span></li>
-                                                        </ul>
+                                                        <div class="mentee-info">
+                                                            <ul style="text-transform:none">
+                                                                <li>Phone <span> ${x.phone}</span></li>
+                                                                <li>Age <span>24 Years, Male</span></li>
+                                                                <li>Email <span class="info"> ${x.email}</span></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </c:forEach>
                                     </div>
                                     <div class="blog-pagination mt-4">
                                         <nav>
