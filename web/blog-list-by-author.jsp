@@ -74,10 +74,13 @@
                                     </div>
                                     <div class="blog-content">
                                         <p>${x.short_detail}</p>
-                                        <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
-                                        <div class="submit-section">
-                                            <button type="submit" class="btn btn-primary submit-btn">Edit</button>
+                                        <div style="display: flex; flex-direction: row; justify-content: space-between; padding-right: 50px">
+                                            <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
+                                            <div class="submit-section">
+                                                <button type="submit" class="btn btn-primary submit-btn">Edit</button>
+                                            </div> 
                                         </div>
+
                                     </div>
                                 </div>
                             </c:forEach>
