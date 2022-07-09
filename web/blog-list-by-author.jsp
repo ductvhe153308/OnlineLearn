@@ -52,64 +52,70 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
-                            <c:forEach items="${list}" var="x">
-                                <div class="blog">
-                                    <div class="blog-image">
-                                        <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
-                                    </div>
-                                    <h3 class="blog-title"><a href="BlogDetail?id=${x.id}">${x.title}</a></h3>
-                                    <div class="blog-info clearfix">
-                                        <div class="post-left">
-                                            <ul>
-                                                <li>
-                                                    <div class="post-author">
-                                                        <a href="profile.html"><img src="assets/img/user/${x.profile_picture}" alt="Post Author"> <span>${x.last_name} ${x.first_name}</span></a>
-                                                    </div>
-                                                </li>
-                                                <li><i class="far fa-clock"></i>${x.created_date}</li>
-                                                <li><i class="far fa-comments"></i>12 Comments</li>
-                                                <li><i class="fa fa-tags"></i>HTML</li>
-                                            </ul>
+                            <c:choose>
+                                <c:when test="${list != null}">
+                                    <c:forEach items="${list}" var="x">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="blog-pagination">
+                                                    <nav>
+                                                        <ul class="pagination justify-content-center">
+                                                            <li class="page-item disabled">
+                                                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item active">
+                                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <p>${x.short_detail}</p>
-                                        <div style="display: flex; flex-direction: row; justify-content: space-between; padding-right: 50px">
-                                            <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
-                                            <div class="submit-section">
-                                                <button type="submit" class="btn btn-primary submit-btn">Edit</button>
-                                            </div> 
+                                        <div class="blog">
+                                            <div class="blog-image">
+                                                <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
+                                            </div>
+                                            <h3 class="blog-title"><a href="BlogDetail?id=${x.id}">${x.title}</a></h3>
+                                            <div class="blog-info clearfix">
+                                                <div class="post-left">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="post-author">
+                                                                <a href="profile.html"><img src="assets/img/user/${x.profile_picture}" alt="Post Author"> <span>${x.last_name} ${x.first_name}</span></a>
+                                                            </div>
+                                                        </li>
+                                                        <li><i class="far fa-clock"></i>${x.created_date}</li>
+                                                        <li><i class="far fa-comments"></i>12 Comments</li>
+                                                        <li><i class="fa fa-tags"></i>HTML</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="blog-content">
+                                                <p>${x.short_detail}</p>
+                                                <div style="display: flex; flex-direction: row; justify-content: space-between; padding-right: 50px">
+                                                    <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
+                                                    <div class="submit-section">
+                                                        <button type="submit" class="btn btn-primary submit-btn">Edit</button>
+                                                    </div> 
+                                                </div>
+
+                                            </div>
                                         </div>
-
-                                    </div>
-                                </div>
-                            </c:forEach>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="blog-pagination">
-                                        <nav>
-                                            <ul class="pagination justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
+                                    <div>ahihi</div>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
 
                         <div class="col-lg-4 col-md-12 sidebar-right theiaStickySidebar">
