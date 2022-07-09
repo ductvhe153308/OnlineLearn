@@ -1,8 +1,9 @@
 <%-- 
-    Document   : blog-list
-    Created on : Jun 5, 2022, 11:26:10 PM
-    Author     : dell
+    Document   : blog-list-by-author
+    Created on : Jul 8, 2022, 1:43:18 PM
+    Author     : ADMIN
 --%>
+
 <%@page import="model.Blog"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -40,7 +41,7 @@
                                     <!--                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>-->
                                 </ol>
                             </nav>
-                            <h2 class="breadcrumb-title">Blog List</h2>
+                            <h2 class="breadcrumb-title">My blog</h2>
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
-                            <c:forEach items="${b.allBlog}" var="x">
+                            <c:forEach items="${list}" var="x">
                                 <div class="blog">
                                     <div class="blog-image">
                                         <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
@@ -74,6 +75,7 @@
                                     <div class="blog-content">
                                         <p>${x.short_detail}</p>
                                         <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
+                                        <a href="" class="read-more">Edit</a>
                                     </div>
                                 </div>
                             </c:forEach>
