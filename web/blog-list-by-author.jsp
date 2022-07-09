@@ -53,33 +53,8 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
                             <c:choose>
-                                <c:when test="${list != null}">
+                                <c:when test="${size != 0}">
                                     <c:forEach items="${list}" var="x">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="blog-pagination">
-                                                    <nav>
-                                                        <ul class="pagination justify-content-center">
-                                                            <li class="page-item disabled">
-                                                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">1</a>
-                                                            </li>
-                                                            <li class="page-item active">
-                                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#">3</a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="blog">
                                             <div class="blog-image">
                                                 <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
@@ -107,13 +82,37 @@
                                                         <button type="submit" class="btn btn-primary submit-btn">Edit</button>
                                                     </div> 
                                                 </div>
-
                                             </div>
                                         </div>
                                     </c:forEach>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="blog-pagination">
+                                                <nav>
+                                                    <ul class="pagination justify-content-center">
+                                                        <li class="page-item disabled">
+                                                            <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">1</a>
+                                                        </li>
+                                                        <li class="page-item active">
+                                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#">3</a>
+                                                        </li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </c:when>
                                 <c:otherwise>
-                                    <div>ahihi</div>
+                                    <div>No blog display</div>
                                 </c:otherwise>
                             </c:choose>
                         </div>
