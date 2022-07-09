@@ -20,6 +20,11 @@
         <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
         <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+            .info{
+                text-transform: none !important;
+            }
+        </style>
     </head>
     <body>
 
@@ -35,7 +40,7 @@
                                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-<!--                                            <li class="breadcrumb-item active" aria-current="page">Mentor List</li>-->
+                                            <!--                                            <li class="breadcrumb-item active" aria-current="page">Mentor List</li>-->
                                         </ol>
                                     </nav>
                                     <h2 class="breadcrumb-title">Mentor List</h2>
@@ -123,10 +128,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="mentee-info">
-                                                        <ul>
-                                                            <li>Phone <span>+1 952 001 8563</span></li>
-                                                            <li>Age <span>38 Years, Male</span></li>
-                                                            <li>Blood Group <span>AB+</span></li>
+                                                        <ul style="text-transform:none">
+                                                            <li>Phone <span>0915021248</span></li>
+                                                            <li>Age <span>24 Years, Male</span></li>
+                                                            <li>Email <span class="info">truonghdhe140305@fpt.edu.vn</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
