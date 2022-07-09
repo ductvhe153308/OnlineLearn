@@ -39,6 +39,7 @@ public class BlogByAuthorController extends HttpServlet {
             BlogDAO blogDAO = new BlogDAO();
             List<Blog> list = blogDAO.getBlogByAuthor(a.getAid());
             request.setAttribute("list", list);
+            request.setAttribute("size", list.size());
             request.getRequestDispatcher("blog-list-by-author.jsp").forward(request, response);
         } catch (Exception e) {
         }
