@@ -79,7 +79,9 @@ $('#page').html(`
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 component" id="sale"></div>  
+                        <div class="col-12 component">
+                            <canvas id="sale"></canvas>
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -94,12 +96,12 @@ $('#page').html(`
                 </div>
             </div>`);
         this.profile();
-        this.invoice();
         this.sale();
         Mentor.board.dashboard('mentor', 1, 5);
         Mentee.board.dashboard('mentee', 1, 5);
+        this.invoice();
         this.booking();
-        };
+};
         /**
          * Admin profile
          */
@@ -135,7 +137,7 @@ $('#page').html(`
                 </div>
             `);
                 $.ajax({type: 'POST',
-                        url: '../admin/ajax/admin/profile',
+                        url: '../ajax/admin/profile',
                         data: {
                         },
                         dataType: 'json',
@@ -155,38 +157,35 @@ $('#page').html(`
         this.invoice = function () {
         $.ajax({
         type: 'post',
-                url: '../admin/ajax/admin/invoice',
+                url: '../ajax/admin/invoice',
                 data:{
 
                 },
-                dataType: 'json',
                 success: function (response) {
-                alert("an");
-                        var config = {
-                        type: 'doughnut',
-                                data:  {
-                                labels: [
-                                        'Red',
-                                        'Blue',
-                                        'Yellow'
-                                ],
-                                        datasets: [
-                                        {
-                                        label: 'My First Dataset',
-                                                data: [300, 50, 100],
-                                                backgroundColor: [
-                                                        'rgb(255, 99, 132)',
-                                                        'rgb(54, 162, 235)',
-                                                        'rgb(255, 205, 86)'
-                                                ],
-                                                hoverOffset: 4
-                                        }]
-                                }
-                        };
+                var config = {
+                type: 'doughnut',
+                        data:  {
+                        labels: [
+                                'Invoiced',
+                                'Received',
+                                'Pending'
+                        ],
+                                datasets: [
+                                {
+                                label: 'My First Dataset',
+                                        data: JSON.parse(response),
+                                        backgroundColor: [
+                                                'rgb(255, 99, 132)',
+                                                'rgb(54, 162, 235)',
+                                                'rgb(255, 205, 86)'
+                                        ],
+                                        hoverOffset: 3
+                                }]
+                        }
+                };
                         var myChart = new Chart($('#invoice'), config);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-
                 }
         });
         };
@@ -194,7 +193,57 @@ $('#page').html(`
          * Sale Chart
          */
         this.sale = function () {
-        $("#sale").css("height", "550px");
+        $.ajax({
+        type: 'post',
+                url: '../ajax/admin/sale',
+                data:{
+
+                },
+                success: function (response) {
+                console.log(response)
+                        var data = JSON.parse(response);
+                        console.log(data)
+                        var labels = JSON.parse(data.labels);
+                        var rec = JSON.parse(data.receiveds);
+                        var pen = JSON.parse(data.pendings);
+                        var config = {
+                        type: 'bar',
+                                data:  {
+                                labels: labels,
+                                        datasets: [
+                                        {
+                                        label: 'Received',
+                                                data: rec,
+                                                backgroundColor: [
+                                                        'rgb(0, 157, 166)'
+                                                ],
+                                                borderWidth: 0,
+                                                borderRadius: 50,
+                                                hoverOffset: 3
+                                        }, {
+                                        label: 'Pending',
+                                                data: pen,
+                                                backgroundColor: [
+                                                        'rgb(255, 156, 39)'
+                                                ],
+                                                borderWidth: 0,
+                                                borderRadius: 50,
+                                                hoverOffset: 3
+                                        }]
+                                },
+                                options: {
+                                scales: {
+                                y: {
+                                beginAtZero: true
+                                }
+                                }
+                                }
+                        };
+                        var myChart = new Chart($('#sale'), config);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                }
+        });
         };
         /**
          * Booking List
@@ -216,4 +265,4 @@ $('#page').html(`
                 }, colgroup);
                 $("#page #booking").html(table);
         };
-        };
+};
