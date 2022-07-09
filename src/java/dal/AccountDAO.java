@@ -43,7 +43,9 @@ public class AccountDAO {
             while (rs.next()) {
                 Account a = new Account(rs.getInt("account_id"),
                         rs.getString("email"),
-                        rs.getString("password"));
+                        rs.getString("password"),
+                        rs.getString("profile_picture")
+                );
                 return a;
             }
             System.out.println(rs);
