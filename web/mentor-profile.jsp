@@ -10,6 +10,7 @@
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/profile-mentee.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:15 GMT -->
     <head>
+        <jsp:useBean id="m" class="dal.AccountDAO" scope="request"></jsp:useBean>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Mentoring</title>
@@ -30,7 +31,6 @@
             <%@include file="header.jsp" %>
             <div class="content">
                 <div class="container">
-
                     <div class="card col-10 me-auto ms-auto p-0">
                         <div class="card-body">
                             <div class="mentor-widget">
@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="user-info-cont">
-                                        <h4 class="usr-name">Jonathan Doe</h4>
+                                        <h4 class="usr-name">${x.last_name} ${x.first_name}</h4>
                                         <p class="mentor-type">English Literature (M.A)</p>
                                         <div class="mentor-action">
                                             <p class="mentor-type social-title">Contact Me</p>

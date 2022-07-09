@@ -32,6 +32,10 @@
         <servlet-name>BlogByAuthorController</servlet-name>
         <servlet-class>controller.home.BlogByAuthorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MentorDetailController</servlet-name>
+        <servlet-class>controller.home.MentorDetailController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>BlogByAuthorController</servlet-name>
         <url-pattern>/BlogByAuthor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MentorDetailController</servlet-name>
+        <url-pattern>/MentorDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
