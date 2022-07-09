@@ -112,21 +112,11 @@
                                                                         <span>Upload Service Images *</span>
                                                                         <input type="file" name="images[]" id="images" multiple="">
                                                                     </div>
-                                                                    <div id="uploadPreview">
-                                                                        <ul class="upload-wrap">
-                                                                            <li>
+                                                                    <div id="uploadPreview" style="padding-top: 20px">
+                                                                        <ul class="upload-wrap" style="list-style: none">
+                                                                            <li style="margin-right: 20px; width: 120px">
                                                                                 <div class="upload-images">
                                                                                     <img alt="" src="assets/img/blog/blog-thumb-01.jpg">
-                                                                                </div>
-                                                                            </li>
-                                                                            <li>
-                                                                                <div class="upload-images">
-                                                                                    <img alt="" src="assets/img/blog/blog-thumb-02.jpg">
-                                                                                </div>
-                                                                            </li>
-                                                                            <li>
-                                                                                <div class="upload-images">
-                                                                                    <img alt="" src="assets/img/blog/blog-thumb-03.jpg">
                                                                                 </div>
                                                                             </li>
                                                                         </ul>
