@@ -118,7 +118,7 @@
                                                         <div class="pro-widget-content">
                                                             <div class="profile-info-widget">
                                                                 <a href="mentor-profile.jsp" class="booking-user-img">
-                                                                    <img src="assets/img/user/user.jpg" alt="User Image">
+                                                                    <img src="assets/img/user/${x.pfp}" alt="User Image">
                                                                 </a>
                                                                 <div class="profile-det-info">
                                                                     <h3><a href="mentor-profile.jsp">${x.first_name} ${x.last_name}</a></h3>
