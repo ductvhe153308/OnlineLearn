@@ -112,7 +112,9 @@
                                     </div>
                                 </c:when>
                                 <c:otherwise>
-                                    <div>No blog display</div>
+                                    <div class="blog" style="font-size: 18px">You don't have any blogs yet! Create a new one
+                                        <a href="blog-create.jsp" style="text-decoration: underline; color: #009efb; font-size: 19px">here</a>
+                                    </div>
                                 </c:otherwise>
                             </c:choose>
                         </div>
