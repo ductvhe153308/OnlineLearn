@@ -117,11 +117,11 @@
                                                     <div class="card-body">
                                                         <div class="pro-widget-content">
                                                             <div class="profile-info-widget">
-                                                                <a href="mentor-profile.jsp" class="booking-user-img">
+                                                                <a href="MentorDetail?id=${x.aid}" class="booking-user-img">
                                                                     <img src="assets/img/user/${x.pfp}" alt="User Image">
                                                                 </a>
                                                                 <div class="profile-det-info">
-                                                                    <h3><a href="mentor-profile.jsp">${x.first_name} ${x.last_name}</a></h3>
+                                                                    <h3><a href="MentorDetail?id=${x.aid}">${x.first_name} ${x.last_name}</a></h3>
                                                                     <div class="mentee-details">
                                                                         <h5><b>Mentor ID :</b> ${x.aid}</h5>
                                                                         <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
