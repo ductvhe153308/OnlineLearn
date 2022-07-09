@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 /**
@@ -26,7 +27,7 @@ public class Account {
     private String user_title;
     private LocalDateTime created_at;
     private int gender;
-    private LocalDateTime dob;
+    private Date dob;
     private String pfp;
     private int count;
 
@@ -92,7 +93,7 @@ public class Account {
         this.role_id = role_id;
     }
 
-    public Account(int aid, String first_name, String last_name, String email, String password, String phone, int role_id, String token, String user_title, LocalDateTime created_at, int gender, LocalDateTime dob) {
+    public Account(int aid, String first_name, String last_name, String email, String password, String phone, int role_id, String token, String user_title, LocalDateTime created_at, int gender, Date dob) {
         this.aid = aid;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -114,6 +115,17 @@ public class Account {
         this.phone = phone;
         this.role_id = role_id;
         this.gender = gender;
+        this.pfp = pfp;
+    }
+    
+    public Account(int aid, String first_name, String last_name, String email, String phone, int gender, Date dob, String pfp) {
+        this.aid = aid;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.phone = phone;
+        this.gender = gender;
+        this.dob = dob;
         this.pfp = pfp;
     }
 
@@ -221,11 +233,11 @@ public class Account {
         this.gender = gender;
     }
 
-    public LocalDateTime getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public void setDob(LocalDateTime dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
