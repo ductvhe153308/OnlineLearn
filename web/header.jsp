@@ -129,10 +129,10 @@
                                 <div class="main-menu-wrapper">
                                     <ul class="main-nav">
                                         <li class="has-submenu">
-                                            <a> <image src="assets/img/user/default.jpg" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
+                                            <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
                                                 ${user.email}<i class="fas fa-chevron-down"></i></a>
                                             <ul class="submenu">
-                                                <li><a href="user-profile.jsp">My profile</a></li>
+                                                <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
                                                 <li><a href="BlogByAuthor">My blog</a></li>
