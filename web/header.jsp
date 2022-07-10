@@ -135,7 +135,7 @@
                                                 <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
-                                                <li><a href="BlogByAuthor">My blog</a></li>
+                                                <li><a href="BlogByAuthor">My Blog</a></li>
                                                 <li><a href="accomplishment.jsp">Accomplishment</a></li>
                                                 <li><a href="changePassword">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
