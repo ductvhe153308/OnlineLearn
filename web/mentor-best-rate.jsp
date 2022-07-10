@@ -48,5 +48,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="sidebar-right theiaStickySidebar">
+                                    <div class="card search-widget">
+                                        <div class="card-body">
+                                            <form class="search-form">
+                                                <div class="input-group">
+                                                    <input onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
+                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="suggest" style="display: none">
+                                        <div class="card category-widget">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Mentor Categories</h4>
+                                            </div>
     </body>
 </html>
