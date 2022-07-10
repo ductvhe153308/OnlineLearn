@@ -122,7 +122,7 @@ $('#page').html(`
                 <div class="row">
                     <div class="col-4">
                         <div class="row" id="admin-ava">
-                            <img src="/onlinelearn/assets/img/user/user7.jpg"/>
+                            <img src="/onlinelearn/assets/img/user/user40.jpg"/>
                         </div>
                         <div class="row profile-value text-truncate" id="admin-name">Sofia Brient</div>
                         <div class="row profile-item">Administrator</div>                    
@@ -145,6 +145,7 @@ $('#page').html(`
                         dataType: 'json',
                         success: function (response) {
                         var admin = response;
+                                console.log(admin)
                                 $('#admin-ava img').attr('src', `/onlinelearn/assets/img/user/${admin.pfp}`);
                                 $("#admin-name").html(admin.last_name + " " + admin.first_name);
                         },
