@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -32,7 +33,13 @@ public class MentorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("mentor.jsp").forward(request, response);
+        Account user = (Account) request.getSession().getAttribute("user");
+        AccountDAO adao = new AccountDAO();
+        if (user == null || adao.getAdmin().getAid() != user.getAid()) {
+            request.getRequestDispatcher("reject.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("mentor.jsp").forward(request, response);
+        }
     }
 
     /**
