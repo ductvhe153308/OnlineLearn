@@ -113,31 +113,33 @@
                                     <div class="row row-grid">
                                         <c:forEach items="${m.allMentor}" var="x">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div class="card widget-profile user-widget-profile">
-                                                    <div class="card-body">
-                                                        <div class="pro-widget-content">
-                                                            <div class="profile-info-widget">
-                                                                <a href="MentorDetail?id=${x.aid}" class="booking-user-img">
-                                                                    <img src="assets/img/user/${x.pfp}" alt="User Image">
-                                                                </a>
-                                                                <div class="profile-det-info">
-                                                                    <h3><a href="MentorDetail?id=${x.aid}">${x.first_name} ${x.last_name}</a></h3>
-                                                                    <div class="mentee-details">
-                                                                        <h5><b>Mentor ID :</b> ${x.aid}</h5>
-                                                                        <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
+                                                <a href="MentorDetail?id=${x.aid}">
+                                                    <div class="card widget-profile user-widget-profile">
+                                                        <div class="card-body">
+                                                            <div class="pro-widget-content">
+                                                                <div class="profile-info-widget">
+                                                                    <div class="booking-user-img">
+                                                                        <img src="assets/img/user/${x.pfp}" alt="User Image">
+                                                                    </div>
+                                                                    <div class="profile-det-info">
+                                                                        <h3>${x.first_name} ${x.last_name}</h3>
+                                                                        <div class="mentee-details">
+                                                                            <h5><b>Mentor ID :</b> ${x.aid}</h5>
+                                                                            <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Alabama, USA</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="mentee-info">
-                                                            <ul style="text-transform:none">
-                                                                <li>Phone <span> ${x.phone}</span></li>
-                                                                <li>Age <span>24 Years, Male</span></li>
-                                                                <li>Email <span class="info"> ${x.email}</span></li>
-                                                            </ul>
+                                                            <div class="mentee-info">
+                                                                <ul style="text-transform:none">
+                                                                    <li>Phone <span> ${x.phone}</span></li>
+                                                                    <li>Age <span>24 Years, Male</span></li>
+                                                                    <li>Email <span class="info"> ${x.email}</span></li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </div>
                                         </c:forEach>
                                     </div>
