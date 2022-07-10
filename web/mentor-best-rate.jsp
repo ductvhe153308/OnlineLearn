@@ -26,9 +26,9 @@
                     text-transform: none !important;
                 }
             </style>
-    </head>
-    <body>
-        <div class="main-wrapper">
+        </head>
+        <body>
+            <div class="main-wrapper">
 
             <%@include file="header.jsp" %>
             <section class="popular-course-section">
@@ -77,7 +77,7 @@
                                                     <li><a href="#">VB <span>(07)</span></a></li>
                                                 </ul>
                                             </div>
-                                            </div>
+                                        </div>
                                         <div class="card tags-widget">
                                             <div class="card-header">
                                                 <h4 class="card-title">Tags</h4>
@@ -103,7 +103,7 @@
                                                     <li><a href="#" class="tag">Asp.net</a></li>
                                                 </ul>
                                             </div>
-                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                                            <div class="mentee-info">
+                                                            <div class="mentee-info">
                                                                 <ul style="text-transform:none">
                                                                     <li>Phone <span> ${x.phone}</span></li>
                                                                     <li>Age <span>24 Years, Male</span></li>
@@ -140,7 +140,7 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                                                </c:forEach>
+                                        </c:forEach>
                                     </div>
                                     <div class="blog-pagination mt-4">
                                         <nav>
@@ -164,7 +164,7 @@
                                         </nav>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
