@@ -18,6 +18,7 @@ $('#page').html(`
                     </div>
                     <div class="row">
                         <div class="col-12 component">
+                            <div class="component-header">Invoice Analytics</div>
                             <canvas id="invoice"></canvas>
                         </div>
                     </div>
@@ -80,6 +81,7 @@ $('#page').html(`
                     </div>
                     <div class="row">
                         <div class="col-12 component">
+                            <div class="component-header">Sales Analytics</div>
                             <canvas id="sale"></canvas>
                         </div>  
                     </div>

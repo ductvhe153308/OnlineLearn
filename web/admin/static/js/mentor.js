@@ -103,7 +103,7 @@ var Mentor = {
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">
-                            ${AP.status(mentor['aid'])}
+                            ${AP.status(mentor['aid'], mentor['enabled'])}
                             </div>
                     </div>`;
                     }, colgroup, true, true);
@@ -113,10 +113,22 @@ var Mentor = {
                         var st = $(this);
                         if (st.hasClass('disabled')) {
                             st.find('input').val(1);
-                            return st.removeClass('disabled');
+                            st.removeClass('disabled');
+                        } else {
+                            st.find('input').val(0);
+                            st.addClass('disabled');
                         }
-                        st.find('input').val(0);
-                        return st.addClass('disabled');
+                        $.ajax({
+                            url: '../ajax/admin/status',
+                            type: 'post',
+                            data: {
+                                aid: st.attr('for'),
+                                enabled: st.find('input').val()
+                            },
+                            success: function (response) {
+                                
+                            }
+                        });
                     });
 
                     $('.sorting').click(function () {
