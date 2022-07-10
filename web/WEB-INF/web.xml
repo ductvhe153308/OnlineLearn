@@ -40,6 +40,10 @@
         <servlet-name>UserProfileController</servlet-name>
         <servlet-class>controller.home.UserProfileController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BlogCreateController</servlet-name>
+        <servlet-class>controller.home.BlogCreateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>UserProfileController</servlet-name>
         <url-pattern>/UserProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogCreateController</servlet-name>
+        <url-pattern>/BlogCreate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
