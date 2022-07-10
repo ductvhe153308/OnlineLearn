@@ -5,22 +5,21 @@
  */
 package controller.home;
 
+import dal.AccountDAO;
 import dal.BlogDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
-import model.Blog;
 
 /**
  *
- * @author ADMIN
+ * @author dell
  */
-public class BlogByAuthorController extends HttpServlet {
+public class MentorDetailController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,13 +34,13 @@ public class BlogByAuthorController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            Account a = (Account) request.getSession().getAttribute("user");
-            BlogDAO blogDAO = new BlogDAO();
-            List<Blog> list = blogDAO.getBlogByAuthor(a.getAid());
-            request.setAttribute("list", list);
-            request.setAttribute("size", list.size());
-            request.getRequestDispatcher("blog-list-by-author.jsp").forward(request, response);
+            int id = Integer.parseInt(request.getParameter("id"));
+            AccountDAO accountDAO = new AccountDAO();
+            Account a = accountDAO.getMentorByID(id);
+            request.setAttribute("x", a);
+            request.getRequestDispatcher("mentor-profile.jsp").forward(request, response);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

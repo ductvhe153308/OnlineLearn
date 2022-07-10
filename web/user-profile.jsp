@@ -9,6 +9,7 @@
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/profile-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:29 GMT -->
     <head>
+        <jsp:useBean id="m" class="dal.AccountDAO" scope="request"></jsp:useBean>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Mentoring</title>
@@ -61,7 +62,7 @@
                                                 <div class="form-group">
                                                     <div class="change-avatar">
                                                         <div class="profile-img">
-                                                            <img src="assets/img/user/default.jpg" alt="User Image">
+                                                            <img src="assets/img/user/${x.pfp}" alt="assets/img/user/default.jpg">
                                                         </div>
                                                         <div class="upload-img">
                                                             <div class="change-photo-btn">
@@ -76,13 +77,13 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>First Name</label>
-                                                    <input type="text" class="form-control" value="Hoang Duc">
+                                                    <input type="text" class="form-control" value="${x.first_name}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Last Name</label>
-                                                    <input type="text" class="form-control" value="Truong">
+                                                    <input type="text" class="form-control" value="${x.last_name}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
@@ -96,13 +97,13 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Email</label>
-                                                    <input type="email" class="form-control" value="truonghdhe140305@fpt.edu.vn">
+                                                    <input type="email" class="form-control" value="${x.email}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Mobile</label>
-                                                    <input type="text" value="+84915021248" class="form-control">
+                                                    <input type="text" value="${x.phone}" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
