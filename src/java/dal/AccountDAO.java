@@ -299,7 +299,7 @@ public class AccountDAO {
                 rs.getString("phone"),
                 rs.getInt("role_id"),
                 rs.getString("token"),
-                "",
+                rs.getInt("enabled"),
                 rs.getDate("created_at"),
                 rs.getInt("gender"),
                 rs.getDate("date_of_birth"),
@@ -326,7 +326,7 @@ public class AccountDAO {
                 rs.getString("phone"),
                 rs.getInt("role_id"),
                 rs.getString("token"),
-                "",
+                rs.getInt("enabled"),
                 rs.getDate("created_at"),
                 rs.getInt("gender"),
                 rs.getDate("date_of_birth"),
@@ -334,5 +334,56 @@ public class AccountDAO {
         JsonObject mentee = new JsonObject();
         mentee.addProperty("account", gson.toJson(a));
         return mentee;
+    }
+
+    public Account getAdmin() {
+        Account admin = new Account();
+        try {
+            String query = "select * \n"
+                    + "     from account \n"
+                    + "     where `role_id` = 1\n";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Account(rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("phone"),
+                        rs.getInt("role_id"),
+                        rs.getString("token"),
+                        rs.getInt("enabled"),
+                        rs.getDate("created_at"),
+                        rs.getInt("gender"),
+                        rs.getDate("date_of_birth"),
+                        rs.getString("profile_picture"));
+            }
+            System.out.println(rs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * Admin set account status for mentor / mentee
+     * @param aid account id
+     * @param enabled is enabled.
+     * @return Number row effect.
+     */
+    public int updateStatus(int aid, int enabled){
+        try {
+            String query = "Update account set `enabled` = ? where account_id = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, enabled);
+            ps.setInt(2, aid);
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
