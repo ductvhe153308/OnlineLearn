@@ -103,5 +103,20 @@
                                                     <li><a href="#" class="tag">Asp.net</a></li>
                                                 </ul>
                                             </div>
+                                             </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div style="width: 100%">
+                                    <div class="row row-grid">
+                                        <c:forEach items="${m.allMentor}" var="x">
+                                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <a href="MentorDetail?id=${x.aid}">
+                                                    <div class="card widget-profile user-widget-profile">
+                                                        <div class="card-body">
+                                                            <div class="pro-widget-content">
+                                                                <div class="profile-info-widget">
+                                                                    <div class="booking-user-img">
     </body>
 </html>
