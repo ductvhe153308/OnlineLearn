@@ -129,5 +129,16 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                                            <div class="mentee-info">
+                                                                <ul style="text-transform:none">
+                                                                    <li>Phone <span> ${x.phone}</span></li>
+                                                                    <li>Age <span>24 Years, Male</span></li>
+                                                                    <li>Email <span class="info"> ${x.email}</span></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
     </body>
 </html>
