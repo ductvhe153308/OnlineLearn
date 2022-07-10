@@ -130,7 +130,7 @@ $('#page').html(`
                     <div class="col-4">
                         <div class="row profile-value" id="admin-meeting">12</div>
                         <div class="row profile-item">Meetings</div>
-                        <div class="row btn" id="btn-view-prf">View Profile</div>
+                        <div class="row btn url" id="btn-view-prf" data-url="onlinelearn/UserProfile?id=40">View Profile</div>
                     </div>
                     <div class="col-4">
                         <div class="row profile-value" id="admin-revenue">$1245</div>

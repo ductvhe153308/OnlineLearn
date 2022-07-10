@@ -176,3 +176,14 @@ and open the template in the editor.
 #page .col-12 {
     width: calc(100% - 10px);
 }
+#page form .row{
+    margin-top: 10px;
+    font-size: 24px;
+}
+#page form input{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.component form{
+    margin-top: 50px;
+}

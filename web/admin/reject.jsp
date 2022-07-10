@@ -25,8 +25,11 @@
                     <div class="row col-12 text-none">
                         You haven't been login yet or haven't any permissions at here!
                     </div>
+                    <div class="btn url" data-url="home" >Back to home</div>
                 </div>
             </div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/onlinelearn/assets/js/url.js"></script>
     </body>
 </html>
