@@ -104,7 +104,7 @@
                                 <ul class="submenu">
                                     <li><a href="all-mentor.jsp">Mentor list</a></li>
                                     <li><a href="mentor-register.jsp">Mentor register</a></li>
-                                    <li><a href="all-mentor.jsp">Mentor best rate</a></li>
+                                    <li><a href="mentor-best-rate.jsp">Mentor best rate</a></li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
@@ -135,7 +135,7 @@
                                                 <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
                                                 <li><a href="">My course</a></li>
                                                 <li><a href="">My purchase</a></li>
-                                                <li><a href="BlogByAuthor">My blog</a></li>
+                                                <li><a href="BlogByAuthor">My Blog</a></li>
                                                 <li><a href="accomplishment.jsp">Accomplishment</a></li>
                                                 <li><a href="changePassword">Change password</a></li>
                                                 <li><a href="logout">Sign out</a></li>
