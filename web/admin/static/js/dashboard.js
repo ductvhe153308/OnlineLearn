@@ -145,14 +145,13 @@ $('#page').html(`
                         dataType: 'json',
                         success: function (response) {
                         var admin = response;
-                                console.log(admin)
                                 $('#admin-ava img').attr('src', `/onlinelearn/assets/img/user/${admin.pfp}`);
                                 $("#admin-name").html(admin.last_name + " " + admin.first_name);
                         },
-                        error: function (jqXHR, textStatus, errorThrown) {
+                        error: function (XHR) {
 
                         }
-                });
+                }); 
         };
         /**
          * Invoice Chart 

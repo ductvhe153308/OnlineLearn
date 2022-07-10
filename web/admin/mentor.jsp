@@ -19,7 +19,7 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-            <div class="page-title">List of Mentor</div>
+            <div class="page-title">List of Mentor <div class="url btn right" data-url="admin/mentor/add">Add mentor</div></div>
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> / 
                 <div>User</div> / 
