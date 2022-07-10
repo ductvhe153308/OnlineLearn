@@ -140,4 +140,25 @@ public class CourseDAO {
         }
         return null;
     }
+    public int getNumberPage() {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "select count(*) from onlinelearning.course ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+               int total = rs.getInt(1);
+               int countPage = 0;
+               countPage = total/3;
+               if(total % 3 == 0){
+                   countPage++;
+               }
+               return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 }
