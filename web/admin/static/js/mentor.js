@@ -14,7 +14,6 @@ var Mentor = {
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #mentor').addClass('active');
-        Mentor.board.full('mentor', 1, 10);
     },
     board: {
         /**
@@ -190,7 +189,23 @@ var Mentor = {
      * Handling add, update, delete mentor.
      */
     form: {
-
+        add : function() {
+            $("#submit-trigger").click(function () {
+                var email = $("input[name=email]").val();
+                $.ajax({
+                    url:'/onlinelearn/ajax/admin/search',
+                    type: 'POST',
+                    data: {
+                        email:email
+                    },
+                    success: function (response) {
+                        $("#submit").click();
+                    },
+                    error: function (xhr) {
+                    }
+                });
+            });
+        }
     }
 };
 

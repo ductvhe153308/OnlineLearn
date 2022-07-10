@@ -7,5 +7,5 @@
  * Active a url, redirect to data-url of element.
  */
 $('.url').click(function () {
-    window.location = '../'+$(this).data('url');
+    window.location = window.location.origin+'/onlinelearn/'+$(this).data('url');
 });

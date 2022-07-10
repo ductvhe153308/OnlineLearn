@@ -33,13 +33,7 @@ public class CatergoriesServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Account user = (Account) request.getSession().getAttribute("user");
-        AccountDAO adao = new AccountDAO();
-        if (user == null || adao.getAdmin().getAid() != user.getAid()) {
-            request.getRequestDispatcher("reject.jsp").forward(request, response);
-        } else {
-            request.getRequestDispatcher("categories.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("categories.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

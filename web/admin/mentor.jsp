@@ -19,7 +19,7 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-            <div class="page-title">List of Mentor <div class="url btn right" data-url="admin/mentor/add">Add mentor</div></div>
+            <div class="page-title">List of Mentor <div class="url btn btn-add right" data-url="admin/mentor/add">Add mentor</div></div>
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> / 
                 <div>User</div> / 
@@ -32,6 +32,7 @@
         <script src="static/js/mentor.js"></script>
         <script>
             Mentor.init();
+            Mentor.board.full('mentor', 1, 10);
         </script>
     </body>
 </html>
