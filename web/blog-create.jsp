@@ -87,7 +87,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Short Detail <span class="text-danger">*</span></label>
-                                                                        <input type="text" id="about" class="form-control service-desc" name="shortDetail">
+                                                                        <textarea type="text" id="about" class="form-control service-desc" name="shortDetail"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -98,7 +98,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Descriptions <span class="text-danger">*</span></label>
-                                                                        <input type="text" id="about" class="form-control service-desc" name="detail">
+                                                                        <textarea type="text" id="about" class="form-control service-desc" name="detail"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
