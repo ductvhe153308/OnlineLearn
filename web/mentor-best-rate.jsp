@@ -28,6 +28,8 @@
             </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="main-wrapper">
+
+            <%@include file="header.jsp" %>
     </body>
 </html>
