@@ -133,4 +133,21 @@ public class BlogDAO {
         }
         return null;
     }
+    
+    public void addNewBlog(String title,String shortDetail, String detail, int author) {
+        List<Blog> list = new ArrayList<>();
+        try {
+            String query = "INSERT INTO `onlinelearning`.`blog` (`detail`, `account_id`, `title`, `updated_date`, `created_date`, `short_detail`) "
+                    + "VALUES (?, ?, ?, now(), now(), ?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, detail);
+            ps.setInt(2, author);
+            ps.setString(3, title);
+            ps.setString(4, shortDetail);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
