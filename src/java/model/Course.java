@@ -27,12 +27,12 @@ public class Course {
     private int total_register_number;
     private String first_name;
     private String last_name;
-    private String avatar;
+    private String profile_picture;
     
     public Course() {
     }
 
-    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name,String avatar) {
+    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name,String profile_picture) {
         this.course_id = course_id;
         this.title = title;
         this.rated_star = rated_star;
@@ -42,7 +42,7 @@ public class Course {
         this.total_register_number = total_register_number;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.avatar = avatar;
+        this.profile_picture = profile_picture;
     }
     
     public Course(int course_id, int aid, String title, int rated_star, double price, int sale_price_id, int total_register_number) {
@@ -182,6 +182,14 @@ public class Course {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+
+    public String getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(String profile_picture) {
+        this.profile_picture = profile_picture;
     }
 
     

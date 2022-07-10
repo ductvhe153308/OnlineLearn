@@ -58,3 +58,84 @@ and open the template in the editor.
 .table-data .disabled .status-circle{
     background-color: rgba(0, 0, 0, 0.25);
 }
+.profile-img{
+    max-width: 100%;
+    height: auto;
+}
+#profile .profile-header{
+    background-color: #b0e1e3;
+    color: #009da6;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 24px;
+}
+#profile h5{
+    margin: 0;
+    padding: 10px 20px ;
+}
+#profile h6{
+    margin: 0;
+    padding: 10px 20px;
+    padding-top: 0px;
+}
+#profile .profile-value{
+    padding-top: 24px;
+    color: #333 !important;
+    font-size: 21px;  
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-family: 'CircularStd', sans-serif;
+}
+#profile .profile-item{
+    color: #757575 !important;
+    font-size: 14.8px;
+    font-weight: 500;
+    font-family: 'CircularStd', sans-serif;
+    padding-bottom: 14px;
+}
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#admin-ava{
+    margin-top: -30px;
+}
+#admin-ava img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid #f0f0f0;
+    padding: 0.25rem;
+    background-color: #fff;
+}
+#btn-view-prf{
+    background-color: #009DA6;
+    border: 1px solid #009DA6;
+    color: #fff;
+    font-size: 14px !important;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#members .row:first-child,
+#appointments .row:first-child,
+#mentoringpoints .row:first-child{
+    padding: 20px;
+    justify-content: space-between;
+}
+#members .row,
+#appointments .row,
+#mentoringpoints .row{
+    padding: 0px 20px;
+    justify-content: flex-start;
+}
+#members .big-num,
+#appointments .big-num,
+#mentoringpoints .big-num{
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}

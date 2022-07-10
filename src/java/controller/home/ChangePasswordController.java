@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author admin
+ * @author ADMIN
  */
 public class ChangePasswordController extends HttpServlet {
 
@@ -32,7 +32,7 @@ public class ChangePasswordController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,8 +47,7 @@ public class ChangePasswordController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                request.getRequestDispatcher("change-password.jsp").forward(request, response);
-
+        request.getRequestDispatcher("change-password.jsp").forward(request, response);
     }
 
     /**
@@ -69,27 +68,27 @@ public class ChangePasswordController extends HttpServlet {
         String confPassword = request.getParameter("rePass");
 
         String password = (String) session.getAttribute("password");
-        RequestDispatcher dispatcher = null;
-        if (oldPassword == password) {
+        if (oldPassword.equals(password)) {
             if (newPassword != null && confPassword != null && newPassword.equals(confPassword)) {
                 try {
                     String email = (String) session.getAttribute("email");
                     AccountDAO a = new AccountDAO();
                     int rowCount = a.resetPassword(newPassword, email);
                     if (rowCount > 0) {
-                        request.setAttribute("changePasswordStatus", "Password resets successfully");
-                        dispatcher = request.getRequestDispatcher("change-password.jsp");
+//                        request.setAttribute("changePasswordStatus", "Password resets successfully");
+                        session.setAttribute("password", newPassword);
+                        response.sendRedirect("home.jsp");
                     } else {
                         request.setAttribute("changePasswordStatus", "Password failed to reset");
-                        dispatcher = request.getRequestDispatcher("change-password.jsp");
+                        request.getRequestDispatcher("change-password.jsp").forward(request, response);
                     }
-                    dispatcher.forward(request, response);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }else{
             request.setAttribute("changePasswordStatus", "Wrong old password");
+            request.getRequestDispatcher("change-password.jsp").forward(request, response);
         }
     }
 

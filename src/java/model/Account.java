@@ -93,6 +93,7 @@ public class Account {
     }
 
     public Account(int aid, String first_name, String last_name, String email, String password, String phone, int role_id, String token, String user_title, Date created_at, int gender, Date dob, String pfp) {
+
         this.aid = aid;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -117,6 +118,17 @@ public class Account {
         this.phone = phone;
         this.role_id = role_id;
         this.gender = gender;
+        this.pfp = pfp;
+    }
+    
+    public Account(int aid, String first_name, String last_name, String email, String phone, int gender, Date dob, String pfp) {
+        this.aid = aid;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.phone = phone;
+        this.gender = gender;
+        this.dob = dob;
         this.pfp = pfp;
     }
 

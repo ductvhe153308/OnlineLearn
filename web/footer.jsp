@@ -46,13 +46,12 @@
                         <div class="col-lg-2 col-md-6">
 
                             <div class="footer-widget footer-menu">
-                                <h2 class="footer-title">For Mentee</h2>
+                                <h2 class="footer-title">For Students</h2>
                                 <ul>
-                                    <li><a href="search.html">Search Mentors</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.jsp">Register</a></li>
-                                    <li><a href="booking.html">Booking</a></li>
-                                    <li><a href="dashboard-mentee.html">Mentee Dashboard</a></li>
+                                    <li><a href="all-course.jsp">Course</a></li>
+                                    <li><a href="all-course.jsp">Course trending</a></li>
+                                    <li><a href="all-course.jsp">Course best rate</a></li>
+                                    <li><a href="mentor-register">Mentor register</a></li>
                                 </ul>
                             </div>
 
@@ -61,11 +60,9 @@
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">For Mentors</h2>
                                 <ul>
-                                    <li><a href="appointments.html">Appointments</a></li>
-                                    <li><a href="chat.html">Chat</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.jsp">Register</a></li>
-                                    <li><a href="dashboard.html">Mentor Dashboard</a></li>
+                                    <li><a href="blog-list.jsp">Blog</a></li>
+                                    <li><a href="all-mentor.jsp">All mentor</a></li>
+                                    <li><a href="all-mentor.jsp">Mentor best rate</a></li>
                                 </ul>
                             </div>
                         </div>

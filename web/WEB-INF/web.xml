@@ -20,6 +20,26 @@
         <servlet-name>RegisterController</servlet-name>
         <servlet-class>controller.home.RegisterController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChangePasswordController</servlet-name>
+        <servlet-class>controller.home.ChangePasswordController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BlogDetailController</servlet-name>
+        <servlet-class>controller.home.BlogDetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BlogByAuthorController</servlet-name>
+        <servlet-class>controller.home.BlogByAuthorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MentorDetailController</servlet-name>
+        <servlet-class>controller.home.MentorDetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserProfileController</servlet-name>
+        <servlet-class>controller.home.UserProfileController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -39,6 +59,26 @@
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/register_controller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordController</servlet-name>
+        <url-pattern>/changePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogDetailController</servlet-name>
+        <url-pattern>/BlogDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogByAuthorController</servlet-name>
+        <url-pattern>/BlogByAuthor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MentorDetailController</servlet-name>
+        <url-pattern>/MentorDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserProfileController</servlet-name>
+        <url-pattern>/UserProfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

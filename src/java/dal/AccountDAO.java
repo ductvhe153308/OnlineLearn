@@ -12,10 +12,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Account;
+import model.Blog;
 import model.Course;
 import utils.DBContext;
 
@@ -40,7 +43,9 @@ public class AccountDAO {
             while (rs.next()) {
                 Account a = new Account(rs.getInt("account_id"),
                         rs.getString("email"),
-                        rs.getString("password"));
+                        rs.getString("password"),
+                        rs.getString("profile_picture")
+                );
                 return a;
             }
             System.out.println(rs);
@@ -62,6 +67,58 @@ public class AccountDAO {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return 0;
+    }
+
+    public List<Account> getAllMentor() {
+        List<Account> list = new ArrayList<>();
+        try {
+            String query = "SELECT account.account_id, account.last_name, account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account a = new Account(
+                        rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getString(4),
+                         rs.getString(5),
+                         rs.getInt(6),
+                         rs.getDate(7),
+                        rs.getString(8));
+                list.add(a);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Account getMentorByID(int id) {
+        try {
+            String query = "SELECT account.account_id, account.last_name, account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 \n"
+                    + "and account.account_id = ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+               Account a = new Account(
+                        rs.getInt(1),
+                         rs.getString(2),
+                         rs.getString(3),
+                         rs.getString(4),
+                         rs.getString(5),
+                         rs.getInt(6),
+                         rs.getDate(7),
+                        rs.getString(8));
+                return a;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
