@@ -164,5 +164,23 @@
                                         </nav>
                                     </div>
                                 </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <%@include file="footer.jsp" %> 
+
+        </div>
+        <script>
+            function toogleSuggestSearch() {
+                var x = document.getElementById("suggest");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>
