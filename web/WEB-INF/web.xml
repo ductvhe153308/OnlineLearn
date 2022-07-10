@@ -44,6 +44,10 @@
         <servlet-name>BlogCreateController</servlet-name>
         <servlet-class>controller.home.BlogCreateController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditBlogController</servlet-name>
+        <servlet-class>controller.home.EditBlogController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>BlogCreateController</servlet-name>
         <url-pattern>/BlogCreate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditBlogController</servlet-name>
+        <url-pattern>/EditBlog</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
