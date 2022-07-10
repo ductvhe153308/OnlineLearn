@@ -394,7 +394,6 @@ public class AccountDAO {
     }
 
     public Account getAdmin() {
-        Account admin = new Account();
         try {
             String query = "select * \n"
                     + "     from account \n"
