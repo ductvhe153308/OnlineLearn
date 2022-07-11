@@ -149,8 +149,8 @@ public class CourseDAO {
             while (rs.next()) {
                int total = rs.getInt(1);
                int countPage = 0;
-               countPage = total/3;
-               if(total % 3 != 0){
+               countPage = total/4;
+               if(total % 4 != 0){
                    countPage++;
                }
                return countPage;
@@ -161,12 +161,13 @@ public class CourseDAO {
         return 0;
     }
     
-    public List<Course> getPaging(int index) {
+    public List<Course> getAllCoursePaging(int index) {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "select * from onlinelearning.course order by";
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name,account.profile_picture FROM onlinelearning.course,onlinelearning.account where course.aid = account.account_id order by course_id asc limit 4 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, (index-1)*4);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Course c = new Course(rs.getInt(1),
@@ -186,5 +187,15 @@ public class CourseDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        CourseDAO dao = new CourseDAO();
+        int n = dao.getNumberPage();
+        System.out.println(n);
+//        List<Course> list = dao.getAllCoursePaging(2);
+//        for(Course o : list){
+//            System.out.println(o);
+//        }
     }
 }
