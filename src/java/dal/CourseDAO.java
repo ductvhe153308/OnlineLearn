@@ -141,7 +141,6 @@ public class CourseDAO {
         return null;
     }
     public int getNumberPage() {
-        List<Course> list = new ArrayList<>();
         try {
             String query = "select count(*) from onlinelearning.course ";
             conn = new DBContext().getConnection();
@@ -151,7 +150,7 @@ public class CourseDAO {
                int total = rs.getInt(1);
                int countPage = 0;
                countPage = total/3;
-               if(total % 3 == 0){
+               if(total % 3 != 0){
                    countPage++;
                }
                return countPage;
@@ -160,5 +159,32 @@ public class CourseDAO {
             e.printStackTrace();
         }
         return 0;
+    }
+    
+    public List<Course> getPaging(int index) {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "select * from onlinelearning.course order by";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Course c = new Course(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10));
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
