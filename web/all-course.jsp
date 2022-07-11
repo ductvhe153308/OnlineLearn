@@ -124,11 +124,11 @@ Author     : DuongHoangLe
                                     </li>
                                     <c:forEach begin = "1" end = "${c.numberPage}" var = "i">
                                         <li class="page-item">
-                                        <a class="page-link" href="#">${i}</a>
+                                        <a class="page-link" href="paging?index=${i}">${i}</a>
                                     </li>   
                                     </c:forEach>
                                    
-                                    </li>
+                                    
                                     <li class="page-item">
                                         <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
                                     </li>
