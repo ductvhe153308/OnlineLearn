@@ -70,7 +70,7 @@ Author     : DuongHoangLe
                     </div>
                 </div>
                 <div class="row">  
-                    <c:forEach items="${c.allCourse}" var="x">
+                    <c:forEach items="${list}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
@@ -119,19 +119,22 @@ Author     : DuongHoangLe
                         <div class="blog-pagination">
                             <nav>
                                 <ul class="pagination justify-content-center">
+                                    <c:if test="${tag >1}">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                        <a class="page-link" href="CourseListController?index=${tag-1}" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
                                     </li>
-                                    <c:forEach begin = "1" end = "${c.numberPage}" var = "i">
-                                        <li class="page-item">
-                                        <a class="page-link" href="paging?index=${i}">${i}</a>
+                                    </c:if>
+                                    <c:forEach begin = "1" end = "${endP}" var = "i">
+                                        <li class="page-item ${tag==i?"active":""} ">
+                                        <a class="page-link  " href="CourseListController?index=${i}">${i}</a>
                                     </li>   
                                     </c:forEach>
                                    
-                                    
+                                    <c:if test="${tag <c.numberPage}">
                                     <li class="page-item">
-                                        <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
+                                        <a class="page-link" href="CourseListController?index=${tag+1}"><i class="fas fa-angle-double-right"></i></a>
                                     </li>
+                                    </c:if>
                                 </ul>
                             </nav>
                         </div>
