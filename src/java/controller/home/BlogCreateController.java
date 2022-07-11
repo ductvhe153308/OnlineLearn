@@ -12,13 +12,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Blog;
+import model.Account;
 
 /**
  *
  * @author ADMIN
  */
-public class BlogDetailController extends HttpServlet {
+public class BlogCreateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,15 +31,6 @@ public class BlogDetailController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            BlogDAO blogDAO = new BlogDAO();
-            Blog b = blogDAO.getBlogByID(id);
-            request.setAttribute("x", b);
-            request.getRequestDispatcher("blog-details.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -68,7 +59,16 @@ public class BlogDetailController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            Account a = (Account) request.getSession().getAttribute("user");
+            String title = request.getParameter("title");
+            String shortDetail = request.getParameter("shortDetail");
+            String detail = request.getParameter("detail");
+            BlogDAO blogDAO = new BlogDAO();
+            blogDAO.addNewBlog(title, shortDetail, detail, a.getAid());
+            response.sendRedirect("BlogByAuthor");
+        } catch (Exception e) {
+        }
     }
 
     /**

@@ -35,7 +35,8 @@ public class AccountDAO {
 
     public Account checkLogin(String email, String password) {
         try {
-            String query = "select * from account where email = ? and password = ?";
+            String query = "select account.account_id,account.email,account.password,account.profile_picture,account.role_id \n"
+                    + "from account where email = ? and password = ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, email);
@@ -45,7 +46,8 @@ public class AccountDAO {
                 Account a = new Account(rs.getInt("account_id"),
                         rs.getString("email"),
                         rs.getString("password"),
-                        rs.getString("profile_picture")
+                        rs.getString("profile_picture"),
+                        rs.getInt("role_id")
                 );
                 return a;
             }
@@ -552,5 +554,26 @@ public class AccountDAO {
             conn.close();
         }
         return c;
+    }
+
+    public void updateProfile(Account a, int aid) {
+        String query = "UPDATE `onlinelearning`.`account` SET `last_name` = ?, `first_name` = ?, `phone` = ?, `date_of_birth` = ? WHERE account_id = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, a.getLast_name());
+            ps.setString(2, a.getFirst_name());
+            ps.setString(3, a.getPhone());
+            ps.setString(4, a.getDob().toString());
+            ps.setInt(5, aid);
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public static void main(String[] args) {
+        AccountDAO dao = new AccountDAO();
+
     }
 }
