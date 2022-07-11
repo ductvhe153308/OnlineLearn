@@ -5,8 +5,12 @@
  */
 package controller.admin;
 
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,7 +49,22 @@ public class AddMenteeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        try {
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            AccountDAO adao = new AccountDAO();
+            int added = adao.addMentee(fname, lname, email, password);
+            request.getRequestDispatcher("/admin/addmentee.jsp").include(request, response);
+            if (added > 0) {
+                response.getWriter().print("<script>AP.alertSuccess('Done!');</script>");
+            } else {
+                response.getWriter().print("<script>AP.alertError('Failed!');</script>");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddMenteeServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
