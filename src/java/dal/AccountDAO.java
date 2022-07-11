@@ -34,7 +34,8 @@ public class AccountDAO {
 
     public Account checkLogin(String email, String password) {
         try {
-            String query = "select * from account where email = ? and password = ?";
+            String query = "select account.account_id,account.email,account.password,account.profile_picture,account.role_id \n"
+                    + "from onlinelearning.account where email = ? and password = ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, email);
@@ -44,7 +45,8 @@ public class AccountDAO {
                 Account a = new Account(rs.getInt("account_id"),
                         rs.getString("email"),
                         rs.getString("password"),
-                        rs.getString("profile_picture")
+                        rs.getString("profile_picture"),
+                        rs.getInt("role_id")
                 );
                 return a;
             }
@@ -79,12 +81,12 @@ public class AccountDAO {
             while (rs.next()) {
                 Account a = new Account(
                         rs.getInt(1),
-                         rs.getString(2),
-                         rs.getString(3),
-                         rs.getString(4),
-                         rs.getString(5),
-                         rs.getInt(6),
-                         rs.getDate(7),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getDate(7),
                         rs.getString(8));
                 list.add(a);
             }
@@ -104,14 +106,14 @@ public class AccountDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-               Account a = new Account(
+                Account a = new Account(
                         rs.getInt(1),
-                         rs.getString(2),
-                         rs.getString(3),
-                         rs.getString(4),
-                         rs.getString(5),
-                         rs.getInt(6),
-                         rs.getDate(7),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getDate(7),
                         rs.getString(8));
                 return a;
             }
@@ -425,11 +427,12 @@ public class AccountDAO {
 
     /**
      * Admin set account status for mentor / mentee
+     *
      * @param aid account id
      * @param enabled is enabled.
      * @return Number row effect.
      */
-    public int updateStatus(int aid, int enabled){
+    public int updateStatus(int aid, int enabled) {
         try {
             String query = "Update account set `enabled` = ? where account_id = ?";
             conn = new DBContext().getConnection();
@@ -442,9 +445,10 @@ public class AccountDAO {
         }
         return 0;
     }
-    public void updateProfile(Account a,int aid){
+
+    public void updateProfile(Account a, int aid) {
         String query = "UPDATE `onlinelearning`.`account` SET `last_name` = ?, `first_name` = ?, `phone` = ?, `date_of_birth` = ? WHERE account_id = ?";
-         try {
+        try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, a.getLast_name());
@@ -452,13 +456,14 @@ public class AccountDAO {
             ps.setString(3, a.getPhone());
             ps.setString(4, a.getDob().toString());
             ps.setInt(5, aid);
-           
+
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
+
     public static void main(String[] args) {
         AccountDAO dao = new AccountDAO();
-        
+
     }
 }
