@@ -572,8 +572,32 @@ public class AccountDAO {
         }
     }
 
-    public static void main(String[] args) {
-        AccountDAO dao = new AccountDAO();
-
+    public int addMentee(String fname, String lname, String email, String password) throws SQLException {
+        Account a = checkEmail(email);
+        if (a != null) {
+            return 0;
+        }
+        int c = 0;
+        try {
+            String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`) "
+                    + "VALUES (?,?,?,?,?,?,?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, lname);
+            ps.setString(2, fname);
+            ps.setString(3, email);
+            ps.setString(4, password);
+            ps.setDate(5, new Date(System.currentTimeMillis()));
+            ps.setInt(6, 3);
+            ps.setInt(7, 1);
+            ps.executeUpdate();
+            c = 1;
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            ps.close();
+            conn.close();
+        }
+        return c;
     }
 }
