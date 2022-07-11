@@ -5,8 +5,12 @@
  */
 package controller.admin;
 
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +24,7 @@ import model.Account;
  */
 @WebServlet(name = "AddMentorServlet", urlPatterns = {"/admin/mentor/add"})
 public class AddMentorServlet extends HttpServlet {
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -45,7 +50,22 @@ public class AddMentorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        try {
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            AccountDAO adao = new AccountDAO();
+            int added = adao.addMentor(fname, lname, email, password);
+            request.getRequestDispatcher("/admin/addmentor.jsp").include(request, response);
+            if (added > 0) {
+                response.getWriter().print("<script>AP.alertSuccess('Done!');</script>");
+            } else {
+                response.getWriter().print("<script>AP.alertError('Failed!');</script>");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddMentorServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

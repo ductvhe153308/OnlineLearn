@@ -9,6 +9,9 @@ import com.google.gson.JsonArray;
 import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,28 +36,32 @@ public class Sorting extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int index = Integer.parseInt(request.getParameter("index"));
-        boolean asc = Boolean.valueOf(request.getParameter("asc"));
-        AccountDAO adao = new AccountDAO();
-        JsonArray data = new JsonArray();
-        switch (index) {
-            case 0:
-                data = adao.getSortedListMentor0(asc);
-                break;
-            case 1:
-                data = adao.getSortedListMentor1(asc);
-                break;
-            case 2:
-                data = adao.getSortedListMentor2(asc);
-                break;
-            case 3:
-                data = adao.getSortedListMentor3(asc);
-                break;
-            default:
-                data = adao.getListMentor(1, 10);
-                break;
+        try {
+            int index = Integer.parseInt(request.getParameter("index"));
+            boolean asc = Boolean.valueOf(request.getParameter("asc"));
+            AccountDAO adao = new AccountDAO();
+            JsonArray data = new JsonArray();
+            switch (index) {
+                case 0:
+                    data = adao.getSortedListMentor0(asc);
+                    break;
+                case 1:
+                    data = adao.getSortedListMentor1(asc);
+                    break;
+                case 2:
+                    data = adao.getSortedListMentor2(asc);
+                    break;
+                case 3:
+                    data = adao.getSortedListMentor3(asc);
+                    break;
+                default:
+                    data = adao.getListMentor(1, 10);
+                    break;
+            }
+            response.getWriter().print(data);
+        } catch (SQLException ex) {
+            Logger.getLogger(Sorting.class.getName()).log(Level.SEVERE, null, ex);
         }
-        response.getWriter().print(data);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -69,7 +70,7 @@ public class AccountDAO {
         return 0;
     }
 
-    public List<Account> getAllMentor() {
+    public List<Account> getAllMentor() throws SQLException {
         List<Account> list = new ArrayList<>();
         try {
             String query = "SELECT account.account_id, account.last_name, account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2;";
@@ -79,23 +80,27 @@ public class AccountDAO {
             while (rs.next()) {
                 Account a = new Account(
                         rs.getInt(1),
-                         rs.getString(2),
-                         rs.getString(3),
-                         rs.getString(4),
-                         rs.getString(5),
-                         rs.getInt(6),
-                         rs.getDate(7),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getDate(7),
                         rs.getString(8));
                 list.add(a);
             }
-            return list;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
-        return null;
+        return list;
     }
 
-    public Account getMentorByID(int id) {
+    public Account getMentorByID(int id) throws SQLException {
+        Account a = null;
         try {
             String query = "SELECT account.account_id, account.last_name, account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 \n"
                     + "and account.account_id = ?;";
@@ -104,21 +109,24 @@ public class AccountDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-               Account a = new Account(
+                a = new Account(
                         rs.getInt(1),
-                         rs.getString(2),
-                         rs.getString(3),
-                         rs.getString(4),
-                         rs.getString(5),
-                         rs.getInt(6),
-                         rs.getDate(7),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getDate(7),
                         rs.getString(8));
-                return a;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
-        return null;
+        return a;
     }
 
     /**
@@ -126,8 +134,9 @@ public class AccountDAO {
      * @param page index of page
      * @param num_objs number of Mentor in page
      * @return JsonArray
+     * @throws java.sql.SQLException
      */
-    public JsonArray getListMentor(int page, int num_objs) {
+    public JsonArray getListMentor(int page, int num_objs) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
             String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number  \n"
@@ -145,8 +154,12 @@ public class AccountDAO {
                 mentors.add(mentor);
             }
             System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentors;
     }
@@ -156,8 +169,9 @@ public class AccountDAO {
      * @param page index of page
      * @param num_objs number of Mentee in page
      * @return JsonArray
+     * @throws java.sql.SQLException
      */
-    public JsonArray getListMentee(int page, int num_objs) {
+    public JsonArray getListMentee(int page, int num_objs) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
             String query = "select a.* \n"
@@ -175,14 +189,17 @@ public class AccountDAO {
                 mentee = getMentee(rs);
                 mentees.add(mentee);
             }
-            System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentees;
     }
 
-    public JsonArray getSortedListMentee0(boolean asc) {
+    public JsonArray getSortedListMentee0(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
             String query = "select a.* \n"
@@ -200,13 +217,17 @@ public class AccountDAO {
                 mentees.add(mentee);
             }
             System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentees;
     }
 
-    public JsonArray getSortedListMentee1(boolean asc) {
+    public JsonArray getSortedListMentee1(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
             String query = "select a.* \n"
@@ -224,13 +245,17 @@ public class AccountDAO {
                 mentees.add(mentee);
             }
             System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentees;
     }
 
-    public JsonArray getSortedListMentee2(boolean asc) {
+    public JsonArray getSortedListMentee2(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
             String query = "select a.* \n"
@@ -248,13 +273,17 @@ public class AccountDAO {
                 mentees.add(mentee);
             }
             System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentees;
     }
 
-    public JsonArray getSortedListMentor0(boolean asc) {
+    public JsonArray getSortedListMentor0(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
             String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
@@ -270,14 +299,17 @@ public class AccountDAO {
                 mentor = getMentor(rs);
                 mentors.add(mentor);
             }
-            System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentors;
     }
 
-    public JsonArray getSortedListMentor1(boolean asc) {
+    public JsonArray getSortedListMentor1(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
             String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
@@ -293,14 +325,17 @@ public class AccountDAO {
                 mentor = getMentor(rs);
                 mentors.add(mentor);
             }
-            System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentors;
     }
 
-    public JsonArray getSortedListMentor2(boolean asc) {
+    public JsonArray getSortedListMentor2(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
             String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
@@ -316,14 +351,17 @@ public class AccountDAO {
                 mentor = getMentor(rs);
                 mentors.add(mentor);
             }
-            System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentors;
     }
 
-    public JsonArray getSortedListMentor3(boolean asc) {
+    public JsonArray getSortedListMentor3(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
             String query = "select a.*, c.course_id, c.title, c.rated_star, c.price, c.total_register_number,(c.price*c.total_register_number) as `earned`  \n"
@@ -339,9 +377,13 @@ public class AccountDAO {
                 mentor = getMentor(rs);
                 mentors.add(mentor);
             }
-            System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return mentors;
     }
@@ -393,7 +435,7 @@ public class AccountDAO {
         return mentee;
     }
 
-    public Account getAdmin() {
+    public Account getAdmin() throws SQLException {
         try {
             String query = "select * \n"
                     + "     from account \n"
@@ -416,30 +458,99 @@ public class AccountDAO {
                         rs.getDate("date_of_birth"),
                         rs.getString("profile_picture"));
             }
-            System.out.println(rs);
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
         }
         return null;
     }
 
     /**
      * Admin set account status for mentor / mentee
+     *
      * @param aid account id
      * @param enabled is enabled.
      * @return Number row effect.
      */
-    public int updateStatus(int aid, int enabled){
+    public int updateStatus(int aid, int enabled) throws SQLException {
+        int c = 0;
         try {
             String query = "Update account set `enabled` = ? where account_id = ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, enabled);
             ps.setInt(2, aid);
-            return ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
+            c = ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            ps.close();
+            conn.close();
         }
-        return 0;
+        return c;
+    }
+
+    /**
+     * Check this email has been register yet.
+     *
+     * @param email
+     * @return
+     */
+    public Account checkEmail(String email) throws SQLException {
+        try {
+            String query = "select * from account where email = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account a = new Account(rs.getInt("account_id"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("profile_picture")
+                );
+                return a;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return null;
+    }
+
+    public int addMentor(String fname, String lname, String email, String password) throws SQLException {
+        Account a = checkEmail(email);
+        if (a != null) {
+            return 0;
+        }
+        int c = 0;
+        try {
+            String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`) "
+                    + "VALUES (?,?,?,?,?,?,?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, lname);
+            ps.setString(2, fname);
+            ps.setString(3, email);
+            ps.setString(4, password);
+            ps.setDate(5, new Date(System.currentTimeMillis()));
+            ps.setInt(6, 2);
+            ps.setInt(7, 1);
+            ps.executeUpdate();
+            c = 1;
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            ps.close();
+            conn.close();
+        }
+        return c;
     }
 }

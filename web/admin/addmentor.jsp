@@ -27,11 +27,11 @@
                 <div class="dist">Add</div>
             </div> 
             <div class="component col-12" id="mentor" style="align-items: center;color: #36847a; font-weight: 700;background: url(/onlinelearn/assets/img/home_art.jpg); background-size: cover; height:550px">
-                <form action="/admin/mentor/add" method="post">
+                <form action="add" method="post">
                     <div class="row">
                         <div class="col-7 row">
                             <span class="col-3">First name</span>                            
-                            <input class="col-7" type="text" name="fnam" required>
+                            <input class="col-7" type="text" name="fname" required>
                         </div>
                     </div>
                     <div class="row">
