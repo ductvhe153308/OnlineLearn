@@ -48,6 +48,10 @@
         <servlet-name>EditBlogController</servlet-name>
         <servlet-class>controller.home.EditBlogController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CourseListController</servlet-name>
+        <servlet-class>controller.CourseListController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>EditBlogController</servlet-name>
         <url-pattern>/EditBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseListController</servlet-name>
+        <url-pattern>/CourseListController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

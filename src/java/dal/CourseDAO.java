@@ -161,10 +161,37 @@ public class CourseDAO {
         return 0;
     }
     
+    public List<Course> getAllCoursePaging(int index) {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name,account.profile_picture FROM onlinelearning.course,onlinelearning.account where course.aid = account.account_id order by course_id asc limit 4 offset ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, (index-1)*4);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Course c = new Course(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10));
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public List<Course> getPaging(int index) {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "select * from onlinelearning.course order by";
+            String query = "select * from onlinelearning.course order by course_id asc limit 2 offset 2";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
