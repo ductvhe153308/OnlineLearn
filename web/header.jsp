@@ -115,7 +115,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="admin/dashboard" target="_blank">Admin</a>
+                                <a href="admin/dashboard">Admin</a>
                             </li>
                             <li class="login-link">
                                 <a href="account">Login / Sign up</a>
