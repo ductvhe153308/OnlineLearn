@@ -11,7 +11,6 @@ var Mentee = {
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #mentee').addClass('active');
-        Mentee.board.full('mentee', 1, 10);
     },
     /**
      * Handling show objects in list.
@@ -191,6 +190,25 @@ var Mentee = {
      * @type type
      */
     form: {
-
+        add: function () {
+            $("#submit-trigger").click(function () {
+                var email = $("input[name=email]").val();
+                $.ajax({
+                    url: '/onlinelearn/ajax/admin/search',
+                    type: 'POST',
+                    data: {
+                        email: email
+                    },
+                    success: function (response) {
+                        if (response == 0) {
+                            return $("#submit").click();
+                        }
+                        return AP.alertError("This email has been registered!");
+                    },
+                    error: function (xhr) {
+                    }
+                });
+            });
+        }
     }
 };
