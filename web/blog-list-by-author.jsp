@@ -79,7 +79,9 @@
                                                 <div style="display: flex; flex-direction: row; justify-content: space-between; padding-right: 50px">
                                                     <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
                                                     <div class="submit-section">
-                                                        <button type="submit" class="btn btn-primary submit-btn">Edit</button>
+                                                        <button type="submit" class="btn btn-primary submit-btn">
+                                                            <a href="EditBlog?id=${x.id}">Edit</a>
+                                                        </button>
                                                     </div> 
                                                 </div>
                                             </div>

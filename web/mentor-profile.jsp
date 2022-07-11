@@ -11,22 +11,22 @@
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/profile-mentee.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:15 GMT -->
     <head>
         <jsp:useBean id="m" class="dal.AccountDAO" scope="request"></jsp:useBean>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Mentoring</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+            <title>Mentoring</title>
 
-        <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+            <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+            <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+            <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
+            <link rel="stylesheet" href="assets/css/style.css">
+        </head>
+        <body>
 
-        <div class="main-wrapper">
+            <div class="main-wrapper">
 
             <%@include file="header.jsp" %>
             <div class="content">
@@ -39,13 +39,13 @@
                                         <div class="pro-avatar">
                                             <img style="width: 100px; height: 100px; border-radius: 50%" src="assets/img/user/${x.pfp}" alt="User Image">
                                         </div>
-<!--                                        <div class="rating">
-                                            <i class="fas fa-star filled"></i>
-                                            <i class="fas fa-star filled"></i>
-                                            <i class="fas fa-star filled"></i>
-                                            <i class="fas fa-star filled"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>-->
+                                        <!--                                        <div class="rating">
+                                                                                    <i class="fas fa-star filled"></i>
+                                                                                    <i class="fas fa-star filled"></i>
+                                                                                    <i class="fas fa-star filled"></i>
+                                                                                    <i class="fas fa-star filled"></i>
+                                                                                    <i class="fas fa-star"></i>
+                                                                                </div>-->
                                         <div class="mentor-details m-0">
                                             <p class="user-location m-0"><i class="fas fa-map-marker-alt"></i> Tamil Nadu, India</p>
                                         </div>
@@ -93,6 +93,27 @@
                                 </div>
 
                             </div>
+                        </div>
+                    </div>
+                    <div class="card col-10 me-auto ms-auto p-0">
+                        <div class="card-body custom-border-card pb-0">
+
+                            <div class="widget education-widget mb-0">
+                                <h4 class="widget-title">My course</h4>
+                                <hr />
+                                <div class="experience-box" style="padding-bottom: 10px">
+                                    <div class="submit-section" style="display: flex; justify-content: space-between; align-items: center"> 
+                                        <span>View all ${x.first_name} ${x.last_name}'s Course</span>
+                                        <a href="all-course.jsp">
+                                            <button type="submit" class="btn btn-primary submit-btn">
+                                                <span>Mentor's Course</span>
+                                            </button>
+                                        </a>
+
+                                    </div> 
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="card col-10 me-auto ms-auto p-0">
