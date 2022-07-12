@@ -49,7 +49,7 @@
                                 <h2 class="footer-title">For Students</h2>
                                 <ul>
                                     <li><a href="all-course.jsp">Course</a></li>
-                                    <li><a href="all-course.jsp">Course trending</a></li>
+                                    <li><a href="course-trending.jsp">Course trending</a></li>
                                     <li><a href="course-top-rated.jsp">Course top rate</a></li>
                                     <li><a href="mentor-register">Mentor register</a></li>
                                 </ul>
