@@ -81,7 +81,6 @@ public class CourseDAO {
 //        }
 //        return null;
 //    }
-
     public List<Course> getTopRatedCourse() {
         List<Course> list = new ArrayList<>();
         try {
@@ -186,6 +185,33 @@ public class CourseDAO {
                         rs.getString(10));
                 list.add(c);
             }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<Course> getCourseByMentor() {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction, total_register_number from onlinelearning.course where aid = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                Course c = new Course(rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getInt(3),
+//                        rs.getDouble(4),
+//                        rs.getString(5),
+//                        rs.getString(6),
+//                        rs.getInt(7),
+//                        rs.getString(8),
+//                        rs.getString(9),
+//                        rs.getString(10));
+//                list.add(c);
+//            }
             return list;
         } catch (Exception e) {
             e.printStackTrace();
