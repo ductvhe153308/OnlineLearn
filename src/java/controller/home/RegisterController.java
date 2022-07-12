@@ -9,6 +9,8 @@ import dal.RegisterDAO;
 import model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -25,14 +27,7 @@ import javax.servlet.http.HttpSession;
  */
 public class RegisterController extends HttpServlet {
 
-    DateTimeFormatter fmt = new DateTimeFormatterBuilder()
-            .appendPattern("yyyy-MM-dd")
-            .optionalStart()
-            .appendPattern(" HH:mm")
-            .optionalEnd()
-            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
-            .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
-            .toFormatter();
+   final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -96,7 +91,7 @@ public class RegisterController extends HttpServlet {
 //                } else if(gender.equals("0")){
 //                    newAccount.setUser_title("Mrs");
 //                }
-                newAccount.setDob(LocalDateTime.parse(dob, fmt));
+                newAccount.setDob(Date.valueOf(dob));
                 dao.register(newAccount);
                 HttpSession session = request.getSession();
                 session.setAttribute("user", newAccount);
