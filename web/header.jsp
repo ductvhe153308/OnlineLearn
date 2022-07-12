@@ -148,9 +148,6 @@
                                             <li><a href="blog-create.jsp">New blog</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="admin/dashboard">Admin</a>
-                                    </li>
                                     <li class="login-link">
                                         <a href="account">Login / Sign up</a>
                                     </li>
