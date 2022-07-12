@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
-                        <h2><span class="text-weight">All</span> Courses <span class="header-right"></span></h2>
+                        <h2><span class="text-weight">Courses</span> by Author ${name} <span class="header-right"></span></h2>
                     </div>
                 </div>
                 <div class="row">
