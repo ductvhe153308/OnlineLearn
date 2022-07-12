@@ -62,7 +62,7 @@
                                 <ul>
                                     <li><a href="blog-list.jsp">Blog</a></li>
                                     <li><a href="all-mentor.jsp">All mentor</a></li>
-                                    <li><a href="all-mentor.jsp">Mentor best rate</a></li>
+                                    <li><a href="all-mentor.jsp">Mentor top rate</a></li>
                                 </ul>
                             </div>
                         </div>
