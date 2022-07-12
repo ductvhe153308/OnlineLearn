@@ -32,6 +32,9 @@ public class CourseByMentorController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             int id = Integer.parseInt(request.getParameter("id"));
+            String name = request.getParameter("name");
+            request.setAttribute("id", id);
+            request.setAttribute("name", name);
             request.getRequestDispatcher("course-by-mentor.jsp").forward(request, response);
         } catch (Exception e) {
         }
