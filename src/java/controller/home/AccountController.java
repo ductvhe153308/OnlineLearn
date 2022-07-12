@@ -72,13 +72,14 @@ public class AccountController extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
             if (a != null) {
-                if (a.getRole_id() == 1) {
-                    response.sendRedirect("admin/dashboard");
-                } else {
-                    HttpSession session = request.getSession();
+                 HttpSession session = request.getSession();
                     session.setAttribute("user", a);
                     session.setAttribute("email", email);
                     session.setAttribute("password", password);
+                if (a.getRole_id() == 1) {
+                    response.sendRedirect("admin/dashboard");
+                } else {
+                   
                     response.sendRedirect("home.jsp");
                 }
             }
