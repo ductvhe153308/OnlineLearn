@@ -51,7 +51,7 @@
                                     <li><a href="all-course.jsp">Course</a></li>
                                     <li><a href="course-trending.jsp">Course trending</a></li>
                                     <li><a href="course-top-rated.jsp">Course top rate</a></li>
-                                    <li><a href="mentor-register">Mentor register</a></li>
+                                    <li><a href="mentor-register.jsp">Mentor register</a></li>
                                 </ul>
                             </div>
 
