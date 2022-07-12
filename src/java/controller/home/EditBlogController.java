@@ -3,27 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.admin.ajax.mentor;
+package controller.home;
 
-import com.google.gson.JsonArray;
-import dal.AccountDAO;
+import dal.BlogDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Blog;
 
 /**
  *
- * @author Dell
+ * @author ADMIN
  */
-@WebServlet(name = "Sorting", urlPatterns = {"/admin/ajax/mentor/sorting"})
-public class Sorting extends HttpServlet {
+public class EditBlogController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,32 +31,6 @@ public class Sorting extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            int index = Integer.parseInt(request.getParameter("index"));
-            boolean asc = Boolean.valueOf(request.getParameter("asc"));
-            AccountDAO adao = new AccountDAO();
-            JsonArray data = new JsonArray();
-            switch (index) {
-                case 0:
-                    data = adao.getSortedListMentor0(asc);
-                    break;
-                case 1:
-                    data = adao.getSortedListMentor1(asc);
-                    break;
-                case 2:
-                    data = adao.getSortedListMentor2(asc);
-                    break;
-                case 3:
-                    data = adao.getSortedListMentor3(asc);
-                    break;
-                default:
-                    data = adao.getListMentor(1, 10);
-                    break;
-            }
-            response.getWriter().print(data);
-        } catch (SQLException ex) {
-            Logger.getLogger(Sorting.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -76,7 +45,11 @@ public class Sorting extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int id = Integer.parseInt(request.getParameter("id"));
+        BlogDAO dao = new BlogDAO();
+        Blog blog = dao.getBlogByID(id);
+        request.setAttribute("b", blog);
+        request.getRequestDispatcher("blog-edit.jsp").forward(request, response);    
     }
 
     /**
@@ -90,7 +63,15 @@ public class Sorting extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+            int id = Integer.parseInt(request.getParameter("id"));
+            String title = request.getParameter("title");
+            String shortDetail = request.getParameter("shortDetail");
+            String detail = request.getParameter("detail");
+
+            BlogDAO blogDAO = new BlogDAO();
+            blogDAO.editBlog(title, shortDetail, detail, id);
+            Blog b = blogDAO.getBlogByID(id);
+            response.sendRedirect("BlogByAuthor");
     }
 
     /**

@@ -62,7 +62,7 @@ and open the template in the editor.
     padding: 10px 0px;
     box-sizing: content-box;
 }
-#page .right{
+.right{
     float: right !important;
 }
 .btn{
@@ -186,4 +186,72 @@ and open the template in the editor.
 }
 .component form{
     margin-top: 50px;
+}
+.dialog-wapper{
+    width: calc(100vw);
+    height: calc(100vh);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .48);
+}
+.dialog-wapper .dialog{
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    min-height: 150px;
+    min-width: 300px;
+}
+.dialog .dialog-header{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: 600;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    border-bottom: 1px solid #dee1e6;
+}
+.dialog .dialog-footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: sans-serif;
+    border-top: 1px solid #dee1e6;
+    text-align: center;
+}
+.dialog .dialog-footer:hover{
+    background-color: #f8f8fb;
+    transition-duration: 1s;
+}
+.dialog .dialog-content{
+    display: flex;
+    align-content: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-top: 1px solid #dee1e6;
+    min-height: 100px;
+    margin-bottom: 42px;
+}
+.error .dialog-header{
+    color: #dd0132;
+}
+.success .dialog-header{
+    color: #3dd598;
+}
+.dialog-header svg{
+    cursor: pointer;
+}
+.dialog-header svg:hover{
+    fill: #dd0132;
 }

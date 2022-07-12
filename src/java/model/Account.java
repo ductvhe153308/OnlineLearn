@@ -32,7 +32,15 @@ public class Account {
 
     public Account() {
     }
-
+    
+    public Account(int aid, String email, String password, String pfp,int role_id) {
+        this.aid = aid;
+        this.email = email;
+        this.password = password;
+        this.pfp = pfp;
+        this.role_id = role_id;
+    }
+    
     public Account(String first_name, String last_name, int count) {
         this.first_name = first_name;
         this.last_name = last_name;

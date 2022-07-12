@@ -3,46 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller.admin;
 
-import dal.BlogDAO;
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Blog;
 
 /**
  *
- * @author ADMIN
+ * @author Dell
  */
-public class BlogDetailController extends HttpServlet {
+@WebServlet(name = "AddMenteeServlet", urlPatterns = {"/admin/mentee/add"})
+public class AddMenteeServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            BlogDAO blogDAO = new BlogDAO();
-            Blog b = blogDAO.getBlogByID(id);
-            request.setAttribute("x", b);
-            request.getRequestDispatcher("blog-details.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -54,7 +35,7 @@ public class BlogDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("/admin/addmentee.jsp").forward(request, response);
     }
 
     /**
@@ -68,7 +49,22 @@ public class BlogDetailController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            AccountDAO adao = new AccountDAO();
+            int added = adao.addMentee(fname, lname, email, password);
+            request.getRequestDispatcher("/admin/addmentee.jsp").include(request, response);
+            if (added > 0) {
+                response.getWriter().print("<script>AP.alertSuccess('Done!');</script>");
+            } else {
+                response.getWriter().print("<script>AP.alertError('Failed!');</script>");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(AddMenteeServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

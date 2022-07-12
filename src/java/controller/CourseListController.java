@@ -3,27 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.admin.ajax.mentor;
+package controller;
 
-import com.google.gson.JsonArray;
-import dal.AccountDAO;
+import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Course;
 
 /**
  *
- * @author Dell
+ * @author admin
  */
-@WebServlet(name = "Sorting", urlPatterns = {"/admin/ajax/mentor/sorting"})
-public class Sorting extends HttpServlet {
+public class CourseListController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,32 +32,18 @@ public class Sorting extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            int index = Integer.parseInt(request.getParameter("index"));
-            boolean asc = Boolean.valueOf(request.getParameter("asc"));
-            AccountDAO adao = new AccountDAO();
-            JsonArray data = new JsonArray();
-            switch (index) {
-                case 0:
-                    data = adao.getSortedListMentor0(asc);
-                    break;
-                case 1:
-                    data = adao.getSortedListMentor1(asc);
-                    break;
-                case 2:
-                    data = adao.getSortedListMentor2(asc);
-                    break;
-                case 3:
-                    data = adao.getSortedListMentor3(asc);
-                    break;
-                default:
-                    data = adao.getListMentor(1, 10);
-                    break;
-            }
-            response.getWriter().print(data);
-        } catch (SQLException ex) {
-            Logger.getLogger(Sorting.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       String index = request.getParameter("index");
+       if(index == null){
+           index ="1";
+       }
+       int indexPage = Integer.parseInt(index);
+       CourseDAO dao = new CourseDAO();
+       int endPage = dao.getNumberPage();
+       List<Course> list = dao.getAllCoursePaging(indexPage);
+       request.setAttribute("list", list);
+       request.setAttribute("endP", endPage);
+       request.setAttribute("tag", indexPage);
+       request.getRequestDispatcher("all-course.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

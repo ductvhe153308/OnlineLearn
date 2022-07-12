@@ -8,6 +8,9 @@ package controller.admin;
 import com.google.gson.JsonArray;
 import dal.AccountDAO;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,11 +50,15 @@ public class MentorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int page = Integer.parseInt(request.getParameter("page"));
-        int num_objs = Integer.parseInt(request.getParameter("num_objs"));
-        AccountDAO adao = new AccountDAO();
-        JsonArray data = adao.getListMentor(page, num_objs);
-        response.getWriter().print(data);
+        try {
+            int page = Integer.parseInt(request.getParameter("page"));
+            int num_objs = Integer.parseInt(request.getParameter("num_objs"));
+            AccountDAO adao = new AccountDAO();
+            JsonArray data = adao.getListMentor(page, num_objs);
+            response.getWriter().print(data);
+        } catch (SQLException ex) {
+            Logger.getLogger(MentorServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

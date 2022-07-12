@@ -125,7 +125,7 @@ var Mentor = {
                                 enabled: st.find('input').val()
                             },
                             success: function (response) {
-                                
+
                             }
                         });
                     });
@@ -189,17 +189,20 @@ var Mentor = {
      * Handling add, update, delete mentor.
      */
     form: {
-        add : function() {
+        add: function () {
             $("#submit-trigger").click(function () {
                 var email = $("input[name=email]").val();
                 $.ajax({
-                    url:'/onlinelearn/ajax/admin/search',
+                    url: '/onlinelearn/ajax/admin/search',
                     type: 'POST',
                     data: {
-                        email:email
+                        email: email
                     },
                     success: function (response) {
-                        $("#submit").click();
+                        if (response == 0) {
+                            return $("#submit").click();
+                        }
+                        return AP.alertError("This email has been registered!");
                     },
                     error: function (xhr) {
                     }

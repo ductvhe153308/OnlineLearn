@@ -19,7 +19,7 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-            <div class="page-title">List of Mentee</div>
+            <div class="page-title">List of Mentee <div class="url btn btn-add right" data-url="admin/mentee/add">Add mentee</div></div>
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> / 
                 <div>User</div> / 
@@ -32,6 +32,7 @@
         <script src="static/js/mentee.js"></script>
         <script>
             Mentee.init();
+            Mentee.board.full('mentee', 1, 10);
         </script>
     </body>
 </html>

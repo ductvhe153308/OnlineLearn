@@ -10,7 +10,6 @@ import model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -95,6 +94,8 @@ public class RegisterController extends HttpServlet {
                 dao.register(newAccount);
                 HttpSession session = request.getSession();
                 session.setAttribute("user", newAccount);
+                session.setAttribute("email", email);
+                session.setAttribute("password", pass);
                 request.setAttribute("mess1", "Register Successfully!");
                 request.getRequestDispatcher("home.jsp").forward(request, response);
 

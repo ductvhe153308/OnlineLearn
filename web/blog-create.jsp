@@ -54,14 +54,14 @@
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h3 class="pb-3">Add Blog</h3>
-                                                    <form action="">
+                                                    <form action="BlogCreate" method="POST">
                                                         <div class="service-fields mb-3">
                                                             <h4 class="heading-2">Service Information</h4>
                                                             <div class="row">
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Blog Title <span class="text-danger">*</span></label>
-                                                                        <input class="form-control" type="text">
+                                                                        <input class="form-control" type="text" name="title">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -87,7 +87,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Short Detail <span class="text-danger">*</span></label>
-                                                                        <textarea id="about" class="form-control service-desc" name="about"></textarea>
+                                                                        <textarea type="text" id="about" class="form-control service-desc" name="shortDetail"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -98,7 +98,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Descriptions <span class="text-danger">*</span></label>
-                                                                        <textarea id="about" class="form-control service-desc" name="about"></textarea>
+                                                                        <textarea type="text" id="about" class="form-control service-desc" name="detail"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -123,7 +123,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div>  
                                                         <div class="submit-section">
                                                             <button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Submit</button>
                                                         </div>

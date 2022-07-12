@@ -87,63 +87,119 @@
                                 <i class="fas fa-times"></i>
                             </a>
                         </div>
-                        <ul class="main-nav">
-                            <li class="active">
-                                <a href="home">Home</a>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="all-course.jsp">Course list</a></li>
-                                    <li><a href="course-trending.jsp">Course trending</a></li>
-                                    <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                        <c:choose>
+                            <c:when test="${sessionScope.user.role_id == 2}">
+                                <ul class="main-nav">
+                                    <li class="active">
+                                        <a href="home">Home</a>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="CourseList">Course list</a></li>
+                                            <li><a href="course-trending.jsp">Course trending</a></li>
+                                            <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="all-mentor.jsp">Mentor list</a></li>
+                                            <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="blog-list.jsp">Blog list</a></li>
+                                            <li><a href="blog-create.jsp">New blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="login-link">
+                                        <a href="account">Login / Sign up</a>
+                                    </li>
                                 </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="all-mentor.jsp">Mentor list</a></li>
-                                    <li><a href="mentor-register.jsp">Mentor register</a></li>
-                                    <li><a href="all-mentor.jsp">Mentor best rate</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <ul class="main-nav">
+                                    <li class="active">
+                                        <a href="home">Home</a>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="CourseList">Course list</a></li>
+                                            <li><a href="course-trending.jsp">Course trending</a></li>
+                                            <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="all-mentor.jsp">Mentor list</a></li>
+                                            <li><a href="mentor-register.jsp">Mentor register</a></li>
+                                            <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="blog-list.jsp">Blog list</a></li>
+                                            <li><a href="blog-create.jsp">New blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="login-link">
+                                        <a href="account">Login / Sign up</a>
+                                    </li>
                                 </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="blog-list.jsp">Blog list</a></li>
-                                    <li><a href="blog-create.jsp">New blog</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="admin/dashboard" target="_blank">Admin</a>
-                            </li>
-                            <li class="login-link">
-                                <a href="account">Login / Sign up</a>
-                            </li>
-                        </ul>
+                            </c:otherwise>
+                        </c:choose>
+
                     </div>
 
                     <c:choose>
                         <c:when test="${sessionScope.user != null}">
-                            <ul class="nav header-navbar-rht">
-                                <div class="main-menu-wrapper">
-                                    <ul class="main-nav">
-                                        <li class="has-submenu">
-                                            <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
-                                                ${email}<i class="fas fa-chevron-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
-                                                <li><a href="">My course</a></li>
-                                                <li><a href="">My purchase</a></li>
-                                                <li><a href="BlogByAuthor">My blog</a></li>
-                                                <li><a href="accomplishment.jsp">Accomplishment</a></li>
-                                                <li><a href="changePassword">Change password</a></li>
-                                                <li><a href="logout">Sign out</a></li>
-                                            </ul> 
-                                        </li>
+                            <c:choose>
+                                <c:when test="${user.role_id == 2}">
+                                    <ul class="nav header-navbar-rht">
+                                        <div class="main-menu-wrapper">
+                                            <ul class="main-nav">
+                                                <li class="has-submenu">
+                                                    <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
+                                                        ${email}<i class="fas fa-chevron-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
+                                                        <li><a href="BlogByAuthor">My blog</a></li>
+                                                        <li><a href="changePassword">Change password</a></li>
+                                                        <li><a href="logout">Sign out</a></li>
+                                                    </ul> 
+                                                </li>
+                                            </ul>
+                                        </div>   
                                     </ul>
-                                </div>   
-                            </ul>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <ul class="nav header-navbar-rht">
+                                        <div class="main-menu-wrapper">
+                                            <ul class="main-nav">
+                                                <li class="has-submenu">
+                                                    <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
+                                                        ${email}<i class="fas fa-chevron-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
+                                                        <li><a href="">My course</a></li>
+                                                        <li><a href="">My purchase</a></li>
+                                                        <li><a href="accomplishment.jsp">My accomplishment</a></li>
+                                                        <li><a href="changePassword">Change password</a></li>
+                                                        <li><a href="logout">Sign out</a></li>
+                                                    </ul> 
+                                                </li>
+                                            </ul>
+                                        </div>   
+                                    </ul>
+                                </c:otherwise>
+                            </c:choose>      
                         </c:when>
                         <c:otherwise>
                             <ul class="nav header-navbar-rht">

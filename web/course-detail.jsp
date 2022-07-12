@@ -40,7 +40,7 @@
                         <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
                             <div style="width: 60%">
                                 <h4 style="color: white; padding-bottom: 20px">
-                                    Couse > Category 
+                                    <a href="CourseList">Course</a> > Category 
                                 </h4>
                                 <h1 style="color: white;">
                                     From Zero to Hero with Nodejs

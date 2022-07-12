@@ -97,7 +97,7 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Email</label>
-                                                    <input type="email" class="form-control" value="${x.email}">
+                                                    <div class="form-control" >${x.email}</div>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">

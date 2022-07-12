@@ -117,8 +117,8 @@ public class AdminFilter implements Filter {
             HttpServletResponse res = (HttpServletResponse) response;
             Account user = (Account) req.getSession().getAttribute("user");
             AccountDAO adao = new AccountDAO();
-            System.out.println(req.getRequestURI());
-            if ((user == null || adao.getAdmin().getAid() != user.getAid()) && !(req.getRequestURI().endsWith(".jsp")||req.getRequestURI().endsWith(".js")||req.getRequestURI().endsWith(".css"))) {
+            System.out.println(req.getRequestURI()+"asdahg");
+            if ((user == null || adao.getAdmin().getAid() != user.getAid()) && !(req.getRequestURI().endsWith(".jsp")||req.getRequestURI().endsWith(".js")||req.getRequestURI().endsWith(".css")||req.getRequestURI().endsWith(".png")||req.getRequestURI().endsWith(".jpg"))) {
                 req.getRequestDispatcher("/admin/reject.jsp").forward(req, res);
             } else {
                 chain.doFilter(request, response);
