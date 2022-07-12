@@ -96,7 +96,7 @@
                                     <li class="has-submenu">
                                         <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="all-course.jsp">Course list</a></li>
+                                            <li><a href="CourseListController">Course list</a></li>
                                             <li><a href="course-trending.jsp">Course trending</a></li>
                                             <li><a href="course-top-rated.jsp">Course top rated</a></li>
                                         </ul>
@@ -128,7 +128,7 @@
                                     <li class="has-submenu">
                                         <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="all-course.jsp">Course list</a></li>
+                                            <li><a href="CourseListController">Course list</a></li>
                                             <li><a href="course-trending.jsp">Course trending</a></li>
                                             <li><a href="course-top-rated.jsp">Course top rated</a></li>
                                         </ul>
