@@ -102,7 +102,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CourseListController</servlet-name>
-        <url-pattern>/CourseListController</url-pattern>
+        <url-pattern>/CourseList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
