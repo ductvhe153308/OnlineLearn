@@ -68,6 +68,10 @@
         <servlet-name>MentorBestRateController</servlet-name>
         <servlet-class>controller.MentorBestRateController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CourseDetailController</servlet-name>
+        <servlet-class>controller.CourseDetailController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -135,6 +139,10 @@
     <servlet-mapping>
         <servlet-name>MentorBestRateController</servlet-name>
         <url-pattern>/MentorBestRate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseDetailController</servlet-name>
+        <url-pattern>/CourseDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
