@@ -72,12 +72,13 @@ public class AccountDAO {
         return 0;
     }
 
-    public List<Account> getAllMentor() throws SQLException {
+    public List<Account> getAllMentorPaging(int index)  {
         List<Account> list = new ArrayList<>();
         try {
-            String query = "SELECT account.account_id, account.last_name, account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2;";
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 8 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, (index - 1) * 8);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Account a = new Account(
@@ -93,12 +94,28 @@ public class AccountDAO {
             }
         } catch (SQLException e) {
 
-        } finally {
-            rs.close();
-            ps.close();
-            conn.close();
-        }
+        } 
         return list;
+    }
+    public int getMentorNumberPage() {
+        try {
+            String query = "select count(*) from onlinelearning.account where role_id = 2 ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 8;
+                if (total % 8 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public Account getMentorByID(int id) throws SQLException {
@@ -556,7 +573,8 @@ public class AccountDAO {
         return c;
     }
 
-    public void updateProfile(Account a, int aid) {
+    public boolean updateProfile(Account a) {
+        boolean f = false;
         String query = "UPDATE `onlinelearning`.`account` SET `last_name` = ?, `first_name` = ?, `phone` = ?, `date_of_birth` = ? WHERE account_id = ?";
         try {
             conn = new DBContext().getConnection();
@@ -565,11 +583,13 @@ public class AccountDAO {
             ps.setString(2, a.getFirst_name());
             ps.setString(3, a.getPhone());
             ps.setString(4, a.getDob().toString());
-            ps.setInt(5, aid);
+            ps.setInt(5, a.getAid());
 
             ps.executeUpdate();
+            f=true;
         } catch (Exception e) {
         }
+        return f;
     }
 
     public int addMentee(String fname, String lname, String email, String password) throws SQLException {

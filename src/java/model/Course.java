@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
  * @author Dell
  */
 public class Course {
+
     private int course_id;
     private int aid;
     private String title;
@@ -28,11 +29,11 @@ public class Course {
     private String first_name;
     private String last_name;
     private String profile_picture;
-    
+
     public Course() {
     }
 
-    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name,String profile_picture) {
+    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name, String profile_picture) {
         this.course_id = course_id;
         this.title = title;
         this.rated_star = rated_star;
@@ -44,7 +45,7 @@ public class Course {
         this.last_name = last_name;
         this.profile_picture = profile_picture;
     }
-    
+
     public Course(int course_id, int aid, String title, int rated_star, double price, int sale_price_id, int total_register_number) {
         this.course_id = course_id;
         this.aid = aid;
@@ -61,6 +62,17 @@ public class Course {
         this.title = title;
         this.rated_star = rated_star;
         this.price = price;
+        this.total_register_number = total_register_number;
+    }
+
+    public Course(int course_id, int aid, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number) {
+        this.course_id = course_id;
+        this.aid = aid;
+        this.title = title;
+        this.rated_star = rated_star;
+        this.price = price;
+        this.thumnail = thumnail;
+        this.introduction = introduction;
         this.total_register_number = total_register_number;
     }
 
@@ -192,6 +204,4 @@ public class Course {
         this.profile_picture = profile_picture;
     }
 
-    
-    
 }

@@ -19,7 +19,7 @@ import model.Course;
  *
  * @author admin
  */
-public class CourseListController extends HttpServlet {
+public class CourseTopRateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,12 +38,12 @@ public class CourseListController extends HttpServlet {
        }
        int indexPage = Integer.parseInt(index);
        CourseDAO dao = new CourseDAO();
-       int endPage = dao.getNumberPage();
-       List<Course> list = dao.getAllCoursePaging(indexPage);
+       int endPage = dao.pageRateCourse();
+       List<Course> list = dao.getTopRatedCourse(indexPage);
        request.setAttribute("list", list);
        request.setAttribute("endP", endPage);
        request.setAttribute("tag", indexPage);
-       request.getRequestDispatcher("all-course.jsp").forward(request, response);
+       request.getRequestDispatcher("course-top-rated.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

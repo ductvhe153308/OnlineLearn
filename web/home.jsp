@@ -5,11 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/home.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:14:09 GMT -->
     <head>
+        <jsp:useBean id="c" class="dal.CourseDAO" scope="request"></jsp:useBean>
+        <jsp:useBean id="b" class="dal.BlogDAO" scope="request"></jsp:useBean>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Mentoring</title>
@@ -180,344 +183,51 @@
                         </div>
                     </div>
                     <div class="row">                               
+                        <c:forEach items="${c.courseTrending}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
+
+                            <div class="popular-course" style="cursor: pointer">
+                                <a href="course-detail.jsp">
+                                    <div class="courses-head">
+                                        <div class="courses-img-main">
+                                            <img src="assets/img/course/${x.thumnail}" alt="" class="img-fluid w-100">
+                                        </div>
+                                        <div class="courses-aut-img">
+                                            <img src="assets/img/user/${x.profile_picture}" alt="">
+                                        </div>
                                     </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
+                                    <div class="courses-body">
+                                        <div class="courses-ratings">
+                                            <ul class="mb-1"> 
+                                                <c:forEach begin = "1" end = "${x.rated_star}">
+                                                    <li><i class="fas fa-star checked"></i>
+                                                    </li> 
+                                                </c:forEach>
+                                            </ul>
+                                            <p class="mb-1">${x.last_name} ${x.first_name}</p>
+                                            <h4 class="mb-0">
+                                                <a>${x.title} </a>
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
+                                    <div class="courses-border"></div>
+                                    <div class="courses-footer d-flex align-items-center">
+                                        <div class="courses-count">
+                                            <ul class="mb-0">
+                                                <li><i class="fas fa-user-graduate me-1"></i> ${x.total_register_number}</li>
+                                                <li><i class="far fa-file-alt me-1"></i>2</li>
+                                            </ul>
+                                        </div>
+                                        <div class="courses-amt ms-auto">
+                                            <h3 class="mb-0">$ ${x.price}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
-                       <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
-                             <a href="course-detail.jsp"><div class="popular-course">
-                                <div class="courses-head">
-                                    <div class="courses-img-main">
-                                        <img src="assets/img/course/c10.jpg" alt="" class="img-fluid w-100">
-                                    </div>
-                                    <div class="courses-aut-img">
-                                        <img src="assets/img/user/user2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="courses-body">
-                                    <div class="courses-ratings">
-                                        <ul class="mb-1">
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star checked"></i>
-                                            </li>
-                                            <li> <i class="fas fa-star not-checked"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="mb-1">John Paul</p>
-                                        <h4 class="mb-0">Learn Python – Interactive Tutorial</h4>
-                                    </div>
-                                </div>
-                                <div class="courses-border"></div>
-                                <div class="courses-footer d-flex align-items-center">
-                                    <div class="courses-count">
-                                        <ul class="mb-0">
-                                            <li><i class="fas fa-user-graduate me-1"></i> 122</li>
-                                            <li><i class="far fa-file-alt me-1"></i>2</li>
-                                        </ul>
-                                    </div>
-                                    <div class="courses-amt ms-auto">
-                                        <h3 class="mb-0">$100</h3>
-                                    </div>
-                                </div>
-                            </div></a>
-                        </div>
+                    </c:forEach>
                         <div class="section-btn m-auto text-center">
-                            <a href="all-course.jsp">
+                            <a href="CourseList">
                                 <button class="btn btn-course">View all <i class="fas fa-caret-right right-nav-white"></i></button>
                             </a>
                         </div>
@@ -855,57 +565,25 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
+                        <c:forEach items="${b.latestBlog}" var="x">
+                            <div class="col-md-4 col-sm-6">
                             <div class="blog-box blog-grid-box">
                                 <div class="blog-grid-box-img">
-                                    <a href="blog-details.jsp">
-                                        <img src="assets/img/blog/blog-01.jpg" class="img-fluid" alt="">
+                                    <a href="BlogDetail?id=${x.id}">
+                                        <img src="assets/img/blog/${x.image}" class="img-fluid" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-grid-box-content">
                                     <div class="blog-avatar text-center">
-                                        <p>Posted on 24-01-2021</p>
+                                        <p>Posted on ${x.created_date}</p>
                                     </div>
-                                    <h4><a href="blog-details.jsp">Contrary to popular belief, Lorem Ipsum is</a></h4>
+                                    <h4><a href="BlogDetail?id=${x.id}">${x.title}</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                                    <a href="blog-details.jsp" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
+                                    <a href="BlogDetail?id=${x.id}" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-box blog-grid-box">
-                                <div class="blog-grid-box-img">
-                                    <a href="blog-details.jsp">
-                                        <img src="assets/img/blog/blog-02.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-grid-box-content">
-                                    <div class="blog-avatar text-center">
-                                        <p>Posted on 24-01-2021</p>
-                                    </div>
-                                    <h4><a href="blog-details.jsp">The standard chunk of Lorem Ipsum used</a></h4>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                                    <a href="blog-details.jsp" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="blog-box blog-grid-box">
-                                <div class="blog-grid-box-img">
-                                    <a href="blog-details.jsp">
-                                        <img src="assets/img/blog/blog-03.jpg" class="img-fluid" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-grid-box-content">
-                                    <div class="blog-avatar text-center">
-                                        <p>Posted on 24-01-2021</p>
-                                    </div>
-                                    <h4><a href="blog-details.jsp">The standard Lorem Ipsum passage, used</a></h4>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
-                                    <a href="blog-details.jsp" class="text-primary">View More <i class="fas fa-caret-right right-nav"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </section>

@@ -49,9 +49,9 @@
                                 <h2 class="footer-title">For Students</h2>
                                 <ul>
                                     <li><a href="all-course.jsp">Course</a></li>
-                                    <li><a href="all-course.jsp">Course trending</a></li>
-                                    <li><a href="all-course.jsp">Course best rate</a></li>
-                                    <li><a href="mentor-register">Mentor register</a></li>
+                                    <li><a href="course-trending.jsp">Course trending</a></li>
+                                    <li><a href="course-top-rated.jsp">Course top rate</a></li>
+                                    <li><a href="mentor-register.jsp">Mentor register</a></li>
                                 </ul>
                             </div>
 
@@ -62,7 +62,7 @@
                                 <ul>
                                     <li><a href="blog-list.jsp">Blog</a></li>
                                     <li><a href="all-mentor.jsp">All mentor</a></li>
-                                    <li><a href="all-mentor.jsp">Mentor best rate</a></li>
+                                    <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -103,8 +103,8 @@
                                 <hr />
                                 <div class="experience-box" style="padding-bottom: 10px">
                                     <div class="submit-section" style="display: flex; justify-content: space-between; align-items: center"> 
-                                        <span>View all ${x.first_name} ${x.last_name}'s Course</span>
-                                        <a href="all-course.jsp">
+                                        <span>View all ${x.first_name} ${x.last_name}'s Course ${x.aid}</span>
+                                        <a href="CourseByMentor?id=${x.aid}&name=${x.first_name}+${x.last_name}">
                                             <button type="submit" class="btn btn-primary submit-btn">
                                                 <span>Mentor's Course</span>
                                             </button>

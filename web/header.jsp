@@ -94,18 +94,18 @@
                                         <a href="home">Home</a>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                        <a href="CourseList">Course <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="all-course.jsp">Course list</a></li>
+                                            <li><a href="CourseList">Course list</a></li>
                                             <li><a href="course-trending.jsp">Course trending</a></li>
-                                            <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                            <li><a href="CourseTopRate">Course top rated</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
                                         <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="all-mentor.jsp">Mentor list</a></li>
-                                            <li><a href="mentor-best-rate.jsp">Mentor best rate</a></li>
+                                            <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -126,11 +126,11 @@
                                         <a href="home">Home</a>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                        <a href="CourseList">Course <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="all-course.jsp">Course list</a></li>
+                                            <li><a href="CourseList">Course list</a></li>
                                             <li><a href="course-trending.jsp">Course trending</a></li>
-                                            <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                            <li><a href="CourseTopRate">Course top rated</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -138,7 +138,7 @@
                                         <ul class="submenu">
                                             <li><a href="all-mentor.jsp">Mentor list</a></li>
                                             <li><a href="mentor-register.jsp">Mentor register</a></li>
-                                            <li><a href="mentor-best-rate.jsp">Mentor best rate</a></li>
+                                            <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -147,9 +147,6 @@
                                             <li><a href="blog-list.jsp">Blog list</a></li>
                                             <li><a href="blog-create.jsp">New blog</a></li>
                                         </ul>
-                                    </li>
-                                    <li>
-                                        <a href="admin/dashboard">Admin</a>
                                     </li>
                                     <li class="login-link">
                                         <a href="account">Login / Sign up</a>

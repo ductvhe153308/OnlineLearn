@@ -43,7 +43,7 @@
                                             <!--                                            <li class="breadcrumb-item active" aria-current="page">Mentor List</li>-->
                                         </ol>
                                     </nav>
-                                    <h2 class="breadcrumb-title">Mentor Best Rate</h2>
+                                    <h2 class="breadcrumb-title">Mentor Top Rate</h2>
                                 </div>
                             </div>
                         </div>

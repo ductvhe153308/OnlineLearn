@@ -1,7 +1,7 @@
 <%-- 
-Document   : all-course
-Created on : Jun 9, 2022, 10:02:53 PM
-Author     : DuongHoangLe
+    Document   : course-by-mentor
+    Created on : Jul 13, 2022, 2:21:50 AM
+    Author     : dell
 --%>
 
 <%@page import="model.Course"%>
@@ -30,7 +30,7 @@ Author     : DuongHoangLe
             <div class="container">
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
-                        <h2><span class="text-weight">All</span> Courses <span class="header-right"></span></h2>
+                        <h2><span class="text-weight">Courses</span> by Author ${name} <span class="header-right"></span></h2>
                     </div>
                 </div>
                 <div class="row">

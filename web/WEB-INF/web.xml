@@ -52,6 +52,18 @@
         <servlet-name>CourseListController</servlet-name>
         <servlet-class>controller.CourseListController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CourseByMentorController</servlet-name>
+        <servlet-class>controller.home.CourseByMentorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CourseTopRateController</servlet-name>
+        <servlet-class>controller.CourseTopRateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MentorListController</servlet-name>
+        <servlet-class>controller.MentorListController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -102,7 +114,19 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CourseListController</servlet-name>
-        <url-pattern>/CourseListController</url-pattern>
+        <url-pattern>/CourseList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseByMentorController</servlet-name>
+        <url-pattern>/CourseByMentor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseTopRateController</servlet-name>
+        <url-pattern>/CourseTopRate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MentorListController</servlet-name>
+        <url-pattern>/MentorList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

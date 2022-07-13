@@ -26,14 +26,7 @@ import javax.servlet.http.HttpSession;
  */
 public class RegisterController extends HttpServlet {
 
-    DateTimeFormatter fmt = new DateTimeFormatterBuilder()
-            .appendPattern("yyyy-MM-dd")
-            .optionalStart()
-            .appendPattern(" HH:mm")
-            .optionalEnd()
-            .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
-            .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
-            .toFormatter();
+   final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
