@@ -96,20 +96,21 @@ $('#page').html(`
             <div class="row">
                 <div class="col-12 component" id="booking">
                 </div>
-            </div>`);
-        this.profile();
-        this.sale();
-        Mentor.board.dashboard('mentor', 1, 5);
-        Mentee.board.dashboard('mentee', 1, 5);
-        this.invoice();
-        this.booking();
-};
-        /**
-         * Admin profile
-         */
-        this.profile = function () {
-        var profile = $("#profile");
-                profile.html(`
+            </div>`)
+        this.profile()
+        this.sale()
+        this.invoice()
+        Mentor.board.dashboard('mentor', 1, 5)
+        Mentee.board.dashboard('mentee', 1, 5)
+        Booking.board.dashboard('booking', 1, 5)
+        this.booking()
+        }
+/**
+ * Admin profile
+ */
+this.profile = function () {
+var profile = $("#profile")
+        profile.html(`
                 <div class="row profile-header">
                     <div class="col-7">
                         <h5>Welcome Back !</h5>
@@ -137,134 +138,134 @@ $('#page').html(`
                         <div class="row profile-item">Revenue</div>
                     </div>
                 </div>
-            `);
-                $.ajax({type: 'POST',
-                        url: '../ajax/admin/profile',
-                        data: {
-                        },
-                        dataType: 'json',
-                        success: function (response) {
-                        var admin = response;
-                                $('#admin-ava img').attr('src', `/onlinelearn/assets/img/user/${admin.pfp}`);
-                                $("#admin-name").html(admin.last_name + " " + admin.first_name);
-                        },
-                        error: function (XHR) {
-
-                        }
-                }); 
-        };
-        /**
-         * Invoice Chart 
-         */
-        this.invoice = function () {
-        $.ajax({
-        type: 'post',
-                url: '../ajax/admin/invoice',
-                data:{
-
+            `)
+        $.ajax({type: 'POST',
+                url: '../ajax/admin/profile',
+                data: {
                 },
+                dataType: 'json',
                 success: function (response) {
+                var admin = response;
+                        $('#admin-ava img').attr('src', `/onlinelearn/assets/img/user/${admin.pfp}`);
+                        $("#admin-name").html(admin.last_name + " " + admin.first_name);
+                },
+                error: function (XHR) {
+
+                }
+        })
+}
+/**
+ * Invoice Chart 
+ */
+this.invoice = function () {
+$.ajax({
+type: 'post',
+        url: '../ajax/admin/invoice',
+        data:{
+
+        },
+        success: function (response) {
+        var config = {
+        type: 'doughnut',
+                data:  {
+                labels: [
+                        'Invoiced',
+                        'Received',
+                        'Pending'
+                ],
+                        datasets: [
+                        {
+                        label: 'My First Dataset',
+                                data: JSON.parse(response),
+                                backgroundColor: [
+                                        'rgb(255, 99, 132)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(255, 205, 86)'
+                                ],
+                                hoverOffset: 3
+                        }]
+                }
+        }
+        var myChart = new Chart($('#invoice'), config)
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        }
+})
+        }
+/**
+ * Sale Chart
+ */
+this.sale = function () {
+$.ajax({
+type: 'post',
+        url: '../ajax/admin/sale',
+        data:{
+
+        },
+        success: function (response) {
+        console.log(response)
+                var data = JSON.parse(response)
+                console.log(data)
+                var labels = JSON.parse(data.labels)
+                var rec = JSON.parse(data.receiveds)
+                var pen = JSON.parse(data.pendings)
                 var config = {
-                type: 'doughnut',
+                type: 'bar',
                         data:  {
-                        labels: [
-                                'Invoiced',
-                                'Received',
-                                'Pending'
-                        ],
+                        labels: labels,
                                 datasets: [
                                 {
-                                label: 'My First Dataset',
-                                        data: JSON.parse(response),
+                                label: 'Received',
+                                        data: rec,
                                         backgroundColor: [
-                                                'rgb(255, 99, 132)',
-                                                'rgb(54, 162, 235)',
-                                                'rgb(255, 205, 86)'
+                                                'rgb(0, 157, 166)'
                                         ],
+                                        borderWidth: 0,
+                                        borderRadius: 50,
+                                        hoverOffset: 3
+                                }, {
+                                label: 'Pending',
+                                        data: pen,
+                                        backgroundColor: [
+                                                'rgb(255, 156, 39)'
+                                        ],
+                                        borderWidth: 0,
+                                        borderRadius: 50,
                                         hoverOffset: 3
                                 }]
+                        },
+                        options: {
+                        scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                        }
                         }
                 };
-                        var myChart = new Chart($('#invoice'), config);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                }
-        });
-        };
-        /**
-         * Sale Chart
-         */
-        this.sale = function () {
-        $.ajax({
-        type: 'post',
-                url: '../ajax/admin/sale',
-                data:{
-
-                },
-                success: function (response) {
-                console.log(response)
-                        var data = JSON.parse(response);
-                        console.log(data)
-                        var labels = JSON.parse(data.labels);
-                        var rec = JSON.parse(data.receiveds);
-                        var pen = JSON.parse(data.pendings);
-                        var config = {
-                        type: 'bar',
-                                data:  {
-                                labels: labels,
-                                        datasets: [
-                                        {
-                                        label: 'Received',
-                                                data: rec,
-                                                backgroundColor: [
-                                                        'rgb(0, 157, 166)'
-                                                ],
-                                                borderWidth: 0,
-                                                borderRadius: 50,
-                                                hoverOffset: 3
-                                        }, {
-                                        label: 'Pending',
-                                                data: pen,
-                                                backgroundColor: [
-                                                        'rgb(255, 156, 39)'
-                                                ],
-                                                borderWidth: 0,
-                                                borderRadius: 50,
-                                                hoverOffset: 3
-                                        }]
-                                },
-                                options: {
-                                scales: {
-                                y: {
-                                beginAtZero: true
-                                }
-                                }
-                                }
-                        };
-                        var myChart = new Chart($('#sale'), config);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                }
-        });
-        };
-        /**
-         * Booking List
-         */
-        this.booking = function () {
-        var table_name = 'Booking List';
-                var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount'];
-                var colgroup = [100, 60, 90, 70, 50, 70];
-                var data = [1, 2, 3, 4, 5];
-                var table = AP.table.render(table_name, header, data, function (index) {
-                return `<div class="table-row">
+                var myChart = new Chart($('#sale'), config)
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        }
+})
+}
+/**
+ * Booking List
+ */
+this.booking = function () {
+var table_name = 'Booking List';
+        var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount']
+        var colgroup = [100, 60, 90, 70, 50, 70]
+        var data = [1, 2, 3, 4, 5];
+        var table = AP.table.render(table_name, header, data, function (index) {
+        return `<div class="table-row">
                         <div class="table-data" style="width:${colgroup[0]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[1]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[2]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[5]}px">${index}</div>
-                    </div>`;
-                }, colgroup);
-                $("#page #booking").html(table);
-        };
-};
+                    </div>`
+        }, colgroup)
+        $("#page #booking").html(table)
+        }
+}
