@@ -84,7 +84,13 @@ public class CourseDAO {
     public List<Course> getTopRatedCourse(int index) {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name,account.profile_picture FROM onlinelearning.course,onlinelearning.account where course.aid = account.account_id and course.rated_star=5 order by course.course_id asc limit 4 offset ?";
+            String query = "SELECT course.course_id,course.title,course.rated_star,"
+                    + "course.price,course.thumbnail,course.introduction,"
+                    + "course.total_register_number,account.first_name,"
+                    + "account.last_name,account.profile_picture "
+                    + "FROM onlinelearning.course,onlinelearning.account "
+                    + "where course.aid = account.account_id and course.rated_star=5"
+                    + " order by course.course_id asc limit 4 offset ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, (index - 1) * 4);
@@ -134,7 +140,9 @@ public class CourseDAO {
     public List<Course> getCourseTrending() {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name,account.profile_picture\n"
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
+                    + "course.thumbnail,course.introduction,course.total_register_number,account.first_name,"
+                    + "account.last_name,account.profile_picture\n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id \n"
                     + "order by course.total_register_number desc limit 4;";
@@ -185,7 +193,9 @@ public class CourseDAO {
     public List<Course> getAllCoursePaging(int index) {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,course.thumbnail,course.introduction,course.total_register_number,account.first_name,account.last_name,account.profile_picture \n"
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
+                    + "course.thumbnail,course.introduction,course.total_register_number,"
+                    + "account.first_name,account.last_name,account.profile_picture \n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id \n"
                     + "order by course.course_id asc limit 4 offset ?;";
@@ -216,7 +226,8 @@ public class CourseDAO {
     public List<Course> getCourseByMentor() {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction, total_register_number from onlinelearning.course where aid = ?";
+            String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction,"
+                    + " total_register_number from onlinelearning.course where aid = ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
