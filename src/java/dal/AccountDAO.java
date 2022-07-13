@@ -556,7 +556,8 @@ public class AccountDAO {
         return c;
     }
 
-    public void updateProfile(Account a, int aid) {
+    public boolean updateProfile(Account a) {
+        boolean f = false;
         String query = "UPDATE `onlinelearning`.`account` SET `last_name` = ?, `first_name` = ?, `phone` = ?, `date_of_birth` = ? WHERE account_id = ?";
         try {
             conn = new DBContext().getConnection();
@@ -565,11 +566,13 @@ public class AccountDAO {
             ps.setString(2, a.getFirst_name());
             ps.setString(3, a.getPhone());
             ps.setString(4, a.getDob().toString());
-            ps.setInt(5, aid);
+            ps.setInt(5, a.getAid());
 
             ps.executeUpdate();
+            f=true;
         } catch (Exception e) {
         }
+        return f;
     }
 
     public int addMentee(String fname, String lname, String email, String password) throws SQLException {
