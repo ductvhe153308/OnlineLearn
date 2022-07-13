@@ -40,7 +40,7 @@
                         <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
                             <div style="width: 60%">
                                 <h4 style="color: white; padding-bottom: 20px">
-                                    <a href="CourseList">Course</a> > Category 
+                                    <a href="CourseList" style="color: white">Course</a> > Category 
                                 </h4>
                                 <h1 style="color: white;">
                                     ${title}
@@ -60,7 +60,7 @@
                                              margin: auto;
                                              height: 60px;" src="assets/img/user/${author_img}" alt="">
                                     </div>
-                                    <p style="color: white; padding-left: 20px">${author}</p>
+                                    <p style="color: white; padding-left: 20px; font-size: 22px">${author}</p>
                                 </div>
                             </div>
                             <div>
