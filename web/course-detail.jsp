@@ -43,20 +43,14 @@
                                     <a href="CourseList">Course</a> > Category 
                                 </h4>
                                 <h1 style="color: white;">
-                                    From Zero to Hero with Nodejs
+                                    ${title}
                                 </h1>
                                 <div class="courses-ratings">
                                     <ul class="mb-1">
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star checked"></i>
-                                        </li>
-                                        <li> <i class="fas fa-star not-checked"></i>
-                                        </li>
+                                        <c:forEach begin = "1" end = "${x.rate}">
+                                            <li><i class="fas fa-star checked"></i>
+                                            </li> 
+                                        </c:forEach>
                                     </ul>
                                 </div>
                                 <div style="display: flex; flex-direction: row; align-items: center; padding-top: 50px">
@@ -64,9 +58,9 @@
                                         <img style="border-radius: 50%;
                                              width: 60px;
                                              margin: auto;
-                                             height: 60px;" src="assets/img/user/user8.jpg" alt="">
+                                             height: 60px;" src="assets/img/user/${author_img}" alt="">
                                     </div>
-                                    <p style="color: white; padding-left: 20px">Keny White</p>
+                                    <p style="color: white; padding-left: 20px">${author}</p>
                                 </div>
                             </div>
                             <div>
@@ -90,7 +84,7 @@
                                     <span id="dateNow"></span>
                                 </span>
                             </a>
-                            <span style="display: block; padding-top: 20px">1,234 already enrolled</span>
+                            <span style="display: block; padding-top: 20px">${total_register} already enrolled</span>
                         </div>
                     </div>
                     <div class="row">
@@ -508,9 +502,9 @@
         <script src="assets/js/script.js"></script>
         <script>
             var d = new Date();
-            var monthNow = d.toLocaleString('default', { month: 'long' });
+            var monthNow = d.toLocaleString('default', {month: 'long'});
             document.getElementById("monthNow").innerHTML = monthNow;
-            document.getElementById("dateNow").innerHTML =d.getDate() ;
+            document.getElementById("dateNow").innerHTML = d.getDate();
         </script>
     </body>
 
