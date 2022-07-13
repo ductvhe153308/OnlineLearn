@@ -8,6 +8,7 @@ package dal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Account;
@@ -258,5 +259,34 @@ public class CourseDAO {
         for(Course o : list){
             System.out.println(o);
         }
+    }
+
+    public Course getCourse(int course_id) throws SQLException {
+        Course c = null;
+        try {
+            String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction,"
+                    + " total_register_number from course where course_id = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, course_id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                c = new Course(rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getString(3),
+                        rs.getInt(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getInt(8));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally{
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return c;
     }
 }
