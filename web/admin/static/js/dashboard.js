@@ -94,7 +94,7 @@ $('#page').html(`
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 component" id="booking">
+                <div class="col-12 component" id="course">
                 </div>
             </div>`)
         this.profile()
@@ -102,8 +102,7 @@ $('#page').html(`
         this.invoice()
         Mentor.board.dashboard('mentor', 1, 5)
         Mentee.board.dashboard('mentee', 1, 5)
-        Booking.board.dashboard('booking', 1, 5)
-        this.booking()
+        Course.board.dashboard('course', 1, 5)
         }
 /**
  * Admin profile
@@ -251,8 +250,8 @@ type: 'post',
 /**
  * Booking List
  */
-this.booking = function () {
-var table_name = 'Booking List';
+this.course = function () {
+var table_name = 'Course List';
         var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount']
         var colgroup = [100, 60, 90, 70, 50, 70]
         var data = [1, 2, 3, 4, 5];
@@ -266,6 +265,6 @@ var table_name = 'Booking List';
                         <div class="table-data" style="width:${colgroup[5]}px">${index}</div>
                     </div>`
         }, colgroup)
-        $("#page #booking").html(table)
+        $("#page #course").html(table)
         }
 }

@@ -19,8 +19,8 @@ import model.Account;
  *
  * @author Dell
  */
-@WebServlet(name = "BookingServlet", urlPatterns = {"/admin/booking"})
-public class BookingServlet extends HttpServlet {
+@WebServlet(name = "CourseServlet", urlPatterns = {"/admin/course"})
+public class CourseServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +33,7 @@ public class BookingServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("booking.jsp").forward(request, response);
+        request.getRequestDispatcher("course.jsp").forward(request, response);
 
     }
 

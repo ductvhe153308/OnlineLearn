@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-var Booking = {
+var Course = {
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #booking').addClass('active');
@@ -19,19 +19,20 @@ var Booking = {
         dashboard: function (id, page, num_objs) {
             $.ajax({
                 type: 'POST',
-                url: "../admin/booking",
+                url: "../admin/course",
                 data: {
                     page: page,
                     num_objs: num_objs
                 },
                 success: function (response) { // Kieu String
-                    var table_name = 'Booking List';
+                    var table_name = 'Course List';
                     var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount']
                     var colgroup = [100, 60, 90, 70, 50, 70]
                     var data = JSON.parse(response)
                     var table = AP.table.render(table_name, header, data, function (index) {
                         var booking = JSON.parse(data[index])
                         var mentor = JSON.parse(booking['mentor'])
+                        var course = JSON.parse(booking['course'])
                         var mentee = JSON.parse(booking['mentee'])
                         var x_img = mentor['pfp'];
                         var y_img = mentee['pfp'];
@@ -42,10 +43,10 @@ var Booking = {
                             y_img = 'default.jpg';
                         }
                         return `<div class="table-row">
-                        <div class="table-data" style="width:${colgroup[0]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[1]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[2]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
+                        <div class="table-data" style="width:${colgroup[0]}px">${mentor.name}</div>
+                        <div class="table-data" style="width:${colgroup[1]}px">${course.name}</div>
+                        <div class="table-data" style="width:${colgroup[2]}px">${mentee.name}</div>
+                        <div class="table-data" style="width:${colgroup[3]}px">${booking.time}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">${index}</div>
                         <div class="table-data" style="width:${colgroup[5]}px">${index}</div>
                     </div>`;
