@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="row">  
-                    <c:forEach items="${c.topRatedCourse}" var="x">
+                    <c:forEach items="${list}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
@@ -92,7 +92,7 @@
                                             </ul>
                                             <p class="mb-1">${x.last_name} ${x.first_name}</p>
                                             <h4 class="mb-0">
-                                                <a>${x.title} </a>
+                                                <a>${x.title}</a>
                                             </h4>
                                         </div>
                                     </div>
@@ -118,21 +118,22 @@
                         <div class="blog-pagination">
                             <nav>
                                 <ul class="pagination justify-content-center">
+                                    <c:if test="${tag >1}">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                        <a class="page-link" href="CourseTopRate?index=${tag-1}" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
                                     </li>
+                                    </c:if>
+                                    <c:forEach begin = "1" end = "${endP}" var = "i">
+                                        <li class="page-item ${tag==i?"active":""} ">
+                                        <a class="page-link  " href="CourseTopRate?index=${i}">${i}</a>
+                                    </li>   
+                                    </c:forEach>
+                                   
+                                    <c:if test="${tag < endP}">
                                     <li class="page-item">
-                                        <a class="page-link" href="#">1</a>
+                                        <a class="page-link" href="CourseTopRate?index=${tag+1}"><i class="fas fa-angle-double-right"></i></a>
                                     </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
-                                    </li>
+                                    </c:if>
                                 </ul>
                             </nav>
                         </div>
