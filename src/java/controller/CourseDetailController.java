@@ -30,11 +30,13 @@ public class CourseDetailController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        int course_id = Integer.parseInt(request.getParameter("course_id"));
         String title = request.getParameter("title");
         int rate = Integer.parseInt(request.getParameter("rate"));
         int total_register = Integer.parseInt(request.getParameter("total_register"));
         String author = request.getParameter("author");
         String author_img = request.getParameter("author_img");
+        request.setAttribute("course_id", course_id);
         request.setAttribute("title", title);
         request.setAttribute("rate", rate);
         request.setAttribute("total_register", total_register);
