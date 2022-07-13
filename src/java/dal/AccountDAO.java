@@ -70,6 +70,30 @@ public class AccountDAO {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return 0;
+    } public List<Account> getAllMentor()  {
+        List<Account> list = new ArrayList<>();
+        try {
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account a = new Account(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getDate(7),
+                        rs.getString(8));
+                list.add(a);
+            }
+        } catch (SQLException e) {
+
+        } 
+        return list;
     }
 
     public List<Account> getAllMentorPaging(int index)  {
