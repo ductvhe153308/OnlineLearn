@@ -26,7 +26,7 @@
         <script src="static/js/dashboard.js"></script>
         <script src="static/js/mentor.js"></script>
         <script src="static/js/mentee.js"></script>
-        <script src="static/js/booking.js"></script>
+        <script src="static/js/course.js"></script>
         <script src="/onlinelearn/assets/js/url.js"></script>
         <script>
             Dashboard.init();
