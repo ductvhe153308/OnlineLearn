@@ -29,22 +29,22 @@ public class BlogDAO {
         try {
             String query = "SELECT blog.id,blog.detail,blog.title,blog.updated_date,blog.image,blog.created_date,blog.short_detail,account.first_name,account.last_name,account.profile_picture\n"
                     + "FROM onlinelearning.blog,onlinelearning.account\n"
-                    + "where blog.account_id=account.account_id\n"
-                    + "order by blog.created_date desc;";
+                    + "WHERE blog.account_id=account.account_id\n"
+                    + "ORDER BY blog.created_date desc;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Blog b = new Blog(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
+                Blog b = new Blog(rs.getInt("id"),
+                        rs.getString("detail"),
+                        rs.getString("title"),
                         LocalDateTime.MAX,
-                        rs.getString(5),
-                        rs.getDate(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10));
+                        rs.getString("image"),
+                        rs.getDate("created_date"),
+                        rs.getString("short_detail"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"));
                 list.add(b);
             }
             return list;
@@ -58,7 +58,7 @@ public class BlogDAO {
         List<Blog> list = new ArrayList<>();
         try {
             String query = "select blog.id,blog.title,blog.image,blog.created_date from blog \n"
-                    + "order by blog.created_date desc limit 5;";
+                    + "order by blog.created_date desc limit 3;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
