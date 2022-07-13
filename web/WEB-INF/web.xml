@@ -56,6 +56,10 @@
         <servlet-name>CourseByMentorController</servlet-name>
         <servlet-class>controller.home.CourseByMentorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CourseTopRateController</servlet-name>
+        <servlet-class>controller.CourseTopRateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>CourseByMentorController</servlet-name>
         <url-pattern>/CourseByMentor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseTopRateController</servlet-name>
+        <url-pattern>/CourseTopRate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
