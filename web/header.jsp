@@ -102,10 +102,10 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
+                                        <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="all-mentor.jsp">Mentor list</a></li>
-                                            <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
+                                            <li><a href="MentorList">Mentor list</a></li>
+                                            <li><a href="MentorBestRate">Mentor top rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -134,11 +134,11 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="all-mentor.jsp">Mentor <i class="fas fa-chevron-down"></i></a>
+                                        <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="all-mentor.jsp">Mentor list</a></li>
+                                            <li><a href="MentorList">Mentor list</a></li>
                                             <li><a href="mentor-register.jsp">Mentor register</a></li>
-                                            <li><a href="mentor-best-rate.jsp">Mentor top rate</a></li>
+                                            <li><a href="MentorBestRate">Mentor top rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -168,7 +168,7 @@
                                                     <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
                                                         ${email}<i class="fas fa-chevron-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
+                                                        <li><a href="UserProfile?id=${id}">My profile</a></li>
                                                         <li><a href="BlogByAuthor">My blog</a></li>
                                                         <li><a href="changePassword">Change password</a></li>
                                                         <li><a href="logout">Sign out</a></li>
@@ -187,7 +187,7 @@
                                                     <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
                                                         ${email}<i class="fas fa-chevron-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
+                                                        <li><a href="UserProfile?id=${id}">My profile</a></li>
                                                         <li><a href="">My course</a></li>
                                                         <li><a href="">My purchase</a></li>
                                                         <li><a href="accomplishment.jsp">My accomplishment</a></li>
