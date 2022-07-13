@@ -72,12 +72,13 @@ public class AccountDAO {
         return 0;
     }
 
-    public List<Account> getAllMentor() throws SQLException {
+    public List<Account> getAllMentorPaging(int index)  {
         List<Account> list = new ArrayList<>();
         try {
-            String query = "SELECT account.account_id, account.last_name, account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2;";
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 8 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, (index - 1) * 8);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Account a = new Account(
@@ -93,12 +94,28 @@ public class AccountDAO {
             }
         } catch (SQLException e) {
 
-        } finally {
-            rs.close();
-            ps.close();
-            conn.close();
-        }
+        } 
         return list;
+    }
+    public int getMentorNumberPage() {
+        try {
+            String query = "select count(*) from onlinelearning.account where role_id = 2 ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 8;
+                if (total % 8 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public Account getMentorByID(int id) throws SQLException {
