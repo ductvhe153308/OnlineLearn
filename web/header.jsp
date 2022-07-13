@@ -94,11 +94,11 @@
                                         <a href="home">Home</a>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                        <a href="CourseList">Course <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="CourseList">Course list</a></li>
                                             <li><a href="course-trending.jsp">Course trending</a></li>
-                                            <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                            <li><a href="CourseTopRate">Course top rated</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -126,11 +126,11 @@
                                         <a href="home">Home</a>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="all-course.jsp">Course <i class="fas fa-chevron-down"></i></a>
+                                        <a href="CourseList">Course <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="CourseList">Course list</a></li>
                                             <li><a href="course-trending.jsp">Course trending</a></li>
-                                            <li><a href="course-top-rated.jsp">Course top rated</a></li>
+                                            <li><a href="CourseTopRate">Course top rated</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
