@@ -39,7 +39,7 @@ public class MyCourseController extends HttpServlet {
             List<MyCourse> list = courseDAO.getMyCourse(a.getAid());
             request.setAttribute("mycourse", list);
             request.setAttribute("size", list.size());
-            request.getRequestDispatcher("mycourse.jsp").forward(request, response);
+            request.getRequestDispatcher("my-course.jsp").forward(request, response);
         } catch (Exception e) {
         }
     }
