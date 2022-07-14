@@ -76,6 +76,10 @@
         <servlet-name>BlogListController</servlet-name>
         <servlet-class>controller.home.BlogListController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyCourseController</servlet-name>
+        <servlet-class>controller.home.MyCourseController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -151,6 +155,10 @@
     <servlet-mapping>
         <servlet-name>BlogListController</servlet-name>
         <url-pattern>/BlogList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyCourseController</servlet-name>
+        <url-pattern>/MyCourse</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
