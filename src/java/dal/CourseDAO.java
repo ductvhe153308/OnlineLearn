@@ -342,4 +342,43 @@ public class CourseDAO {
         }
         return null;
     }
+    
+    public List<MyCourse> getMyAccomplishment(int accid1) {
+        List<MyCourse> list = new ArrayList<>();
+        try {
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.thumbnail,course.introduction,course.total_register_number,\n"
+                    + "account.first_name,account.last_name,account.profile_picture,\n"
+                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access,mycourse.status,course.price\n"
+                    + "FROM onlinelearning.course,onlinelearning.account,onlinelearning.mycourse\n"
+                    + "WHERE accid1= ?\n"
+                    + "AND course.aid = account.account_id\n"
+                    + "AND course.course_id = mycourse.cid\n"
+                    + "AND mycourse.status = 1;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, accid1);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MyCourse c = new MyCourse(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getDate(12),
+                        rs.getBoolean(13),
+                        rs.getDouble(14));
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
