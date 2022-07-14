@@ -51,7 +51,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-8 col-md-12">
-                            <c:forEach items="${b.allBlog}" var="x">
+                            <c:forEach items="${list}" var="x">
                                 <div class="blog">
                                     <div class="blog-image">
                                         <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
@@ -82,22 +82,23 @@
                                     <div class="blog-pagination">
                                         <nav>
                                             <ul class="pagination justify-content-center">
-                                                <li class="page-item disabled">
-                                                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
-                                                </li>
-                                            </ul>
+                                    <c:if test="${tag >1}">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="BlogList?index=${tag-1}" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                    </li>
+                                    </c:if>
+                                    <c:forEach begin = "1" end = "${endP}" var = "i">
+                                        <li class="page-item ${tag==i?"active":""} ">
+                                        <a class="page-link  " href="BlogList?index=${i}">${i}</a>
+                                    </li>   
+                                    </c:forEach>
+                                   
+                                    <c:if test="${tag <c.numberPage}">
+                                    <li class="page-item">
+                                        <a class="page-link" href="BlogList?index=${tag+1}"><i class="fas fa-angle-double-right"></i></a>
+                                    </li>
+                                    </c:if>
+                                </ul>
                                         </nav>
                                     </div>
                                 </div>
