@@ -226,13 +226,14 @@ public class CourseDAO {
         return null;
     }
 
-    public List<Course> getCourseByMentor() {
+    public List<Course> getCourseByMentor(int aid) {
         List<Course> list = new ArrayList<>();
         try {
             String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction,"
                     + " total_register_number from onlinelearning.course where aid = ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Course c = new Course(rs.getInt(1),
