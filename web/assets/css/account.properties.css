@@ -26,6 +26,9 @@ and open the template in the editor.
 .rating-star, .money{
     padding-left: 0px !important;
 }
+#categories .rating-star{
+    padding-top:0px;
+}
 .url{
     cursor: pointer;
 }

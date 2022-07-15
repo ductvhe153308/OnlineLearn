@@ -37,37 +37,21 @@ var Categories = {
                 var data = JSON.parse(response);
                 console.log(data)
                 var table = AP.table.render(table_name, header, data, function (index) {
-                    var booking = data[index]
-                    var mentor = booking['mentor']
-                    var course = booking['course']
-                    var mentee = booking['mentee']
-                    var x_img = mentor['pfp'];
-                    var y_img = mentee['pfp'];
-                    if (x_img == null) {
-                        x_img = 'default.jpg';
-                    }
-                    if (y_img == null) {
-                        y_img = 'default.jpg';
-                    }
+                    var category = data[index];
                     return `<div class="table-row">
                         <div class="table-data" style="width:${colgroup[0]}px">
-                            <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${x_img}"/>
-                            <div class="user-name">${mentor['first_name']} ${mentor['last_name']}</div>
+                            ${index+1}
                         </div>
                         <div class="table-data" style="width:${colgroup[1]}px">
-                            <div>${course['title']}</div>
+                            ${category['name']}
                         </div>
                         <div class="table-data" style="width:${colgroup[2]}px">
-                            <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${y_img}" alt="ava"/>
-                            <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div>
+                            ${AP.time.time(category['created_at'])}
                         </div>
-                        <div class="table-data" style="width:${colgroup[3]}px">${AP.time.time(booking.booking_time)}<br><div style="color:#009DA6; padding-left:0px;">${AP.time.duration(booking.booking_time, booking.duration)}</div></div>
-                        <div class="table-data" style="width:${colgroup[4]}px">
-                            ${AP.status(booking['id'], booking['status'])}
-                            </div>
-                        <div class="table-data" style="width:${colgroup[4]}px">
-                            ${AP.money.dollar(course['price'] * course['total_register_number'])}
+                        <div class="table-data" style="width:${colgroup[3]}px;">
+                            ${AP.rate.star(index%5+1)}
                         </div>
+                        <div class="table-data" style="width:${colgroup[4]}px">sdf</div>
                     </div>`;
                 }, colgroup, true, true);
                 $("#page #" + id).html(table);
