@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
-                        <h2><span class="text-weight">Courses</span> by Author ${name} <span class="header-right"></span></h2>
+                        <h2><span class="text-weight">Courses</span> by Mentor ${name} <span class="header-right"></span></h2>
                     </div>
                 </div>
                 <div class="row">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="row">  
-                    <c:forEach items="${list}" var="x">
+                    <c:forEach items="${mentorCourse}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
