@@ -53,7 +53,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
-                                <a href="course-detail.jsp">
+                                <a href="course-start-learning.jsp">
                                     <div class="courses-head">
                                         <div class="courses-img-main">
                                             <img src="assets/img/course/${x.thumbnail}" alt="" class="img-fluid w-100">
