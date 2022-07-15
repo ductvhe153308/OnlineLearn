@@ -77,7 +77,7 @@
             </div>
 
             <div class="person">
-                 ${fullname}
+                 ${user_name}
             </div>
 
             <div class="reason" style="padding-top: 50px">
