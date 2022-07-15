@@ -109,7 +109,7 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
+                                        <a href="BlogList">Blog <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="BlogList">Blog list</a></li>
                                             <li><a href="blog-create.jsp">New blog</a></li>
@@ -142,7 +142,7 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
+                                        <a href="BlogList">Blog <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="BlogList">Blog list</a></li>
                                             <li><a href="blog-create.jsp">New blog</a></li>
