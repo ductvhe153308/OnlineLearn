@@ -18,13 +18,19 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-
+            <div class="page-title">Categories <div class="url btn btn-add right" data-url="admin/category/add">Add category</div></div>
+            <div class="page-navigation">
+                <div class="url" data-url="admin/dashboard">Dashboard</div> /
+                <div class="dist">Categories</div>
+            </div> 
+            <div class="component col-12" id="categories"></div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="/onlinelearn/assets/js/url.js"></script>
         <script src="static/js/categories.js"></script>
         <script>
             Categories.init();
+            Categories.board('categories', 1, 10);
         </script>
     </body>
 </html>

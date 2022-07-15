@@ -268,6 +268,12 @@ var AP = {
             }
             return `${h1}.${m1} ${am1 ? 'AM' : 'PM'} - ${h2}.${m2} ${am2 ? 'AM' : 'PM'}`;
         }
+    },
+    /**
+     * Refresh page
+     */
+    refresh: function (){
+        location.reload();
     }
 };
 
