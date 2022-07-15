@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Account;
 import model.Booking;
+import model.Course;
 import utils.DBContext;
 
 /**
@@ -25,24 +26,29 @@ public class BookingDAO {
     private PreparedStatement ps = null;
     private ResultSet rs = null;
 
-    public ArrayList<Booking> getListBooking() throws SQLException {
+    public ArrayList<Booking> getListBooking(int page, int num_objs) throws SQLException {
         ArrayList<Booking> bks = new ArrayList<>();
         try {
-            String query = "select * from booking";
+            String query = "select * from booking limit ? , ? ;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, (page - 1) * num_objs);
+            ps.setInt(2, num_objs);
             rs = ps.executeQuery();
             AccountDAO adao = new AccountDAO();
             CourseDAO cdao = new CourseDAO();
+            Course c;
             while (rs.next()) {
+                c = cdao.getCourse(rs.getInt("course_id"));
                 Booking b = new Booking(rs.getInt("id"),
                         adao.getAccount(rs.getInt("mentee_id")),
-                        cdao.getCourse(rs.getInt("course_id")),
+                        adao.getAccount(c.getAid()),
+                        c,
                         rs.getInt("booking_time"),
                         rs.getInt("duration"));
                 bks.add(b);
             }
-            System.out.println(rs);
+            
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
