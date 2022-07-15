@@ -16,17 +16,19 @@ public class Booking {
     private Account mentor;
     private Course course;
     private int booking_time;
+    private int status;
     private int duration;
 
     public Booking() {
     }
 
-    public Booking(int id, Account mentee,Account mentor, Course course, int booking_time, int duration) {
+    public Booking(int id, Account mentee, Account mentor, Course course, int booking_time, int status, int duration) {
         this.id = id;
         this.mentee = mentee;
         this.mentor = mentor;
         this.course = course;
         this.booking_time = booking_time;
+        this.status = status;
         this.duration = duration;
     }
 
