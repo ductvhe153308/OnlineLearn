@@ -18,9 +18,9 @@ import model.MyCourse;
 
 /**
  *
- * @author ADMIN
+ * @author dell
  */
-public class MyAccomplishmentController extends HttpServlet {
+public class MyPurchaseController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +36,15 @@ public class MyAccomplishmentController extends HttpServlet {
         try {
             Account a = (Account) request.getSession().getAttribute("user");
             CourseDAO courseDAO = new CourseDAO();
-            List<MyCourse> list = courseDAO.getMyAccomplishment(a.getAid());
-            request.setAttribute("complete", list);
+            List<MyCourse> list = courseDAO.getMyPurchase(a.getAid());
+            int totalPrice = 0;
+            for (MyCourse myCourse : list) {
+               totalPrice += myCourse.getPrice();
+            }
+            request.setAttribute("purchase", list);
+            request.setAttribute("total_price", totalPrice);
             request.setAttribute("size", list.size());
-            request.getRequestDispatcher("my-accomplishment.jsp").forward(request, response);
+            request.getRequestDispatcher("my-purchase.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

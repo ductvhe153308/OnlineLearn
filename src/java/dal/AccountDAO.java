@@ -35,7 +35,7 @@ public class AccountDAO {
 
     public Account checkLogin(String email, String password) {
         try {
-            String query = "select account.account_id,account.email,account.password,account.profile_picture,account.role_id \n"
+            String query = "select account.account_id,account.email,account.password,account.profile_picture,account.role_id, account.first_name, account.last_name \n"
                     + "from account where email = ? and password = ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -47,7 +47,9 @@ public class AccountDAO {
                         rs.getString("email"),
                         rs.getString("password"),
                         rs.getString("profile_picture"),
-                        rs.getInt("role_id")
+                        rs.getInt("role_id"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name")
                 );
                 return ac;
             }
@@ -70,13 +72,15 @@ public class AccountDAO {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return 0;
-    } public List<Account> getAllMentor()  {
+    }
+
+    public List<Account> getAllMentor() {
         List<Account> list = new ArrayList<>();
         try {
             String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 ;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            
+
             rs = ps.executeQuery();
             while (rs.next()) {
                 Account a = new Account(
@@ -92,11 +96,11 @@ public class AccountDAO {
             }
         } catch (SQLException e) {
 
-        } 
+        }
         return list;
     }
 
-    public List<Account> getAllMentorPaging(int index)  {
+    public List<Account> getAllMentorPaging(int index) {
         List<Account> list = new ArrayList<>();
         try {
             String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 8 offset ?;";
@@ -118,9 +122,10 @@ public class AccountDAO {
             }
         } catch (SQLException e) {
 
-        } 
+        }
         return list;
     }
+
     public int getMentorNumberPage() {
         try {
             String query = "select count(*) from onlinelearning.account where role_id = 2 ";
@@ -171,11 +176,13 @@ public class AccountDAO {
         }
         return a;
     }
+
     /**
      * Get an account by its id.
+     *
      * @param id aid
      * @return Account
-     * @throws SQLException 
+     * @throws SQLException
      */
     public Account getAccount(int id) throws SQLException {
         Account a = null;
@@ -205,6 +212,7 @@ public class AccountDAO {
         }
         return a;
     }
+
     /**
      *
      * @param page index of page
@@ -643,7 +651,7 @@ public class AccountDAO {
             ps.setInt(5, a.getAid());
 
             ps.executeUpdate();
-            f=true;
+            f = true;
         } catch (Exception e) {
         }
         return f;

@@ -77,21 +77,21 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>First Name</label>
-                                                    <input type="text" class="form-control" value="${x.first_name}">
+                                                    <input type="text" class="form-control" name ="first_name" value="${x.first_name}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Last Name</label>
-                                                    <input type="text" class="form-control" value="${x.last_name}">
+                                                    <input type="text" class="form-control" name ="last_name" value="${x.last_name}">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Date of Birth</label>
-                                                    <div class="cal-icon">
-                                                        <input type="text" class="form-control datetimepicker" value="26-09-2000">
-                                                    </div>
+                                                    
+                                                        <input type="date" name="dob" placeholder="Date Of Birth"class="form-control" value="${x.dob}" >
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
@@ -103,7 +103,7 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Mobile</label>
-                                                    <input type="text" value="${x.phone}" class="form-control">
+                                                    <input type="text" value="${x.phone}" name ="phone" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">

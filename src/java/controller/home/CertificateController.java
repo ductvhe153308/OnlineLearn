@@ -5,22 +5,19 @@
  */
 package controller.home;
 
-import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
-import model.MyCourse;
 
 /**
  *
- * @author ADMIN
+ * @author dell
  */
-public class MyAccomplishmentController extends HttpServlet {
+public class CertificateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,15 +30,13 @@ public class MyAccomplishmentController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            String course_name = request.getParameter("course_name");
+            request.setAttribute("course_name", course_name);
             Account a = (Account) request.getSession().getAttribute("user");
-            CourseDAO courseDAO = new CourseDAO();
-            List<MyCourse> list = courseDAO.getMyAccomplishment(a.getAid());
-            request.setAttribute("complete", list);
-            request.setAttribute("size", list.size());
-            request.getRequestDispatcher("my-accomplishment.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
+            request.setAttribute("user_name", a.getLast_name() + " " + a.getFirst_name());
+            request.getRequestDispatcher("certificate.jsp").forward(request, response);
         }
     }
 

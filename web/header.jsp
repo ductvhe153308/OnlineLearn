@@ -189,7 +189,7 @@
                                                     <ul class="submenu">
                                                         <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
                                                         <li><a href="MyCourse">My course</a></li>
-                                                        <li><a href="">My purchase</a></li>
+                                                        <li><a href="MyPurchase">My purchase</a></li>
                                                         <li><a href="MyAccomplishment">My accomplishment</a></li>
                                                         <li><a href="changePassword">Change password</a></li>
                                                         <li><a href="logout">Sign out</a></li>

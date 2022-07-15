@@ -88,6 +88,14 @@
         <servlet-name>MyAccomplishmentController</servlet-name>
         <servlet-class>controller.home.MyAccomplishmentController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CertificateController</servlet-name>
+        <servlet-class>controller.home.CertificateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyPurchaseController</servlet-name>
+        <servlet-class>controller.home.MyPurchaseController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -175,6 +183,14 @@
     <servlet-mapping>
         <servlet-name>MyAccomplishmentController</servlet-name>
         <url-pattern>/MyAccomplishment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CertificateController</servlet-name>
+        <url-pattern>/Certificate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyPurchaseController</servlet-name>
+        <url-pattern>/MyPurchase</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
