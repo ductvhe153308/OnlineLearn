@@ -147,7 +147,7 @@ var AP = {
      * @param {String} message
      * @param {Function} handle
      */
-    alertError: function (message, handle = null){
+    alertError: function (message, handle = null) {
         $("#page").before(`
             <div class="dialog-wapper">
                 <div class="dialog error">
@@ -156,7 +156,7 @@ var AP = {
                         <div class="dialog-footer btn dialog-close">Ok</div>
                 </div>
             </div>`);
-        $(".dialog-close").click(function (){
+        $(".dialog-close").click(function () {
             $(".dialog-wapper").remove();
         });
     },
@@ -165,7 +165,7 @@ var AP = {
      * @param {String} message
      * @param {Function} handle
      */
-    alertSuccess: function (message, handle = null){
+    alertSuccess: function (message, handle = null) {
         $("#page").before(`
             <div class="dialog-wapper">
                 <div class="dialog success">
@@ -174,9 +174,100 @@ var AP = {
                         <div class="dialog-footer btn dialog-close">Ok</div>
                 </div>
             </div>`);
-        $(".dialog-close").click(function (){
+        $(".dialog-close").click(function () {
             $(".dialog-wapper").remove();
         });
+    },
+    /**
+     * Utils for time.
+     */
+    time: {
+        /**
+         * Get Date string from time stamp.
+         * @param {Int} timestamp
+         * @returns {String}
+         */
+        time: function (timestamp) {
+            var date = new Date(timestamp * 1000);
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            switch (month) {
+                case 1:
+                    month = 'Jan';
+                    break;
+                case 2:
+                    month = 'Feb';
+                    break;
+                case 3:
+                    month = 'Mar';
+                    break;
+                case 4:
+                    month = 'Apr';
+                    break;
+                case 5:
+                    month = 'May';
+                    break;
+                case 6:
+                    month = 'Jun';
+                    break;
+                case 7:
+                    month = 'Jul';
+                    break;
+                case 8:
+                    month = 'Aug';
+                    break;
+                case 9:
+                    month = 'Sep';
+                    break;
+                case 10:
+                    month = 'Oct';
+                    break;
+                case 11:
+                    month = 'Nov';
+                    break;
+                case 12:
+                    month = 'Dec';
+                    break;
+
+            }
+            day = (day < 10 ? "0" : "") + day;
+            return `${day} ${month} ${date.getFullYear()}`;
+        },
+        /**
+         * Calculate duration time and make to visualize string
+         * @param {Int} start 
+         * @param {Int} duration
+         * @returns {String}
+         */
+        duration: function (start, duration) {
+            var date1 = new Date(start * 1000);
+            var date2 = new Date((start + duration) * 1000);
+            var am1 = true;
+            var am2 = true;
+            var h1 = date1.getHours();
+            if (h1 > 12) {
+                am1 = false;
+            }
+            if(h1<10){
+                h1 = `0${h1}`;
+            }
+            var h2 = date2.getHours();
+            if (h2 > 12) {
+                am2 = false;
+            }
+            if(h2<10){
+                h2 = `0${h2}`;
+            }
+            var m1 = date1.getMinutes();
+            if(m1<10){
+                m1 = `0${m1}`;
+            }
+            var m2 = date2.getMinutes();
+            if(m2<10){
+                m2 = `0${m2}`;
+            }
+            return `${h1}.${m1} ${am1 ? 'AM' : 'PM'} - ${h2}.${m2} ${am2 ? 'AM' : 'PM'}`;
+        }
     }
 };
 

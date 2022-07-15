@@ -29,11 +29,12 @@ var Course = {
                     var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Amount']
                     var colgroup = [100, 60, 90, 70, 70]
                     var data = JSON.parse(response)
+                    console.log(data)
                     var table = AP.table.render(table_name, header, data, function (index) {
-                        var booking = JSON.parse(data[index])
-                        var mentor = JSON.parse(booking['mentor'])
-                        var course = JSON.parse(booking['course'])
-                        var mentee = JSON.parse(booking['mentee'])
+                        var booking = data[index]
+                        var mentor = booking['mentor']
+                        var course = booking['course']
+                        var mentee = booking['mentee']
                         var x_img = mentor['pfp'];
                         var y_img = mentee['pfp'];
                         if (x_img == null) {
@@ -51,10 +52,10 @@ var Course = {
                             <div>${course['title']}</div>
                         </div>
                         <div class="table-data" style="width:${colgroup[2]}px">
-                            <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${img}" alt="ava"/>
+                            <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${y_img}" alt="ava"/>
                             <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div>
                         </div>
-                        <div class="table-data" style="width:${colgroup[3]}px">${booking.time}</div>
+                        <div class="table-data" style="width:${colgroup[3]}px">${AP.time.time(booking.booking_time)}<br>${AP.time.duration(booking.booking_time, booking.duration)}</div>
                         <div class="table-data" style="width:${colgroup[4]}px">
                             ${AP.money.dollar(course['price'] * course['total_register_number'])}
                         </div>
