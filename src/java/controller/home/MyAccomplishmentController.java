@@ -39,7 +39,7 @@ public class MyAccomplishmentController extends HttpServlet {
             List<MyCourse> list = courseDAO.getMyAccomplishment(a.getAid());
             request.setAttribute("complete", list);
             request.setAttribute("size", list.size());
-            request.getRequestDispatcher("accomplishment.jsp").forward(request, response);
+            request.getRequestDispatcher("my-accomplishment.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
