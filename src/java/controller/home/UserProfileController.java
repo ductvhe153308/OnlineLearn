@@ -9,6 +9,7 @@ package controller.home;
 import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,16 +33,7 @@ public class UserProfileController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            AccountDAO accountDAO = new AccountDAO();
-            Account a = accountDAO.getAccount(id);
-            request.setAttribute("x", a);
-            request.getRequestDispatcher("user-profile.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -56,7 +48,16 @@ public class UserProfileController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
+            AccountDAO accountDAO = new AccountDAO();
+            Account a = accountDAO.getAccount(id);
+            request.setAttribute("x", a);
+            request.getRequestDispatcher("user-profile.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -70,7 +71,17 @@ public class UserProfileController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int id = Integer.parseInt(request.getParameter("id"));
+        String firstname = request.getParameter("first_name");
+        String lastname = request.getParameter("last_name");
+        String phone = request.getParameter("phone");
+        String dob = request.getParameter("dob");
+        AccountDAO accountDAO = new AccountDAO();
+        if(firstname !=null){
+            accountDAO.updateProfile(id, firstname, lastname, phone, Date.valueOf(dob));
+        }
+        
+         response.sendRedirect("home.jsp");
     }
 
     /**

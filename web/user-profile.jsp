@@ -56,7 +56,7 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <form>
+                                    <form action="UserProfile?id=${x.aid}" method="post">
                                         <div class="row form-row" style="width: 100%">
                                             <div class="">
                                                 <div class="form-group">
@@ -77,13 +77,13 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>First Name</label>
-                                                    <input type="text" class="form-control" name ="first_name" value="${x.first_name}">
+                                                    <input type="text" class="form-control" name ="first_name" value="${x.first_name}" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Last Name</label>
-                                                    <input type="text" class="form-control" name ="last_name" value="${x.last_name}">
+                                                    <input type="text" class="form-control" name ="last_name" value="${x.last_name}"  required="required">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
@@ -103,32 +103,32 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Mobile</label>
-                                                    <input type="text" value="${x.phone}" name ="phone" class="form-control">
+                                                    <input type="number" value="${x.phone}" name ="phone" class="form-control"  required="required">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>State</label>
-                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <input type="text" class="form-control" value="Newyork"  required="required">
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>City</label>
-                                                    <input type="text" class="form-control" value="Old Forge">
+                                                    <input type="text" class="form-control" value="Old Forge"  required="required">
                                                 </div>
                                             </div>
                                             
                                             <div class="col-12 col-md-6">
                                                 <div class="form-group">
                                                     <label>Country</label>
-                                                    <input type="text" class="form-control" value="United States">
+                                                    <input type="text" class="form-control" value="United States "  required="required">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label>Address</label>
-                                                    <input type="text" class="form-control" value="806 Twin Willow Lane">
+                                                    <input type="text" class="form-control" value="806 Twin Willow Lane"  required="required">
                                                 </div>
                                             </div>
                                         </div>

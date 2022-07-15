@@ -638,23 +638,23 @@ public class AccountDAO {
         return c;
     }
 
-    public boolean updateProfile(Account a) {
-        boolean f = false;
+    public void updateProfile(int id,String firstname,String lastname,String phone,Date dob) {
+       
         String query = "UPDATE `onlinelearning`.`account` SET `last_name` = ?, `first_name` = ?, `phone` = ?, `date_of_birth` = ? WHERE account_id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, a.getLast_name());
-            ps.setString(2, a.getFirst_name());
-            ps.setString(3, a.getPhone());
-            ps.setString(4, a.getDob().toString());
-            ps.setInt(5, a.getAid());
+            ps.setString(1,firstname);
+            ps.setString(2, lastname);
+            ps.setString(3, phone);
+            ps.setString(4, dob.toString());
+            ps.setInt(5, id);
 
             ps.executeUpdate();
-            f = true;
+           
         } catch (Exception e) {
         }
-        return f;
+       
     }
 
     public int addMentee(String fname, String lname, String email, String password) throws SQLException {
