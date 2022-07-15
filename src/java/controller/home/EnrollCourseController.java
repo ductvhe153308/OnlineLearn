@@ -8,19 +8,18 @@ package controller.home;
 import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Account;
-import model.MyCourse;
 
 /**
  *
  * @author ADMIN
  */
-public class MyAccomplishmentController extends HttpServlet {
+public class EnrollCourseController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,16 +32,7 @@ public class MyAccomplishmentController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            Account a = (Account) request.getSession().getAttribute("user");
-            CourseDAO courseDAO = new CourseDAO();
-            List<MyCourse> list = courseDAO.getMyAccomplishment(a.getAid());
-            request.setAttribute("complete", list);
-            request.setAttribute("size", list.size());
-            request.getRequestDispatcher("my-accomplishment.jsp").forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        response.setContentType("text/html;charset=UTF-8");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -57,7 +47,7 @@ public class MyAccomplishmentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       
     }
 
     /**
@@ -71,7 +61,16 @@ public class MyAccomplishmentController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        try {
+           int cid = Integer.parseInt(request.getParameter("cid"));
+           int aid = ((Account) session.getAttribute("user")).getAid();
+            CourseDAO courseDAO = new CourseDAO();
+            courseDAO.addMyCourse(cid, aid);
+            response.sendRedirect("course-start-learning.jsp");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
