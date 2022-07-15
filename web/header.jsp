@@ -168,7 +168,7 @@
                                                     <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
                                                         ${email}<i class="fas fa-chevron-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="UserProfile?id=${user.id}">My profile</a></li>
+                                                        <li><a href="UserProfile">My profile</a></li>
                                                         <li><a href="BlogByAuthor">My blog</a></li>
                                                         <li><a href="changePassword">Change password</a></li>
                                                         <li><a href="logout">Sign out</a></li>
