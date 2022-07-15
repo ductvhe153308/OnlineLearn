@@ -5,12 +5,16 @@
  */
 package controller.home;
 
+import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Course;
 
 /**
  *
@@ -35,6 +39,11 @@ public class CourseByMentorController extends HttpServlet {
             String name = request.getParameter("name");
             request.setAttribute("id", id);
             request.setAttribute("name", name);
+//            Account a = (Account) request.getSession().getAttribute("user");
+            CourseDAO courseDAO = new CourseDAO();
+            List<Course> list = courseDAO.getCourseByMentor(id);
+            request.setAttribute("mentorCourse", list);
+            request.setAttribute("size", list.size());
             request.getRequestDispatcher("course-by-mentor.jsp").forward(request, response);
         } catch (Exception e) {
         }
