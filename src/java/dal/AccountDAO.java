@@ -43,13 +43,13 @@ public class AccountDAO {
             ps.setString(2, password);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Account a = new Account(rs.getInt("account_id"),
+                Account ac = new Account(rs.getInt("account_id"),
                         rs.getString("email"),
                         rs.getString("password"),
                         rs.getString("profile_picture"),
                         rs.getInt("role_id")
                 );
-                return a;
+                return ac;
             }
             System.out.println(rs);
         } catch (Exception e) {

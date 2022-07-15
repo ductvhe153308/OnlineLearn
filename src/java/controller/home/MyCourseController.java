@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
-import model.Course;
+import model.MyCourse;
 
 /**
  *
- * @author dell
+ * @author ADMIN
  */
-public class CourseByMentorController extends HttpServlet {
+public class MyCourseController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +33,13 @@ public class CourseByMentorController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            String name = request.getParameter("name");
-            request.setAttribute("id", id);
-            request.setAttribute("name", name);
-//            Account a = (Account) request.getSession().getAttribute("user");
+            Account a = (Account) request.getSession().getAttribute("user");
             CourseDAO courseDAO = new CourseDAO();
-            List<Course> list = courseDAO.getCourseByMentor(id);
-            request.setAttribute("mentorCourse", list);
+            List<MyCourse> list = courseDAO.getMyCourse(a.getAid());
+            request.setAttribute("mycourse", list);
             request.setAttribute("size", list.size());
-            request.getRequestDispatcher("course-by-mentor.jsp").forward(request, response);
+            request.getRequestDispatcher("my-course.jsp").forward(request, response);
         } catch (Exception e) {
         }
     }

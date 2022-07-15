@@ -1,7 +1,7 @@
 <%-- 
-    Document   : course-by-mentor
-    Created on : Jul 13, 2022, 2:21:50 AM
-    Author     : dell
+    Document   : mycourse
+    Created on : Jul 15, 2022, 12:04:56 AM
+    Author     : ADMIN
 --%>
 
 <%@page import="model.Course"%>
@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
-                        <h2><span class="text-weight">Courses</span> by Mentor ${name} <span class="header-right"></span></h2>
+                        <h2><span class="text-weight">My</span> Courses <span class="header-right"></span></h2>
                     </div>
                 </div>
                 <div class="row">
@@ -45,39 +45,18 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="suggest" style="display: none">
-                            <div class="card category-widget">
-                                <div class="card-header">
-                                    <h4 class="card-title">Course Categories</h4>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="categories">
-                                        <li><a href="#">HTML <span>(62)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card tags-widget">
-                                <div class="card-header">
-                                    <h4 class="card-title">Tags</h4>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="tags">
-                                        <li><a href="#" class="tag">HTML</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="row">  
-                    <c:forEach items="${mentorCourse}" var="x">
+                    <c:forEach items="${mycourse}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
                                 <a href="course-detail.jsp">
                                     <div class="courses-head">
                                         <div class="courses-img-main">
-                                            <img src="assets/img/course/${x.thumnail}" alt="" class="img-fluid w-100">
+                                            <img src="assets/img/course/${x.thumbnail}" alt="" class="img-fluid w-100">
                                         </div>
                                         <div class="courses-aut-img">
                                             <img src="assets/img/user/${x.profile_picture}" alt="">
@@ -93,7 +72,7 @@
                                             </ul>
                                             <p class="mb-1">${x.last_name} ${x.first_name}</p>
                                             <h4 class="mb-0">
-                                                <a>${x.title}</a>
+                                                <a>${x.title} </a>
                                             </h4>
                                         </div>
                                     </div>
@@ -105,41 +84,16 @@
                                                 <li><i class="far fa-file-alt me-1"></i>2</li>
                                             </ul>
                                         </div>
-                                        <div class="courses-amt ms-auto">
+                                         <div class="courses-amt ms-auto">
                                             <h3 class="mb-0">$ ${x.price}</h3>
-                                        </div>
+                                        </div>       
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </c:forEach>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="blog-pagination">
-                            <nav>
-                                <ul class="pagination justify-content-center">
-                                    <c:if test="${tag >1}">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="CourseList?index=${tag-1}" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
-                                    </li>
-                                    </c:if>
-                                    <c:forEach begin = "1" end = "${endP}" var = "i">
-                                        <li class="page-item ${tag==i?"active":""} ">
-                                        <a class="page-link  " href="CourseList?index=${i}">${i}</a>
-                                    </li>   
-                                    </c:forEach>
-                                   
-                                    <c:if test="${tag <c.numberPage}">
-                                    <li class="page-item">
-                                        <a class="page-link" href="CourseList?index=${tag+1}"><i class="fas fa-angle-double-right"></i></a>
-                                    </li>
-                                    </c:if>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </section>
         <%@include file="footer.jsp" %> 

@@ -5,6 +5,7 @@
  */
 package controller.home;
 
+import dal.BlogDAO;
 import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,14 +14,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Account;
+import model.Blog;
 import model.Course;
 
 /**
  *
- * @author dell
+ * @author admin
  */
-public class CourseByMentorController extends HttpServlet {
+public class BlogListController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,19 +35,18 @@ public class CourseByMentorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            int id = Integer.parseInt(request.getParameter("id"));
-            String name = request.getParameter("name");
-            request.setAttribute("id", id);
-            request.setAttribute("name", name);
-//            Account a = (Account) request.getSession().getAttribute("user");
-            CourseDAO courseDAO = new CourseDAO();
-            List<Course> list = courseDAO.getCourseByMentor(id);
-            request.setAttribute("mentorCourse", list);
-            request.setAttribute("size", list.size());
-            request.getRequestDispatcher("course-by-mentor.jsp").forward(request, response);
-        } catch (Exception e) {
-        }
+        String index = request.getParameter("index");
+       if(index == null){
+           index ="1";
+       }
+       int indexPage = Integer.parseInt(index);
+       BlogDAO dao = new BlogDAO();
+       int endPage = dao.getBlogNumberPage();
+       List<Blog> list = dao.getAllBlogPaging(indexPage);
+       request.setAttribute("list", list);
+       request.setAttribute("endP", endPage);
+       request.setAttribute("tag", indexPage);
+       request.getRequestDispatcher("blog-list.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

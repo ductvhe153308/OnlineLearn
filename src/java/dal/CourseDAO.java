@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Account;
 import model.Course;
+import model.MyCourse;
 import utils.DBContext;
 
 /**
@@ -115,7 +116,8 @@ public class CourseDAO {
         }
         return null;
     }
-    public int pageRateCourse(){
+
+    public int pageRateCourse() {
         try {
             String query = "SELECT count(*)\n"
                     + "FROM onlinelearning.course\n"
@@ -224,13 +226,14 @@ public class CourseDAO {
         return null;
     }
 
-    public List<Course> getCourseByMentor() {
+    public List<Course> getCourseByMentor(int aid) {
         List<Course> list = new ArrayList<>();
         try {
             String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction,"
                     + " total_register_number from onlinelearning.course where aid = ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Course c = new Course(rs.getInt(1),
@@ -256,7 +259,7 @@ public class CourseDAO {
         int n = dao.pageRateCourse();
         System.out.println(n);
         List<Course> list = dao.getTopRatedCourse(1);
-        for(Course o : list){
+        for (Course o : list) {
             System.out.println(o);
         }
     }
@@ -282,11 +285,103 @@ public class CourseDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             rs.close();
             ps.close();
             conn.close();
         }
         return c;
+    }
+
+    public void addMyCourse(int cid,int aid) {
+        try {
+            String query = "INSERT INTO `onlinelearning`.`mycourse` (`from_date`, `to_date`, `last_access`, `cid`, `accid1`, `status`)"
+                    + " VALUES (now(), NOW() + INTERVAL 30 DAY, now(), ?, ?, 0);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, cid);
+            ps.setInt(2, aid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<MyCourse> getMyCourse(int accid1) {
+        List<MyCourse> list = new ArrayList<>();
+        try {
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.thumbnail,course.introduction,course.total_register_number,\n"
+                    + "account.first_name,account.last_name,account.profile_picture,\n"
+                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access,mycourse.status,course.price\n"
+                    + "FROM onlinelearning.course,onlinelearning.account,onlinelearning.mycourse\n"
+                    + "WHERE accid1= ?\n"
+                    + "AND course.aid = account.account_id\n"
+                    + "AND course.course_id = mycourse.cid\n"
+                    + "AND mycourse.status = 0;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, accid1);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MyCourse c = new MyCourse(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getDate(12),
+                        rs.getBoolean(13),
+                        rs.getDouble(14));
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<MyCourse> getMyAccomplishment(int aid) {
+        List<MyCourse> list = new ArrayList<>();
+        try {
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.thumbnail,course.introduction,course.total_register_number,\n"
+                    + "account.first_name,account.last_name,account.profile_picture,\n"
+                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access\n"
+                    + "FROM onlinelearning.course,onlinelearning.account,onlinelearning.mycourse\n"
+                    + "WHERE accid1= ?\n"
+                    + "AND course.aid = account.account_id\n"
+                    + "AND course.course_id = mycourse.cid\n"
+                    + "AND mycourse.status = 1;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, aid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MyCourse c = new MyCourse(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getDate(12),
+                        rs.getBoolean(13),
+                        rs.getDouble(14));
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

@@ -64,9 +64,9 @@ public class AccountController extends HttpServlet {
             throws ServletException, IOException {
         try {
             String email = request.getParameter("email").trim();
-            String password = request.getParameter("password").trim();
+            String pass = request.getParameter("password").trim();
             AccountDAO accountDAO = new AccountDAO();
-            Account a = accountDAO.checkLogin(email, password);
+            Account a = accountDAO.checkLogin(email, pass);
             if (a == null) {
                 request.setAttribute("mess", "Username or password incorrect");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -75,7 +75,7 @@ public class AccountController extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", a);
                 session.setAttribute("email", email);
-                session.setAttribute("password", password);
+                session.setAttribute("password", pass);
                 if (a.getRole_id() == 1) {
                     response.sendRedirect("admin/dashboard");
                 } else {

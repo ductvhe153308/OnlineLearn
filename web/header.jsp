@@ -109,9 +109,9 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
+                                        <a href="BlogList">Blog <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="blog-list.jsp">Blog list</a></li>
+                                            <li><a href="BlogList">Blog list</a></li>
                                             <li><a href="blog-create.jsp">New blog</a></li>
                                         </ul>
                                     </li>
@@ -142,9 +142,9 @@
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
-                                        <a href="blog-list.jsp">Blog <i class="fas fa-chevron-down"></i></a>
+                                        <a href="BlogList">Blog <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
-                                            <li><a href="blog-list.jsp">Blog list</a></li>
+                                            <li><a href="BlogList">Blog list</a></li>
                                             <li><a href="blog-create.jsp">New blog</a></li>
                                         </ul>
                                     </li>
@@ -168,7 +168,7 @@
                                                     <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
                                                         ${email}<i class="fas fa-chevron-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="UserProfile?id=${id}">My profile</a></li>
+                                                        <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
                                                         <li><a href="BlogByAuthor">My blog</a></li>
                                                         <li><a href="changePassword">Change password</a></li>
                                                         <li><a href="logout">Sign out</a></li>
@@ -187,8 +187,8 @@
                                                     <a> <image src="assets/img/user/${user.pfp}" style="width: 40px;height: 40px;border-radius: 50%;margin-right:10px"/>
                                                         ${email}<i class="fas fa-chevron-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="UserProfile?id=${id}">My profile</a></li>
-                                                        <li><a href="">My course</a></li>
+                                                        <li><a href="UserProfile?id=${user.aid}">My profile</a></li>
+                                                        <li><a href="MyCourse">My course</a></li>
                                                         <li><a href="">My purchase</a></li>
                                                         <li><a href="accomplishment.jsp">My accomplishment</a></li>
                                                         <li><a href="changePassword">Change password</a></li>

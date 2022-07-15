@@ -296,7 +296,8 @@
                             </div>
                         </div>
                         <div class="section-btn m-auto text-center">
-                            <button class="btn btn-course">Become an Instructor <i class="fas fa-caret-right right-nav-white"></i></button>
+                            <button class="btn btn-course">
+                                <a href="mentor-register.jsp" class="text-white">Become an Instructor</a> <i class="fas fa-caret-right right-nav-white"></i></button>
                         </div>
                     </div>
                 </div>
@@ -503,14 +504,14 @@
                             <div class="featured-card bg-dark-grey">
                                 <h2 class="text-white">Best Courses</h2>
                                 <p class="text-white">Courses for all levels cover technical skills, creative techniques, business strategies, and more. We have collected all of the necessary effective study.</p>
-                                <a href="#" class="text-white">View More <i class="fas fa-caret-right right-nav-grey"></i></a>
+                                <a href="CourseTopRate" class="text-white">View More <i class="fas fa-caret-right right-nav-grey"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="featured-card bg-primary">
                                 <h2 class="text-white">Top rated Instructors</h2>
                                 <p class="text-white">Courses for all levels cover technical skills, creative techniques, business strategies, and more. We have collected all of the necessary effective study.</p>
-                                <a href="#" class="text-white">View More <i class="fas fa-caret-right right-nav-white"></i></a>
+                                <a href="MentorBestRate" class="text-white">View More <i class="fas fa-caret-right right-nav-white"></i></a>
                             </div>
                         </div>
                     </div>

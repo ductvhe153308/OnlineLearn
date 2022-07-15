@@ -52,8 +52,6 @@
                                         <div class="col-12">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h3 class="pb-3">Edit Blog</h3>
-                                                    
                                                     <form action="EditBlog?id=${b.id}" method="POST">
                                                         <div class="service-fields mb-3">
                                                             <h4 class="heading-2">Service Information</h4>

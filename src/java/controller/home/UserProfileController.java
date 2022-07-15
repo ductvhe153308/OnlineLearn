@@ -36,7 +36,7 @@ public class UserProfileController extends HttpServlet {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             AccountDAO accountDAO = new AccountDAO();
-            Account a = accountDAO.getMentorByID(id);
+            Account a = accountDAO.getAccount(id);
             request.setAttribute("x", a);
             request.getRequestDispatcher("user-profile.jsp").forward(request, response);
         } catch (Exception e) {
