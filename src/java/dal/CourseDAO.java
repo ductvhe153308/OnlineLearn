@@ -21,11 +21,11 @@ import utils.DBContext;
  * @author Dell
  */
 public class CourseDAO {
-    
+
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
-    
+
     public ArrayList<Course> getAllCourseBySomeMentor(ArrayList<Account> mentors) {
         ArrayList<Course> courses = new ArrayList<>();
         StringBuilder ids = new StringBuilder();
@@ -116,7 +116,7 @@ public class CourseDAO {
         }
         return null;
     }
-    
+
     public int pageRateCourse() {
         try {
             String query = "SELECT count(*)\n"
@@ -139,7 +139,7 @@ public class CourseDAO {
         }
         return 0;
     }
-    
+
     public List<Course> getCourseTrending() {
         List<Course> list = new ArrayList<>();
         try {
@@ -171,7 +171,7 @@ public class CourseDAO {
         }
         return null;
     }
-    
+
     public int getNumberPage() {
         try {
             String query = "select count(*) from onlinelearning.course ";
@@ -192,7 +192,7 @@ public class CourseDAO {
         }
         return 0;
     }
-    
+
     public List<Course> getAllCoursePaging(int index) {
         List<Course> list = new ArrayList<>();
         try {
@@ -225,7 +225,7 @@ public class CourseDAO {
         }
         return null;
     }
-    
+
     public List<Course> getCourseByMentor() {
         List<Course> list = new ArrayList<>();
         try {
@@ -252,7 +252,7 @@ public class CourseDAO {
         }
         return null;
     }
-    
+
     public static void main(String[] args) {
         CourseDAO dao = new CourseDAO();
         int n = dao.pageRateCourse();
@@ -262,7 +262,7 @@ public class CourseDAO {
             System.out.println(o);
         }
     }
-    
+
     public Course getCourse(int course_id) throws SQLException {
         Course c = null;
         try {
@@ -291,19 +291,19 @@ public class CourseDAO {
         }
         return c;
     }
-    
+
     public void addMyCourse() {
         try {
             String query = "";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            
+
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     public List<MyCourse> getMyCourse(int accid1) {
         List<MyCourse> list = new ArrayList<>();
         try {
@@ -342,13 +342,13 @@ public class CourseDAO {
         }
         return null;
     }
-    
-    public List<MyCourse> getMyAccomplishment(int accid1) {
+
+    public List<MyCourse> getMyAccomplishment(int aid) {
         List<MyCourse> list = new ArrayList<>();
         try {
             String query = "SELECT course.course_id,course.title,course.rated_star,course.thumbnail,course.introduction,course.total_register_number,\n"
                     + "account.first_name,account.last_name,account.profile_picture,\n"
-                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access,mycourse.status,course.price\n"
+                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access\n"
                     + "FROM onlinelearning.course,onlinelearning.account,onlinelearning.mycourse\n"
                     + "WHERE accid1= ?\n"
                     + "AND course.aid = account.account_id\n"
@@ -356,7 +356,7 @@ public class CourseDAO {
                     + "AND mycourse.status = 1;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setInt(1, accid1);
+            ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
                 MyCourse c = new MyCourse(rs.getInt(1),
