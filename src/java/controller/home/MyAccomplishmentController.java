@@ -18,7 +18,7 @@ import model.MyCourse;
 
 /**
  *
- * @author dell
+ * @author ADMIN
  */
 public class MyAccomplishmentController extends HttpServlet {
 
@@ -33,15 +33,15 @@ public class MyAccomplishmentController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         try {
             Account a = (Account) request.getSession().getAttribute("user");
             CourseDAO courseDAO = new CourseDAO();
             List<MyCourse> list = courseDAO.getMyAccomplishment(a.getAid());
             request.setAttribute("complete", list);
-//            request.setAttribute("size", list.size());
+            request.setAttribute("size", list.size());
             request.getRequestDispatcher("accomplishment.jsp").forward(request, response);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
