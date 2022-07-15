@@ -88,6 +88,10 @@
         <servlet-name>MyAccomplishmentController</servlet-name>
         <servlet-class>controller.home.MyAccomplishmentController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CirtificateController</servlet-name>
+        <servlet-class>controller.home.CirtificateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -175,6 +179,10 @@
     <servlet-mapping>
         <servlet-name>MyAccomplishmentController</servlet-name>
         <url-pattern>/MyAccomplishment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CirtificateController</servlet-name>
+        <url-pattern>/Cirtificate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
