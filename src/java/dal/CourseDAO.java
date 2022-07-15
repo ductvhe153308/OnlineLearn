@@ -293,12 +293,14 @@ public class CourseDAO {
         return c;
     }
 
-    public void addMyCourse() {
+    public void addMyCourse(int cid,int aid) {
         try {
-            String query = "";
+            String query = "INSERT INTO `onlinelearning`.`mycourse` (`from_date`, `to_date`, `last_access`, `cid`, `accid1`, `status`)"
+                    + " VALUES (now(), NOW() + INTERVAL 30 DAY, now(), ?, ?, 0);";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-
+            ps.setInt(1, cid);
+            ps.setInt(2, aid);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
