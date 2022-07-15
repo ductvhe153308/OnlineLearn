@@ -39,10 +39,13 @@
                                     <!--                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>-->
                                 </ol>
                             </nav>
-                            <h2 class="breadcrumb-title">Purchase</h2>
+                            <h2 class="breadcrumb-title">My Purchase</h2>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div style="display: flex; justify-content: center; align-content: center; margin-top: 50px;">
+                <h1>Total Price: ${total_price}</h1>
             </div>
             <div>
                 <c:forEach items="${purchase}" var="x">
