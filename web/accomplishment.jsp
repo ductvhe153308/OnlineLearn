@@ -47,7 +47,7 @@
             <div>
                 <c:forEach items="${complete}" var="x">
                     <div style="width: 100%; height: fit-content; padding: 30px 200px">
-                        <a href="certificate.jsp" target="_blank">
+                        <a href="Certificate?course_name=${x.title}" target="_blank">
                             <div style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149))">
                                 <div class="courses-body" style="color: white; text-align: start; display: flex; flex-direction: row" >
                                     <div style="width: 80%">
