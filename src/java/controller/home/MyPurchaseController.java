@@ -37,7 +37,12 @@ public class MyPurchaseController extends HttpServlet {
             Account a = (Account) request.getSession().getAttribute("user");
             CourseDAO courseDAO = new CourseDAO();
             List<MyCourse> list = courseDAO.getMyPurchase(a.getAid());
+            int totalPrice = 0;
+            for (MyCourse myCourse : list) {
+               totalPrice += myCourse.getPrice();
+            }
             request.setAttribute("purchase", list);
+            request.setAttribute("total_price", totalPrice);
             request.setAttribute("size", list.size());
             request.getRequestDispatcher("my-purchase.jsp").forward(request, response);
         } catch (Exception e) {
