@@ -34,10 +34,9 @@ public class UserProfileController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            int id = Integer.parseInt(request.getParameter("id"));
+            Account a = (Account) request.getSession().getAttribute("user");
             AccountDAO accountDAO = new AccountDAO();
-            Account a = accountDAO.getMentorByID(id);
-            request.setAttribute("x", a);
+            request.setAttribute("x", accountDAO.getAccount(a.getAid()));
             request.getRequestDispatcher("user-profile.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
