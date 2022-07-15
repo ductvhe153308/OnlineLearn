@@ -44,8 +44,8 @@
                     </div>
                 </div>
             </div>
-            <div class="">
-                <c:forEach items="${accomplishment}" var="x">
+            <div>
+                <c:forEach items="${complete}" var="x">
                     <div style="width: 100%; height: fit-content; padding: 30px 200px">
                         <a href="certificate.jsp" target="_blank">
                             <div style="background-image: linear-gradient(90deg, rgb(140, 21, 21), rgb(210, 194, 149))">
@@ -81,15 +81,11 @@
                                             <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                                         </div>
                                     </div>
-
                                 </div>
                             </div> 
                         </a>
-
-
                     </div>
                 </c:forEach>
-
             </div>
             <%@include file="footer.jsp" %>
 
