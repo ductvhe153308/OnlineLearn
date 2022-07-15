@@ -296,7 +296,7 @@ public class CourseDAO {
     public void addMyCourse(int cid, int aid) {
         try {
             String query = "INSERT INTO `onlinelearning`.`mycourse` (`from_date`, `to_date`, `last_access`, `cid`, `accid1`, `status`)"
-                    + " VALUES (now(), NOW() + INTERVAL 30 DAY, now(), ?, ?, 0);";
+                    + " VALUES (now(), NOW() + INTERVAL 7 DAY, now(), ?, ?, 0);";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, cid);
