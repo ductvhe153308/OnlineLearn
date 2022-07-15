@@ -323,20 +323,20 @@ public class CourseDAO {
             ps.setInt(1, accid1);
             rs = ps.executeQuery();
             while (rs.next()) {
-                MyCourse c = new MyCourse(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getDate(10),
-                        rs.getDate(11),
-                        rs.getDate(12),
-                        rs.getBoolean(13),
-                        rs.getDouble(14));
+                MyCourse c = new MyCourse(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getDate("from_date"),
+                        rs.getDate("to_date"),
+                        rs.getDate("last_access"),
+                        rs.getBoolean("status"),
+                        rs.getDouble("price"));
                 list.add(c);
             }
             return list;
