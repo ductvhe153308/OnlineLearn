@@ -81,6 +81,10 @@
         <servlet-class>controller.home.MyCourseController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>EnrollCourseController</servlet-name>
+        <servlet-class>controller.home.EnrollCourseController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>MyAccomplishmentController</servlet-name>
         <servlet-class>controller.home.MyAccomplishmentController</servlet-class>
     </servlet>
@@ -163,6 +167,10 @@
     <servlet-mapping>
         <servlet-name>MyCourseController</servlet-name>
         <url-pattern>/MyCourse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnrollCourseController</servlet-name>
+        <url-pattern>/EnrollCourse</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MyAccomplishmentController</servlet-name>
