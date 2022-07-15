@@ -93,7 +93,7 @@
                                     </li>   
                                     </c:forEach>
                                    
-                                    <c:if test="${tag <c.numberPage}">
+                                    <c:if test="${tag < endP}">
                                     <li class="page-item">
                                         <a class="page-link" href="BlogList?index=${tag+1}"><i class="fas fa-angle-double-right"></i></a>
                                     </li>
