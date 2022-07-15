@@ -38,8 +38,8 @@ public class MyAccomplishmentController extends HttpServlet {
             Account a = (Account) request.getSession().getAttribute("user");
             CourseDAO courseDAO = new CourseDAO();
             List<MyCourse> list = courseDAO.getMyAccomplishment(a.getAid());
-            request.setAttribute("accomplishment", list);
-            request.setAttribute("size", list.size());
+            request.setAttribute("complete", list);
+//            request.setAttribute("size", list.size());
             request.getRequestDispatcher("accomplishment.jsp").forward(request, response);
         } catch (Exception e) {
         }
