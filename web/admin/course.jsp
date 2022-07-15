@@ -13,18 +13,25 @@
         <link rel="icon" href="/onlinelearn/assets/img/favicon.png">
         <link rel="stylesheet" href="/onlinelearn/admin/static/css/page.css">
         <link rel="stylesheet" href="/onlinelearn/assets/css/table.css">
+        <link rel="stylesheet" href="/onlinelearn/assets/css/account.properties.css">
     </head>
     <body>
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-
+            <div class="page-title">List of Booking Course <div class="url btn btn-add right" data-url="admin/course/add">Add Course</div></div>
+            <div class="page-navigation">
+                <div class="url" data-url="admin/dashboard">Dashboard</div> / 
+                <div class="dist">Course</div>
+            </div> 
+            <div class="component col-12" id="booking"></div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="/onlinelearn/assets/js/url.js"></script>
         <script src="static/js/course.js"></script>
         <script>
             Course.init();
+            Course.board.all('booking', 1, 10);
         </script>
     </body>
 </html>

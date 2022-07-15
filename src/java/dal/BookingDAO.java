@@ -45,6 +45,7 @@ public class BookingDAO {
                         adao.getAccount(c.getAid()),
                         c,
                         rs.getInt("booking_time"),
+                        rs.getInt("status"),
                         rs.getInt("duration"));
                 bks.add(b);
             }
