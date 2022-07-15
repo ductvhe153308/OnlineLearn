@@ -35,7 +35,7 @@ public class CertificateController extends HttpServlet {
             String course_name = request.getParameter("course_name");
             request.setAttribute("course_name", course_name);
             Account a = (Account) request.getSession().getAttribute("user");
-            request.setAttribute("user_name", a.getFirst_name() + a.getLast_name());
+            request.setAttribute("user_name", a.getLast_name() + " " + a.getFirst_name());
             request.getRequestDispatcher("certificate.jsp").forward(request, response);
         }
     }
