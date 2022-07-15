@@ -96,6 +96,10 @@
         <servlet-name>MyPurchaseController</servlet-name>
         <servlet-class>controller.home.MyPurchaseController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MentorRegisterController</servlet-name>
+        <servlet-class>controller.home.MentorRegisterController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -191,6 +195,10 @@
     <servlet-mapping>
         <servlet-name>MyPurchaseController</servlet-name>
         <url-pattern>/MyPurchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MentorRegisterController</servlet-name>
+        <url-pattern>/MentorRegister</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
