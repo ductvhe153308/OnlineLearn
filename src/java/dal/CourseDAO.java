@@ -293,7 +293,7 @@ public class CourseDAO {
         return c;
     }
 
-    public void addMyCourse(int cid,int aid) {
+    public void addMyCourse(int cid, int aid) {
         try {
             String query = "INSERT INTO `onlinelearning`.`mycourse` (`from_date`, `to_date`, `last_access`, `cid`, `accid1`, `status`)"
                     + " VALUES (now(), NOW() + INTERVAL 30 DAY, now(), ?, ?, 0);";
@@ -351,7 +351,7 @@ public class CourseDAO {
         try {
             String query = "SELECT course.course_id,course.title,course.rated_star,course.thumbnail,course.introduction,course.total_register_number,\n"
                     + "account.first_name,account.last_name,account.profile_picture,\n"
-                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access\n"
+                    + "mycourse.from_date,mycourse.to_date,mycourse.last_access,mycourse.status,course.price\n"
                     + "FROM onlinelearning.course,onlinelearning.account,onlinelearning.mycourse\n"
                     + "WHERE accid1= ?\n"
                     + "AND course.aid = account.account_id\n"

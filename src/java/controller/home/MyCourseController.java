@@ -41,6 +41,7 @@ public class MyCourseController extends HttpServlet {
             request.setAttribute("size", list.size());
             request.getRequestDispatcher("my-course.jsp").forward(request, response);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
