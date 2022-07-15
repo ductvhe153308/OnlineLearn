@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -31,16 +32,11 @@ public class CertificateController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CertificateController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CertificateController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String course_name = request.getParameter("course_name");
+            request.setAttribute("course_name", course_name);
+            Account a = (Account) request.getSession().getAttribute("user");
+            request.setAttribute("user_name", a.getFirst_name() + a.getLast_name());
+            request.getRequestDispatcher("certificate.jsp").forward(request, response);
         }
     }
 
