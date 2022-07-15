@@ -13,12 +13,13 @@
         <link rel="icon" href="/onlinelearn/assets/img/favicon.png">
         <link rel="stylesheet" href="/onlinelearn/admin/static/css/page.css">
         <link rel="stylesheet" href="/onlinelearn/assets/css/table.css">
+        <link rel="stylesheet" href="/onlinelearn/assets/css/account.properties.css">
     </head>
     <body>
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-            <div class="page-title">Categories <div class="url btn btn-add right" data-url="admin/category/add">Add category</div></div>
+            <div class="page-title">Categories <div class="btn btn-add right" id="add-category">Add category</div></div>
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> /
                 <div class="dist">Categories</div>

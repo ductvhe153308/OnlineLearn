@@ -145,3 +145,6 @@ and open the template in the editor.
 .btn-add:hover{
     border: 1px solid #009DA6;
 }
+.dialog-content form{
+    padding: 20px;
+}

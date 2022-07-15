@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mentoring - Add Mentor Page</title>
+        <title>Mentoring - Add Category Page</title>
         <link rel="icon" href="/onlinelearn/assets/img/favicon.png">
         <link rel="stylesheet" href="/onlinelearn/admin/static/css/page.css">
         <link rel="stylesheet" href="/onlinelearn/assets/css/table.css">
@@ -19,43 +19,19 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-            <div class="page-title">Add new Mentee</div>
+            <div class="page-title">Add new Category</div>
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> / 
-                <div>User</div> / 
-                <div>Mentee</div> /
+                <div class="url" data-url="admin/course">Course</div> / 
+                <div>Category</div> /
                 <div class="dist">Add</div>
             </div> 
             <div class="component col-12" id="mentee" style="align-items: center;color: #fdff00; font-weight: 700;background: url(/onlinelearn/assets/img/course-bg4.jpg); background-size: cover; height:550px">
                 <form action="add" method="post">
                     <div class="row">
                         <div class="col-7 row">
-                            <span class="col-3">First name</span>                            
+                            <span class="col-3">Category name</span>                            
                             <input class="col-7" type="text" name="fname" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7 row">
-                            <span class="col-3">Last name</span>                            
-                            <input class="col-7" type="text" name="lname" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7 row">
-                            <span class="col-3">Email address</span>                            
-                            <input class="col-7" type="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7 row">
-                            <span class="col-3">Password</span>                            
-                            <input class="col-7" type="password" name="password" value="123456">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-7 row">
-                            <span class="col-3">Note: </span>                            
-                            <span class="col-7" style="padding: 5px 10px; color: #fff">Password default is 123456!</span>
                         </div>
                     </div>
                     <div class="row">

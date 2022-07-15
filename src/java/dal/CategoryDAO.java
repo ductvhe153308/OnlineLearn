@@ -70,7 +70,7 @@ public class CategoryDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, name);
-            ps.setLong(2, System.currentTimeMillis());
+            ps.setInt(2, (int)(System.currentTimeMillis()/1000));
             add = ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

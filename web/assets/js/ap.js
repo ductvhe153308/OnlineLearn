@@ -179,6 +179,26 @@ var AP = {
         });
     },
     /**
+     * 
+     * @param {type} title
+     * @param {type} message
+     * @param {type} handle
+     * @returns {undefined}
+     */
+    dialog: function (title, message, handle = null) {
+        $("#page").before(`
+            <div class="dialog-wapper">
+                <div class="dialog">
+                        <div class="dialog-header">${title} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" class="right dialog-close bi bi-x-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>                  </div>
+                        <div class="dialog-content">${message}</div>
+                        <div class="dialog-footer btn dialog-close">Ok</div>
+                </div>
+            </div>`);
+        $(".dialog-close").click(function () {
+            $(".dialog-wapper").remove();
+        });
+    },
+    /**
      * Utils for time.
      */
     time: {
@@ -248,22 +268,22 @@ var AP = {
             if (h1 > 12) {
                 am1 = false;
             }
-            if(h1<10){
+            if (h1 < 10) {
                 h1 = `0${h1}`;
             }
             var h2 = date2.getHours();
             if (h2 > 12) {
                 am2 = false;
             }
-            if(h2<10){
+            if (h2 < 10) {
                 h2 = `0${h2}`;
             }
             var m1 = date1.getMinutes();
-            if(m1<10){
+            if (m1 < 10) {
                 m1 = `0${m1}`;
             }
             var m2 = date2.getMinutes();
-            if(m2<10){
+            if (m2 < 10) {
                 m2 = `0${m2}`;
             }
             return `${h1}.${m1} ${am1 ? 'AM' : 'PM'} - ${h2}.${m2} ${am2 ? 'AM' : 'PM'}`;
@@ -272,7 +292,7 @@ var AP = {
     /**
      * Refresh page
      */
-    refresh: function (){
+    refresh: function () {
         location.reload();
     }
 };
