@@ -77,14 +77,14 @@
             </div>
 
             <div class="person">
-                Joe Nathan
+                 ${fullname}
             </div>
 
             <div class="reason" style="padding-top: 50px">
                 For complete 
                 <span style="display: block"> 
                     <h1>
-                        From Zero to Hero with Nodejs
+                        ${course_name}
                     </h1>
                 </span>
                 in July 7, 2022
