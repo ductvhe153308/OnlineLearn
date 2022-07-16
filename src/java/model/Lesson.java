@@ -15,10 +15,19 @@ public class Lesson {
     private String video;
     private boolean status;
     private int course_id;
+    private int lesson_order;
+    private String title;
     
     public Lesson() {
     }
-    
+    public Lesson(int id,int lesson_order,String title,String subtitle, String video,int course_id) {
+        this.id = id;
+        this.lesson_order = lesson_order;
+        this.title = title;
+        this.subtitle = subtitle;
+        this.video = video;
+        this.course_id = course_id;
+    }
     public Lesson(int id,String subtitle, String video,int course_id) {
         this.id = id;
         this.subtitle = subtitle;
@@ -76,6 +85,22 @@ public class Lesson {
 
     public void setCourse_id(int course_id) {
         this.course_id = course_id;
+    }
+
+    public int getLesson_order() {
+        return lesson_order;
+    }
+
+    public void setLesson_order(int lesson_order) {
+        this.lesson_order = lesson_order;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
     
     
