@@ -35,7 +35,7 @@ public class LessonDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Lesson lesson = new Lesson(rs.getInt("id"),rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
+                Lesson lesson = new Lesson(rs.getInt("id"), rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
                 return lesson;
             }
         } catch (Exception e) {
@@ -43,11 +43,11 @@ public class LessonDAO {
         }
         return null;
     }
-    
+
     public List<Lesson> getLessonList(int id) {
         List<Lesson> list = new ArrayList<>();
         try {
-            String query = "SELECT lesson.id,videodetail.link, videodetail.subtitle,course.course_id\n"
+            String query = "SELECT lesson.id,lesson.lesson_order,lesson.title,videodetail.link, videodetail.subtitle,course.course_id\n"
                     + "FROM onlinelearning.videodetail,onlinelearning.lesson,onlinelearning.course\n"
                     + "WHERE course.course_id = ?\n"
                     + "AND lesson.courseId = course.course_id\n"
@@ -57,7 +57,12 @@ public class LessonDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Lesson lesson = new Lesson(rs.getInt("id"),rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
+                Lesson lesson = new Lesson(rs.getInt("id"),
+                        rs.getInt("lesson_order"),
+                         rs.getString("title"),
+                         rs.getString("subtitle"),
+                         rs.getString("link"),
+                         rs.getInt("course_id"));
                 list.add(lesson);
             }
             return list;
