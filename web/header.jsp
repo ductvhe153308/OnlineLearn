@@ -137,7 +137,6 @@
                                         <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="MentorList">Mentor list</a></li>
-                                            <li><a href="mentor-register.jsp">Mentor register</a></li>
                                             <li><a href="MentorBestRate">Mentor top rate</a></li>
                                         </ul>
                                     </li>
