@@ -105,7 +105,7 @@
                                         <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="MentorList">Mentor list</a></li>
-                                            <li><a href="MentorBestRate">Mentor top rate</a></li>
+                                            <li><a href="MentorBestRate">Mentor best rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -137,7 +137,7 @@
                                         <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="MentorList">Mentor list</a></li>
-                                            <li><a href="MentorBestRate">Mentor top rate</a></li>
+                                            <li><a href="MentorBestRate">Mentor best rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
