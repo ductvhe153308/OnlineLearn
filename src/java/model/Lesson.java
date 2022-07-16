@@ -18,7 +18,14 @@ public class Lesson {
     
     public Lesson() {
     }
-
+    
+    public Lesson(int id,String subtitle, String video,int course_id) {
+        this.id = id;
+        this.subtitle = subtitle;
+        this.video = video;
+        this.course_id = course_id;
+    }
+    
     public Lesson(String subtitle, String video,int course_id) {
         this.subtitle = subtitle;
         this.video = video;
