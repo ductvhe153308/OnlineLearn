@@ -33,8 +33,10 @@
     <div class="main-wrapper">
         <%@include file="header.jsp" %>
         <div style="display: flex; flex-direction: row">
-            <%@include file="right-navbar.jsp" %>
-            <div style="width: 80%">
+            <div style="width: 25%">
+                <%@include file="right-navbar.jsp" %>
+            </div>
+            <div style="width: 75%">
                 <div class="row">
                     <c:forEach items="${list}" var="x">
                         <a href="LessonDetail?id=${x.id}">Lesson</a>
