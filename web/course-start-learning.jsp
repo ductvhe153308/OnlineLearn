@@ -39,7 +39,8 @@
             <div style="width: max-content">
                 <div class="row">
                     <c:forEach items="${list}" var="x">
-                        <a href="LessonDetail?id=${x.id}">Lesson</a>
+                        <a href="LessonDetail?id=${x.id}">Lesson ${x.lesson_order}: ${x.title}
+                        </a>
                     </c:forEach>
                 </div>
             </div>
