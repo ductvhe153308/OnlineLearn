@@ -103,7 +103,7 @@ public class AccountDAO {
     public List<Account> getAllMentorPaging(int index) {
         List<Account> list = new ArrayList<>();
         try {
-            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 8 offset ?;";
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 5 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, (index - 1) * 8);
