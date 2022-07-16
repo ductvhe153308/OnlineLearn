@@ -33,7 +33,7 @@ public class LessonDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Lesson lesson = new Lesson(rs.getString("link"), rs.getString("subtitle"), rs.getInt("course_id"));
+                Lesson lesson = new Lesson(rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
                 return lesson;
             }
         } catch (Exception e) {
