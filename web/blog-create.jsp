@@ -53,7 +53,6 @@
                                         <div class="col-12">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h3 class="pb-3">Add Blog</h3>
                                                     <form action="BlogCreate" method="POST">
                                                         <div class="service-fields mb-3">
                                                             <h4 class="heading-2">Service Information</h4>
@@ -61,7 +60,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Blog Title <span class="text-danger">*</span></label>
-                                                                        <input class="form-control" type="text" name="title">
+                                                                        <input class="form-control" type="text" name="title" required="required">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -87,7 +86,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Short Detail <span class="text-danger">*</span></label>
-                                                                        <textarea type="text" id="about" class="form-control service-desc" name="shortDetail"></textarea>
+                                                                        <textarea type="text" id="about" class="form-control service-desc" name="shortDetail" required="required"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -98,7 +97,7 @@
                                                                 <div class="col-lg-12">
                                                                     <div class="form-group">
                                                                         <label>Descriptions <span class="text-danger">*</span></label>
-                                                                        <textarea type="text" id="about" class="form-control service-desc" name="detail"></textarea>
+                                                                        <textarea type="text" id="about" class="form-control service-desc" name="detail" required="required"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
