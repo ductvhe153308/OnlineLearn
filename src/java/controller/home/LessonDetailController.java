@@ -36,6 +36,10 @@ public class LessonDetailController extends HttpServlet {
             LessonDAO lessonDAO = new LessonDAO();
             Lesson lesson = lessonDAO.getLessonByID(id);
             request.setAttribute("x", lesson);
+            String order = request.getParameter("order");
+            String title = request.getParameter("title");
+            request.setAttribute("order", order);
+            request.setAttribute("title", title);
 //            request.setAttribute("id", id);
             request.getRequestDispatcher("lesson.jsp").forward(request, response);
         } catch (Exception e) {
