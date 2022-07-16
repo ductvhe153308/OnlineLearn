@@ -28,33 +28,40 @@
         <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
 
         <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+            .right-navbar > .main-nav>li>a {
+                font-size: 20px !important;
+                font-weight: bold !important;
+                line-height: 50px !important;
+            }
+            .right-navbar > .main-nav>li {
+                padding: 20px;
+            }
+            .right-navbar > .main-nav{
+                width: 100% !important;
+            }
+        </style>
     </head>
     <body>
         <div class="header">
-            <div class="" style="width: 25%; height: 100%">
-                <div class="main-menu-wrapper" >
-                    <ul class="main-nav" style="display: flex; flex-direction: column">
-                        <li class="has-submenu">
-                            <a href="CourseList">Overview <i class="fas fa-chevron-down"></i></a>
-                            <ul class="submenu">
-                                <li><a href="">Lesson 1</a></li>
-                                <li><a href="">Lesson 2</a></li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="">Grades</a>
-                        </li>
-                        <li class="">
-                            <a href="">Discussion Forums</a>
-                        </li>
-                        <li class="">
-                            <a href="">Messages</i></a>
-                        </li>
-                        <li class="">
-                            <a href="">Course Info</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="right-navbar" style="width: 20%; height: 100%">
+                <ul class="main-nav" style="display: flex; flex-direction: column">
+                    <li class="has-submenu" style="padding: 20px">
+                        <a href="CourseList">Overview</a>
+                    </li>
+                    <li class="" style="padding: 20px">
+                        <a href="">Grades</a>
+                    </li>
+                    <li class="" style="padding: 20px">
+                        <a href="">Discussion</a>
+                    </li>
+                    <li class="" style="padding: 20px">
+                        <a href="">Messages</i></a>
+                    </li>
+                    <li class="" style="padding: 20px">
+                        <a href="">Course Info</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
