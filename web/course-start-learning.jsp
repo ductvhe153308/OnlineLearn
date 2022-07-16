@@ -48,10 +48,10 @@
                             <div class="blog-view">
                                 <div class="blog blog-single-post">
                                     <div class="blog-image">
-                                       <iframe width="100%" height="500" src="${x.subtitle}" title="Mentoring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                       <iframe width="100%" height="500" src="${x.video}" title="Mentoring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div class="blog-content">
-                                        ${x.video}
+                                        ${x.subtitle}
                                        
                                     </div>
                                 </div>
