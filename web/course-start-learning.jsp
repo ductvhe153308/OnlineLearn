@@ -36,7 +36,7 @@
             <div style="width: 220px">
                 <%@include file="right-navbar.jsp" %>
             </div>
-            <div style="width: max-content">
+            <div style="width: calc(100% - 220px)">
                 <div class="row">
                     <c:forEach items="${list}" var="x">
                         <a href="LessonDetail?id=${x.id}">Lesson ${x.lesson_order}: ${x.title}

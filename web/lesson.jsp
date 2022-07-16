@@ -36,7 +36,7 @@
             <div style="width: 220px">
                 <%@include file="right-navbar.jsp" %>
             </div>
-            <div style="width: max-content">
+            <div style="width: calc(100% - 220px)">
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <div class="blog-view">
