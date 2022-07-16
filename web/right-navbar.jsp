@@ -36,30 +36,34 @@
             }
             .right-navbar > .main-nav>li {
                 padding: 20px;
+                width: 100%
+            }
+            .right-navbar > .main-nav> li:hover {
+                background-color: #E6E6FA !important;
             }
             .right-navbar > .main-nav{
-                width: 100% !important;
+                width: 100%;
             }
         </style>
     </head>
     <body>
         <div class="header">
-            <div class="right-navbar" style="width: 20%; height: 100%">
+            <div class="right-navbar" style="width: 100%; height: 100%">
                 <ul class="main-nav" style="display: flex; flex-direction: column">
-                    <li class="has-submenu" style="padding: 20px">
-                        <a href="CourseList">Overview</a>
+                    <li class="has-submenu">
+                        <a href="#">Overview</a>
                     </li>
-                    <li class="" style="padding: 20px">
-                        <a href="">Grades</a>
+                    <li class="">
+                        <a href="#">Grades</a>
                     </li>
-                    <li class="" style="padding: 20px">
-                        <a href="">Discussion</a>
+                    <li class="">
+                        <a href="#">Discussion</a>
                     </li>
-                    <li class="" style="padding: 20px">
-                        <a href="">Messages</i></a>
+                    <li class="">
+                        <a href="#">Messages</i></a>
                     </li>
-                    <li class="" style="padding: 20px">
-                        <a href="">Course Info</a>
+                    <li class="">
+                        <a href="#">Course Info</a>
                     </li>
                 </ul>
             </div>

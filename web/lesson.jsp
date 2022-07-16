@@ -33,16 +33,10 @@
     <div class="main-wrapper">
         <%@include file="header.jsp" %>
         <div style="display: flex; flex-direction: row">
-            <div class="navbar" style="width: 20%; display: flex; flex-direction: column;">
-                <div class="course-navbar" style="font-size: 20px; font-weight: bold; padding: 20px">
-                    <a href="#Overview">Overview</a>
-                    <a href="#Grades">Grades</a>
-                    <a href="#Discussion">Discussion Forums</a>
-                    <a href="#Messages">Messages</a>
-                    <a href="#Info">Course Info</a>
-                </div>
+            <div style="width: 25%">
+                <%@include file="right-navbar.jsp" %>
             </div>
-            <div style="width: 80%">
+            <div style="width: 75%">
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
                         <div class="blog-view">
