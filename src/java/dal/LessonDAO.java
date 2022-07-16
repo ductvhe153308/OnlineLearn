@@ -8,6 +8,8 @@ package dal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import model.Lesson;
 import utils.DBContext;
 
@@ -23,7 +25,29 @@ public class LessonDAO {
 
     public Lesson getLessonByID(int id) {
         try {
-            String query = "SELECT videodetail.link, videodetail.subtitle,course.course_id\n"
+            String query = "SELECT lesson.id,videodetail.link, videodetail.subtitle,course.course_id\n"
+                    + "FROM onlinelearning.videodetail,onlinelearning.lesson,onlinelearning.course\n"
+                    + "WHERE lesson.id = ?\n"
+                    + "AND lesson.courseId = course.course_id\n"
+                    + "AND lesson.videoId = videodetail.id;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Lesson lesson = new Lesson(rs.getInt("id"),rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
+                return lesson;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    public List<Lesson> getLessonList(int id) {
+        List<Lesson> list = new ArrayList<>();
+        try {
+            String query = "SELECT lesson.id,videodetail.link, videodetail.subtitle,course.course_id\n"
                     + "FROM onlinelearning.videodetail,onlinelearning.lesson,onlinelearning.course\n"
                     + "WHERE course.course_id = ?\n"
                     + "AND lesson.courseId = course.course_id\n"
@@ -33,9 +57,10 @@ public class LessonDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Lesson lesson = new Lesson(rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
-                return lesson;
+                Lesson lesson = new Lesson(rs.getInt("id"),rs.getString("subtitle"), rs.getString("link"), rs.getInt("course_id"));
+                list.add(lesson);
             }
+            return list;
         } catch (Exception e) {
             e.printStackTrace();
         }
