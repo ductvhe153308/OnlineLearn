@@ -67,7 +67,6 @@ public class EnrollCourseController extends HttpServlet {
            int aid = ((Account) session.getAttribute("user")).getAid();
             CourseDAO courseDAO = new CourseDAO();
             courseDAO.addMyCourse(cid, aid);
-            response.sendRedirect("course-start-learning.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }
