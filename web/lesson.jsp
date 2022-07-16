@@ -41,7 +41,7 @@
                     <div class="col-lg-8 col-md-12">
                         <div class="blog-view">
                             <div class="blog blog-single-post">
-                                <h1>Lesson ${order}: ${name}</h1>
+                                <h1>Lesson ${order}: ${title}</h1>
                                 <div class="blog-image" style="padding-top: 50px">
                                     <iframe width="100%" height="500" src="${x.video}" title="Mentoring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
