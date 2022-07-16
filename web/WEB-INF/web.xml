@@ -104,6 +104,10 @@
         <servlet-name>LessonDetailController</servlet-name>
         <servlet-class>controller.home.LessonDetailController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TotalLessonController</servlet-name>
+        <servlet-class>controller.home.TotalLessonController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -207,6 +211,10 @@
     <servlet-mapping>
         <servlet-name>LessonDetailController</servlet-name>
         <url-pattern>/LessonDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TotalLessonController</servlet-name>
+        <url-pattern>/TotalLesson</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
