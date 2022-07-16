@@ -36,8 +36,8 @@ public class LessonDetailController extends HttpServlet {
             LessonDAO lessonDAO = new LessonDAO();
             Lesson lesson = lessonDAO.getLessonByID(id);
             request.setAttribute("x", lesson);
-            request.setAttribute("id", id);
-            request.getRequestDispatcher("course-start-learning.jsp").forward(request, response);
+//            request.setAttribute("id", id);
+            request.getRequestDispatcher("lesson.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
