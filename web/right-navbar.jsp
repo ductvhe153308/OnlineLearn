@@ -32,27 +32,7 @@
     <body>
         <div class="header">
             <div class="" style="width: 25%; height: 100%">
-                <div class="navbar-header">
-                    <a id="mobile_btn" href="javascript:void(0);">
-                        <span class="bar-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </a>
-                    <a href="home.jsp" class="navbar-brand logo">
-                        <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
-                    </a>
-                </div>
                 <div class="main-menu-wrapper" >
-                    <div class="menu-header">
-                        <a href="home.jsp" class="menu-logo">
-                            <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
-                        </a>
-                        <a id="menu_close" class="menu-close" href="javascript:void(0);">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </div>
                     <ul class="main-nav" style="display: flex; flex-direction: column">
                         <li class="has-submenu">
                             <a href="CourseList">Overview <i class="fas fa-chevron-down"></i></a>
