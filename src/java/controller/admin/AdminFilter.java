@@ -112,16 +112,16 @@ public class AdminFilter implements Filter {
         doBeforeProcessing(request, response);
 
         Throwable problem = null;
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
         try {
-            HttpServletRequest req = (HttpServletRequest) request;
-            HttpServletResponse res = (HttpServletResponse) response;
             Account user = (Account) req.getSession().getAttribute("user");
             AccountDAO adao = new AccountDAO();
-            System.out.println(req.getRequestURI()+"asdahg");
-            if ((user == null || adao.getAdmin().getAid() != user.getAid()) && !(req.getRequestURI().endsWith(".jsp")||req.getRequestURI().endsWith(".js")||req.getRequestURI().endsWith(".css")||req.getRequestURI().endsWith(".png")||req.getRequestURI().endsWith(".jpg"))) {
+            if ((user == null || adao.getAdmin().getAid() != user.getAid()) && !(req.getRequestURI().endsWith(".jsp") || req.getRequestURI().endsWith(".js") || req.getRequestURI().endsWith(".css") || req.getRequestURI().endsWith(".png") || req.getRequestURI().endsWith(".jpg"))) {
                 req.getRequestDispatcher("/admin/reject.jsp").forward(req, res);
             } else {
                 chain.doFilter(request, response);
+
             }
         } catch (Throwable t) {
             // If an exception is thrown somewhere down the filter chain,
@@ -129,6 +129,7 @@ public class AdminFilter implements Filter {
             // rethrow the problem after that.
             problem = t;
             t.printStackTrace();
+            req.getRequestDispatcher("/admin/dashboard").forward(req, res);
         }
 
         doAfterProcessing(request, response);
