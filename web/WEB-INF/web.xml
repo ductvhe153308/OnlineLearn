@@ -112,6 +112,10 @@
         <servlet-name>SendFeedbackController</servlet-name>
         <servlet-class>controller.SendFeedbackController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuizDetailController</servlet-name>
+        <servlet-class>controller.home.QuizDetailController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -223,6 +227,10 @@
     <servlet-mapping>
         <servlet-name>SendFeedbackController</servlet-name>
         <url-pattern>/SendFeedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizDetailController</servlet-name>
+        <url-pattern>/QuizDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
