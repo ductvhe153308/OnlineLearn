@@ -4,6 +4,7 @@
     Author     : Dell
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,25 +32,41 @@
                     <div class="row">
                         <div class="col-7 row">
                             <span class="col-3">First name</span>                            
-                            <input class="col-7" type="text" name="fname" required>
+                            <input class="col-7" type="text" name="fname" required maxlength="50">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-7 row">
                             <span class="col-3">Last name</span>                            
-                            <input class="col-7" type="text" name="lname" required>
+                            <input class="col-7" type="text" name="lname" required maxlength="50">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-7 row">
                             <span class="col-3">Email address</span>                            
-                            <input class="col-7" type="email" name="email" required>
+                            <input class="col-7" type="email" name="email" required maxlength="150">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7 row">
+                            <span class="col-3">Course Category</span> 
+                            <select class="col-7" name="category" style="width: calc(100% / 12 * 7 + 19px);" required>
+                                <c:forEach var="x" items ="${categories}">
+                                    <option value="${x.getId()}">${x.getName()}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7 row">
+                            <span class="col-3">Course Name</span>                            
+                            <input class="col-7" type="text" name="cname" required maxlength="50">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-7 row">
                             <span class="col-3">Password</span>                            
-                            <input class="col-7" type="password" name="password" value="123456">
+                            <input class="col-7" type="password" name="password" value="123456" minlength="6" maxlength="50">
                         </div>
                     </div>
                     <div class="row">

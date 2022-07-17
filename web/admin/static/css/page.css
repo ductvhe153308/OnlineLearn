@@ -180,7 +180,8 @@ and open the template in the editor.
     margin-top: 10px;
     font-size: 24px;
 }
-#page form input{
+#page form input,
+#page form select{
     padding: 5px 10px;
     border-radius: 5px;
 }

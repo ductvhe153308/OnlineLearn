@@ -103,4 +103,29 @@ public class CategoryDAO {
         }
         return add;
     }
+
+    public ArrayList<Category> getAllCategories() throws SQLException {
+        ArrayList<Category> cs = new ArrayList<>();
+        try {
+            String query = "select * from coursecategory;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            CourseDAO cdao = new CourseDAO();
+            while (rs.next()) {
+                Category c = new Category(rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("created_at"));
+                cs.add(c);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return cs;
+    }
 }
