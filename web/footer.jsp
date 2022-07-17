@@ -48,10 +48,10 @@
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">For Students</h2>
                                 <ul>
-                                    <li><a href="all-course.jsp">Course</a></li>
-                                    <li><a href="course-trending.jsp">Course trending</a></li>
-                                    <li><a href="course-top-rated.jsp">Course top rate</a></li>
-                                    <li><a href="mentor-register.jsp">Mentor register</a></li>
+                                    <li><a href="CourseList">Course</a></li>
+                                    <li><a href="#">Course trending</a></li>
+                                    <li><a href="CourseTopRate">Course top rate</a></li>
+                                    <li><a href="#">Mentor register</a></li>
                                 </ul>
                             </div>
 
@@ -60,9 +60,9 @@
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">For Mentors</h2>
                                 <ul>
-                                    <li><a href="blog-list.jsp">Blog</a></li>
-                                    <li><a href="all-mentor.jsp">All mentor</a></li>
-                                    <li><a href="mentor-best-rate.jsp">Mentor best rate</a></li>
+                                    <li><a href="BlogList">Blog list</a></li>
+                                    <li><a href="MentorList">Mentor list</a></li>
+                                    <li><a href="MentorBestRate">Mentor best rate</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                                 <ul>
                                     <li><a href="terms.jsp">Terms</a></li>
                                     <li><a href="privacy-policy-and-safety.jsp">Privacy Policy</a></li>
-                                    <li><a href="send-feedback.jsp">Send feedback</a></li>
+                                    <li><a href="#">Send feedback</a></li>
                                 </ul>
                             </div>
                         </div>
