@@ -1,7 +1,7 @@
 <%-- 
-    Document   : course-start-learning
-    Created on : Jun 13, 2022, 9:17:22 AM
-    Author     : dell
+    Document   : lesson
+    Created on : Jul 16, 2022, 3:03:19 PM
+    Author     : ADMIN
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -37,19 +37,21 @@
                 <%@include file="right-navbar.jsp" %>
             </div>
             <div style="width: calc(100% - 220px)">
-                <div class="row" style="display: flex; flex-direction: column; justify-content: center; align-content: center; padding-top: 50px">
-                    <c:forEach items="${list}" var="x">
-                        <div style="height: 100px; width: 50%; border: 1px solid black; margin-bottom: 50px; font-size: 18px">
-                            <div>
-                            <a href="LessonDetail?id=${x.id}&order=${x.lesson_order}&title=${x.title}">Lesson ${x.lesson_order}: ${x.title}
-                            </a> 
-                            </div>
-                            <div>
-                            <a href="QuizDetail?id=${x.id}">Quiz ${x.lesson_order}
-                            </a>
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="blog-view">
+                            <div class="blog blog-single-post">
+                                <h1>Lesson ${order}: ${title}</h1>
+                                <div class="blog-image" style="padding-top: 50px">
+                                    <iframe width="100%" height="500" src="${x.video}" title="Mentoring" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="blog-content" style="font-size: 18px;">
+                                    <h3>Subtitle: </h3>
+                                    ${x.subtitle}                                      
+                                </div>
                             </div>
                         </div>
-                    </c:forEach>
+                    </div>
                 </div>
             </div>
         </div>

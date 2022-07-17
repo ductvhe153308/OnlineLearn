@@ -5,21 +5,20 @@
  */
 package controller.home;
 
-import dal.CourseDAO;
+import dal.LessonDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
+import model.Lesson;
 
 /**
  *
  * @author ADMIN
  */
-public class EnrollCourseController extends HttpServlet {
+public class LessonDetailController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +31,20 @@ public class EnrollCourseController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
+            LessonDAO lessonDAO = new LessonDAO();
+            Lesson lesson = lessonDAO.getLessonByID(id);
+            request.setAttribute("x", lesson);
+            String order = request.getParameter("order");
+            String title = request.getParameter("title");
+            request.setAttribute("order", order);
+            request.setAttribute("title", title);
+//            request.setAttribute("id", id);
+            request.getRequestDispatcher("lesson.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,7 +59,7 @@ public class EnrollCourseController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        processRequest(request, response);
     }
 
     /**
@@ -61,15 +73,7 @@ public class EnrollCourseController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        try {
-           int cid = Integer.parseInt(request.getParameter("cid"));
-           int aid = ((Account) session.getAttribute("user")).getAid();
-            CourseDAO courseDAO = new CourseDAO();
-            courseDAO.addMyCourse(cid, aid);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        processRequest(request, response);
     }
 
     /**

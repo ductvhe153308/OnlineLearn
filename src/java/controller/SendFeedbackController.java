@@ -3,23 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller;
 
-import dal.CourseDAO;
+import dal.FeedbackDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Account;
 
 /**
  *
- * @author ADMIN
+ * @author dell
  */
-public class EnrollCourseController extends HttpServlet {
+public class SendFeedbackController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,6 +32,18 @@ public class EnrollCourseController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SendFeedbackController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SendFeedbackController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,7 +58,7 @@ public class EnrollCourseController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        processRequest(request, response);
     }
 
     /**
@@ -61,14 +72,18 @@ public class EnrollCourseController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        try {
-           int cid = Integer.parseInt(request.getParameter("cid"));
-           int aid = ((Account) session.getAttribute("user")).getAid();
-            CourseDAO courseDAO = new CourseDAO();
-            courseDAO.addMyCourse(cid, aid);
-        } catch (Exception e) {
-            e.printStackTrace();
+        try{
+            Account a = (Account) request.getSession().getAttribute("user");
+            String how_find_this_site = request.getParameter("how_find_this_site");
+            String rating = request.getParameter("rating");
+            String comment = request.getParameter("comment");
+            String voting = request.getParameter("voting");
+            FeedbackDAO feedbackDAO = new FeedbackDAO();
+            feedbackDAO.addNewFeedback(how_find_this_site, rating, comment, voting, a.getAid());
+            response.sendRedirect("home.jsp");
+            
+        }catch(Exception e){
+            
         }
     }
 

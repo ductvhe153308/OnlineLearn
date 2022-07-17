@@ -96,6 +96,30 @@
         <servlet-name>MyPurchaseController</servlet-name>
         <servlet-class>controller.home.MyPurchaseController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MentorRegisterController</servlet-name>
+        <servlet-class>controller.home.MentorRegisterController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LessonDetailController</servlet-name>
+        <servlet-class>controller.home.LessonDetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TotalLessonController</servlet-name>
+        <servlet-class>controller.home.TotalLessonController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendFeedbackController</servlet-name>
+        <servlet-class>controller.SendFeedbackController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuizDetailController</servlet-name>
+        <servlet-class>controller.home.QuizDetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyFeedbackController</servlet-name>
+        <servlet-class>controller.home.MyFeedbackController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -191,6 +215,30 @@
     <servlet-mapping>
         <servlet-name>MyPurchaseController</servlet-name>
         <url-pattern>/MyPurchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MentorRegisterController</servlet-name>
+        <url-pattern>/MentorRegister</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LessonDetailController</servlet-name>
+        <url-pattern>/LessonDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TotalLessonController</servlet-name>
+        <url-pattern>/TotalLesson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendFeedbackController</servlet-name>
+        <url-pattern>/SendFeedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizDetailController</servlet-name>
+        <url-pattern>/QuizDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyFeedbackController</servlet-name>
+        <url-pattern>/MyFeedback</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

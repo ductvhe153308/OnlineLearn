@@ -88,7 +88,7 @@
                                                 </a>
                                             </c:when>
                                             <c:otherwise>
-                                                <a class="btn btn-primary" style="background-color: #55acee; width: 200px" role="button" onclick="document.getElementById('enroll').submit()">                          
+                                                <a class="btn btn-primary" style="background-color: #55acee; width: 200px" href="TotalLesson?id=${course_id}" role="button" onclick="document.getElementById('enroll').submit()">                          
                                                     <span style="display: block; font-size: 22px">
                                                         Enroll 
                                                     </span>

@@ -105,7 +105,7 @@
                                         <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="MentorList">Mentor list</a></li>
-                                            <li><a href="MentorBestRate">Mentor top rate</a></li>
+                                            <li><a href="MentorBestRate">Mentor best rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
@@ -137,15 +137,13 @@
                                         <a href="MentorList">Mentor <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="MentorList">Mentor list</a></li>
-                                            <li><a href="mentor-register.jsp">Mentor register</a></li>
-                                            <li><a href="MentorBestRate">Mentor top rate</a></li>
+                                            <li><a href="MentorBestRate">Mentor best rate</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-submenu">
                                         <a href="BlogList">Blog <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="BlogList">Blog list</a></li>
-                                            <li><a href="blog-create.jsp">New blog</a></li>
                                         </ul>
                                     </li>
                                     <li class="login-link">

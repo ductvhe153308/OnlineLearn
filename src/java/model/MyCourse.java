@@ -28,6 +28,7 @@ public class MyCourse {
     private String profile_picture;
     private boolean status;
     private double price;
+    
     public MyCourse() {
     }
 
