@@ -40,8 +40,14 @@
                 <div class="row" style="display: flex; flex-direction: column; justify-content: center; align-content: center; padding-top: 50px">
                     <c:forEach items="${list}" var="x">
                         <div style="height: 100px; width: 50%; border: 1px solid black; margin-bottom: 50px; font-size: 18px">
+                            <div>
                             <a href="LessonDetail?id=${x.id}&order=${x.lesson_order}&title=${x.title}">Lesson ${x.lesson_order}: ${x.title}
-                            </a>  
+                            </a> 
+                            </div>
+                            <div>
+                            <a href="QuizDetail?id=${x.id}">Quiz ${x.lesson_order}
+                            </a>
+                            </div>
                         </div>
                     </c:forEach>
                 </div>
