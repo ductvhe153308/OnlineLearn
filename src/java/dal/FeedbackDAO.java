@@ -30,7 +30,8 @@ public class FeedbackDAO {
             String query = "SELECT feedback.id, feedback.a_id, account.first_name, account.last_name, feedback.feedback_time, feedback.how_find_this_site, feedback.rating, feedback.voting, feedback.comment \n"
                     + "from onlinelearning.feedback, onlinelearning.account\n"
                     + "where feedback.a_id = account.account_id\n"
-                    + "and account.account_id = ?;";
+                    + "and account.account_id = ?\n"
+                    + "order by feedback.id desc;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, id);
