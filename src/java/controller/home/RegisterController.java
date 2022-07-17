@@ -5,6 +5,7 @@
  */
 package controller.home;
 
+import dal.AccountDAO;
 import dal.RegisterDAO;
 import model.Account;
 import java.io.IOException;
@@ -64,7 +65,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RegisterDAO dao = new RegisterDAO();
+        AccountDAO dao = new AccountDAO();
         String firstname = request.getParameter("first_name");
         String lastname = request.getParameter("last_name");
         String email = request.getParameter("email");
