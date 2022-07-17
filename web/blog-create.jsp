@@ -9,6 +9,7 @@
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/add-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
     <head>
+        <jsp:useBean id="c" class="dal.CategoryDAO" scope="request"></jsp:useBean>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Mentoring</title>
@@ -53,6 +54,7 @@
                                         <div class="col-12">
                                             <div class="card">
                                                 <div class="card-body">
+                                                    
                                                     <form action="BlogCreate" method="POST">
                                                         <div class="service-fields mb-3">
                                                             <h4 class="heading-2">Service Information</h4>
@@ -71,10 +73,10 @@
                                                                 <div class="col-lg-6">
                                                                     <div class="form-group">
                                                                         <label>Category <span class="text-danger">*</span></label>
-                                                                        <select class="form-control select" name="category">
-                                                                            <option value="1">Abacus Study for beginner - Part I</option>
-                                                                            <option value="2" selected="selected">Abacus Study for beginner - Part II</option>
-                                                                            <option value="3">Abacus Study for beginner - Part III</option>
+                                                                        <select class="form-control select" name="blogCategory">
+                                                                            <c:forEach items="${c.allBlogCategory}" var="x">
+                                                                                <option value="${x.id}">${x.name}</option>
+                                                                            </c:forEach>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -127,6 +129,7 @@
                                                             <button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Submit</button>
                                                         </div>
                                                     </form>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
