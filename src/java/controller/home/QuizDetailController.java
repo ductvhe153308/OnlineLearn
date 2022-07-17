@@ -33,13 +33,7 @@ public class QuizDetailController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         PrintWriter out = response.getWriter();
-        int id =1;
-         QuizDAO dao = new QuizDAO();
-       List<Quiz> quiz = dao.getQuiz(id);
-       request.setAttribute("quiz", quiz);
-        
-        request.getRequestDispatcher("quiz.jsp").forward(request, response);
+         
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -54,7 +48,21 @@ public class QuizDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       String index = request.getParameter("index");
+       if(index == null){
+           index ="1";
+       }
+       int indexPage = Integer.parseInt(index);
+        PrintWriter out = response.getWriter();
+        int id =1;
+         QuizDAO dao = new QuizDAO();
+       Quiz quiz = dao.getQuiz1(indexPage);
+       int endPage = dao.getQuizNumber(id);
+       request.setAttribute("endP", endPage);
+
+       request.setAttribute("quiz", quiz);
+        
+        request.getRequestDispatcher("quiz.jsp").forward(request, response);
     }
 
     /**
@@ -69,6 +77,7 @@ public class QuizDetailController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+       
     }
 
     /**
