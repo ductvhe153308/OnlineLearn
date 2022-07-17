@@ -120,6 +120,10 @@
         <servlet-name>MyFeedbackController</servlet-name>
         <servlet-class>controller.home.MyFeedbackController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CourseTrendingController</servlet-name>
+        <servlet-class>controller.CourseTrendingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -239,6 +243,10 @@
     <servlet-mapping>
         <servlet-name>MyFeedbackController</servlet-name>
         <url-pattern>/MyFeedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseTrendingController</servlet-name>
+        <url-pattern>/CourseTrending</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

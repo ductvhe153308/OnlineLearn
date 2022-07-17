@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller;
 
-import dal.QuizDAO;
+import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -13,13 +13,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Quiz;
+import model.Course;
 
 /**
  *
  * @author admin
  */
-public class QuizDetailController extends HttpServlet {
+public class CourseTrendingController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,8 +32,18 @@ public class QuizDetailController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-         
+        String index = request.getParameter("index");
+       if(index == null){
+           index ="1";
+       }
+       int indexPage = Integer.parseInt(index);
+       CourseDAO dao = new CourseDAO();
+       int endPage = dao.getNumberPage();
+       List<Course> list = dao.getAllCoursePaging(indexPage);
+       request.setAttribute("list", list);
+       request.setAttribute("endP", endPage);
+       request.setAttribute("tag", indexPage);
+       request.getRequestDispatcher("all-course.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -48,21 +58,7 @@ public class QuizDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String index = request.getParameter("index");
-       if(index == null){
-           index ="1";
-       }
-       int indexPage = Integer.parseInt(index);
-        PrintWriter out = response.getWriter();
-        int id =1;
-         QuizDAO dao = new QuizDAO();
-       Quiz quiz = dao.getQuiz1(indexPage);
-       int endPage = dao.getQuizNumber(id);
-       request.setAttribute("endP", endPage);
-
-       request.setAttribute("quiz", quiz);
-        
-        request.getRequestDispatcher("quiz.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -77,7 +73,6 @@ public class QuizDetailController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-       
     }
 
     /**
