@@ -33,7 +33,7 @@ public class Account {
     public Account() {
     }
     
-    public Account(int aid, String email, String password, String pfp,int role_id, String first_name, String last_name) {
+    public Account(int aid, String email, String password, String pfp,int role_id, String first_name, String last_name, int enabled) {
         this.aid = aid;
         this.email = email;
         this.password = password;
@@ -41,6 +41,7 @@ public class Account {
         this.role_id = role_id;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.enabled = enabled;
     }
     
     public Account(String first_name, String last_name, int count) {

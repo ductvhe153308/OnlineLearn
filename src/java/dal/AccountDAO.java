@@ -35,7 +35,7 @@ public class AccountDAO {
 
     public Account checkLogin(String email, String password) {
         try {
-            String query = "select account.account_id,account.email,account.password,account.profile_picture,account.role_id, account.first_name, account.last_name \n"
+            String query = "select account.account_id,account.email,account.password,account.profile_picture,account.role_id, account.first_name, account.last_name, account.enabled \n"
                     + "from account where email = ? and password = ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -49,7 +49,8 @@ public class AccountDAO {
                         rs.getString("profile_picture"),
                         rs.getInt("role_id"),
                         rs.getString("first_name"),
-                        rs.getString("last_name")
+                        rs.getString("last_name"),
+                        rs.getInt("enabled")
                 );
                 return ac;
             }
