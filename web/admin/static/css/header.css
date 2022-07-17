@@ -69,7 +69,8 @@ and open the template in the editor.
 
 .header #appendix {
     padding: 10px 10px;
-    position: absolute;
+    position: absolute;   
+    top: 0px;
     right: 20px;
 }
 
