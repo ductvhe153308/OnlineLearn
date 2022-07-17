@@ -6,7 +6,7 @@
 package controller.home;
 
 import dal.AccountDAO;
-import dal.RegisterDAO;
+
 import model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
