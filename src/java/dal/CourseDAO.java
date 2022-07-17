@@ -235,8 +235,10 @@ public class CourseDAO {
     public List<Course> getCourseByMentor(int aid) {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "select course_id, aid, title, rated_star, price, thumbnail, introduction,"
-                    + " total_register_number from onlinelearning.course where aid = ?";
+            String query = "select course.course_id, aid, title, rated_star, price, thumbnail, introduction, total_register_number, account.first_name, account.last_name, account.profile_picture \n"
+                    + "from onlinelearning.course, onlinelearning.account \n"
+                    + "where account.account_id = course.aid \n"
+                    + "and aid = ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, aid);
@@ -249,8 +251,11 @@ public class CourseDAO {
                         rs.getDouble(5),
                         rs.getString(6),
                         rs.getString(7),
-                        rs.getInt(8));
-                System.out.println(c);
+                        rs.getInt(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11)
+                );
                 list.add(c);
             }
             return list;
@@ -390,7 +395,7 @@ public class CourseDAO {
         }
         return null;
     }
-    
+
     public List<MyCourse> getMyPurchase(int aid) {
         List<MyCourse> list = new ArrayList<>();
         try {
