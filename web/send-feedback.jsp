@@ -1,4 +1,4 @@
-<%-- 
+CHECKED<%-- 
     Document   : send_feedback
     Created on : Jun 24, 2022, 10:50:55 PM
     Author     : dell
@@ -59,12 +59,12 @@
                         <tr  style="margin-top: 10px">
                             <td align="center"><b>How would you rate my website:</b></td> 
                             <td ALIGN="CENTER"> 
-                                <input TYPE="radio" NAME = "rating" VALUE = "Excellent"> Excellent 
+                                <input TYPE="radio" NAME = "rating" VALUE = "Excellent" CHECKED > Excellent 
                                 <input TYPE="radio" NAME = "rating" VALUE = "Good"> Good 
-                                <input TYPE="radio" NAME = "rating" VALUE = "Average" CHECKED> Average 
+                                <input TYPE="radio" NAME = "rating" VALUE = "Average" > Average 
                                 <input TYPE="radio" NAME = "rating" VALUE = "Poor"> Poor 
                                
-                            </td>
+                            </td>       
                         </tr>
 
                         <tr>
