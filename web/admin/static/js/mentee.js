@@ -161,7 +161,7 @@ var Mentee = {
                                                 <div class="table-data" style="width:${colgroup[3]}px">
                                                     ${AP.money.dollar(210)}</div>
                                                 <div class="table-data" style="width:${colgroup[4]}px">
-                                                    ${AP.status(mentee['aid'])}
+                                                    ${AP.status(mentee['aid'], mentee['enabled'])}
                                                     </div>
                                             </div>`;
                                 });

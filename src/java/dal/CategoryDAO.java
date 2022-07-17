@@ -5,6 +5,9 @@
  */
 package dal;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,7 +36,8 @@ public class CategoryDAO {
      * @return
      * @throws SQLException
      */
-    public ArrayList<Category> getListCategories(int page, int num_objs) throws SQLException {
+    public JsonArray getListCategories(int page, int num_objs) throws SQLException {
+        JsonArray jcs = new JsonArray();
         ArrayList<Category> cs = new ArrayList<>();
         try {
             String query = "select * from coursecategory limit ? , ? ;";
@@ -57,6 +61,7 @@ public class CategoryDAO {
             ps.close();
             conn.close();
         }
+        Gson gson = new Gson();
         for (Category c : cs) {
             try {
                 String query = "select avg(rated_star) as `avg` from course where  course_category_id = ?;";
@@ -65,7 +70,11 @@ public class CategoryDAO {
                 ps.setInt(1, c.getId());
                 rs = ps.executeQuery();
                 while (rs.next()) {
-                    
+                    int avg = (int)(rs.getDouble("avg"));
+                    JsonObject o = new JsonObject();
+                    o.addProperty("category", gson.toJson(c));
+                    o.addProperty("rate", avg);
+                    jcs.add(o);
                 }
 
             } catch (SQLException e) {
@@ -76,7 +85,7 @@ public class CategoryDAO {
                 conn.close();
             }
         }
-        return cs;
+        return jcs;
     }
 
     /**

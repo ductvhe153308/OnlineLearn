@@ -8,11 +8,11 @@ and open the template in the editor.
     Author     : DELL
 */
 .header {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: fixed !important;
+    z-index: 2 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
 }
 
 .header .header-left,
@@ -21,7 +21,7 @@ and open the template in the editor.
 .header #minimize,
 .header #appendix,
 .header #appendix div {
-    display: inline-block;
+    display: inline-block  !important;
 }
 
 .header .header-left {
@@ -33,15 +33,20 @@ and open the template in the editor.
 }
 
 .header .header-right {
-    background-color: #ffffff;
-    position: absolute;
-    height: 65.67px;
-    width: calc(100vw - 250px);
-    box-sizing: border-box;
-    padding: 10px 20px;
-    border-bottom: 1px solid #6c707b;
+    background-color: #ffffff !important;
+    position: absolute !important;
+    top:0px  !important;
+    margin-left: 0px !important;
+    height: 65.67px !important;
+    width: calc(100vw - 250px) !important;
+    box-sizing: border-box !important;
+    padding: 10px 20px !important;
+    border-bottom: 1px solid #6c707b !important;
 }
-
+.main-nav>li>a{
+    display: flex !important;
+    line-height: 40px !important;
+}
 .header-right svg {
     padding: 13px 0px;
 }
