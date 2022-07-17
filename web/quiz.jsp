@@ -43,7 +43,7 @@
                                             </div>
                                             <c:forEach items="${q.choices}"  var="c">
                                                 <div class="card-body">
-                                                    <input type="radio" value="${c.choiceId}" name="${q.questionId}" > ${c.description} <br>
+                                                    <input type="radio" value="${c.choiceId}" name="" > ${c.description} <br>
                                                 </div>
                                             </c:forEach>
                                         </div>
