@@ -48,6 +48,12 @@
                     </div>
                     <div class="row">
                         <div class="col-7 row">
+                            <span class="col-3">Phone number</span>                            
+                            <input class="col-7" type="text" name="phone" required maxlength="10" minlength="10">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7 row">
                             <span class="col-3">Password</span>                            
                             <input class="col-7" type="password" name="password" value="123456">
                         </div>
@@ -55,7 +61,7 @@
                     <div class="row">
                         <div class="col-7 row">
                             <span class="col-3">Note: </span>                            
-                            <span class="col-7" style="padding: 5px 10px; color: #fff">Password default is 123456!</span>
+                            <span class="col-7" style="padding: 5px 10px; color: #c0b937">Password default is 123456!</span>
                         </div>
                     </div>
                     <div class="row">

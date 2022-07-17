@@ -49,6 +49,12 @@
                     </div>
                     <div class="row">
                         <div class="col-7 row">
+                            <span class="col-3">Phone number</span>                            
+                            <input class="col-7" type="text" name="phone" required maxlength="10" minlength="10">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7 row">
                             <span class="col-3">Course Category</span> 
                             <select class="col-7" name="category" style="width: calc(100% / 12 * 7 + 19px);" required>
                                 <c:forEach var="x" items ="${categories}">

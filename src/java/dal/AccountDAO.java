@@ -61,7 +61,8 @@ public class AccountDAO {
         }
         return null;
     }
-     public Account checkAccountExist(String email) {
+
+    public Account checkAccountExist(String email) {
         String query = "select * from onlinelearning.account where email = ?";
         try {
             conn = new DBContext().getConnection();
@@ -650,15 +651,25 @@ public class AccountDAO {
         return null;
     }
 
-    public int addMentor(String fname, String lname, String email, String password) throws SQLException {
+    /**
+     *
+     * @param fname
+     * @param lname
+     * @param phone
+     * @param email
+     * @param password
+     * @return
+     * @throws SQLException
+     */
+    public int addMentor(String fname, String lname, String phone, String email, String password) throws SQLException {
         Account a = checkEmail(email);
         if (a != null) {
             return 0;
         }
         int c = 0;
         try {
-            String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`) "
-                    + "VALUES (?,?,?,?,?,?,?);";
+            String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`, `phone`) "
+                    + "VALUES (?,?,?,?,?,?,?,?);";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, lname);
@@ -668,19 +679,20 @@ public class AccountDAO {
             ps.setDate(5, new Date(System.currentTimeMillis()));
             ps.setInt(6, 2);
             ps.setInt(7, 1);
+            ps.setString(8, phone);
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 c = rs.getInt(1);
             }
         } catch (SQLException e) {
-            System.out.println("Error-"+e);
+            System.out.println("Error-" + e);
         } finally {
             rs.close();
             ps.close();
             conn.close();
         }
-        System.out.println("Id: "+c);
+        System.out.println("Id: " + c);
         return c;
     }
 
@@ -703,15 +715,25 @@ public class AccountDAO {
 
     }
 
-    public int addMentee(String fname, String lname, String email, String password) throws SQLException {
+    /**
+     *
+     * @param fname
+     * @param lname
+     * @param phone
+     * @param email
+     * @param password
+     * @return
+     * @throws SQLException
+     */
+    public int addMentee(String fname, String lname, String phone, String email, String password) throws SQLException {
         Account a = checkEmail(email);
         if (a != null) {
             return 0;
         }
         int c = 0;
         try {
-            String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`) "
-                    + "VALUES (?,?,?,?,?,?,?);";
+            String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`, `phone`) "
+                    + "VALUES (?,?,?,?,?,?,?,?);";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, lname);
@@ -721,6 +743,7 @@ public class AccountDAO {
             ps.setDate(5, new Date(System.currentTimeMillis()));
             ps.setInt(6, 3);
             ps.setInt(7, 1);
+            ps.setString(8, phone);
             ps.executeUpdate();
             c = 1;
         } catch (SQLException e) {

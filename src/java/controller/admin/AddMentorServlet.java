@@ -65,11 +65,12 @@ public class AddMentorServlet extends HttpServlet {
             String fname = request.getParameter("fname");
             String lname = request.getParameter("lname");
             String email = request.getParameter("email");
+            String phone = request.getParameter("phone");
             String course = request.getParameter("cname");
             int category_id = Integer.parseInt(request.getParameter("category"));
             String password = request.getParameter("password");
             AccountDAO adao = new AccountDAO();
-            int added = adao.addMentor(fname, lname, email, password);
+            int added = adao.addMentor(fname, lname, phone, email, password);
             if (added > 0) {
                 CourseDAO cdao = new CourseDAO();
                 cdao.addNewCourse(course, category_id, added);
