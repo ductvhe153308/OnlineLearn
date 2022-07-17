@@ -33,7 +33,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name, String profile_picture) {
+    public Course(int course_id, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name, String profile_picture, int aid) {
         this.course_id = course_id;
         this.title = title;
         this.rated_star = rated_star;
@@ -44,6 +44,7 @@ public class Course {
         this.first_name = first_name;
         this.last_name = last_name;
         this.profile_picture = profile_picture;
+        this.aid = aid;
     }
 
     public Course(int course_id, int aid, String title, int rated_star, double price, int sale_price_id, int total_register_number) {
