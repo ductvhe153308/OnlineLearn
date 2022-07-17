@@ -23,7 +23,7 @@
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> / 
                 <div>User</div> / 
-                <div>Mentee</div> /
+                <div class="url" data-url="admin/mentee">Mentee</div> /
                 <div class="dist">Add</div>
             </div> 
             <div class="component col-12" id="mentee" style="align-items: center;color: #fdff00; font-weight: 700;background: url(/onlinelearn/assets/img/course-bg4.jpg); background-size: cover; height:550px">
