@@ -162,6 +162,9 @@
                                             <li><a href="send-feedback.jsp">Send feedback</a></li>
                                         </ul>
                                     </li>
+                                    <li>
+                                        <a href="admin">Admin</a>
+                                    </li>
                                     <li class="login-link">
                                         <a href="account">Login / Sign up</a>
                                     </li>

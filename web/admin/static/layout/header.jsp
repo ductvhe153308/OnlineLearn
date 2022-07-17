@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="header">
-        <div class="header-left">
+        <div class="header-left url" data-url="home">
             <img src="/onlinelearn/admin/static/images/logo-white.png"/>
         </div>
         <div class="header-right">
