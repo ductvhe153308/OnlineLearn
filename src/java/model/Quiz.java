@@ -1,7 +1,6 @@
 package model;
 
 import java.util.List;
-import model.Question;
 
 public class Quiz {
     private int quizId;
