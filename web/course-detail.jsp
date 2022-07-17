@@ -134,7 +134,7 @@
                                                 </div>
                                             </div>
                                             <div class="author-details">
-                                                <a href="profile.html" class="blog-author-name">${author}</a>
+                                                <a href="MentorDetail?id=${author_id}" class="blog-author-name">${author}</a>
                                                 <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                                             </div>
                                         </div>
