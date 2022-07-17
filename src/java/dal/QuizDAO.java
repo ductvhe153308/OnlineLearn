@@ -27,6 +27,32 @@ public class QuizDAO {
     private PreparedStatement ps = null;
     private ResultSet rs = null;
 
+     public Quiz getQuiz1(int id)  {
+        Quiz quiz = new Quiz();
+        try {
+            this.conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(""
+                    + "SELECT qz.Id , qz.description\n"
+                    + "FROM onlinelearning.quiz AS qz ,\n"
+                    + "onlinelearning.lesson AS ls \n"
+                    + "where qz.lesson_id = ls.id \n"
+                    + "and qz.id=?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                quiz.setQuizId(rs.getInt("Id"));
+                quiz.setDescription(rs.getString("description"));
+                List<Choice> choices = getChoices(rs.getInt("Id"));
+                quiz.setChoices(choices);
+                
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return quiz;
+    }
+     
     public List<Quiz> getQuiz(int id) {
         List<Quiz> quiz = new ArrayList<>();
 
@@ -45,7 +71,6 @@ public class QuizDAO {
 
                 Quiz qu = new Quiz();
                 qu.setQuizId(rs.getInt("Id"));
-
                 qu.setDescription(rs.getString("description"));
                 List<Choice> choices = getChoices(rs.getInt("Id"));
                 qu.setChoices(choices);
@@ -96,10 +121,26 @@ public class QuizDAO {
     }
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
-       List<Quiz> quiz = dao.getQuiz(1);
-       for(Quiz o : quiz){
-           System.out.println(o);
-       }
+       Quiz quiz = dao.getQuiz1(2);
+       int x = dao.getQuizNumber(1);
+        System.out.println(x);
+           System.out.println(quiz);
+       
     }
-
+    public int getQuizNumber(int id) {
+        try {
+            String query = "select count(*) from onlinelearning.quiz where quiz.lesson_id = ?  ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return  rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
 }
