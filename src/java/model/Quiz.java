@@ -2,42 +2,59 @@ package model;
 
 import java.util.List;
 import model.Question;
-import model.QuizType;
 
 public class Quiz {
-    private QuizType quizType;
-    private List<Question> questions;
-    private String questionsJson;
+    private int quizId;
+    private String description;
+    private List<Choice> choices;
+   
 
-    public String getQuestionsJson() {
-        return questionsJson;
+   
+
+    public int getIsSelected() {
+        return isSelected;
     }
 
-    public void setQuestionsJson(String questionsJson) {
-        this.questionsJson = questionsJson;
+    public void setIsSelected(int isSelected) {
+        this.isSelected = isSelected;
     }
 
-    public QuizType getQuizType() {
-        return quizType;
+    private int isSelected;
+
+    public int getQuizId() {
+        return quizId;
     }
 
-    public void setQuizType(QuizType quizType) {
-        this.quizType = quizType;
+    public void setQuizId(int quizId) {
+        this.quizId = quizId;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
+ 
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<Choice> getChoices() {
+        return choices;
+    }
+
+    public void setChoices(List<Choice> choices) {
+        this.choices = choices;
     }
 
     @Override
     public String toString() {
-        return "Quiz{" +
-                "quizType=" + quizType +
-                ", questions=" + questions +
+        return "Question{" +
+                "questionId=" + quizId +
+                ", description='" + description + '\'' +
+                ", choices=" + choices +
+                ", isSelected=" + isSelected +
                 '}';
     }
+
 }
