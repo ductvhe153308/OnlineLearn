@@ -12,7 +12,7 @@ package model;
 public class Choice {
     private int choiceId;
     private String description;
-    private int isAnswer;
+    private int isCorrectAnswer;
 
     public int getChoiceId() {
         return choiceId;
@@ -30,19 +30,22 @@ public class Choice {
         this.description = description;
     }
 
-    public int getIsAnswer() {
-        return isAnswer;
+    public int getIsCorrectAnswer() {
+        return isCorrectAnswer;
     }
 
-    public void setIsAnswer(int isAnswer) {
-        this.isAnswer = isAnswer;
+    public void setIsCorrectAnswer(int isCorrectAnswer) {
+        this.isCorrectAnswer = isCorrectAnswer;
     }
+    
+   
+   
     @Override
     public String toString() {
         return "Choice{" +
                 "choiceId=" + choiceId +
                 ", description='" + description + '\'' +
-                ", isAnswer=" + isAnswer +
+                ", isAnswer=" + isCorrectAnswer +
                 '}';
     }
 }
