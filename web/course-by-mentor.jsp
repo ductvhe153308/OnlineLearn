@@ -74,7 +74,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
-                                <a href="course-detail.jsp">
+                                <a href="CourseDetail?course_id=${x.course_id}&title=${x.title}&rate=${x.rated_star}&total_register=${x.total_register_number}&author_id=${x.aid}&author=${x.last_name}+${x.first_name}&author_img=${x.profile_picture}">
                                     <div class="courses-head">
                                         <div class="courses-img-main">
                                             <img src="assets/img/course/${x.thumnail}" alt="" class="img-fluid w-100">
@@ -91,7 +91,7 @@
                                                     </li> 
                                                 </c:forEach>
                                             </ul>
-                                            <p class="mb-1">${x.last_name} ${x.first_name}</p>
+                                            <p class="mb-1">${x.last_name} ${x.first_name} ${x.course_id}</p>
                                             <h4 class="mb-0">
                                                 <a>${x.title}</a>
                                             </h4>
