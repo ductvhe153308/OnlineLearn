@@ -89,7 +89,7 @@ public class CourseDAO {
             String query = "SELECT course.course_id,course.title,course.rated_star,"
                     + "course.price,course.thumbnail,course.introduction,"
                     + "course.total_register_number,account.first_name,"
-                    + "account.last_name,account.profile_picture "
+                    + "account.last_name,account.profile_picture, course.aid "
                     + "FROM onlinelearning.course,onlinelearning.account "
                     + "where course.aid = account.account_id and course.rated_star=5"
                     + " order by course.course_id asc limit 4 offset ?";
@@ -107,7 +107,9 @@ public class CourseDAO {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10));
+                        rs.getString(10),
+                        rs.getInt(11)
+                );
                 list.add(c);
             }
             return list;
@@ -145,7 +147,7 @@ public class CourseDAO {
         try {
             String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
                     + "course.thumbnail,course.introduction,course.total_register_number,account.first_name,"
-                    + "account.last_name,account.profile_picture\n"
+                    + "account.last_name,account.profile_picture, course.aid\n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id \n"
                     + "order by course.total_register_number desc limit 4;";
@@ -162,7 +164,9 @@ public class CourseDAO {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10));
+                        rs.getString(10),
+                        rs.getInt(11)
+                );
                 list.add(c);
             }
             return list;
@@ -198,7 +202,7 @@ public class CourseDAO {
         try {
             String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
                     + "course.thumbnail,course.introduction,course.total_register_number,"
-                    + "account.first_name,account.last_name,account.profile_picture \n"
+                    + "account.first_name,account.last_name,account.profile_picture, course.aid \n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id \n"
                     + "order by course.course_id asc limit 4 offset ?;";
@@ -216,7 +220,9 @@ public class CourseDAO {
                         rs.getInt(7),
                         rs.getString(8),
                         rs.getString(9),
-                        rs.getString(10));
+                        rs.getString(10),
+                        rs.getInt(11)
+                );
                 list.add(c);
             }
             return list;
