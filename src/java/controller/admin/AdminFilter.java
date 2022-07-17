@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.sql.SQLException;
 import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -117,18 +118,25 @@ public class AdminFilter implements Filter {
         try {
             Account user = (Account) req.getSession().getAttribute("user");
             AccountDAO adao = new AccountDAO();
+            /* Admin Filter logic
+             * user not exist -> reject request
+             * user isn't admin -> reject
+             * Then, allow request to file assets.
+             */
             if ((user == null || adao.getAdmin().getAid() != user.getAid()) && !(req.getRequestURI().endsWith(".jsp") || req.getRequestURI().endsWith(".js") || req.getRequestURI().endsWith(".css") || req.getRequestURI().endsWith(".png") || req.getRequestURI().endsWith(".jpg"))) {
                 req.getRequestDispatcher("/admin/reject.jsp").forward(req, res);
-            } else {
+            } // Accept request
+            else {
+                // Default request for addmin
+                if (req.getRequestURI().equalsIgnoreCase("/onlinelearn/admin/")) {
+                    req.getRequestDispatcher("/admin/dashboard").forward(req, res);
+                }
                 chain.doFilter(request, response);
-
             }
-        } catch (Throwable t) {
+        } catch (IOException | SQLException | ServletException t) {
             // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then
             // rethrow the problem after that.
-            problem = t;
-            t.printStackTrace();
             req.getRequestDispatcher("/admin/dashboard").forward(req, res);
         }
 
