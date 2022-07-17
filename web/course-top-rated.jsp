@@ -73,7 +73,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
-                                <a href="CourseDetail?course_id=${x.course_id}&title=${x.title}&rate=${x.rated_star}&total_register=${x.total_register_number}&author=${x.last_name}+${x.first_name}&author_img=${x.profile_picture}">
+                                <a href="CourseDetail?course_id=${x.course_id}&title=${x.title}&rate=${x.rated_star}&total_register=${x.total_register_number}&author_id=${x.aid}&author=${x.last_name}+${x.first_name}&author_img=${x.profile_picture}">
                                     <div class="courses-head">
                                         <div class="courses-img-main">
                                             <img src="assets/img/course/${x.thumnail}" alt="" class="img-fluid w-100">
