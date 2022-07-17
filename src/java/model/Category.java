@@ -24,6 +24,11 @@ public class Category {
         this.created_at = creates_at;
     }
 
+    public Category(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
