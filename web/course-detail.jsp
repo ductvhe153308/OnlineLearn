@@ -130,11 +130,11 @@
                                         <div class="about-author">
                                             <div class="about-author-img">
                                                 <div class="author-img-wrap">
-                                                    <a href="profile.html"><img class="img-fluid rounded-circle" alt="" src="assets/img/user/user1.jpg"></a>
+                                                    <a href="profile.html"><img class="img-fluid rounded-circle" alt="" src="assets/img/user/${author_img}"></a>
                                                 </div>
                                             </div>
                                             <div class="author-details">
-                                                <a href="profile.html" class="blog-author-name">Darren Elder</a>
+                                                <a href="profile.html" class="blog-author-name">${author}</a>
                                                 <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                                             </div>
                                         </div>
