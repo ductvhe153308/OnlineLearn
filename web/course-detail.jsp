@@ -130,7 +130,7 @@
                                         <div class="about-author">
                                             <div class="about-author-img">
                                                 <div class="author-img-wrap">
-                                                    <a href="profile.html"><img class="img-fluid rounded-circle" alt="" src="assets/img/user/${author_img}"></a>
+                                                    <a href="MentorDetail?id=${author_id}"><img class="img-fluid rounded-circle" alt="" src="assets/img/user/${author_img}"></a>
                                                 </div>
                                             </div>
                                             <div class="author-details">
