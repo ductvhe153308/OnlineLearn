@@ -66,6 +66,20 @@ public class Course {
         this.total_register_number = total_register_number;
     }
 
+    public Course(int course_id, int aid, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number, String first_name, String last_name, String profile_picture) {
+        this.course_id = course_id;
+        this.aid = aid;
+        this.title = title;
+        this.rated_star = rated_star;
+        this.price = price;
+        this.thumnail = thumnail;
+        this.introduction = introduction;
+        this.total_register_number = total_register_number;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.profile_picture = profile_picture;
+    }
+    
     public Course(int course_id, int aid, String title, int rated_star, double price, String thumnail, String introduction, int total_register_number) {
         this.course_id = course_id;
         this.aid = aid;
