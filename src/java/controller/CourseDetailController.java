@@ -34,6 +34,7 @@ public class CourseDetailController extends HttpServlet {
         String title = request.getParameter("title");
         int rate = Integer.parseInt(request.getParameter("rate"));
         int total_register = Integer.parseInt(request.getParameter("total_register"));
+        int author_id = Integer.parseInt(request.getParameter("author_id"));
         String author = request.getParameter("author");
         String author_img = request.getParameter("author_img");
         request.setAttribute("course_id", course_id);
@@ -42,6 +43,7 @@ public class CourseDetailController extends HttpServlet {
         request.setAttribute("total_register", total_register);
         request.setAttribute("author", author);
         request.setAttribute("author_img", author_img);
+        request.setAttribute("author_id", author_id);
         request.getRequestDispatcher("course-detail.jsp").forward(request, response);
     }
 
