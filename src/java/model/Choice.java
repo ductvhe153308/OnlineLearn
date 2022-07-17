@@ -43,7 +43,7 @@ public class Choice {
     @Override
     public String toString() {
         return "Choice{" +
-                "choiceId=" + choiceId +
+                "\nchoiceId=" + choiceId +
                 ", description='" + description + '\'' +
                 ", isAnswer=" + isCorrectAnswer +
                 '}';
