@@ -115,6 +115,14 @@
                                             <li><a href="blog-create.jsp">New blog</a></li>
                                         </ul>
                                     </li>
+                                    <li class="has-submenu">
+                                        <a href="BlogList">Other <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="terms.jsp">Terms</a></li>
+                                            <li><a href="privacy-policy-and-safety.jsp">Privacy Policy</a></li>
+                                            <li><a href="send-feedback.jsp">Send feedback</a></li>
+                                        </ul>
+                                    </li>
                                     <li class="login-link">
                                         <a href="account">Login / Sign up</a>
                                     </li>
@@ -144,6 +152,14 @@
                                         <a href="BlogList">Blog <i class="fas fa-chevron-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="BlogList">Blog list</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="BlogList">Other <i class="fas fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="terms.jsp">Terms</a></li>
+                                            <li><a href="privacy-policy-and-safety.jsp">Privacy Policy</a></li>
+                                            <li><a href="send-feedback.jsp">Send feedback</a></li>
                                         </ul>
                                     </li>
                                     <li class="login-link">
