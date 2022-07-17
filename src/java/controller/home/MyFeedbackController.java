@@ -3,32 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.admin;
+package controller.home;
 
-import com.google.gson.Gson;
-import dal.AccountDAO;
-import dal.CategoryDAO;
+import dal.FeedbackDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
-import model.Category;
+import model.Feedback;
 
 /**
  *
- * @author Dell
+ * @author dell
  */
-@WebServlet(name = "CatergoriesServlet", urlPatterns = {"/admin/categories"})
-public class CatergoriesServlet extends HttpServlet {
+@WebServlet(name = "MyFeedbackController", urlPatterns = {"/MyFeedback"})
+public class MyFeedbackController extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            Account a = (Account) request.getSession().getAttribute("user");
+            FeedbackDAO feedbackDAO = new FeedbackDAO();
+            List<Feedback> list = feedbackDAO.getFeedbackByUser(a.getAid());
+            request.setAttribute("myfeedback", list);
+            request.getRequestDispatcher("my-feedback.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -40,7 +58,7 @@ public class CatergoriesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("categories.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -54,14 +72,7 @@ public class CatergoriesServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            CategoryDAO  cdao = new CategoryDAO();
-            ArrayList<Category> cs = cdao.getListCategories(1, 10);
-            Gson gson = new Gson();
-            response.getWriter().print(gson.toJson(cs));
-        } catch (SQLException ex) {
-            Logger.getLogger(CatergoriesServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -72,6 +83,6 @@ public class CatergoriesServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
+    }// </editor-fold>
 
 }

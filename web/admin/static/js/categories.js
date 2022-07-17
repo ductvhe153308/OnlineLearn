@@ -40,7 +40,7 @@ var Categories = {
                     var category = data[index];
                     return `<div class="table-row">
                         <div class="table-data" style="width:${colgroup[0]}px">
-                            ${index+1}
+                            ${parseInt(index)+1}
                         </div>
                         <div class="table-data" style="width:${colgroup[1]}px">
                             ${category['name']}

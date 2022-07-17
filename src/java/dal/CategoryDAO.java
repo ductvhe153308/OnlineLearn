@@ -24,12 +24,14 @@ public class CategoryDAO {
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
+
     /**
      * Get list of all course categories.
+     *
      * @param page
      * @param num_objs
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public ArrayList<Category> getListCategories(int page, int num_objs) throws SQLException {
         ArrayList<Category> cs = new ArrayList<>();
@@ -55,13 +57,34 @@ public class CategoryDAO {
             ps.close();
             conn.close();
         }
+        for (Category c : cs) {
+            try {
+                String query = "select avg(rated_star) as `avg` from course where  course_category_id = ?;";
+                conn = new DBContext().getConnection();
+                ps = conn.prepareStatement(query);
+                ps.setInt(1, c.getId());
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                rs.close();
+                ps.close();
+                conn.close();
+            }
+        }
         return cs;
     }
+
     /**
      * Add new course category into database.
+     *
      * @param name
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public int addCategory(String name) throws SQLException {
         int add = 0;
@@ -70,7 +93,7 @@ public class CategoryDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, name);
-            ps.setInt(2, (int)(System.currentTimeMillis()/1000));
+            ps.setInt(2, (int) (System.currentTimeMillis() / 1000));
             add = ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
