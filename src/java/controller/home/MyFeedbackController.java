@@ -3,22 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package controller.home;
 
 import dal.FeedbackDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
+import model.Feedback;
 
 /**
  *
  * @author dell
  */
-public class SendFeedbackController extends HttpServlet {
+@WebServlet(name = "MyFeedbackController", urlPatterns = {"/MyFeedback"})
+public class MyFeedbackController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,18 +35,14 @@ public class SendFeedbackController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SendFeedbackController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SendFeedbackController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            Account a = (Account) request.getSession().getAttribute("user");
+            FeedbackDAO feedbackDAO = new FeedbackDAO();
+            List<Feedback> list = feedbackDAO.getFeedbackByUser(a.getAid());
+            request.setAttribute("myfeedback", list);
+            request.getRequestDispatcher("my-feedback.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -72,19 +72,7 @@ public class SendFeedbackController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{
-            Account a = (Account) request.getSession().getAttribute("user");
-            String how_find_this_site = request.getParameter("how_find_this_site");
-            String rating = request.getParameter("rating");
-            String comment = request.getParameter("comment");
-            String voting = request.getParameter("voting");
-            FeedbackDAO feedbackDAO = new FeedbackDAO();
-            feedbackDAO.addNewFeedback(how_find_this_site, rating, comment, voting, a.getAid());
-            response.sendRedirect("home.jsp");
-            
-        }catch(Exception e){
-            
-        }
+        processRequest(request, response);
     }
 
     /**
