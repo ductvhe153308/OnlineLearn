@@ -5,10 +5,12 @@
  */
 package controller;
 
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.sql.SQLException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -16,6 +18,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -23,17 +28,17 @@ import javax.servlet.annotation.WebFilter;
  */
 @WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/*"})
 public class AuthenticationFilter implements Filter {
-    
+
     private static final boolean debug = true;
 
     // The filter configuration object we are associated with.  If
     // this value is null, this filter instance is not currently
     // configured. 
     private FilterConfig filterConfig = null;
-    
+
     public AuthenticationFilter() {
-    }    
-    
+    }
+
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
@@ -60,8 +65,8 @@ public class AuthenticationFilter implements Filter {
 	    log(buf.toString());
 	}
          */
-    }    
-    
+    }
+
     private void doAfterProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
@@ -99,24 +104,38 @@ public class AuthenticationFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
+
         if (debug) {
             log("AuthenticationFilter:doFilter()");
         }
-        
+
         doBeforeProcessing(request, response);
-        
+
         Throwable problem = null;
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
         try {
-            chain.doFilter(request, response);
-        } catch (Throwable t) {
+            Account user = (Account) req.getSession().getAttribute("user");
+            /* Admin Filter logic
+             * user not exist -> reject request
+             * user isn't admin -> reject
+             * Then, allow request to file assets.
+             */
+            if (req.getRequestURI().equalsIgnoreCase("/onlinelearn/")) {
+                req.getRequestDispatcher("/home").forward(req, res);
+            } else if (user != null && 1 != user.getEnabled()) {
+                req.getRequestDispatcher("/home").forward(req, res);
+            } // Accept request
+            else {
+                chain.doFilter(request, response);
+            }
+        } catch (IOException | ServletException t) {
             // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then
             // rethrow the problem after that.
-            problem = t;
-            t.printStackTrace();
+            req.getRequestDispatcher("/admin/dashboard").forward(req, res);
         }
-        
+
         doAfterProcessing(request, response);
 
         // If there was a problem, we want to rethrow it if it is
@@ -151,16 +170,16 @@ public class AuthenticationFilter implements Filter {
     /**
      * Destroy method for this filter
      */
-    public void destroy() {        
+    public void destroy() {
     }
 
     /**
      * Init method for this filter
      */
-    public void init(FilterConfig filterConfig) {        
+    public void init(FilterConfig filterConfig) {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
-            if (debug) {                
+            if (debug) {
                 log("AuthenticationFilter:Initializing filter");
             }
         }
@@ -179,20 +198,20 @@ public class AuthenticationFilter implements Filter {
         sb.append(")");
         return (sb.toString());
     }
-    
+
     private void sendProcessingError(Throwable t, ServletResponse response) {
-        String stackTrace = getStackTrace(t);        
-        
+        String stackTrace = getStackTrace(t);
+
         if (stackTrace != null && !stackTrace.equals("")) {
             try {
                 response.setContentType("text/html");
                 PrintStream ps = new PrintStream(response.getOutputStream());
-                PrintWriter pw = new PrintWriter(ps);                
+                PrintWriter pw = new PrintWriter(ps);
                 pw.print("<html>\n<head>\n<title>Error</title>\n</head>\n<body>\n"); //NOI18N
 
                 // PENDING! Localize this for next official release
-                pw.print("<h1>The resource did not process correctly</h1>\n<pre>\n");                
-                pw.print(stackTrace);                
+                pw.print("<h1>The resource did not process correctly</h1>\n<pre>\n");
+                pw.print(stackTrace);
                 pw.print("</pre></body>\n</html>"); //NOI18N
                 pw.close();
                 ps.close();
@@ -209,7 +228,7 @@ public class AuthenticationFilter implements Filter {
             }
         }
     }
-    
+
     public static String getStackTrace(Throwable t) {
         String stackTrace = null;
         try {
@@ -223,9 +242,9 @@ public class AuthenticationFilter implements Filter {
         }
         return stackTrace;
     }
-    
+
     public void log(String msg) {
-        filterConfig.getServletContext().log(msg);        
+        filterConfig.getServletContext().log(msg);
     }
-    
+
 }
