@@ -16,6 +16,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -107,14 +110,30 @@ public class AuthenticationFilter implements Filter {
         doBeforeProcessing(request, response);
         
         Throwable problem = null;
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;           
         try {
-            chain.doFilter(request, response);
-        } catch (Throwable t) {
+            Account user = (Account) req.getSession().getAttribute("user");
+            /* Admin Filter logic
+             * user not exist -> reject request
+             * user isn't admin -> reject
+             * Then, allow request to file assets.
+             */
+            if (req.getRequestURI().equalsIgnoreCase("/onlinelearn/")) {
+                req.getRequestDispatcher("/home").forward(req, res);
+            } else if (user != null && 1 != user.getEnabled()) {
+                req.getRequestDispatcher("/home").forward(req, res);
+            } // Accept request
+            else {
+                chain.doFilter(request, response);
+            }
+        } catch (IOException | ServletException t) {
             // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then
             // rethrow the problem after that.
             problem = t;
             t.printStackTrace();
+            req.getRequestDispatcher("/home").forward(req, res);
         }
         
         doAfterProcessing(request, response);

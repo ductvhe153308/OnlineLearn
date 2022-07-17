@@ -80,7 +80,7 @@ var Mentee = {
                 success: function (response) {
                     var table_name = 'Mentee List';
                     var header = ['Mentee Name', 'Phone', 'Menber Since', 'Paid', 'Account Status'];
-                    var colgroup = [150, 90, 70, 50, 150];
+                    var colgroup = [150, 100, 100, 100, 190];
                     var data = JSON.parse(response);
                     var table = AP.table.render(table_name, header, data, function (index) {
                         var mentee = JSON.parse(data[index]['account']);
