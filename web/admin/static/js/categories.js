@@ -37,7 +37,8 @@ var Categories = {
                 var data = JSON.parse(response);
                 console.log(data)
                 var table = AP.table.render(table_name, header, data, function (index) {
-                    var category = data[index];
+                    var category = JSON.parse(data[index]['category']);
+                    var rate = data[index]['rate'];
                     return `<div class="table-row">
                         <div class="table-data" style="width:${colgroup[0]}px">
                             ${parseInt(index)+1}
@@ -49,7 +50,7 @@ var Categories = {
                             ${AP.time.time(category['created_at'])}
                         </div>
                         <div class="table-data" style="width:${colgroup[3]}px;">
-                            ${AP.rate.star(index%5+1)}
+                            ${AP.rate.star(rate)}
                         </div>
                         <div class="table-data" style="width:${colgroup[4]}px">sdf</div>
                     </div>`;

@@ -6,6 +6,7 @@
 package controller.admin;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import dal.AccountDAO;
 import dal.CategoryDAO;
 import java.io.IOException;
@@ -56,9 +57,9 @@ public class CatergoriesServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             CategoryDAO  cdao = new CategoryDAO();
-            ArrayList<Category> cs = cdao.getListCategories(1, 10);
+            JsonArray cs = cdao.getListCategories(1, 10);
             Gson gson = new Gson();
-            response.getWriter().print(gson.toJson(cs));
+            response.getWriter().print(cs);
         } catch (SQLException ex) {
             Logger.getLogger(CatergoriesServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

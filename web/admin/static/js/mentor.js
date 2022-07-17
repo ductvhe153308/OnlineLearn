@@ -142,10 +142,9 @@ var Mentor = {
                                 asc: asc
                             },
                             success: function (response) {
-                                var data = JSON.parse(response);
-                                console.log(data);
                                 var new_table = AP.render(data, function (index) {
                                     var mentor = JSON.parse(data[index]['account']);
+                                    console.log(mentor);
                                     var course = JSON.parse(data[index]['course']);
                                     var img = mentor['pfp'];
                                     if (img == null) {
@@ -162,7 +161,7 @@ var Mentor = {
                                             <div class="table-data" style="width:${colgroup[3]}px">
                                                 ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
                                             <div class="table-data" style="width:${colgroup[4]}px">
-                                                ${AP.status(mentor['aid'])}
+                                                ${AP.status(mentor['aid'],mentor['enabled'])}
                                                 </div>
                                         </div>`;
                                 });
