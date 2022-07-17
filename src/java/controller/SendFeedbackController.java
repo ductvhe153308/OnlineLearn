@@ -80,7 +80,7 @@ public class SendFeedbackController extends HttpServlet {
             String voting = request.getParameter("voting");
             FeedbackDAO feedbackDAO = new FeedbackDAO();
             feedbackDAO.addNewFeedback(how_find_this_site, rating, comment, voting, a.getAid());
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("MyFeedback");
             
         }catch(Exception e){
             
