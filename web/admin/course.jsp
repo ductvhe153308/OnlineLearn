@@ -19,7 +19,7 @@
         <jsp:include page="static/layout/header.jsp" />
         <jsp:include page="static/layout/slide-bar.jsp" />
         <div id="page">
-            <div class="page-title">List of Booking Course <div class="url btn btn-add right" data-url="admin/course/add">Add Course</div></div>
+            <div class="page-title">List of Booking Course </div>
             <div class="page-navigation">
                 <div class="url" data-url="admin/dashboard">Dashboard</div> / 
                 <div class="dist">Course</div>
