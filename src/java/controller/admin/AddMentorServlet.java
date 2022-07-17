@@ -7,6 +7,7 @@ package controller.admin;
 
 import dal.AccountDAO;
 import dal.CategoryDAO;
+import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -64,9 +65,15 @@ public class AddMentorServlet extends HttpServlet {
             String fname = request.getParameter("fname");
             String lname = request.getParameter("lname");
             String email = request.getParameter("email");
+            String course = request.getParameter("cname");
+            int category_id = Integer.parseInt(request.getParameter("category"));
             String password = request.getParameter("password");
             AccountDAO adao = new AccountDAO();
             int added = adao.addMentor(fname, lname, email, password);
+            if (added > 0) {
+                CourseDAO cdao = new CourseDAO();
+                cdao.addNewCourse(course, category_id, added);
+            }
             request.getRequestDispatcher("/admin/addmentor.jsp").include(request, response);
             if (added > 0) {
                 response.getWriter().print("<script>AP.alertSuccess('Done!');</script>");

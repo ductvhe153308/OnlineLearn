@@ -13,6 +13,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -620,7 +621,7 @@ public class AccountDAO {
             String query = "INSERT INTO `account` (`last_name`, `first_name`, `email`, `password`, `created_at`, `role_id`, `enabled`) "
                     + "VALUES (?,?,?,?,?,?,?);";
             conn = new DBContext().getConnection();
-            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, lname);
             ps.setString(2, fname);
             ps.setString(3, email);
@@ -629,33 +630,38 @@ public class AccountDAO {
             ps.setInt(6, 2);
             ps.setInt(7, 1);
             ps.executeUpdate();
-            c = 1;
+            rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                c = rs.getInt(1);
+            }
         } catch (SQLException e) {
-            System.out.println(e);
+            System.out.println("Error-"+e);
         } finally {
+            rs.close();
             ps.close();
             conn.close();
         }
+        System.out.println("Id: "+c);
         return c;
     }
 
-    public void updateProfile(int id,String firstname,String lastname,String phone,Date dob) {
-       
+    public void updateProfile(int id, String firstname, String lastname, String phone, Date dob) {
+
         String query = "UPDATE `onlinelearning`.`account` SET `last_name` = ?, `first_name` = ?, `phone` = ?, `date_of_birth` = ? WHERE account_id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1,firstname);
+            ps.setString(1, firstname);
             ps.setString(2, lastname);
             ps.setString(3, phone);
             ps.setString(4, dob.toString());
             ps.setInt(5, id);
 
             ps.executeUpdate();
-           
+
         } catch (Exception e) {
         }
-       
+
     }
 
     public int addMentee(String fname, String lname, String email, String password) throws SQLException {

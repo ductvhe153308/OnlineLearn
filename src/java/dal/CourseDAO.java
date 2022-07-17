@@ -433,4 +433,22 @@ public class CourseDAO {
         }
         return null;
     }
+
+    public void addNewCourse(String course, int category_id, int mentor_id) throws SQLException {
+        try {
+            String query = "INSERT INTO `course` (`aid`, `title`, `rated_star`, `price`, `total_register_number`, `course_category_id`) "
+                    + "VALUES (?,?,0,0,0,?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, mentor_id);
+            ps.setString(2, course);
+            ps.setInt(3, category_id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            ps.close();
+            conn.close();
+        }
+    }
 }
