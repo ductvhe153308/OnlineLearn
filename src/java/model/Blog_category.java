@@ -7,24 +7,16 @@ package model;
 
 /**
  *
- * @author Dell
+ * @author ADMIN
  */
-public class Category {
-
+public class Blog_category {
     private int id;
     private String name;
-    private int created_at;
 
-    public Category() {
+    public Blog_category() {
     }
 
-    public Category(int id, String name, int creates_at) {
-        this.id = id;
-        this.name = name;
-        this.created_at = creates_at;
-    }
-
-    public Category(int id, String name) {
+    public Blog_category(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -44,13 +36,4 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(int created_at) {
-        this.created_at = created_at;
-    }
-
 }

@@ -8,6 +8,7 @@ package controller.home;
 import dal.LessonDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,8 +38,9 @@ public class TotalLessonController extends HttpServlet {
             int id = Integer.parseInt(request.getParameter("id"));
             LessonDAO lessonDAO = new LessonDAO();
             List<Lesson> list = lessonDAO.getLessonList(id);
+//            Lesson lesson = new Lesson();
             request.setAttribute("list", list);
-            request.setAttribute("size", list.size());
+//            request.setAttribute("size", list.size());
 //            request.setAttribute("id", id);
             request.getRequestDispatcher("course-start-learning.jsp").forward(request, response);
         } catch (Exception e) {

@@ -67,9 +67,10 @@ public class EditBlogController extends HttpServlet {
             String title = request.getParameter("title");
             String shortDetail = request.getParameter("shortDetail");
             String detail = request.getParameter("detail");
-
+            int blog_category = Integer.parseInt(request.getParameter("blogCategory"));
+            
             BlogDAO blogDAO = new BlogDAO();
-            blogDAO.editBlog(title, shortDetail, detail, id);
+            blogDAO.editBlog(title, shortDetail, detail, blog_category ,id);
             Blog b = blogDAO.getBlogByID(id);
             response.sendRedirect("BlogByAuthor");
     }

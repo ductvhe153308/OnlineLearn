@@ -185,32 +185,34 @@ public class BlogDAO {
         return null;
     }
 
-    public void addNewBlog(String title, String shortDetail, String detail, int author) {
+    public void addNewBlog(String title, String shortDetail, String detail, int blog_category,int author) {
         try {
-            String query = "INSERT INTO `onlinelearning`.`blog` (`detail`, `account_id`, `title`, `updated_date`, `created_date`, `short_detail`) "
-                    + "VALUES (?, ?, ?, now(), now(), ?);";
+            String query = "INSERT INTO `onlinelearning`.`blog` (`detail`, `account_id`, `title`, `updated_date`, `created_date`, `short_detail`,`blog_category_id`) "
+                    + "VALUES (?, ?, ?, now(), now(), ?,?);";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, detail);
             ps.setInt(2, author);
             ps.setString(3, title);
             ps.setString(4, shortDetail);
+            ps.setInt(5, blog_category);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void editBlog(String detail, String title, String shortDetail,int id) {
+    public void editBlog(String title, String shortDetail,String detail,int blog_category,int id) {
         try {
-            String query = "update onlinelearning.blog set blog.detail=?,blog.title=?,blog.updated_date=now(),blog.short_detail=?\n"
+            String query = "update onlinelearning.blog set blog.title=?,blog.updated_date=now(),blog.short_detail=?,blog.detail=?,blog.blog_category_id=?\n"
                     + "where blog.id=?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, detail);
-            ps.setString(2, title);
-            ps.setString(3, shortDetail);
-            ps.setInt(4, id);
+            ps.setString(1, title);
+            ps.setString(2, shortDetail);
+            ps.setString(3, detail);
+            ps.setInt(4, blog_category);
+            ps.setInt(5, id);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+import model.Blog_category;
 import model.Booking;
 import model.Category;
 import model.Course;
@@ -137,4 +139,40 @@ public class CategoryDAO {
         }
         return cs;
     }
+    
+    public List<Blog_category> getAllBlogCategory() {
+        List<Blog_category> list = new ArrayList<>();
+        try {
+            String query = "SELECT blogcategory.id,blogcategory.name FROM onlinelearning.blogcategory;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                list.add(new Blog_category(id, name));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+//        public List<Category> getAllCourseCategory() {
+//        List<Category> list = new ArrayList<>();
+//        try {
+//            String query = "SELECT * FROM onlinelearning.coursecategory;";
+//            conn = new DBContext().getConnection();
+//            ps = conn.prepareStatement(query);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                Category c = new Category(rs.getInt("id"), rs.getString("name"));
+//                list.add(c);
+//            }
+//            return list;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 }
