@@ -53,9 +53,10 @@ public class AddMenteeServlet extends HttpServlet {
             String fname = request.getParameter("fname");
             String lname = request.getParameter("lname");
             String email = request.getParameter("email");
+            String phone = request.getParameter("phone");
             String password = request.getParameter("password");
             AccountDAO adao = new AccountDAO();
-            int added = adao.addMentee(fname, lname, email, password);
+            int added = adao.addMentee(fname, lname, phone, email, password);
             request.getRequestDispatcher("/admin/addmentee.jsp").include(request, response);
             if (added > 0) {
                 response.getWriter().print("<script>AP.alertSuccess('Done!');</script>");

@@ -21,26 +21,33 @@ var Transaction = {
             },
             success: function (response) {
                 var table_name = 'Transaction List';
-                var header = ['#Number', 'Mentee', 'Total Amount', 'Status', 'Action']
-                var colgroup = [100, 155, 155, 155, 155];
+                var header = ['#Number', 'Mentee', 'Total Amount', 'Time', 'Status', 'Action']
+                var colgroup = [130, 255, 155, 100, 155, 155];
                 var data = JSON.parse(response);
                 var table = AP.table.render(table_name, header, data, function (index) {
-                    var category = JSON.parse(data[index]['category']);
-                    var rate = data[index]['rate'];
+                    var transaction = data[index];
+                    var mentee = data[index].mentee;
+                    var img = mentee.pfp;
+                    if (img == null) {
+                        img = 'default.jpg';
+                    }
                     return `<div class="table-row">
                         <div class="table-data" style="width:${colgroup[0]}px">
-                            ${parseInt(index)+1}
+                            #IN00${transaction.id}
                         </div>
                         <div class="table-data" style="width:${colgroup[1]}px">
-                            ${category['name']}
-                        </div>
+                            <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${img}" alt="ava"/>
+                        <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div></div>
                         <div class="table-data" style="width:${colgroup[2]}px">
-                            ${AP.time.time(category['created_at'])}
+                            ${AP.money.dollar(transaction.amount)}
                         </div>
                         <div class="table-data" style="width:${colgroup[3]}px;">
-                            ${AP.rate.star(rate)}
+                            ${AP.time.time(transaction.last_update)}
                         </div>
-                        <div class="table-data" style="width:${colgroup[4]}px">sdf</div>
+                        <div class="table-data" style="width:${colgroup[4]}px;">
+                            ${AP.status(1)}
+                        </div>
+                        <div class="table-data" style="width:${colgroup[5]}px">sdf</div>
                     </div>`;
                 }, colgroup, true, true);
                 $("#page #" + id).html(table);
@@ -115,10 +122,10 @@ var Transaction = {
             }
         });
     },
-    display : {
-        
+    display: {
+
     },
-    form:{
-        
+    form: {
+
     }
 };

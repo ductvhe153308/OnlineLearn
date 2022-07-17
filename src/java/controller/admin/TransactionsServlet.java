@@ -7,9 +7,13 @@ package controller.admin;
 
 import com.google.gson.Gson;
 import dal.AccountDAO;
+import dal.TransactionDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,8 +53,13 @@ public class TransactionsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Gson gson = new Gson();
-        response.getWriter().print(gson.toJson(new ArrayList<>()));
+        try {
+            TransactionDAO tdao = new TransactionDAO();
+            Gson gson = new Gson();
+            response.getWriter().print(gson.toJson(tdao.getListTransaction(1, 10)));
+        } catch (SQLException ex) {
+            Logger.getLogger(TransactionsServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
