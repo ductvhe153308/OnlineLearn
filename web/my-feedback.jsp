@@ -41,7 +41,7 @@
                             <p>Do you think this my form looks like?<span style="color: #00cc52"> -  ${x.voting}</p>
                             <p>Feedback time:<span style="color: #00cc52"> ${x.feedback_time} </p>
                             <div class="submit-section" style="display:  flex; justify-content: right;">
-                                <button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Delete</button>
+                                <input class="btn btn-primary submit-btn" type="button" value="Delete" onclick="confirm_decision();"/>
                             </div>
                         </div>
                     </c:forEach>
@@ -50,5 +50,16 @@
             </div>
         </section>
         <%@include file="footer.jsp" %> 
+        <script>
+            function confirm_decision() {
+                if (confirm("Do you want to delete this feedback?")) // this will pop up confirmation box and if yes is clicked it call servlet else return to page
+                {
+                    alert("yes");
+                } else {
+                    return false;
+                }
+                return true;
+            }
+        </script>
     </body>
 </html>
