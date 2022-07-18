@@ -40,6 +40,9 @@
                             <p>Comment or Suggestions<span style="color: #00cc52">- ${x.comment} </p>
                             <p>Do you think this my form looks like?<span style="color: #00cc52"> -  ${x.voting}</p>
                             <p>Feedback time:<span style="color: #00cc52"> ${x.feedback_time} </p>
+                            <div class="submit-section" style="display:  flex; justify-content: right;">
+                                <button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Delete</button>
+                            </div>
                         </div>
                     </c:forEach>
                 </div>
