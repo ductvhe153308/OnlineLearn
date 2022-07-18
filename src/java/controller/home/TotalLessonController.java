@@ -42,7 +42,7 @@ public class TotalLessonController extends HttpServlet {
             request.setAttribute("list", list);
 //            request.setAttribute("size", list.size());
 //            request.setAttribute("id", id);
-            request.getRequestDispatcher("course-start-learning.jsp").forward(request, response);
+            request.getRequestDispatcher("course-overview.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
