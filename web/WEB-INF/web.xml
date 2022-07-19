@@ -132,6 +132,10 @@
         <servlet-name>DeleteFeebackController</servlet-name>
         <servlet-class>controller.DeleteFeebackController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchCourseController</servlet-name>
+        <servlet-class>controller.SearchCourseController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -263,6 +267,10 @@
     <servlet-mapping>
         <servlet-name>DeleteBlogController</servlet-name>
         <url-pattern>/DeleteBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchCourseController</servlet-name>
+        <url-pattern>/SearchCourse</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
