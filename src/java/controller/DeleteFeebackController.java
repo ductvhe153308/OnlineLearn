@@ -63,6 +63,7 @@ public class DeleteFeebackController extends HttpServlet {
             String id = request.getParameter("id");
             FeedbackDAO feedbackDAO = new FeedbackDAO();
             feedbackDAO.deleteFeedbackById(a.getAid(), id);
+            request.setAttribute("delete_feedback_msg", "Delete a feedback successfully!");
             response.sendRedirect("MyFeedback");
         } catch (Exception e) {
         }
