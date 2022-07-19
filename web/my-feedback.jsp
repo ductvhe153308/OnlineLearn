@@ -40,15 +40,15 @@
                             <p>Comment or Suggestions<span style="color: #00cc52">- ${x.comment} </p>
                             <p>Do you think this my form looks like?<span style="color: #00cc52"> -  ${x.voting}</p>
                             <p>Feedback time:<span style="color: #00cc52"> ${x.feedback_time} </p>
-                            <form id="delete_feedback" action="DeleteFeedback" method="post">
+                            <form id="delete_feedback">
                                 <div class="submit-section" style="display:  flex; justify-content: right;">
-                                    <div>
-                                        <select name="rating" size="1">
-                                            <option value = "yes" selected>Another Website</option>
+                                    <div style="display: none">
+                                        <select name="id" size="1">
+                                            <option value = "${x.id}" selected>Another Website</option>
                                         </select>
                                     </div>
 
-                                    <input class="btn btn-primary submit-btn" type="submit" value="submit" onclick="confirm_decision(${x.id});"/>
+                                    <input class="btn btn-primary submit-btn" type="submit" value="submit" onclick="confirm_decision();"/>
                                 </div>
                             </form>
 
@@ -60,15 +60,16 @@
         </section>
         <%@include file="footer.jsp" %> 
         <script>
-            function confirm_decision(id) {
-                if (confirm("Do you want to delete this feedback id = " + id + " ?")) // this will pop up confirmation box and if yes is clicked it call servlet else return to page
+            function confirm_decision() {
+                var delete_feedback = document.getElementById("delete_feedback");
+                if (confirm("Do you want to delete this feedback?")) // this will pop up confirmation box and if yes is clicked it call servlet else return to page
                 {
-                    var feedback_id = id;
-                    feedback_id.submit();
+                    delete_feedback.method = "post"
+                    delete_feedback.action = "DeleteFeedback"
+                    delete_feedback.submit();
                 } else {
                     return false;
                 }
-                return true;
             }
         </script>
     </body>
