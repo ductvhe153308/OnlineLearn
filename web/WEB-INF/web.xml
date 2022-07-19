@@ -142,7 +142,7 @@
     </servlet>
     <servlet>
         <servlet-name>SearchBlogController</servlet-name>
-        <servlet-class>controller.home.SearchBlogController</servlet-class>
+        <servlet-class>controller.blog.SearchBlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>QuizResultController</servlet-name>
