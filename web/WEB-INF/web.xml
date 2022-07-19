@@ -138,7 +138,7 @@
     </servlet>
     <servlet>
         <servlet-name>SearchMentorController</servlet-name>
-        <servlet-class>controller.SearchMentorController</servlet-class>
+        <servlet-class>controller.mentor.SearchMentorController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchBlogController</servlet-name>
