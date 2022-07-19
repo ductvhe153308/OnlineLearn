@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller.lesson;
 
-import dal.AccountDAO;
+import dal.LessonDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
+import model.Lesson;
 
 /**
  *
- * @author admin
+ * @author ADMIN
  */
-public class AccountController extends HttpServlet {
+public class LessonDetailController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +31,20 @@ public class AccountController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
+            LessonDAO lessonDAO = new LessonDAO();
+            Lesson lesson = lessonDAO.getLessonByID(id);
+            request.setAttribute("x", lesson);
+            String order = request.getParameter("order");
+            String title = request.getParameter("title");
+            request.setAttribute("order", order);
+            request.setAttribute("title", title);
+//            request.setAttribute("id", id);
+            request.getRequestDispatcher("lesson.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -48,7 +59,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -62,28 +73,7 @@ public class AccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            String email = request.getParameter("email").trim();
-            String pass = request.getParameter("password").trim();
-            AccountDAO accountDAO = new AccountDAO();
-            Account a = accountDAO.checkLogin(email, pass);
-            if (a == null) {
-                request.setAttribute("mess", "Username or password incorrect");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
-            }
-            if (a != null) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", a);
-                session.setAttribute("email", email);
-                session.setAttribute("password", pass);
-                if (a.getRole_id() == 1) {
-                    response.sendRedirect("admin/dashboard");
-                } else {
-                    response.sendRedirect("home.jsp");
-                }
-            }
-        } catch (Exception e) {
-        }
+        processRequest(request, response);
     }
 
     /**

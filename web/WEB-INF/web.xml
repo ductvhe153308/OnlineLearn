@@ -2,27 +2,27 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>AccountController</servlet-name>
-        <servlet-class>controller.home.AccountController</servlet-class>
+        <servlet-class>controller.common.AccountController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutController</servlet-name>
-        <servlet-class>controller.home.LogoutController</servlet-class>
+        <servlet-class>controller.common.LogoutController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ValidateOtpController</servlet-name>
-        <servlet-class>controller.home.ValidateOtpController</servlet-class>
+        <servlet-class>controller.common.ValidateOtpController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>NewPasswordController</servlet-name>
-        <servlet-class>controller.home.NewPasswordController</servlet-class>
+        <servlet-class>controller.common.NewPasswordController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegisterController</servlet-name>
-        <servlet-class>controller.home.RegisterController</servlet-class>
+        <servlet-class>controller.common.RegisterController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ChangePasswordController</servlet-name>
-        <servlet-class>controller.home.ChangePasswordController</servlet-class>
+        <servlet-class>controller.common.ChangePasswordController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogDetailController</servlet-name>
@@ -102,11 +102,11 @@
     </servlet>
     <servlet>
         <servlet-name>LessonDetailController</servlet-name>
-        <servlet-class>controller.home.LessonDetailController</servlet-class>
+        <servlet-class>controller.lesson.LessonDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TotalLessonController</servlet-name>
-        <servlet-class>controller.home.TotalLessonController</servlet-class>
+        <servlet-class>controller.lesson.TotalLessonController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SendFeedbackController</servlet-name>
@@ -142,7 +142,7 @@
     </servlet>
     <servlet>
         <servlet-name>SearchBlogController</servlet-name>
-        <servlet-class>controller.home.SearchBlogController</servlet-class>
+        <servlet-class>controller.blog.SearchBlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>QuizResultController</servlet-name>
