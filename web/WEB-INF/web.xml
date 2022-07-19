@@ -30,7 +30,7 @@
     </servlet>
     <servlet>
         <servlet-name>BlogByAuthorController</servlet-name>
-        <servlet-class>controller.home.BlogByAuthorController</servlet-class>
+        <servlet-class>controller.blog.BlogByAuthorController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MentorDetailController</servlet-name>
