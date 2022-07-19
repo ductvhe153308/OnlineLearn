@@ -46,7 +46,7 @@
     </servlet>
     <servlet>
         <servlet-name>EditBlogController</servlet-name>
-        <servlet-class>controller.home.EditBlogController</servlet-class>
+        <servlet-class>controller.blog.EditBlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseListController</servlet-name>
