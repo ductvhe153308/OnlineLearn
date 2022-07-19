@@ -34,18 +34,24 @@ public class SearchCourseController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String searchName = request.getParameter("searchByName");
-        String index = request.getParameter("index");
-        if (index == null) {
-            index = "1";
+        if (searchName.length() != 0) {
+            String index = request.getParameter("index");
+            if (index == null) {
+                index = "1";
+            }
+            int indexPage = Integer.parseInt(index);
+            CourseDAO dao = new CourseDAO();
+            int endPage = dao.getNumberPageBySearch(searchName);
+            List<Course> list = dao.getCourseBySearchName(indexPage, searchName);
+            request.setAttribute("list", list);
+            request.setAttribute("endP", endPage);
+            request.setAttribute("tag", indexPage);
+            request.setAttribute("searchName", searchName);
+            request.getRequestDispatcher("all-course.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("CourseList");
         }
-        int indexPage = Integer.parseInt(index);
-        CourseDAO dao = new CourseDAO();
-        int endPage = dao.getNumberPage();
-        List<Course> list = dao.getCourseBySearchName(indexPage, searchName);
-        request.setAttribute("list", list);
-        request.setAttribute("endP", endPage);
-        request.setAttribute("tag", indexPage);
-        request.getRequestDispatcher("all-course.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
