@@ -451,4 +451,41 @@ public class CourseDAO {
             conn.close();
         }
     }
+    
+    public List<Course> getCourseBySearchName(int index, String searchName) {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
+                    + "course.thumbnail,course.introduction,course.total_register_number,"
+                    + "account.first_name,account.last_name,account.profile_picture, course.aid \n"
+                    + "FROM onlinelearning.course,onlinelearning.account\n"
+                    + "where course.aid = account.account_id \n"
+                    + "and course.title = ? \n"
+                    + "order by course.course_id asc limit 4 offset ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1,"%" + searchName + "%");
+            ps.setInt(2, (index - 1) * 4);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Course c = new Course(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getInt(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getInt(11)
+                );
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
