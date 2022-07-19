@@ -23,6 +23,7 @@ public class BlogDAO {
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
+
     public int getBlogNumberPage() {
         try {
             String query = "select count(*) from onlinelearning.blog  ";
@@ -43,6 +44,7 @@ public class BlogDAO {
         }
         return 0;
     }
+
     public List<Blog> getAllBlogPaging(int index) {
         List<Blog> list = new ArrayList<>();
         try {
@@ -53,7 +55,7 @@ public class BlogDAO {
                     + " ORDER BY blog.id asc limit 5 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-             ps.setInt(1, (index - 1) * 5);
+            ps.setInt(1, (index - 1) * 5);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Blog b = new Blog(rs.getInt("id"),
@@ -185,7 +187,7 @@ public class BlogDAO {
         return null;
     }
 
-    public void addNewBlog(String title, String shortDetail, String detail, int blog_category,int author) {
+    public void addNewBlog(String title, String shortDetail, String detail, int blog_category, int author) {
         try {
             String query = "INSERT INTO `onlinelearning`.`blog` (`detail`, `account_id`, `title`, `updated_date`, `created_date`, `short_detail`,`blog_category_id`) "
                     + "VALUES (?, ?, ?, now(), now(), ?,?);";
@@ -202,7 +204,7 @@ public class BlogDAO {
         }
     }
 
-    public void editBlog(String title, String shortDetail,String detail,int blog_category,int id) {
+    public void editBlog(String title, String shortDetail, String detail, int blog_category, int id) {
         try {
             String query = "update onlinelearning.blog set blog.title=?,blog.updated_date=now(),blog.short_detail=?,blog.detail=?,blog.blog_category_id=?\n"
                     + "where blog.id=?;";
@@ -213,6 +215,18 @@ public class BlogDAO {
             ps.setString(3, detail);
             ps.setInt(4, blog_category);
             ps.setInt(5, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteBlog(int id) {
+        try {
+            String query = "DELETE FROM `onlinelearning`.`blog` WHERE (`id` = ?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
