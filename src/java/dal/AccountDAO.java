@@ -859,7 +859,23 @@ public class AccountDAO {
         return c;
     }
 
-    public int countingStar() {
-        return 123;
+    public int countingStar() throws SQLException {
+        int c = 0;
+        try {
+            String query = "select sum(rated_star) as 'total' from course";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                c = rs.getInt("total");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return c;
     }
 }
