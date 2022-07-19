@@ -267,9 +267,9 @@ public class CourseDAO {
 
     public static void main(String[] args) {
         CourseDAO dao = new CourseDAO();
-        int n = dao.pageRateCourse();
+        int n = dao.getNumberPageBySearch("CSS");
         System.out.println(n);
-        List<Course> list = dao.getTopRatedCourse(1);
+        List<Course> list = dao.getCourseBySearchName(1, "CSS");
         for (Course o : list) {
             System.out.println(o);
         }
@@ -451,7 +451,7 @@ public class CourseDAO {
             conn.close();
         }
     }
-    
+
     public List<Course> getCourseBySearchName(int index, String searchName) {
         List<Course> list = new ArrayList<>();
         try {
@@ -464,7 +464,7 @@ public class CourseDAO {
                     + "order by course.course_id asc limit 4 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1,"%" + searchName + "%");
+            ps.setString(1, searchName);
             ps.setInt(2, (index - 1) * 4);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -487,5 +487,31 @@ public class CourseDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int getNumberPageBySearch(String searchName) {
+        try {
+            String query = "SELECT count(*)\n"
+                    + "FROM onlinelearning.course,onlinelearning.account\n"
+                    + "where course.aid = account.account_id \n"
+                    + "and course.title = ?\n"
+                    + "order by course.course_id asc";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, searchName);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 4;
+                if (total % 4 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
