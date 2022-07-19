@@ -37,7 +37,7 @@ public class DeleteFeebackController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DeleteFeebackController</title>");            
+            out.println("<title>Servlet DeleteFeebackController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet DeleteFeebackController at " + request.getContextPath() + "</h1>");
@@ -58,7 +58,14 @@ public class DeleteFeebackController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            Account a = (Account) request.getSession().getAttribute("user");
+            String id = request.getParameter("id");
+            FeedbackDAO feedbackDAO = new FeedbackDAO();
+            feedbackDAO.deleteFeedbackById(a.getAid(), id);
+            response.sendRedirect("MyFeedback");
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -72,14 +79,6 @@ public class DeleteFeebackController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            Account a = (Account) request.getSession().getAttribute("user");
-            String id = request.getParameter("id");
-            FeedbackDAO feedbackDAO = new FeedbackDAO();
-            feedbackDAO.deleteFeedbackById(a.getAid(), id);
-            response.sendRedirect("MyFeedback");
-        } catch (Exception e) {
-        }
     }
 
     /**
@@ -93,4 +92,3 @@ public class DeleteFeebackController extends HttpServlet {
     }// </editor-fold>
 
 }
-
