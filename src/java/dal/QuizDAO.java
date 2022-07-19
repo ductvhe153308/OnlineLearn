@@ -136,8 +136,8 @@ public class QuizDAO {
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
         List<Quiz> quiz = dao.getQuiz1(2);
-  
-        
+        int n = dao.getQuizNumberPage(1);
+        System.out.println(n);
         for(Quiz o :quiz){
            
             List<Choice> choice = dao.getChoices(o.getQuizId());
@@ -147,8 +147,13 @@ public class QuizDAO {
           
             
         }
+                int firtId =quiz.get(0).getQuizId();
+
         for(Quiz o :quiz){
+           
+            System.out.println(o.getQuizId() - firtId +1);
             System.out.println(o);
+            
         }
 
     }
