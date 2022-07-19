@@ -59,18 +59,5 @@
             </div>
         </section>
         <%@include file="footer.jsp" %> 
-        <script>
-            function confirm_decision() {
-                var delete_feedback = document.getElementById("delete_feedback");
-                if (confirm("Do you want to delete this feedback?")) // this will pop up confirmation box and if yes is clicked it call servlet else return to page
-                {
-                    delete_feedback.method = "post"
-                    delete_feedback.action = "DeleteFeedback"
-                    delete_feedback.submit();
-                } else {
-                    return false;
-                }
-            }
-        </script>
     </body>
 </html>
