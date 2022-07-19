@@ -98,7 +98,7 @@
     </servlet>
     <servlet>
         <servlet-name>MentorRegisterController</servlet-name>
-        <servlet-class>controller.home.MentorRegisterController</servlet-class>
+        <servlet-class>controller.mentor.MentorRegisterController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LessonDetailController</servlet-name>
