@@ -8,6 +8,9 @@ package controller.admin;
 import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,14 +36,18 @@ public class DashboardServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        AccountDAO adao = new AccountDAO();
-        int members = adao.countingMember();
-        request.setAttribute("members", members);
-        int appointments = adao.countingAppointment();
-        request.setAttribute("appointments", appointments);
-        int stars = adao.countingStar();
-        request.setAttribute("stars", stars);
-        request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+        try {
+            AccountDAO adao = new AccountDAO();
+            int members = adao.countingMember();
+            request.setAttribute("members", members);
+            int appointments = adao.countingAppointment();
+            request.setAttribute("appointments", appointments);
+            int stars = adao.countingStar();
+            request.setAttribute("stars", stars);
+            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(DashboardServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -819,8 +819,24 @@ public class AccountDAO {
         return c;
     }
 
-    public int countingMember() {
-        return 166;
+    public int countingMember() throws SQLException {
+        int c = 0;
+        try {
+            String query = "select count(*) as 'total' from account where role_id = 2 or role_id = 3";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                c = rs.getInt("total");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return c;
     }
 
     public int countingAppointment() {
