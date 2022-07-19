@@ -450,7 +450,7 @@ public class CourseDAO {
                     + "account.first_name,account.last_name,account.profile_picture, course.aid \n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id \n"
-                    + "and course.title like ? \n"
+                    + "and course.title like %?% \n"
                     + "order by course.course_id asc limit 4 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
