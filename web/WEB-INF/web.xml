@@ -58,7 +58,7 @@
     </servlet>
     <servlet>
         <servlet-name>CourseTopRateController</servlet-name>
-        <servlet-class>controller.CourseTopRateController</servlet-class>
+        <servlet-class>controller.course.CourseTopRateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MentorListController</servlet-name>
