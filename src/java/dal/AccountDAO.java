@@ -224,11 +224,11 @@ public class AccountDAO {
     
     public int getMentorNumberPageByName(String searchName) {
         try {
-            String query = "select count(*) from onlinelearning.account where role_id = 2 and account.last_name = ? or account.first_name = ? ";
+            String query = "select count(*) from onlinelearning.account where role_id = 2 and account.last_name like ? or account.first_name like ? ";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, searchName);
-            ps.setString(2, searchName);
+            ps.setString(1, "%" + searchName + "%");
+            ps.setString(2, "%" + searchName + "%");
             rs = ps.executeQuery();
             while (rs.next()) {
                 int total = rs.getInt(1);
