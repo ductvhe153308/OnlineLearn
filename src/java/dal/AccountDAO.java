@@ -222,7 +222,28 @@ public class AccountDAO {
         return list;
     }
     
-    
+    public int getMentorNumberPageByName(String searchName) {
+        try {
+            String query = "select count(*) from onlinelearning.account where role_id = 2 and account.last_name = ? or account.first_name = ? ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, searchName);
+            ps.setString(2, searchName);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 8;
+                if (total % 8 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
     public Account getMentorByID(int id) throws SQLException {
         Account a = null;
