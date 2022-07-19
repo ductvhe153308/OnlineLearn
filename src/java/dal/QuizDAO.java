@@ -144,19 +144,16 @@ public class QuizDAO {
 
             List<Choice> choice = dao.getChoices(o.getQuizId());
             for (Choice c : choice) {
-                if(c.getIsCorrectAnswer() ==1){
-                    o.setAnswer( c.getChoiceId()+"" );
+                if (c.getIsCorrectAnswer() == 1) {
+                    o.setAnswer(c.getChoiceId() + "");
                 }
-                
-           
 
-        }
+            }
             o.setChoices(choice);
-            
 
         }
         int firtId = quiz.get(0).getQuizId();
-        
+
         for (Quiz o : quiz) {
 
             System.out.println(o);
@@ -166,18 +163,34 @@ public class QuizDAO {
 
     }
 
-    public void getResult(int quiz_mark, int quizId,int user_select ,int is_correct_answer ) {
+    public void getResult(int quiz_mark, int quizId, int user_select, int is_correct_answer, int lesson_id) {
         try {
-            String query = "INSERT INTO onlinelearning.result \n"
-                    + "(quiz_mark, quizId, user_select, is_correct_answer) VALUES (?, ?, ?, ?);";
+            String query = "INSERT INTO `onlinelearning`.`result` \n"
+                    + "(quiz_mark_id,quizId, user_select, is_correct_answer, lessonId) \n"
+                    + "VALUES (?,?, ?, ?, ?);";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, quiz_mark);
             ps.setInt(2, quizId);
             ps.setInt(3, user_select);
             ps.setInt(4, is_correct_answer);
+            ps.setInt(5, lesson_id);
             rs = ps.executeQuery();
-        }catch (Exception e) {
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getMark(int id) {
+        try {
+            String query = "select count(*) from onlinelearning.result \n"
+                    + "where result.user_select = result.is_correct_answer \n"
+                    + "and result.lessonId = ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
