@@ -33,7 +33,7 @@ var Mentor = {
                 success: function (response) { // Kieu String
                     var table_name = 'Mentor List';
                     var header = ['Mentor Name', 'Course', 'Earned', 'Reviews'];
-                    var colgroup = [150, 90, 50, 130];
+                    var colgroup = [210, 90, 100, 130];
                     var data = JSON.parse(response);
                     var table = AP.table.render(table_name, header, data, function (index) {
                         var mentor = JSON.parse(data[index]['account']);
@@ -82,7 +82,7 @@ var Mentor = {
                 success: function (response) {
                     var table_name = 'Mentor List';
                     var header = ['Mentor Name', 'Course', 'Menber Since', 'Earned', 'Account Status'];
-                    var colgroup = [150, 90, 70, 50, 150];
+                    var colgroup = [210, 150, 150, 150, 180];
                     var data = JSON.parse(response);
                     var table = AP.table.render(table_name, header, data, function (index) {
                         var mentor = JSON.parse(data[index]['account']);
