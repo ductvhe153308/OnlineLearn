@@ -41,7 +41,7 @@
 <!--                                            <li class="breadcrumb-item active" aria-current="page">Add Blog</li>-->
                                         </ol>
                                     </nav>
-                                    <h2 class="breadcrumb-title">Add Blog</h2>
+                                    <h2 class="breadcrumb-title">Create Blog</h2>
                                 </div>
                             </div>
                         </div>
