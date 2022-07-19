@@ -50,7 +50,7 @@
     </servlet>
     <servlet>
         <servlet-name>CourseListController</servlet-name>
-        <servlet-class>controller.CourseListController</servlet-class>
+        <servlet-class>controller.course.CourseListController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseByMentorController</servlet-name>
