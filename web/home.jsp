@@ -165,7 +165,7 @@
                             </div>
                         </div>
                         <div class="section-btn m-auto text-center">
-                            <a href="all-course.jsp">
+                            <a href="course-list.jsp">
                                 <button class="btn btn-course">View all Courses <i class="fas fa-caret-right right-nav-white"></i></button>
                             </a>
                         </div>
