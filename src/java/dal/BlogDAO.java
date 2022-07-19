@@ -137,16 +137,16 @@ public class BlogDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Blog b = new Blog(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
+                Blog b = new Blog(rs.getInt("id"),
+                        rs.getString("detail"),
+                        rs.getString("title"),
                         LocalDateTime.MAX,
-                        rs.getString(5),
-                        rs.getDate(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10));
+                        rs.getString("image"),
+                        rs.getDate("created_date"),
+                        rs.getString("short_detail"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"));
                 return b;
             }
         } catch (Exception e) {
