@@ -43,7 +43,7 @@ public class CourseTrendingController extends HttpServlet {
        request.setAttribute("list", list);
        request.setAttribute("endP", endPage);
        request.setAttribute("tag", indexPage);
-       request.getRequestDispatcher("all-course.jsp").forward(request, response);
+       request.getRequestDispatcher("course-list.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
