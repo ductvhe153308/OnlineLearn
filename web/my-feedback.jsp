@@ -48,7 +48,7 @@
                                         </select>
                                     </div>
 
-                                    <input class="btn btn-primary submit-btn" type="submit" value="submit" onclick="confirm_decision();"/>
+                                    <input class="btn btn-primary submit-btn" type="submit" value="Delete" onclick="confirm_decision();"/>
                                 </div>
                             </form>
 
