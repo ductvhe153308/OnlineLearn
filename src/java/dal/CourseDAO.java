@@ -98,17 +98,17 @@ public class CourseDAO {
             ps.setInt(1, (index - 1) * 4);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Course c = new Course(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getInt(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getInt(11)
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getInt("aid")
                 );
                 list.add(c);
             }
@@ -155,17 +155,17 @@ public class CourseDAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Course c = new Course(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getInt(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getInt(11)
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getInt("aid")
                 );
                 list.add(c);
             }
@@ -211,17 +211,17 @@ public class CourseDAO {
             ps.setInt(1, (index - 1) * 4);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Course c = new Course(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getDouble(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getInt(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getInt(11)
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getInt("aid")
                 );
                 list.add(c);
             }
@@ -244,17 +244,17 @@ public class CourseDAO {
             ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Course c = new Course(rs.getInt(1),
-                        rs.getInt(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getDouble(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getInt(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11)
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getInt("aid"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture")
                 );
                 list.add(c);
             }
@@ -263,16 +263,6 @@ public class CourseDAO {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        CourseDAO dao = new CourseDAO();
-        int n = dao.pageRateCourse();
-        System.out.println(n);
-        List<Course> list = dao.getTopRatedCourse(1);
-        for (Course o : list) {
-            System.out.println(o);
-        }
     }
 
     public Course getCourse(int course_id) throws SQLException {
@@ -285,14 +275,14 @@ public class CourseDAO {
             ps.setInt(1, course_id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                c = new Course(rs.getInt(1),
-                        rs.getInt(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getDouble(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getInt(8));
+                c = new Course(rs.getInt("course_id"),
+                        rs.getInt("aid"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -373,20 +363,20 @@ public class CourseDAO {
             ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                MyCourse c = new MyCourse(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getDate(10),
-                        rs.getDate(11),
-                        rs.getDate(12),
-                        rs.getBoolean(13),
-                        rs.getDouble(14));
+                MyCourse c = new MyCourse(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getDate("from_date"),
+                        rs.getDate("to_date"),
+                        rs.getDate("last_access"),
+                        rs.getBoolean("status"),
+                        rs.getDouble("price"));
                 list.add(c);
             }
             return list;
@@ -411,20 +401,20 @@ public class CourseDAO {
             ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                MyCourse c = new MyCourse(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getInt(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getDate(10),
-                        rs.getDate(11),
-                        rs.getDate(12),
-                        rs.getBoolean(13),
-                        rs.getDouble(14));
+                MyCourse c = new MyCourse(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getDate("from_date"),
+                        rs.getDate("to_date"),
+                        rs.getDate("last_access"),
+                        rs.getBoolean("status"),
+                        rs.getDouble("price"));
                 list.add(c);
             }
             return list;
@@ -449,6 +439,79 @@ public class CourseDAO {
         } finally {
             ps.close();
             conn.close();
+        }
+    }
+
+    public List<Course> getCourseBySearchName(int index, String searchName) {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
+                    + "course.thumbnail,course.introduction,course.total_register_number,"
+                    + "account.first_name,account.last_name,account.profile_picture, course.aid \n"
+                    + "FROM onlinelearning.course,onlinelearning.account\n"
+                    + "where course.aid = account.account_id \n"
+                    + "and course.title like %?% \n"
+                    + "order by course.course_id asc limit 4 offset ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + searchName + "%");
+            ps.setInt(2, (index - 1) * 4);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getInt("aid")
+                );
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public int getNumberPageBySearch(String searchName) {
+        try {
+            String query = "SELECT count(*)\n"
+                    + "FROM onlinelearning.course,onlinelearning.account\n"
+                    + "where course.aid = account.account_id \n"
+                    + "and course.title like ?\n"
+                    + "order by course.course_id asc";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + searchName + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 4;
+                if (total % 4 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+        CourseDAO dao = new CourseDAO();
+        int n = dao.getNumberPageBySearch("CSS");
+        System.out.println(n);
+        List<Course> list = dao.getCourseBySearchName(1, "CSS");
+        for (Course o : list) {
+            System.out.println(o);
         }
     }
 }

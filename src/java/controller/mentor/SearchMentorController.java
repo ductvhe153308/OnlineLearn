@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller.mentor;
 
-import dal.QuizDAO;
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -13,16 +13,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.Account;
-import model.Choice;
-import model.Quiz;
 
 /**
  *
- * @author admin
+ * @author dell
  */
-public class QuizDetailController extends HttpServlet {
+public class SearchMentorController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +33,25 @@ public class QuizDetailController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        request.setCharacterEncoding("UTF-8");
+        String searchName = request.getParameter("searchByName");
+        if (searchName.length() != 0) {
+            String index = request.getParameter("index");
+        if (index == null) {
+            index = "1";
+        }
+        int indexPage = Integer.parseInt(index);
+        AccountDAO dao = new AccountDAO();
+        int endPage = dao.getMentorNumberPageByName(searchName);
+        List<Account> list = dao.getMentorListByName(indexPage, searchName);
+        request.setAttribute("list", list);
+        request.setAttribute("endP", endPage);
+        request.setAttribute("tag", indexPage);
+        request.setAttribute("searchName", searchName);
+        request.getRequestDispatcher("mentor-list.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("MentorList");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -51,27 +66,7 @@ public class QuizDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-PrintWriter out = response.getWriter();
-
-         int id =Integer.parseInt(request.getParameter("id"));
-        
-        QuizDAO dao =new QuizDAO();
-        List<Quiz> quiz = dao.getQuiz1(id);
-        int num = dao.getQuizNumberPage(id);
-        for(Quiz o :quiz){
-           
-            List<Choice> choice = dao.getChoices(o.getQuizId());
-            o.setChoices(choice);    
-        }
-        int firtId =quiz.get(0).getQuizId();
-        //b2 set data
-        
-        request.setAttribute("quiz", quiz);
-        request.setAttribute("firtId", firtId);
-        
-        request.getRequestDispatcher("quiz.jsp").forward(request, response);
-
+        processRequest(request, response);
     }
 
     /**
@@ -85,34 +80,8 @@ PrintWriter out = response.getWriter();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Account a = (Account) request.getSession().getAttribute("user");
-       
-        int sellect1 = Integer.parseInt(request.getParameter("choice1"));
-        int sellect2 = Integer.parseInt(request.getParameter("choice2"));
-        int sellect3 = Integer.parseInt(request.getParameter("choice3"));
-        int sellect4 = Integer.parseInt(request.getParameter("choice4"));
-        int sellect5 = Integer.parseInt(request.getParameter("choice5"));
-        
-        
-        int id =Integer.parseInt(request.getParameter("id"));
-        
-        QuizDAO dao =new QuizDAO();
-        List<Integer> intt1 = dao.getQuizIdListbyLesson(id);
-        List<Integer> intt2 = dao.getCorrectChoiceIdList(id);
-        dao.setResult(a.getAid(), intt1.get(0), sellect1, intt2.get(0), id);
-        dao.setResult(a.getAid(), intt1.get(1), sellect2, intt2.get(1), id);
-        dao.setResult(a.getAid(), intt1.get(2), sellect3, intt2.get(2), id);
-        dao.setResult(a.getAid(), intt1.get(3), sellect4, intt2.get(3), id);
-        dao.setResult(a.getAid(), intt1.get(4), sellect5, intt2.get(4), id);
-       
-        request.getRequestDispatcher("lesson.jsp");
-        }
-        
-        
-        
-        
-        
-    
+        processRequest(request, response);
+    }
 
     /**
      * Returns a short description of the servlet.

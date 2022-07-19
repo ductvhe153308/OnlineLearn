@@ -11,6 +11,7 @@
 
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/blog-list.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:38 GMT -->
     <head>
+        <jsp:useBean id="c" class="dal.CategoryDAO" scope="request"></jsp:useBean>
         <jsp:useBean id="b" class="dal.BlogDAO" scope="request"></jsp:useBean>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -38,7 +39,7 @@
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-                                    <!--                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>-->
+                                    <!--<li class="breadcrumb-item active" aria-current="page">Blog</li>-->
                                 </ol>
                             </nav>
                             <h2 class="breadcrumb-title">My Blog</h2>
@@ -76,16 +77,30 @@
                                             </div>
                                             <div class="blog-content">
                                                 <p>${x.short_detail}</p>
-                                                <div style="display: flex; flex-direction: row; justify-content: space-between; padding-right: 50px">
+                                                <div style="display: flex; flex-direction: row; justify-content: space-between; padding-right: 50px;">
                                                     <a href="BlogDetail?id=${x.id}" class="read-more">Read More</a>
-                                                    <div class="submit-section">
-                                                        <button type="submit" class="btn btn-primary submit-btn">
-                                                            <a href="EditBlog?id=${x.id}">Edit</a>
-                                                        </button>
-                                                    </div> 
+                                                    <div style="display: flex;">
+                                                        <div class="submit-section">
+                                                            <button type="submit" class="btn btn-primary submit-btn" style="margin-right: 20px;" onclick="return confirm('Are you sure you want to delete?')">
+                                                                <a href="DeleteBlog?id=${x.id}" style="color: white;">Delete <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                                                    </svg></a>
+                                                            </button>
+                                                        </div> 
+
+                                                        <div class="submit-section">
+                                                            <button type="submit" class="btn btn-primary submit-btn">
+                                                                <a href="EditBlog?id=${x.id}" style="color: white;">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                                    </svg></i></a>
+                                                            </button>
+                                                        </div> 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="blog-create.jsp" style="text-decoration: underline; color: #009efb; font-size: 19px">Create new blog</a>
                                     </c:forEach>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -167,40 +182,21 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="categories">
-                                        <li><a href="#">HTML <span>(62)</span></a></li>
-                                        <li><a href="#">Css <span>(27)</span></a></li>
-                                        <li><a href="#">Java Script <span>(41)</span></a></li>
-                                        <li><a href="#">Photoshop <span>(16)</span></a></li>
-                                        <li><a href="#">Wordpress <span>(55)</span></a></li>
-                                        <li><a href="#">VB <span>(07)</span></a></li>
+                                        <c:forEach items="${c.allBlogCategory}" var="x">
+                                            <li><a href="#">${x.name}</a></li>
+                                        </c:forEach>
                                     </ul>
                                 </div>
                             </div>
-
-
                             <div class="card tags-widget">
                                 <div class="card-header">
                                     <h4 class="card-title">Tags</h4>
                                 </div>
                                 <div class="card-body">
                                     <ul class="tags">
-                                        <li><a href="#" class="tag">HTML</a></li>
-                                        <li><a href="#" class="tag">Css</a></li>
-                                        <li><a href="#" class="tag">Java Script</a></li>
-                                        <li><a href="#" class="tag">Jquery</a></li>
-                                        <li><a href="#" class="tag">Wordpress</a></li>
-                                        <li><a href="#" class="tag">Php</a></li>
-                                        <li><a href="#" class="tag">Angular js</a></li>
-                                        <li><a href="#" class="tag">React js</a></li>
-                                        <li><a href="#" class="tag">Vue js</a></li>
-                                        <li><a href="#" class="tag">Photoshop</a></li>
-                                        <li><a href="#" class="tag">Ajax</a></li>
-                                        <li><a href="#" class="tag">Json</a></li>
-                                        <li><a href="#" class="tag">C</a></li>
-                                        <li><a href="#" class="tag">C++</a></li>
-                                        <li><a href="#" class="tag">Vb</a></li>
-                                        <li><a href="#" class="tag">Vb.net</a></li>
-                                        <li><a href="#" class="tag">Asp.net</a></li>
+                                        <c:forEach items="${c.allBlogCategory}" var="x">
+                                            <li><a href="#" class="tag">${x.name}</a></li>
+                                        </c:forEach>
                                     </ul>
                                 </div>
                             </div>

@@ -27,7 +27,7 @@ public class QuizDAO {
     private PreparedStatement ps = null;
     private ResultSet rs = null;
 
-     public Quiz getQuiz1(int id)  {
+    public Quiz getQuiz(int id) {
         Quiz quiz = new Quiz();
         try {
             this.conn = new DBContext().getConnection();
@@ -44,7 +44,7 @@ public class QuizDAO {
                 quiz.setDescription(rs.getString("description"));
                 List<Choice> choices = getChoices(rs.getInt("Id"));
                 quiz.setChoices(choices);
-                
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,50 +52,65 @@ public class QuizDAO {
         }
         return quiz;
     }
-     
-    public List<Quiz> getQuiz(int id) {
-        List<Quiz> quiz = new ArrayList<>();
+
+    public Quiz getQuizFirst(int id) {
+        Quiz quiz = new Quiz();
 
         try {
             this.conn = new DBContext().getConnection();
             ps = conn.prepareStatement(""
                     + "SELECT qz.Id , qz.description\n"
-                    + "FROM onlinelearning.quiz AS qz ,\n"
-                    + "onlinelearning.lesson AS ls \n"
-                    + "where qz.lesson_id = ls.id \n"
-                    + "and ls.id=?");
+                    + " FROM onlinelearning.quiz AS qz ,\n"
+                    + " onlinelearning.lesson AS ls \n"
+                    + " where qz.lesson_id = ls.id \n"
+                    + " and ls.id=? order by qz.Id asc limit 1 ");
             ps.setInt(1, id);
             rs = ps.executeQuery();
 
             while (rs.next()) {
 
-                Quiz qu = new Quiz();
-                qu.setQuizId(rs.getInt("Id"));
-                qu.setDescription(rs.getString("description"));
+                quiz.setQuizId(rs.getInt("Id"));
+                quiz.setDescription(rs.getString("description"));
                 List<Choice> choices = getChoices(rs.getInt("Id"));
-                qu.setChoices(choices);
-                quiz.add(qu);
+                quiz.setChoices(choices);
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
-        } finally {
-            try {
-                if (ps != null) {
-                    ps.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return quiz;
     }
 
-    public List<Choice> getChoices(int id)  {
+    public List<Quiz> getQuiz1(int id) {
+        List<Quiz> quiz = new ArrayList();
+
+        try {
+            this.conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(""
+                    + "SELECT qz.Id , qz.description\n"
+                    + " FROM onlinelearning.quiz AS qz ,\n"
+                    + " onlinelearning.lesson AS ls \n"
+                    + " where qz.lesson_id = ls.id \n"
+                    + " and ls.id=? order by qz.Id asc ");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Quiz q = new Quiz();
+                q.setQuizId(rs.getInt("Id"));
+                q.setDescription(rs.getString("description"));
+
+                quiz.add(q);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return quiz;
+    }
+
+    public List<Choice> getChoices(int id) {
         List<Choice> choices = new ArrayList<>();
 
         try {
@@ -116,18 +131,48 @@ public class QuizDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
-        } 
+        }
         return choices;
     }
-    public static void main(String[] args) {
-        QuizDAO dao = new QuizDAO();
-       Quiz quiz = dao.getQuiz1(2);
-       int x = dao.getQuizNumber(1);
-        System.out.println(x);
-           System.out.println(quiz);
-       
+
+    public void setResult(int acId, int quizId, int user_select, int is_correct_answer, int lesson_id) {
+        try {
+            String query = "INSERT INTO `onlinelearning`.`result` \n"
+                    + "(acId,quizId, user_select, is_correct_answer, lessonId) \n"
+                    + "VALUES (?,?, ?, ?, ?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, acId);
+            ps.setInt(2, quizId);
+            ps.setInt(3, user_select);
+            ps.setInt(4, is_correct_answer);
+            ps.setInt(5, lesson_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    public int getQuizNumber(int id) {
+
+    public int getMark(int id,int aId) {
+        try {
+            String query = "SELECT count(*) FROM onlinelearning.result \n"
+                    + "where acId = ? and lessonId =? \n"
+                    + "and result.user_select = result.is_correct_answer ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, aId);
+            ps.setInt(2, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int getQuizNumberPage(int id) {
         try {
             String query = "select count(*) from onlinelearning.quiz where quiz.lesson_id = ?  ";
             conn = new DBContext().getConnection();
@@ -135,12 +180,92 @@ public class QuizDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return  rs.getInt(1);
+                return rs.getInt(1);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return 0;
     }
-    
+
+    public List<Integer> getCorrectChoiceIdList(int id) {
+        List<Integer> Id = new ArrayList<>();
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement("select choice.id  \n"
+                    + "from onlinelearning.choice \n"
+                    + "inner join onlinelearning.quiz \n"
+                    + "on  choice.quiz_id = quiz.id \n"
+                    + "where choice.is_correct_answer =1 and quiz.lesson_id = ?;");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Id.add(rs.getInt("id"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return Id;
+    }
+
+    public List<Integer> getQuizIdListbyLesson(int id) {
+        List<Integer> Id = new ArrayList<>();
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement("select quiz.id  \n"
+                    + "from  onlinelearning.quiz \n"
+                    + "where  quiz.lesson_id = ?;;");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Id.add(rs.getInt("id"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return Id;
+    }
+
+    public static void main(String[] args) {
+        QuizDAO dao = new QuizDAO();
+        List<Quiz> quiz = dao.getQuiz1(2);
+        int n = dao.getMark(2,41);
+        System.out.println(n);
+        
+//        System.out.println(n);
+//        for (Quiz o : quiz) {
+//
+//            List<Choice> choice = dao.getChoices(o.getQuizId());
+//            for (Choice c : choice) {
+//                if (c.getIsCorrectAnswer() == 1) {
+//                    o.setAnswer(c.getChoiceId());
+//                }
+//
+//            }
+//            o.setChoices(choice);
+//
+//        }
+//        int firtId = quiz.get(0).getQuizId();
+//
+////        for (Quiz o : quiz) {
+////
+////            System.out.println(o);
+////            System.out.println(o.getAnswer());
+////
+////        }
+//        List<Integer> intt = dao.getQuizIdListbyLesson(1);
+//        for (Integer o : intt) {
+//
+//            System.out.println(o);
+//
+//        }
+//
+//        System.out.println(intt.get(3));
+    }
 }

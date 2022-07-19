@@ -14,10 +14,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Blog_category;
+import model.BlogCategory;
 import model.Booking;
 import model.Category;
 import model.Course;
+import model.CourseCategory;
 import utils.DBContext;
 
 /**
@@ -140,8 +141,8 @@ public class CategoryDAO {
         return cs;
     }
     
-    public List<Blog_category> getAllBlogCategory() {
-        List<Blog_category> list = new ArrayList<>();
+    public List<BlogCategory> getAllBlogCategory() {
+        List<BlogCategory> list = new ArrayList<>();
         try {
             String query = "SELECT blogcategory.id,blogcategory.name FROM onlinelearning.blogcategory;";
             conn = new DBContext().getConnection();
@@ -150,7 +151,25 @@ public class CategoryDAO {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                list.add(new Blog_category(id, name));
+                list.add(new BlogCategory(id, name));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+    public List<CourseCategory> getAllCourseCategory() {
+        List<CourseCategory> list = new ArrayList<>();
+        try {
+            String query = "SELECT coursecategory.id,coursecategory.name FROM onlinelearning.coursecategory;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                list.add(new CourseCategory(id, name));
             }
         } catch (Exception e) {
             e.printStackTrace();

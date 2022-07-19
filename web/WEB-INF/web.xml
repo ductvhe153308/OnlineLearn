@@ -2,39 +2,39 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>AccountController</servlet-name>
-        <servlet-class>controller.home.AccountController</servlet-class>
+        <servlet-class>controller.common.AccountController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutController</servlet-name>
-        <servlet-class>controller.home.LogoutController</servlet-class>
+        <servlet-class>controller.common.LogoutController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ValidateOtpController</servlet-name>
-        <servlet-class>controller.home.ValidateOtpController</servlet-class>
+        <servlet-class>controller.common.ValidateOtpController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>NewPasswordController</servlet-name>
-        <servlet-class>controller.home.NewPasswordController</servlet-class>
+        <servlet-class>controller.common.NewPasswordController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegisterController</servlet-name>
-        <servlet-class>controller.home.RegisterController</servlet-class>
+        <servlet-class>controller.common.RegisterController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ChangePasswordController</servlet-name>
-        <servlet-class>controller.home.ChangePasswordController</servlet-class>
+        <servlet-class>controller.common.ChangePasswordController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogDetailController</servlet-name>
-        <servlet-class>controller.home.BlogDetailController</servlet-class>
+        <servlet-class>controller.blog.BlogDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogByAuthorController</servlet-name>
-        <servlet-class>controller.home.BlogByAuthorController</servlet-class>
+        <servlet-class>controller.blog.BlogByAuthorController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MentorDetailController</servlet-name>
-        <servlet-class>controller.home.MentorDetailController</servlet-class>
+        <servlet-class>controller.mentor.MentorDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UserProfileController</servlet-name>
@@ -42,39 +42,39 @@
     </servlet>
     <servlet>
         <servlet-name>BlogCreateController</servlet-name>
-        <servlet-class>controller.home.BlogCreateController</servlet-class>
+        <servlet-class>controller.blog.BlogCreateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EditBlogController</servlet-name>
-        <servlet-class>controller.home.EditBlogController</servlet-class>
+        <servlet-class>controller.blog.EditBlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseListController</servlet-name>
-        <servlet-class>controller.CourseListController</servlet-class>
+        <servlet-class>controller.course.CourseListController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseByMentorController</servlet-name>
-        <servlet-class>controller.home.CourseByMentorController</servlet-class>
+        <servlet-class>controller.course.CourseByMentorController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseTopRateController</servlet-name>
-        <servlet-class>controller.CourseTopRateController</servlet-class>
+        <servlet-class>controller.course.CourseTopRateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MentorListController</servlet-name>
-        <servlet-class>controller.MentorListController</servlet-class>
+        <servlet-class>controller.mentor.MentorListController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MentorBestRateController</servlet-name>
-        <servlet-class>controller.MentorBestRateController</servlet-class>
+        <servlet-class>controller.mentor.MentorBestRateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseDetailController</servlet-name>
-        <servlet-class>controller.CourseDetailController</servlet-class>
+        <servlet-class>controller.course.CourseDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogListController</servlet-name>
-        <servlet-class>controller.home.BlogListController</servlet-class>
+        <servlet-class>controller.blog.BlogListController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MyCourseController</servlet-name>
@@ -98,15 +98,15 @@
     </servlet>
     <servlet>
         <servlet-name>MentorRegisterController</servlet-name>
-        <servlet-class>controller.home.MentorRegisterController</servlet-class>
+        <servlet-class>controller.mentor.MentorRegisterController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LessonDetailController</servlet-name>
-        <servlet-class>controller.home.LessonDetailController</servlet-class>
+        <servlet-class>controller.lesson.LessonDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TotalLessonController</servlet-name>
-        <servlet-class>controller.home.TotalLessonController</servlet-class>
+        <servlet-class>controller.lesson.TotalLessonController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SendFeedbackController</servlet-name>
@@ -122,7 +122,31 @@
     </servlet>
     <servlet>
         <servlet-name>CourseTrendingController</servlet-name>
-        <servlet-class>controller.CourseTrendingController</servlet-class>
+        <servlet-class>controller.course.CourseTrendingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteBlogController</servlet-name>
+        <servlet-class>controller.blog.DeleteBlogController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteFeebackController</servlet-name>
+        <servlet-class>controller.DeleteFeebackController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchCourseController</servlet-name>
+        <servlet-class>controller.course.SearchCourseController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchMentorController</servlet-name>
+        <servlet-class>controller.mentor.SearchMentorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchBlogController</servlet-name>
+        <servlet-class>controller.blog.SearchBlogController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuizResultController</servlet-name>
+        <servlet-class>controller.home.QuizResultController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
@@ -247,6 +271,30 @@
     <servlet-mapping>
         <servlet-name>CourseTrendingController</servlet-name>
         <url-pattern>/CourseTrending</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteFeebackController</servlet-name>
+        <url-pattern>/DeleteFeedback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBlogController</servlet-name>
+        <url-pattern>/DeleteBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchCourseController</servlet-name>
+        <url-pattern>/SearchCourse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchMentorController</servlet-name>
+        <url-pattern>/SearchMentor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchBlogController</servlet-name>
+        <url-pattern>/SearchBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizResultController</servlet-name>
+        <url-pattern>/QuizResult</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

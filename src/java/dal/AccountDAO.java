@@ -126,14 +126,14 @@ public class AccountDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Account a = new Account(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getDate(7),
-                        rs.getString(8));
+                        rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getInt("gender"),
+                        rs.getDate("date_of_birth"),
+                        rs.getString("profile_picture"));
                 list.add(a);
             }
         } catch (SQLException e) {
@@ -145,21 +145,24 @@ public class AccountDAO {
     public List<Account> getAllMentorPaging(int index) {
         List<Account> list = new ArrayList<>();
         try {
-            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 5 offset ?;";
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, \n"
+                    + "account.date_of_birth, account.profile_picture  \n"
+                    + "FROM onlinelearning.account where role_id = 2 \n"
+                    + "order by account.account_id asc limit 8 offset ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, (index - 1) * 8);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Account a = new Account(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getDate(7),
-                        rs.getString(8));
+                        rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getInt("gender"),
+                        rs.getDate("date_of_birth"),
+                        rs.getString("profile_picture"));
                 list.add(a);
             }
         } catch (SQLException e) {
@@ -189,6 +192,71 @@ public class AccountDAO {
         return 0;
     }
 
+    public List<Account> getMentorListByName(int index, String searchName) {
+        List<Account> list = new ArrayList<>();
+        try {
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  \n"
+                    + "FROM onlinelearning.account \n"
+                    + "where role_id = 2\n"
+                    + "and account.last_name like ?\n"
+                    + "or account.first_name like ?\n"
+                    + "order by account.account_id asc limit 8 offset ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + searchName + "%");
+            ps.setString(2, "%" + searchName + "%");
+            ps.setInt(3, (index - 1) * 8);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account a = new Account(
+                        rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getInt("gender"),
+                        rs.getDate("date_of_birth"),
+                        rs.getString("profile_picture"));
+                list.add(a);
+            }
+        } catch (SQLException e) {
+
+        }
+        return list;
+    }
+
+    public int getMentorNumberPageByName(String searchName) {
+        try {
+            String query = "select count(*) from onlinelearning.account where role_id = 2 and account.last_name like ? or account.first_name like ? ";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + searchName + "%");
+            ps.setString(2, "%" + searchName + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 8;
+                if (total % 8 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+//    public static void main(String[] args) {
+//        AccountDAO dao = new AccountDAO();
+//        int n = dao.getMentorNumberPageByName("Nguyen");
+//        System.out.println(n);
+//        List<Account> list = dao.getMentorListByName(1, "Nguyen");
+//        for (Account o : list) {
+//            System.out.println(o);
+//        }
+//    }
     public Account getMentorByID(int id) throws SQLException {
         Account a = null;
         try {
@@ -200,14 +268,14 @@ public class AccountDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 a = new Account(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
-                        rs.getDate(7),
-                        rs.getString(8));
+                        rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getInt("gender"),
+                        rs.getDate("date_of_birth"),
+                        rs.getString("profile_picture"));
             }
         } catch (SQLException e) {
 

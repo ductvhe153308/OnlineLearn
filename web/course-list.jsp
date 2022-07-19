@@ -1,7 +1,7 @@
 <%-- 
-    Document   : course-by-mentor
-    Created on : Jul 13, 2022, 2:21:50 AM
-    Author     : dell
+Document   : course-list
+Created on : Jun 9, 2022, 10:02:53 PM
+Author     : dell
 --%>
 
 <%@page import="model.Course"%>
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <jsp:useBean id="c" class="dal.CourseDAO" scope="request"></jsp:useBean>
+        <jsp:useBean id="c" class="dal.CategoryDAO" scope="request"></jsp:useBean>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
             <title>Mentoring</title>
@@ -30,29 +30,32 @@
             <div class="container">
                 <div class="section-heading d-flex align-items-center">
                     <div class="heading-content">
-                        <h2><span class="text-weight">Courses</span> by Mentor ${name} <span class="header-right"></span></h2>
+                        <h2><span class="text-weight">All</span> Courses <span class="header-right"></span></h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="sidebar-right theiaStickySidebar">
                         <div class="card search-widget">
                             <div class="card-body">
-                                <form class="search-form">
+                                <form class="search-form" method="post" action="SearchCourse">
                                     <div class="input-group">
-                                        <input onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
+                                        <input value="${searchName}" name="searchByName" onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div id="suggest" style="display: none">
+                        <div id="suggest">
                             <div class="card category-widget">
                                 <div class="card-header">
                                     <h4 class="card-title">Course Categories</h4>
                                 </div>
                                 <div class="card-body">
                                     <ul class="categories">
-                                        <li><a href="#">HTML <span>(62)</span></a></li>
+                                        <c:forEach items="${c.allCourseCategory}" var="x">
+                                            <li><a href="#">${x.name}</a></li>
+                                        </c:forEach>
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -62,7 +65,9 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="tags">
-                                        <li><a href="#" class="tag">HTML</a></li>
+                                        <c:forEach items="${c.allCourseCategory}" var="x">
+                                            <li><a href="#" class="tag">${x.name}</a></li>
+                                        </c:forEach>
                                     </ul>
                                 </div>
                             </div>
@@ -70,7 +75,7 @@
                     </div>
                 </div>
                 <div class="row">  
-                    <c:forEach items="${mentorCourse}" var="x">
+                    <c:forEach items="${list}" var="x">
                         <div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-wrap">
 
                             <div class="popular-course" style="cursor: pointer">
@@ -120,8 +125,8 @@
                             <nav>
                                 <ul class="pagination justify-content-center">
                                     <c:if test="${tag >1}">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="CourseList?index=${tag-1}" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                    <li class="page-item">
+                                        <a class="page-link" href="CourseList?index=${tag-1}" ><i class="fas fa-angle-double-left"></i></a>
                                     </li>
                                     </c:if>
                                     <c:forEach begin = "1" end = "${endP}" var = "i">
@@ -130,7 +135,7 @@
                                     </li>   
                                     </c:forEach>
                                    
-                                    <c:if test="${tag <c.numberPage}">
+                                    <c:if test="${tag < endP}">
                                     <li class="page-item">
                                         <a class="page-link" href="CourseList?index=${tag+1}"><i class="fas fa-angle-double-right"></i></a>
                                     </li>

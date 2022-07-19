@@ -40,12 +40,12 @@ public class FeedbackDAO {
                 Feedback f = new Feedback(
                         rs.getInt("id"),
                         rs.getInt("a_id"),
-                        rs.getString("first_name"), 
-                        rs.getString("last_name"), 
-                        rs.getString("how_find_this_site"), 
-                        rs.getString("rating"), 
-                        rs.getString("voting"), 
-                        rs.getString("comment"), 
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("how_find_this_site"),
+                        rs.getString("rating"),
+                        rs.getString("voting"),
+                        rs.getString("comment"),
                         rs.getDate("feedback_time"));
                 list.add(f);
                 System.out.println(f);
@@ -68,6 +68,22 @@ public class FeedbackDAO {
             ps.setString(4, voting);
             ps.setString(5, comment);
             ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteFeedbackById(int a_id, String id) {
+        try {
+            String query = "delete from feedback\n"
+                    + "where feedback.a_id = ?\n"
+                    + "and feedback.id = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, a_id);
+            ps.setString(2, id);
+            ps.executeUpdate();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
