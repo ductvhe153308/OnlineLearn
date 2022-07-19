@@ -5,12 +5,15 @@
  */
 package controller;
 
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -30,17 +33,22 @@ public class SearchMentorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SearchMentorController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SearchMentorController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String searchName = request.getParameter("searchByName");
+        if (searchName.length() != 0) {
+            String index = request.getParameter("index");
+        if (index == null) {
+            index = "1";
+        }
+        int indexPage = Integer.parseInt(index);
+        AccountDAO dao = new AccountDAO();
+        int endPage = dao.getMentorNumberPage();
+        List<Account> list = dao.getAllMentorPaging(indexPage);
+        request.setAttribute("list", list);
+        request.setAttribute("endP", endPage);
+        request.setAttribute("tag", indexPage);
+        request.getRequestDispatcher("mentor-list.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("MentorList");
         }
     }
 
