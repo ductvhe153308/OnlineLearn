@@ -33,6 +33,7 @@ public class SearchCourseController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String searchName = request.getParameter("searchByName");
         if (searchName.length() != 0) {
             String index = request.getParameter("index");
