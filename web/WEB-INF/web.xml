@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>LogoutController</servlet-name>
-        <servlet-class>controller.home.LogoutController</servlet-class>
+        <servlet-class>controller.common.LogoutController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ValidateOtpController</servlet-name>
