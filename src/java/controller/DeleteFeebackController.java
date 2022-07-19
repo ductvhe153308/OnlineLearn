@@ -5,6 +5,7 @@
  */
 package controller;
 
+import dal.FeedbackDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -73,6 +74,8 @@ public class DeleteFeebackController extends HttpServlet {
         try {
             String id = request.getParameter("id");
             System.out.println(id);
+            FeedbackDAO feedbackDAO = new FeedbackDAO();
+            feedbackDAO.deleteFeedbackById();
             response.sendRedirect("MyFeedback");
         } catch (Exception e) {
         }
