@@ -18,6 +18,7 @@ import model.BlogCategory;
 import model.Booking;
 import model.Category;
 import model.Course;
+import model.CourseCategory;
 import utils.DBContext;
 
 /**
@@ -151,6 +152,24 @@ public class CategoryDAO {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 list.add(new BlogCategory(id, name));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+    public List<CourseCategory> getAllCourseCategory() {
+        List<CourseCategory> list = new ArrayList<>();
+        try {
+            String query = "SELECT coursecategory.id,coursecategory.name FROM onlinelearning.coursecategory;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                list.add(new CourseCategory(id, name));
             }
         } catch (Exception e) {
             e.printStackTrace();
