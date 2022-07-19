@@ -140,6 +140,10 @@
         <servlet-name>SearchMentorController</servlet-name>
         <servlet-class>controller.SearchMentorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchBlogController</servlet-name>
+        <servlet-class>controller.home.SearchBlogController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -279,6 +283,10 @@
     <servlet-mapping>
         <servlet-name>SearchMentorController</servlet-name>
         <url-pattern>/SearchMentor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchBlogController</servlet-name>
+        <url-pattern>/SearchBlog</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

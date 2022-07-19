@@ -137,16 +137,16 @@ public class BlogDAO {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Blog b = new Blog(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
+                Blog b = new Blog(rs.getInt("id"),
+                        rs.getString("detail"),
+                        rs.getString("title"),
                         LocalDateTime.MAX,
-                        rs.getString(5),
-                        rs.getDate(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10));
+                        rs.getString("image"),
+                        rs.getDate("created_date"),
+                        rs.getString("short_detail"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"));
                 return b;
             }
         } catch (Exception e) {
@@ -168,16 +168,16 @@ public class BlogDAO {
             ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Blog b = new Blog(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
+                Blog b = new Blog(rs.getInt("id"),
+                        rs.getString("detail"),
+                        rs.getString("title"),
                         LocalDateTime.MAX,
-                        rs.getString(5),
-                        rs.getDate(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9),
-                        rs.getString(10));
+                        rs.getString("image"),
+                        rs.getDate("created_date"),
+                        rs.getString("short_detail"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"));
                 list.add(b);
             }
             return list;
@@ -231,5 +231,65 @@ public class BlogDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Blog> getBlogBySearchName(int index, String searchName) {
+        List<Blog> list = new ArrayList<>();
+        try {
+            String query = "SELECT blog.id,blog.detail,blog.title,blog.updated_date,blog.image,\n"
+                    + "blog.created_date,blog.short_detail,account.first_name,account.last_name,account.profile_picture \n"
+                    + "FROM onlinelearning.blog,onlinelearning.account\n"
+                    + "WHERE blog.account_id=account.account_id\n"
+                    + "and blog.title like ?\n"
+                    + "ORDER BY blog.id asc limit 4 offset ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + searchName + "%");
+            ps.setInt(2, (index - 1) * 4);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Blog b = new Blog(rs.getInt("id"),
+                        rs.getString("detail"),
+                        rs.getString("title"),
+                        LocalDateTime.MAX,
+                        rs.getString("image"),
+                        rs.getDate("created_date"),
+                        rs.getString("short_detail"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"));
+                list.add(b);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public int getNumberPageBlogBySearch(String searchName) {
+        try {
+            String query = "SELECT count(*)\n"
+                    + "FROM onlinelearning.blog,onlinelearning.account\n"
+                    + "where blog.account_id = account.account_id \n"
+                    + "and blog.title like ?\n"
+                    + "order by blog.id asc";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + searchName + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 4;
+                if (total % 4 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
