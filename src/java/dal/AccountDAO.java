@@ -216,7 +216,7 @@ public class AccountDAO {
                         rs.getString("phone"),
                         rs.getInt("gender"),
                         rs.getDate("date_of_birth"),
-                        rs.getString(8));
+                        rs.getString("profile_picture"));
                 list.add(a);
             }
         } catch (SQLException e) {
