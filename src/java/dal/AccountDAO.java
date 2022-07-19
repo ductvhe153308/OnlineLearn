@@ -145,7 +145,10 @@ public class AccountDAO {
     public List<Account> getAllMentorPaging(int index) {
         List<Account> list = new ArrayList<>();
         try {
-            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  FROM onlinelearning.account where role_id = 2 order by account.account_id asc limit 5 offset ?;";
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, \n"
+                    + "account.date_of_birth, account.profile_picture  \n"
+                    + "FROM onlinelearning.account where role_id = 2 \n"
+                    + "order by account.account_id asc limit 8 offset ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, (index - 1) * 8);
@@ -197,7 +200,7 @@ public class AccountDAO {
                     + "where role_id = 2\n"
                     + "and account.last_name like ?\n"
                     + "or account.first_name like ?\n"
-                    + "order by account.account_id asc limit 5 offset ?;";
+                    + "order by account.account_id asc limit 8 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, "%" + searchName + "%");
@@ -221,7 +224,7 @@ public class AccountDAO {
         }
         return list;
     }
-    
+
     public int getMentorNumberPageByName(String searchName) {
         try {
             String query = "select count(*) from onlinelearning.account where role_id = 2 and account.last_name like ? or account.first_name like ? ";
@@ -244,7 +247,7 @@ public class AccountDAO {
         }
         return 0;
     }
-    
+
 //    public static void main(String[] args) {
 //        AccountDAO dao = new AccountDAO();
 //        int n = dao.getMentorNumberPageByName("Nguyen");
@@ -254,7 +257,6 @@ public class AccountDAO {
 //            System.out.println(o);
 //        }
 //    }
-
     public Account getMentorByID(int id) throws SQLException {
         Account a = null;
         try {
