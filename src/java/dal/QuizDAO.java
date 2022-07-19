@@ -181,7 +181,7 @@ public class QuizDAO {
         }
     }
 
-    public int getCo(int id) {
+    public int getMark(int id) {
         try {
             String query = "select count(*) from onlinelearning.result \n"
                     + "where result.user_select = result.is_correct_answer \n"
