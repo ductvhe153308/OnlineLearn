@@ -839,8 +839,24 @@ public class AccountDAO {
         return c;
     }
 
-    public int countingAppointment() {
-        return 332;
+    public int countingAppointment() throws SQLException {
+        int c = 0;
+        try {
+            String query = "select count(*) as 'total' from booking";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                c = rs.getInt("total");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return c;
     }
 
     public int countingStar() {
