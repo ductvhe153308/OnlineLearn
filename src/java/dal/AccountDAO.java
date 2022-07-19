@@ -211,7 +211,7 @@ public class AccountDAO {
                 Account a = new Account(
                         rs.getInt("account_id"),
                         rs.getString("last_name"),
-                        rs.getString(3),
+                        rs.getString("first_name"),
                         rs.getString(4),
                         rs.getString(5),
                         rs.getInt(6),
