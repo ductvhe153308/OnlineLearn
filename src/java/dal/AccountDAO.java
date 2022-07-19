@@ -404,7 +404,6 @@ public class AccountDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
-            Account a;
             JsonObject mentee;
             while (rs.next()) {
                 mentee = getMentee(rs);
