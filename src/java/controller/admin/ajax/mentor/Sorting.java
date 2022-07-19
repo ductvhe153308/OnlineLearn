@@ -40,7 +40,7 @@ public class Sorting extends HttpServlet {
             int index = Integer.parseInt(request.getParameter("index"));
             boolean asc = Boolean.valueOf(request.getParameter("asc"));
             AccountDAO adao = new AccountDAO();
-            JsonArray data = new JsonArray();
+            JsonArray data;
             switch (index) {
                 case 0:
                     data = adao.getSortedListMentor0(asc);

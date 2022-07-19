@@ -34,7 +34,7 @@ var Mentor = {
                     var table_name = 'Mentor List';
                     var header = ['Mentor Name', 'Course', 'Earned', 'Reviews'];
                     var colgroup = [150, 90, 50, 130];
-                    var data = JSON.parse(response);                    
+                    var data = JSON.parse(response);
                     var table = AP.table.render(table_name, header, data, function (index) {
                         var mentor = JSON.parse(data[index]['account']);
                         var course = JSON.parse(data[index]['course']);
@@ -108,6 +108,71 @@ var Mentor = {
                     }, colgroup, true, true);
                     $("#page #" + id).html(table);
 
+                    $('.sorting').click(function () {
+                        var sorted = $(this).find('.sorted');
+                        var asc = sorted.hasClass('sorting-asc');
+                        var index = $(this).attr("id").split("-")[1];
+                        $.ajax({
+                            type: 'POST',
+                            url: '../admin/ajax/mentor/sorting',
+                            data: {
+                                index: index,
+                                asc: asc
+                            },
+                            success: function (response) {
+                                var data = JSON.parse(response);
+                                var new_table = AP.render(data, function (index) {
+                                    var mentor = JSON.parse(data[index]['account']);
+                                    console.log(mentor);
+                                    var course = JSON.parse(data[index]['course']);
+                                    var img = mentor['pfp'];
+                                    if (img == null) {
+                                        img = 'default.jpg';
+                                    }
+                                    return `<div class="table-row">
+                                            <div class="table-data" style="width:${colgroup[0]}px">
+                                                <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${img}"/>
+                                            <div class="user-name">${mentor['first_name']} ${mentor['last_name']}</div></div>
+                                            <div class="table-data" style="width:${colgroup[1]}px">
+                                                <div>${course['title']}</div></div>
+                                            <div class="table-data" style="width:${colgroup[2]}px">
+                                                ${mentor['created_at']}</div>
+                                            <div class="table-data" style="width:${colgroup[3]}px">
+                                                ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
+                                            <div class="table-data" style="width:${colgroup[4]}px">
+                                                ${AP.status(mentor['aid'], mentor['enabled'])}
+                                                </div>
+                                        </div>`;
+                                });
+                                console.log(new_table);
+                                $('.table-body').html(new_table);
+                                $('.status').click(function () {
+                                    var st = $(this);
+                                    if (st.hasClass('disabled')) {
+                                        st.find('input').val(1);
+                                        st.removeClass('disabled');
+                                    } else {
+                                        st.find('input').val(0);
+                                        st.addClass('disabled');
+                                    }
+                                    $.ajax({
+                                        url: '../ajax/admin/status',
+                                        type: 'post',
+                                        data: {
+                                            aid: st.attr('for'),
+                                            enabled: st.find('input').val()
+                                        },
+                                        success: function (response) {
+
+                                        }
+                                    });
+                                });
+                            }
+                        });
+
+                    });
+
+
                     $('.status').click(function () {
                         var st = $(this);
                         if (st.hasClass('disabled')) {
@@ -128,48 +193,6 @@ var Mentor = {
 
                             }
                         });
-                    });
-
-                    $('.sorting').click(function () {
-                        var sorted = $(this).find('.sorted');
-                        var asc = sorted.hasClass('sorting-asc');
-                        var index = $(this).attr("id").split("-")[1];
-                        $.ajax({
-                            type: 'POST',
-                            url: '../admin/ajax/mentor/sorting',
-                            data: {
-                                index: index,
-                                asc: asc
-                            },
-                            success: function (response) {
-                                var new_table = AP.render(data, function (index) {
-                                    var mentor = JSON.parse(data[index]['account']);
-                                    console.log(mentor);
-                                    var course = JSON.parse(data[index]['course']);
-                                    var img = mentor['pfp'];
-                                    if (img == null) {
-                                        img = 'default.jpg';
-                                    }
-                                    return `<div class="table-row">
-                                            <div class="table-data" style="width:${colgroup[0]}px">
-                                                <img class="mini-user-ava" src="/onlinelearn/assets/img/user/${img}"/>
-                                            <div class="user-name">${mentor['first_name']} ${mentor['last_name']}</div></div>
-                                            <div class="table-data" style="width:${colgroup[1]}px">
-                                                <div>${course['title']}</div></div>
-                                            <div class="table-data" style="width:${colgroup[2]}px">
-                                                ${mentor['created_at']}</div>
-                                            <div class="table-data" style="width:${colgroup[3]}px">
-                                                ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
-                                            <div class="table-data" style="width:${colgroup[4]}px">
-                                                ${AP.status(mentor['aid'],mentor['enabled'])}
-                                                </div>
-                                        </div>`;
-                                });
-                                console.log(new_table);
-                                $('.table-body').html(new_table);
-                            }
-                        });
-
                     });
                 },
                 error: function (xhr) {
