@@ -213,7 +213,7 @@ public class AccountDAO {
                         rs.getString("last_name"),
                         rs.getString("first_name"),
                         rs.getString("email"),
-                        rs.getString(5),
+                        rs.getString("phone"),
                         rs.getInt(6),
                         rs.getDate(7),
                         rs.getString(8));
