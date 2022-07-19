@@ -46,6 +46,7 @@ public class SearchMentorController extends HttpServlet {
         request.setAttribute("list", list);
         request.setAttribute("endP", endPage);
         request.setAttribute("tag", indexPage);
+        request.setAttribute("searchName", searchName);
         request.getRequestDispatcher("mentor-list.jsp").forward(request, response);
         } else {
             response.sendRedirect("MentorList");
