@@ -818,7 +818,12 @@ public class AccountDAO {
         }
         return c;
     }
-
+    
+    /**
+     * Count total of mentor and mentee.
+     * @return Int
+     * @throws SQLException 
+     */
     public int countingMember() throws SQLException {
         int c = 0;
         try {
@@ -839,6 +844,11 @@ public class AccountDAO {
         return c;
     }
 
+    /**
+     * Counting total of booking.
+     * @return Int
+     * @throws SQLException
+     */
     public int countingAppointment() throws SQLException {
         int c = 0;
         try {
@@ -859,6 +869,12 @@ public class AccountDAO {
         return c;
     }
 
+    /**
+     * Counting total of rated star of course.
+     *
+     * @return Int
+     * @throws SQLException
+     */
     public int countingStar() throws SQLException {
         int c = 0;
         try {
