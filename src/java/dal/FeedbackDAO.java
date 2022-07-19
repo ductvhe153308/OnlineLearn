@@ -73,13 +73,15 @@ public class FeedbackDAO {
         }
     }
 
-    public void deleteFeedbackById() {
+    public void deleteFeedbackById(int a_id, String id) {
         try {
             String query = "delete from feedback\n"
-                    + "where feedback.a_id = 41\n"
-                    + "and feedback.id = 7";
+                    + "where feedback.a_id = ?\n"
+                    + "and feedback.id = ?";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
+            ps.setInt(1, a_id);
+            ps.setString(2, id);
             ps.executeUpdate();
             
         } catch (Exception e) {
