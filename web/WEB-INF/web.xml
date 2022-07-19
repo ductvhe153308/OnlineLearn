@@ -42,7 +42,7 @@
     </servlet>
     <servlet>
         <servlet-name>BlogCreateController</servlet-name>
-        <servlet-class>controller.home.BlogCreateController</servlet-class>
+        <servlet-class>controller.blog.BlogCreateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EditBlogController</servlet-name>
