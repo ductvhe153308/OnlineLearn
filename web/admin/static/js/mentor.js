@@ -97,7 +97,7 @@ var Mentor = {
                         <div class="user-name">${mentor['first_name']} ${mentor['last_name']}</div></div>
                         <div class="table-data" style="width:${colgroup[1]}px">
                             <div>${course['title']}</div></div>
-                        <div class="table-data" style="width:${colgroup[2]}px">
+                        <div class="table-data" style="width:${colgroup[2]}px;padding-top: 15px;">
                             ${mentor['created_at']}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
@@ -135,7 +135,7 @@ var Mentor = {
                                             <div class="user-name">${mentor['first_name']} ${mentor['last_name']}</div></div>
                                             <div class="table-data" style="width:${colgroup[1]}px">
                                                 <div>${course['title']}</div></div>
-                                            <div class="table-data" style="width:${colgroup[2]}px">
+                                            <div class="table-data" style="width:${colgroup[2]}px;padding-top: 15px;">
                                                 ${mentor['created_at']}</div>
                                             <div class="table-data" style="width:${colgroup[3]}px">
                                                 ${AP.money.dollar(course['price'] * course['total_register_number'])}</div>
