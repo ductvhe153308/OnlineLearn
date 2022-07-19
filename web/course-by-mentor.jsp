@@ -91,7 +91,7 @@
                                                     </li> 
                                                 </c:forEach>
                                             </ul>
-                                            <p class="mb-1">${x.last_name} ${x.first_name} ${x.course_id}</p>
+                                            <p class="mb-1">${x.last_name} ${x.first_name}</p>
                                             <h4 class="mb-0">
                                                 <a>${x.title}</a>
                                             </h4>
