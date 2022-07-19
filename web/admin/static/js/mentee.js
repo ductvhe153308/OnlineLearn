@@ -94,7 +94,7 @@ var Mentee = {
                         <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div></div>
                         <div class="table-data" style="width:${colgroup[1]}px">
                             <div>${mentee['phone']}</div></div>
-                        <div class="table-data" style="width:${colgroup[2]}px">
+                        <div class="table-data" style="width:${colgroup[2]}px; padding-top: 15px;">
                             ${mentee['created_at']}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(210)}</div>
@@ -156,7 +156,7 @@ var Mentee = {
                                                 <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div></div>
                                                 <div class="table-data" style="width:${colgroup[1]}px">
                                                     <div>${mentee['phone']}</div></div>
-                                                <div class="table-data" style="width:${colgroup[2]}px">
+                                                <div class="table-data" style="width:${colgroup[2]}px;padding-top: 15px;">
                                                     ${mentee['created_at']}</div>
                                                 <div class="table-data" style="width:${colgroup[3]}px">
                                                     ${AP.money.dollar(210)}</div>
@@ -167,6 +167,29 @@ var Mentee = {
                                 });
                                 console.log(new_table);
                                 $('.table-body').html(new_table);
+                                $('.status').click(
+                                        function () {
+                                            var st = $(this);
+                                            if (st.hasClass('disabled')) {
+                                                st.find('input').val(1);
+                                                st.removeClass('disabled');
+                                            } else {
+                                                st.find('input').val(0);
+                                                st.addClass('disabled');
+                                            }
+                                            $.ajax({
+                                                url: '../ajax/admin/status',
+                                                type: 'post',
+                                                data: {
+                                                    aid: st.attr('for'),
+                                                    enabled: st.find('input').val()
+                                                },
+                                                success: function (response) {
+
+                                                }
+                                            });
+                                        }
+                                );
                             }
                         });
 
