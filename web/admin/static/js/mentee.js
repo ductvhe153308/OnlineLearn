@@ -48,7 +48,7 @@ var Mentee = {
                         <div class="user-name">${mentee['first_name']} ${mentee['last_name']}</div></div>
                         <div class="table-data" style="width:${colgroup[1]}px">
                             <div>${mentee['phone']}</div></div>
-                        <div class="table-data" style="width:${colgroup[2]}px">
+                        <div class="table-data" style="width:${colgroup[2]}px;padding-top:10px;">
                             ${mentee['created_at']}</div>
                         <div class="table-data" style="width:${colgroup[3]}px">
                             ${AP.money.dollar(100)}</div>
