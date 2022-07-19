@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -72,10 +73,10 @@ public class DeleteFeebackController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            Account a = (Account) request.getSession().getAttribute("user");
             String id = request.getParameter("id");
-            System.out.println(id);
             FeedbackDAO feedbackDAO = new FeedbackDAO();
-            feedbackDAO.deleteFeedbackById();
+            feedbackDAO.deleteFeedbackById(a.getAid(), id);
             response.sendRedirect("MyFeedback");
         } catch (Exception e) {
         }
