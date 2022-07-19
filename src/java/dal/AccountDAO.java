@@ -210,7 +210,7 @@ public class AccountDAO {
             while (rs.next()) {
                 Account a = new Account(
                         rs.getInt("account_id"),
-                        rs.getString(2),
+                        rs.getString("last_name"),
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
