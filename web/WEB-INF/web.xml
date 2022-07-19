@@ -122,7 +122,7 @@
     </servlet>
     <servlet>
         <servlet-name>CourseTrendingController</servlet-name>
-        <servlet-class>controller.CourseTrendingController</servlet-class>
+        <servlet-class>controller.course.CourseTrendingController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteBlogController</servlet-name>
