@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller.home;
+package controller.common;
 
 import java.io.IOException;
 import java.io.PrintWriter;
