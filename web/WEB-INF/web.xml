@@ -126,7 +126,7 @@
     </servlet>
     <servlet>
         <servlet-name>DeleteBlogController</servlet-name>
-        <servlet-class>controller.home.DeleteBlogController</servlet-class>
+        <servlet-class>controller.blog.DeleteBlogController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteFeebackController</servlet-name>
