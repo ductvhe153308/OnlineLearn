@@ -144,6 +144,10 @@
         <servlet-name>SearchBlogController</servlet-name>
         <servlet-class>controller.home.SearchBlogController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuizResultController</servlet-name>
+        <servlet-class>controller.home.QuizResultController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -287,6 +291,10 @@
     <servlet-mapping>
         <servlet-name>SearchBlogController</servlet-name>
         <url-pattern>/SearchBlog</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizResultController</servlet-name>
+        <url-pattern>/QuizResult</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
