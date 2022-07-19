@@ -36,4 +36,6 @@ public class BlogCategory {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
 }
