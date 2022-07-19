@@ -214,7 +214,7 @@ public class AccountDAO {
                         rs.getString("first_name"),
                         rs.getString("email"),
                         rs.getString("phone"),
-                        rs.getInt(6),
+                        rs.getInt("gender"),
                         rs.getDate(7),
                         rs.getString(8));
                 list.add(a);
