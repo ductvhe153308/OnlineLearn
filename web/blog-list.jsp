@@ -111,9 +111,9 @@
 
                             <div class="card search-widget">
                                 <div class="card-body">
-                                    <form class="search-form">
+                                    <form class="search-form" action="SearchBlog" method="POST">
                                         <div class="input-group">
-                                            <input type="text" placeholder="Search..." class="form-control">
+                                            <input value="${searchBlog}" name="searchBlog" onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
                                             <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                         </div>
                                     </form>
