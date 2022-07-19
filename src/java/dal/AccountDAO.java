@@ -209,12 +209,12 @@ public class AccountDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Account a = new Account(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
+                        rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getInt("gender"),
                         rs.getDate(7),
                         rs.getString(8));
                 list.add(a);
