@@ -818,4 +818,16 @@ public class AccountDAO {
         }
         return c;
     }
+
+    public int countingMember() {
+        return 166;
+    }
+
+    public int countingAppointment() {
+        return 332;
+    }
+
+    public int countingStar() {
+        return 123;
+    }
 }
