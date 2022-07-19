@@ -254,7 +254,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteFeebackController</servlet-name>
-        <url-pattern>/DeleteFeeback</url-pattern>
+        <url-pattern>/DeleteFeedback</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
