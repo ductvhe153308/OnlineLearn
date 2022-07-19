@@ -33,7 +33,7 @@
                 <div class="row"> 
                     <c:forEach items="${myfeedback}" var="x">
                         <div class="blog">
-                            <div style="margin-bottom: 50px; padding: 30px; display: flex; flex-direction: row; justify-content: space-between">
+                            <div style="display: flex; flex-direction: row; justify-content: space-between">
                                 <div>
                                     <h4>Author: ${x.last_name} ${x.first_name}</h4>
                                     <p>How do find this site?<span style="color: #00cc52">- ${x.how_find_this_site}</span> </p>
