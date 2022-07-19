@@ -212,7 +212,7 @@ public class AccountDAO {
                         rs.getInt("account_id"),
                         rs.getString("last_name"),
                         rs.getString("first_name"),
-                        rs.getString(4),
+                        rs.getString("email"),
                         rs.getString(5),
                         rs.getInt(6),
                         rs.getDate(7),
