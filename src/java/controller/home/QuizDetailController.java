@@ -54,7 +54,7 @@ public class QuizDetailController extends HttpServlet {
         HttpSession session = request.getSession(true);
 PrintWriter out = response.getWriter();
 
-         int id =2;
+         int id =Integer.parseInt(request.getParameter("id"));
         
         QuizDAO dao =new QuizDAO();
         List<Quiz> quiz = dao.getQuiz1(id);
@@ -94,7 +94,7 @@ PrintWriter out = response.getWriter();
         int sellect5 = Integer.parseInt(request.getParameter("choice5"));
         
         
-        int id = 2;
+        int id =Integer.parseInt(request.getParameter("id"));
         
         QuizDAO dao =new QuizDAO();
         List<Integer> intt1 = dao.getQuizIdListbyLesson(id);
@@ -105,7 +105,7 @@ PrintWriter out = response.getWriter();
         dao.setResult(a.getAid(), intt1.get(3), sellect4, intt2.get(3), id);
         dao.setResult(a.getAid(), intt1.get(4), sellect5, intt2.get(4), id);
        
-        request.getRequestDispatcher("quiz.jsp").forward(request, response);
+        request.getRequestDispatcher("lesson.jsp");
         }
         
         

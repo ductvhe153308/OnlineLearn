@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <jsp:useBean id="c1" class="dal.CategoryDAO" scope="request"></jsp:useBean>
         <jsp:useBean id="c" class="dal.CourseDAO" scope="request"></jsp:useBean>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -45,14 +46,16 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="suggest" style="display: none">
+                        <div id="suggest">
                             <div class="card category-widget">
                                 <div class="card-header">
                                     <h4 class="card-title">Course Categories</h4>
                                 </div>
                                 <div class="card-body">
                                     <ul class="categories">
-                                        <li><a href="#">HTML <span>(62)</span></a></li>
+                                        <c:forEach items="${c1.allCourseCategory}" var="x">
+                                            <li><a href="#">${x.name}</a></li>
+                                            </c:forEach>
                                     </ul>
                                 </div>
                             </div>
@@ -62,7 +65,9 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="tags">
-                                        <li><a href="#" class="tag">HTML</a></li>
+                                        <c:forEach items="${c1.allCourseCategory}" var="x">
+                                            <li><a href="#" class="tag">${x.name}</a></li>
+                                            </c:forEach>
                                     </ul>
                                 </div>
                             </div>
@@ -114,7 +119,7 @@
                         </div>
                     </c:forEach>
                 </div>
-            
+
             </div>
         </section>
         <%@include file="footer.jsp" %> 
