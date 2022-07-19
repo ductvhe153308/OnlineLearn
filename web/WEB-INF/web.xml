@@ -125,8 +125,8 @@
         <servlet-class>controller.CourseTrendingController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>DeleteFeedbackController</servlet-name>
-        <servlet-class>controller.DeleteFeedbackController</servlet-class>
+        <servlet-name>DeleteFeebackController</servlet-name>
+        <servlet-class>controller.DeleteFeebackController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
@@ -253,8 +253,8 @@
         <url-pattern>/CourseTrending</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DeleteFeedbackController</servlet-name>
-        <url-pattern>/DeleteFeedbackController</url-pattern>
+        <servlet-name>DeleteFeebackController</servlet-name>
+        <url-pattern>/DeleteFeeback</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
