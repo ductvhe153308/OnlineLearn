@@ -195,13 +195,13 @@ public class AccountDAO {
             String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, account.date_of_birth, account.profile_picture  \n"
                     + "FROM onlinelearning.account \n"
                     + "where role_id = 2\n"
-                    + "and account.last_name = ?\n"
-                    + "or account.first_name = ?\n"
+                    + "and account.last_name like ?\n"
+                    + "or account.first_name like ?\n"
                     + "order by account.account_id asc limit 5 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, searchName);
-            ps.setString(2, searchName);
+            ps.setString(1, "%" + searchName + "%");
+            ps.setString(2, "%" + searchName + "%");
             ps.setInt(3, (index - 1) * 8);
             rs = ps.executeQuery();
             while (rs.next()) {
