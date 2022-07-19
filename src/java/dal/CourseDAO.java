@@ -454,7 +454,7 @@ public class CourseDAO {
                     + "order by course.course_id asc limit 4 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, searchName);
+            ps.setString(1, "%" + searchName + "%");
             ps.setInt(2, (index - 1) * 4);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -488,7 +488,7 @@ public class CourseDAO {
                     + "order by course.course_id asc";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, searchName);
+            ps.setString(1, "%" + searchName + "%");
             rs = ps.executeQuery();
             while (rs.next()) {
                 int total = rs.getInt(1);
