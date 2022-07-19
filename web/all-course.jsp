@@ -39,7 +39,7 @@ Author     : DuongHoangLe
                             <div class="card-body">
                                 <form class="search-form" method="post" action="SearchCourse">
                                     <div class="input-group">
-                                        <input name="searchByName" onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
+                                        <input value="${searchName}" name="searchByName" onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                 </form>
