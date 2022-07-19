@@ -1,7 +1,7 @@
 <%-- 
 Document   : all-course
 Created on : Jun 9, 2022, 10:02:53 PM
-Author     : DuongHoangLe
+Author     : dell
 --%>
 
 <%@page import="model.Course"%>
