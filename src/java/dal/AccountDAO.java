@@ -245,15 +245,15 @@ public class AccountDAO {
         return 0;
     }
     
-    public static void main(String[] args) {
-        AccountDAO dao = new AccountDAO();
-        int n = dao.getMentorNumberPageByName("Nguyen");
-        System.out.println(n);
-        List<Account> list = dao.getMentorListByName(1, "Nguyen");
-        for (Account o : list) {
-            System.out.println(o);
-        }
-    }
+//    public static void main(String[] args) {
+//        AccountDAO dao = new AccountDAO();
+//        int n = dao.getMentorNumberPageByName("Nguyen");
+//        System.out.println(n);
+//        List<Account> list = dao.getMentorListByName(1, "Nguyen");
+//        for (Account o : list) {
+//            System.out.println(o);
+//        }
+//    }
 
     public Account getMentorByID(int id) throws SQLException {
         Account a = null;
