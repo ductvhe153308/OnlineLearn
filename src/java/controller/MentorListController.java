@@ -46,7 +46,7 @@ public class MentorListController extends HttpServlet {
        request.setAttribute("list", list);
        request.setAttribute("endP", endPage);
        request.setAttribute("tag", indexPage);
-       request.getRequestDispatcher("all-mentor.jsp").forward(request, response);
+       request.getRequestDispatcher("mentor-list.jsp").forward(request, response);
     }
     
 
