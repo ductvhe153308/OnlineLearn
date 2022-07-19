@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>ValidateOtpController</servlet-name>
-        <servlet-class>controller.home.ValidateOtpController</servlet-class>
+        <servlet-class>controller.common.ValidateOtpController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>NewPasswordController</servlet-name>
