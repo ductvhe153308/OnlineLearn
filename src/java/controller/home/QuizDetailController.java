@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Account;
 import model.Choice;
 import model.Quiz;
 
@@ -52,6 +53,7 @@ public class QuizDetailController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
 PrintWriter out = response.getWriter();
+
          int id =2;
         
         QuizDAO dao =new QuizDAO();
@@ -64,6 +66,7 @@ PrintWriter out = response.getWriter();
         }
         int firtId =quiz.get(0).getQuizId();
         //b2 set data
+        
         request.setAttribute("quiz", quiz);
         request.setAttribute("firtId", firtId);
         
@@ -82,57 +85,34 @@ PrintWriter out = response.getWriter();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Account a = (Account) request.getSession().getAttribute("user");
+       
         int sellect1 = Integer.parseInt(request.getParameter("choice1"));
         int sellect2 = Integer.parseInt(request.getParameter("choice2"));
         int sellect3 = Integer.parseInt(request.getParameter("choice3"));
         int sellect4 = Integer.parseInt(request.getParameter("choice4"));
         int sellect5 = Integer.parseInt(request.getParameter("choice5"));
         
-        response.getWriter().write("<h3>"+sellect1+"</h3>");
-        response.getWriter().write("<h3>"+sellect2+"</h3>");
-        response.getWriter().write("<h3>"+sellect3+"</h3>");
-        response.getWriter().write("<h3>"+sellect4+"</h3>");
-        response.getWriter().write("<h3>"+sellect5+"</h3>");
+        
+        int id = 2;
+        
+        QuizDAO dao =new QuizDAO();
+        List<Integer> intt1 = dao.getQuizIdListbyLesson(id);
+        List<Integer> intt2 = dao.getCorrectChoiceIdList(id);
+        dao.setResult(a.getAid(), intt1.get(0), sellect1, intt2.get(0), id);
+        dao.setResult(a.getAid(), intt1.get(1), sellect2, intt2.get(1), id);
+        dao.setResult(a.getAid(), intt1.get(2), sellect3, intt2.get(2), id);
+        dao.setResult(a.getAid(), intt1.get(3), sellect4, intt2.get(3), id);
+        dao.setResult(a.getAid(), intt1.get(4), sellect5, intt2.get(4), id);
+       
+        request.getRequestDispatcher("quiz.jsp").forward(request, response);
+        }
         
         
         
-//        boolean finish = false;
-//        HttpSession session = request.getSession();
-//        int id = Integer.parseInt( request.getParameter("id"));
-//        int select = Integer.parseInt(request.getParameter("choice"));
-//        int currentQuiz = Integer.parseInt(request.getParameter("currentQuiz"));
-//        QuizDAO dao = new QuizDAO();
-//        
-//        String action = request.getParameter("action");
-//        
-//         Quiz quiz =(Quiz)request.getSession().getAttribute("quiz");	
-//         
-//        if (select == quiz.getQuizId()) {
-//            
-//            quiz.setIsSelected(select);
-//            
-//        } 
-//        if ("Next".equals(action)) {
-//            currentQuiz++;
-//            dao.getChoices(currentQuiz);
-//            Quiz q = dao.getQuiz(currentQuiz);
-//            session.setAttribute("quiz", q);
-//        } else if ("Previous".equals(action)) {
-//            
-//            currentQuiz--;
-//            dao.getChoices(currentQuiz);
-//            Quiz q = dao.getQuiz(currentQuiz);
-//            session.setAttribute("quiz", q);
-//
-//        } else if ("Finish Exam".equals(action) ) {
-//            finish = true;
-////            int result = quiz.calculateResult(quiz, dao.getQuizNumberPage());
-////            request.setAttribute("result", result);
-////            request.getRequestDispatcher("home.jsp").forward(request, response);
-//
-//        }
         
-    }
+        
+    
 
     /**
      * Returns a short description of the servlet.

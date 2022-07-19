@@ -55,17 +55,19 @@ public class Quiz {
                 ", isSelected=" + isSelected +
                 '}';
     }
-    private String answer;
+    private int answer;
     private int score = 0;
     private String status = "";
 
-    public String getAnswer() {
+    public int getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(int answer) {
         this.answer = answer;
     }
+
+    
 
     public int getScore() {
         return score;

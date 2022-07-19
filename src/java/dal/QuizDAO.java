@@ -153,14 +153,15 @@ public class QuizDAO {
         }
     }
 
-    public int getMark(int id) {
+    public int getMark(int id,int aId) {
         try {
-            String query = "select count(*) from onlinelearning.result \n"
-                    + "where result.user_select = result.is_correct_answer \n"
-                    + "and result.lessonId = ?;";
+            String query = "SELECT count(*) FROM onlinelearning.result \n"
+                    + "where acId = ? and lessonId =? \n"
+                    + "and result.user_select = result.is_correct_answer ";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setInt(1, aId);
+            ps.setInt(2, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return rs.getInt(1);
@@ -234,8 +235,9 @@ public class QuizDAO {
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
         List<Quiz> quiz = dao.getQuiz1(2);
-        int n = dao.getMark(1);
-        dao.setResult(41, 2, 2, 22, 2);
+        int n = dao.getMark(2,41);
+        System.out.println(n);
+        
 //        System.out.println(n);
 //        for (Quiz o : quiz) {
 //
