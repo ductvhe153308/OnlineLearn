@@ -44,7 +44,7 @@
                                 <div class="submit-section" style="display:  flex; justify-content: right;">
                                     <div style="display: none">
                                         <select name="id" size="1">
-                                            <option value = "${x.id}" selected>Another Website</option>
+                                            <option value = "${x.id}" selected></option>
                                         </select>
                                     </div>
 
