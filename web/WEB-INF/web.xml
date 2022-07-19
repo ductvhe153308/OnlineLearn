@@ -70,7 +70,7 @@
     </servlet>
     <servlet>
         <servlet-name>CourseDetailController</servlet-name>
-        <servlet-class>controller.CourseDetailController</servlet-class>
+        <servlet-class>controller.course.CourseDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogListController</servlet-name>
