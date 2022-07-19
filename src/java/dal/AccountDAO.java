@@ -377,7 +377,6 @@ public class AccountDAO {
             ps.setInt(1, (page - 1) * num_objs);
             ps.setInt(2, num_objs);
             rs = ps.executeQuery();
-            Account a;
             JsonObject mentee;
             while (rs.next()) {
                 mentee = getMentee(rs);
@@ -431,7 +430,6 @@ public class AccountDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
-            Account a;
             JsonObject mentee;
             while (rs.next()) {
                 mentee = getMentee(rs);
@@ -459,7 +457,6 @@ public class AccountDAO {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
-            Account a;
             JsonObject mentee;
             while (rs.next()) {
                 mentee = getMentee(rs);
@@ -777,7 +774,7 @@ public class AccountDAO {
 
             ps.executeUpdate();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
 
     }
