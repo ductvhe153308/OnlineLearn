@@ -66,7 +66,7 @@
     </servlet>
     <servlet>
         <servlet-name>MentorBestRateController</servlet-name>
-        <servlet-class>controller.MentorBestRateController</servlet-class>
+        <servlet-class>controller.mentor.MentorBestRateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseDetailController</servlet-name>
