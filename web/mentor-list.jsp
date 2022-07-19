@@ -71,11 +71,6 @@
                                             <div class="card-body">
                                                 <ul class="categories">
                                                     <li><a href="#">HTML <span>(62)</span></a></li>
-                                                    <li><a href="#">Css <span>(27)</span></a></li>
-                                                    <li><a href="#">Java Script <span>(41)</span></a></li>
-                                                    <li><a href="#">Photoshop <span>(16)</span></a></li>
-                                                    <li><a href="#">Wordpress <span>(55)</span></a></li>
-                                                    <li><a href="#">VB <span>(07)</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -86,22 +81,6 @@
                                             <div class="card-body">
                                                 <ul class="tags">
                                                     <li><a href="#" class="tag">HTML</a></li>
-                                                    <li><a href="#" class="tag">Css</a></li>
-                                                    <li><a href="#" class="tag">Java Script</a></li>
-                                                    <li><a href="#" class="tag">Jquery</a></li>
-                                                    <li><a href="#" class="tag">Wordpress</a></li>
-                                                    <li><a href="#" class="tag">Php</a></li>
-                                                    <li><a href="#" class="tag">Angular js</a></li>
-                                                    <li><a href="#" class="tag">React js</a></li>
-                                                    <li><a href="#" class="tag">Vue js</a></li>
-                                                    <li><a href="#" class="tag">Photoshop</a></li>
-                                                    <li><a href="#" class="tag">Ajax</a></li>
-                                                    <li><a href="#" class="tag">Json</a></li>
-                                                    <li><a href="#" class="tag">C</a></li>
-                                                    <li><a href="#" class="tag">C++</a></li>
-                                                    <li><a href="#" class="tag">Vb</a></li>
-                                                    <li><a href="#" class="tag">Vb.net</a></li>
-                                                    <li><a href="#" class="tag">Asp.net</a></li>
                                                 </ul>
                                             </div>
                                         </div>
