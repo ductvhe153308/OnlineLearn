@@ -78,10 +78,11 @@ public class QuizDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
-        } 
+        }
         return quiz;
     }
- public List<Quiz> getQuiz1(int id) {
+
+    public List<Quiz> getQuiz1(int id) {
         List<Quiz> quiz = new ArrayList();
 
         try {
@@ -99,15 +100,16 @@ public class QuizDAO {
                 Quiz q = new Quiz();
                 q.setQuizId(rs.getInt("Id"));
                 q.setDescription(rs.getString("description"));
-                
+
                 quiz.add(q);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
-        } 
+        }
         return quiz;
     }
+
     public List<Choice> getChoices(int id) {
         List<Choice> choices = new ArrayList<>();
 
@@ -138,26 +140,39 @@ public class QuizDAO {
         List<Quiz> quiz = dao.getQuiz1(2);
         int n = dao.getQuizNumberPage(1);
         System.out.println(n);
-        for(Quiz o :quiz){
-           
-            List<Choice> choice = dao.getChoices(o.getQuizId());
-            
-            o.setChoices(choice);
-           
-          
-            
-        }
-                int firtId =quiz.get(0).getQuizId();
+        for (Quiz o : quiz) {
 
-        for(Quiz o :quiz){
-           
-            System.out.println(o.getQuizId() - firtId +1);
+            List<Choice> choice = dao.getChoices(o.getQuizId());
+
+            o.setChoices(choice);
+
+        }
+        int firtId = quiz.get(0).getQuizId();
+
+        for (Quiz o : quiz) {
+
+            System.out.println(o.getQuizId() - firtId + 1);
             System.out.println(o);
-            
+
         }
 
     }
-   
+
+    public void getResult(int quiz_mark, int quizId,int user_select ,int is_correct_answer ) {
+        try {
+            String query = "INSERT INTO onlinelearning.result \n"
+                    + "(quiz_mark, quizId, user_select, is_correct_answer) VALUES (?, ?, ?, ?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, quiz_mark);
+            ps.setInt(2, quizId);
+            ps.setInt(3, user_select);
+            ps.setInt(4, is_correct_answer);
+            rs = ps.executeQuery();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public int getQuizNumberPage(int id) {
         try {
