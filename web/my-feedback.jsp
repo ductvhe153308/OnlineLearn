@@ -50,7 +50,6 @@
                                 </button>
                             </div>
 
-
                         </div>
                     </c:forEach>
                 </div>
@@ -58,5 +57,11 @@
             </div>
         </section>
         <%@include file="footer.jsp" %> 
+        <%
+            String msg = request.getAttribute("delete_feedback_msg").toString();
+            if (!msg.equals("")) {
+               out.print("alert('Delete a feedback successfully');");
+            }
+        %>
     </body>
 </html>
