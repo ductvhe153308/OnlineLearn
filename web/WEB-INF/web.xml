@@ -26,7 +26,7 @@
     </servlet>
     <servlet>
         <servlet-name>BlogDetailController</servlet-name>
-        <servlet-class>controller.home.BlogDetailController</servlet-class>
+        <servlet-class>controller.blog.BlogDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BlogByAuthorController</servlet-name>
