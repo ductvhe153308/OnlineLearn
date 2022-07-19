@@ -265,16 +265,6 @@ public class CourseDAO {
         return null;
     }
 
-    public static void main(String[] args) {
-        CourseDAO dao = new CourseDAO();
-        int n = dao.getNumberPageBySearch("CSS");
-        System.out.println(n);
-        List<Course> list = dao.getCourseBySearchName(1, "CSS");
-        for (Course o : list) {
-            System.out.println(o);
-        }
-    }
-
     public Course getCourse(int course_id) throws SQLException {
         Course c = null;
         try {
@@ -513,5 +503,15 @@ public class CourseDAO {
             e.printStackTrace();
         }
         return 0;
+    }
+    
+    public static void main(String[] args) {
+        CourseDAO dao = new CourseDAO();
+        int n = dao.getNumberPageBySearch("CSS");
+        System.out.println(n);
+        List<Course> list = dao.getCourseBySearchName(1, "CSS");
+        for (Course o : list) {
+            System.out.println(o);
+        }
     }
 }
