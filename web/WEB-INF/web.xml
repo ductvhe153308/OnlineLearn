@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>NewPasswordController</servlet-name>
-        <servlet-class>controller.home.NewPasswordController</servlet-class>
+        <servlet-class>controller.common.NewPasswordController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegisterController</servlet-name>
