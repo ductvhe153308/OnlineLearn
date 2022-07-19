@@ -39,7 +39,7 @@
                 width: 100%
             }
             .right-navbar > .main-nav> li:hover {
-                background-color: #E6E6FA !important;
+                background-color: #FFCB55 !important;
             }
             .right-navbar > .main-nav{
                 width: 100%;
@@ -48,22 +48,22 @@
     </head>
     <body>
         <div class="header">
-            <div class="right-navbar" style="width: 100%; height: 100%">
-                <ul class="main-nav" style="display: flex; flex-direction: column">
-                    <li class="has-submenu">
-                        <a href="#">Overview</a>
+            <div class="right-navbar" style="width: 100%; height: 100%; background: #FFB100">
+                <ul class="main-nav" style="display: flex; flex-direction: column;">
+                    <li class="has-submenu" style="border: 1px solid black;">
+                        <a href="#" style="color: white;">Overview</a>
                     </li>
-                    <li class="">
-                        <a href="#">Grades</a>
+                    <li class="" style="border: 1px solid black;">
+                        <a href="#" style="color: white;">Grades</a>
                     </li>
-                    <li class="">
-                        <a href="#">Discussion</a>
+                    <li class="" style="border: 1px solid black;">
+                        <a href="#" style="color: white;">Discussion</a>
                     </li>
-                    <li class="">
-                        <a href="#">Messages</i></a>
+                    <li class="" style="border: 1px solid black;">
+                        <a href="#" style="color: white;">Messages</i></a>
                     </li>
-                    <li class="">
-                        <a href="#">Course Info</a>
+                    <li class="" style="border: 1px solid black;">
+                        <a href="#" style="color: white;">Course Info</a>
                     </li>
                 </ul>
             </div>

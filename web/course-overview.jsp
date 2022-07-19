@@ -25,6 +25,11 @@
             .course-navbar a{
                 display: block;
                 padding-bottom: 50px;
+                
+            }
+            
+            .hover:hover{
+                background: #AADEE1;
             }
         </style>
     </head>
@@ -33,18 +38,20 @@
     <div class="main-wrapper">
         <%@include file="header.jsp" %>
         <div style="display: flex; flex-direction: row">
-            <div style="width: 220px">
+            <div style="width: 250px; background: #FFB100;">
                 <%@include file="right-navbar.jsp" %>
             </div>
-            <div style="width: calc(100% - 220px)">
-                <div class="row" style="display: flex; flex-direction: column; justify-content: center; align-content: center; padding-top: 50px">
+            <div style="width: calc(100% - 220px);">
+                <div class="row" style="display: flex; flex-direction: column; justify-content: center; margin-left: 15%; padding-top: 50px">
                     <c:forEach items="${list}" var="x">
-                        <div style="height: 100px; width: 50%; border: 1px solid black; margin-bottom: 50px; font-size: 18px">
-                            <div>
-                            <a href="LessonDetail?id=${x.id}&order=${x.lesson_order}&title=${x.title}">Lesson ${x.lesson_order}: ${x.title}
-                            </a> 
+                        <div style="height: 100px; width: 50%; border: 2px solid black; margin-bottom: 50px; font-size: 18px;border-radius: 30px" class="hover">
+                            <div style="padding-top: 35px;">
+                                <a href="LessonDetail?id=${x.id}&order=${x.lesson_order}&title=${x.title}">Lesson ${x.lesson_order}: ${x.title}
+                                </a> 
                             </div>
-                            <div>
+                        </div>
+                        <div style="height: 100px; width: 50%; border: 2px solid black; margin-bottom: 50px; font-size: 18px;border-radius: 30px" class="hover">
+                            <div style="padding-top: 35px;">
                             <a href="QuizDetail?id=${x.id}">Quiz ${x.lesson_order}
                             </a>
                             </div>
