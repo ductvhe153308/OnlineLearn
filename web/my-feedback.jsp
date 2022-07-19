@@ -32,7 +32,7 @@
                 </div>
                 <div class="row"> 
                     <c:forEach items="${myfeedback}" var="x">
-                        <div class="blog">
+                        <div class="blog" style="margin-bottom: 50px !important; box-shadow: 5px 5px 15px rgb(183 183 183 / 25%) !important">
                             <div style="display: flex; flex-direction: row; justify-content: space-between">
                                 <div>
                                     <h4>Author: ${x.last_name} ${x.first_name}</h4>
