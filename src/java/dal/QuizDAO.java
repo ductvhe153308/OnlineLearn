@@ -143,16 +143,24 @@ public class QuizDAO {
         for (Quiz o : quiz) {
 
             List<Choice> choice = dao.getChoices(o.getQuizId());
+            for (Choice c : choice) {
+                if(c.getIsCorrectAnswer() ==1){
+                    o.setAnswer( c.getChoiceId()+"" );
+                }
+                
+           
 
+        }
             o.setChoices(choice);
+            
 
         }
         int firtId = quiz.get(0).getQuizId();
-
+        
         for (Quiz o : quiz) {
 
-            System.out.println(o.getQuizId() - firtId + 1);
             System.out.println(o);
+            System.out.println(o.getAnswer());
 
         }
 
