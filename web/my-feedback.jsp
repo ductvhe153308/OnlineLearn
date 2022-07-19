@@ -40,7 +40,7 @@
                             <p>Comment or Suggestions<span style="color: #00cc52">- ${x.comment} </p>
                             <p>Do you think this my form looks like?<span style="color: #00cc52"> -  ${x.voting}</p>
                             <p>Feedback time:<span style="color: #00cc52"> ${x.feedback_time} </p>
-                            <form id="delete_feedback">
+                            <form id="delete_feedback" method="post" action="DeleteFeedback">
                                 <div class="submit-section" style="display:  flex; justify-content: right;">
                                     <div style="display: none">
                                         <select name="id" size="1">
@@ -48,7 +48,7 @@
                                         </select>
                                     </div>
 
-                                    <input class="btn btn-primary submit-btn" type="submit" value="Delete" onclick="confirm_decision();"/>
+                                    <input class="btn btn-primary submit-btn" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this feedback?')"/>
                                 </div>
                             </form>
 
