@@ -102,7 +102,7 @@
     </servlet>
     <servlet>
         <servlet-name>LessonDetailController</servlet-name>
-        <servlet-class>controller.home.LessonDetailController</servlet-class>
+        <servlet-class>controller.lesson.LessonDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TotalLessonController</servlet-name>
