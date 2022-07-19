@@ -71,13 +71,10 @@ public class DeleteFeebackController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String rating = request.getParameter("rating");
-            System.out.println(rating);
-            request.setAttribute("rating", rating);
-            response.sendRedirect("test.jsp");
-
+            String id = request.getParameter("id");
+            System.out.println(id);
+            response.sendRedirect("MyFeedback");
         } catch (Exception e) {
-
         }
     }
 
