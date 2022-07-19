@@ -1,5 +1,5 @@
 <%-- 
-Document   : all-course
+Document   : course-list
 Created on : Jun 9, 2022, 10:02:53 PM
 Author     : dell
 --%>
