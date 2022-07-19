@@ -38,7 +38,7 @@
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-                                    <!--                                    <li class="breadcrumb-item active" aria-current="page">Blog</li>-->
+                                    <!--<li class="breadcrumb-item active" aria-current="page">Blog</li>-->
                                 </ol>
                             </nav>
                             <h2 class="breadcrumb-title">My Blog</h2>
@@ -99,6 +99,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="blog-create.jsp" style="text-decoration: underline; color: #009efb; font-size: 19px">Create new blog</a>
                                     </c:forEach>
                                     <div class="row">
                                         <div class="col-md-12">
