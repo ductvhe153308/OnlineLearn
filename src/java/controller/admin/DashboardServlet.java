@@ -33,6 +33,13 @@ public class DashboardServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        AccountDAO adao = new AccountDAO();
+        int members = adao.countingMember();
+        request.setAttribute("members", members);
+        int appointments = adao.countingAppointment();
+        request.setAttribute("appointments", appointments);
+        int stars = adao.countingStar();
+        request.setAttribute("stars", stars);
         request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     }
 
