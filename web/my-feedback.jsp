@@ -40,9 +40,18 @@
                             <p>Comment or Suggestions<span style="color: #00cc52">- ${x.comment} </p>
                             <p>Do you think this my form looks like?<span style="color: #00cc52"> -  ${x.voting}</p>
                             <p>Feedback time:<span style="color: #00cc52"> ${x.feedback_time} </p>
-                            <div class="submit-section" style="display:  flex; justify-content: right;">
-                                <input class="btn btn-primary submit-btn" type="button" value="Delete" onclick="confirm_decision(${x.id});"/>
-                            </div>
+                            <form id="delete_feedback" action="DeleteFeedback" method="post">
+                                <div class="submit-section" style="display:  flex; justify-content: right;">
+                                    <div>
+                                        <select name="rating" size="1">
+                                            <option value = "yes" selected>Another Website</option>
+                                        </select>
+                                    </div>
+
+                                    <input class="btn btn-primary submit-btn" type="submit" value="submit" onclick="confirm_decision(${x.id});"/>
+                                </div>
+                            </form>
+
                         </div>
                     </c:forEach>
                 </div>
@@ -54,7 +63,8 @@
             function confirm_decision(id) {
                 if (confirm("Do you want to delete this feedback id = " + id + " ?")) // this will pop up confirmation box and if yes is clicked it call servlet else return to page
                 {
-                    alert("yes");
+                    var feedback_id = id;
+                    feedback_id.submit();
                 } else {
                     return false;
                 }
