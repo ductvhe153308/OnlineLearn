@@ -120,8 +120,8 @@ Author     : DuongHoangLe
                             <nav>
                                 <ul class="pagination justify-content-center">
                                     <c:if test="${tag >1}">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="CourseList?index=${tag-1}" tabindex="-1"><i class="fas fa-angle-double-left"></i></a>
+                                    <li class="page-item">
+                                        <a class="page-link" href="CourseList?index=${tag-1}" ><i class="fas fa-angle-double-left"></i></a>
                                     </li>
                                     </c:if>
                                     <c:forEach begin = "1" end = "${endP}" var = "i">

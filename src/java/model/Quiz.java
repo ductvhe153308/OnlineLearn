@@ -8,7 +8,7 @@ public class Quiz {
     private List<Choice> choices;
    
 
-   
+   private int isSelected;
 
     public int getIsSelected() {
         return isSelected;
@@ -18,7 +18,7 @@ public class Quiz {
         this.isSelected = isSelected;
     }
 
-    private int isSelected;
+    
 
     public int getQuizId() {
         return quizId;
@@ -55,5 +55,33 @@ public class Quiz {
                 ", isSelected=" + isSelected +
                 '}';
     }
+    private String answer;
+    private int score = 0;
+    private String status = "";
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
 
 }
