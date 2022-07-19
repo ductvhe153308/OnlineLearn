@@ -112,10 +112,11 @@
                                                             <div class="mentee-info">
                                                                 <ul style="text-transform:none">
                                                                     <li>Phone <span> ${x.phone}</span></li>
-                                                                    <li>Age <span>24 Years,
+                                                                    <li>DOB <span>${x.dob}</span></li>
+                                                                    <li>Gender <span>
                                                                             <c:if test="${x.gender == 0}">Male</c:if>
                                                                             <c:if test="${x.gender == 1}">Female</c:if>
-                                                                        </span></li>
+                                                                    </span></li>
                                                                     <li>Email <span class="info"> ${x.email}</span></li>
                                                                 </ul>
                                                             </div>
