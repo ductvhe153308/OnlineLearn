@@ -36,19 +36,18 @@ public class MentorListController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String index = request.getParameter("index");
-       if(index == null){
-           index ="1";
-       }
-       int indexPage = Integer.parseInt(index);
+        if (index == null) {
+            index = "1";
+        }
+        int indexPage = Integer.parseInt(index);
         AccountDAO dao = new AccountDAO();
-       int endPage = dao.getMentorNumberPage();
-       List<Account> list = dao.getAllMentorPaging(indexPage);
-       request.setAttribute("list", list);
-       request.setAttribute("endP", endPage);
-       request.setAttribute("tag", indexPage);
-       request.getRequestDispatcher("mentor-list.jsp").forward(request, response);
+        int endPage = dao.getMentorNumberPage();
+        List<Account> list = dao.getAllMentorPaging(indexPage);
+        request.setAttribute("list", list);
+        request.setAttribute("endP", endPage);
+        request.setAttribute("tag", indexPage);
+        request.getRequestDispatcher("mentor-list.jsp").forward(request, response);
     }
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
