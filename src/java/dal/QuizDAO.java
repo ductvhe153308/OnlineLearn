@@ -14,6 +14,7 @@ import java.util.List;
 import model.Choice;
 
 import model.Quiz;
+import model.Quiz_History;
 
 import utils.DBContext;
 
@@ -153,11 +154,12 @@ public class QuizDAO {
         }
     }
 
-    public int getMark(int id,int aId) {
+    public int getMark(int id, int aId) {
         try {
             String query = "SELECT count(*) FROM onlinelearning.result \n"
-                    + "where acId = ? and lessonId =? \n"
-                    + "and result.user_select = result.is_correct_answer ";
+                    + "where acId = ? and lessonId = ?\n"
+                    + " and result.user_select = result.is_correct_answer\n"
+                    + "order by result.id desc limit 5";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, aId);
@@ -232,12 +234,38 @@ public class QuizDAO {
         return Id;
     }
 
+    public List<Quiz_History> getQuizHistory(int id) {
+        List<Quiz_History> quizH = new ArrayList<>();
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement("SELECT history_quiz_mark.id,history_quiz_mark.mark,history_quiz_mark.status \n"
+                    + "FROM onlinelearning.history_quiz_mark where history_quiz_mark.lesID = ?;");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Quiz_History qh = new Quiz_History();
+                qh.setId( rs.getInt("id"));   
+                qh.setMark(rs.getInt("mark"));
+                qh.setStatus(rs.getInt("status"));
+                quizH.add(qh);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return quizH;
+    }
+
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
-        List<Quiz> quiz = dao.getQuiz1(2);
-        int n = dao.getMark(2,41);
-        System.out.println(n);
+        List<Quiz_History> quiz = dao.getQuizHistory(1);
+        for(Quiz_History qh : quiz){
+            System.out.println(qh.getMark());
+        }
         
+
 //        System.out.println(n);
 //        for (Quiz o : quiz) {
 //
