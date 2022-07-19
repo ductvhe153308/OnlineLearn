@@ -244,17 +244,17 @@ public class CourseDAO {
             ps.setInt(1, aid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Course c = new Course(rs.getInt(1),
-                        rs.getInt(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getDouble(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getInt(8),
-                        rs.getString(9),
-                        rs.getString(10),
-                        rs.getString(11)
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getInt("aid"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture")
                 );
                 list.add(c);
             }
