@@ -47,7 +47,7 @@ public class SearchCourseController extends HttpServlet {
             request.setAttribute("endP", endPage);
             request.setAttribute("tag", indexPage);
             request.setAttribute("searchName", searchName);
-            request.getRequestDispatcher("all-course.jsp").forward(request, response);
+            request.getRequestDispatcher("course-list.jsp").forward(request, response);
         } else {
             response.sendRedirect("CourseList");
         }
