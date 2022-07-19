@@ -41,8 +41,8 @@ public class SearchMentorController extends HttpServlet {
         }
         int indexPage = Integer.parseInt(index);
         AccountDAO dao = new AccountDAO();
-        int endPage = dao.getMentorNumberPage();
-        List<Account> list = dao.getAllMentorPaging(indexPage);
+        int endPage = dao.getMentorNumberPageByName(searchName);
+        List<Account> list = dao.getMentorListByName(indexPage, searchName);
         request.setAttribute("list", list);
         request.setAttribute("endP", endPage);
         request.setAttribute("tag", indexPage);
