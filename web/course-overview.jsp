@@ -38,7 +38,7 @@
     <div class="main-wrapper">
         <%@include file="header.jsp" %>
         <div style="display: flex; flex-direction: row">
-            <div style="width: 250px; background: #FFB100;">
+            <div style="width: 250px;">
                 <%@include file="right-navbar.jsp" %>
             </div>
             <div style="width: calc(100% - 220px);">
