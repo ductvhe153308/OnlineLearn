@@ -35,8 +35,8 @@
                                 <h3 class="comp-title">Quiz</h3>
                                 <div class="line"></div>
                             </div>
-                             <c:forEach items="${quiz}" var="q">
-                                
+                             <c:forEach items="${quiz}" var="q" >
+                                 <input type="test" value="${q.lesson_id}" name="id" hidden="hidden" >
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="card">
