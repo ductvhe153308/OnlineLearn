@@ -52,7 +52,7 @@ int id = 1;
 //                 
              }else{q.setStatus(0);}
 //             
-//         }
+         }
          request.setAttribute("quiz", quizH);
          request.getRequestDispatcher("quiz_result.jsp").forward(request, response);
 
