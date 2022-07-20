@@ -110,8 +110,10 @@ PrintWriter out = response.getWriter();
         if(mark > 8){
             status = 1;
         }else{status = 0;}
-        dao.getAttemp(id, a.getAid());
-        dao.updatemark(mark, mark, status, id, a.getAid());
+        int attemp = dao.getAttemp(id, a.getAid())+1;
+        
+        dao.updatemark(mark, attemp, status, id, a.getAid());
+        response.sendRedirect("term.jsp");
         }
         
         
