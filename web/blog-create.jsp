@@ -6,7 +6,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/add-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
     <head>
         <jsp:useBean id="c" class="dal.CategoryDAO" scope="request"></jsp:useBean>
