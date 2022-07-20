@@ -6,7 +6,15 @@ public class Quiz {
     private int quizId;
     private String description;
     private List<Choice> choices;
-   
+   private int lesson_id;
+
+    public int getLesson_id() {
+        return lesson_id;
+    }
+
+    public void setLesson_id(int lesson_id) {
+        this.lesson_id = lesson_id;
+    }
 
    private int isSelected;
 
