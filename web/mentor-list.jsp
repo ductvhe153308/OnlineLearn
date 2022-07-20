@@ -57,32 +57,10 @@
                                         <div class="card-body">
                                             <form class="search-form" method="post" action="SearchMentor">
                                                 <div class="input-group">
-                                                    <input value="${searchName}" name="searchByName" onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
+                                                    <input value="${searchName}" name="searchByName" type="text" placeholder="Search..." class="form-control">
                                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                                 </div>
                                             </form>
-                                        </div>
-                                    </div>
-                                    <div id="suggest" style="display: none">
-                                        <div class="card category-widget">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Mentor Categories</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="categories">
-                                                    <li><a href="#">HTML <span>(62)</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card tags-widget">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Tags</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="tags">
-                                                    <li><a href="#" class="tag">HTML</a></li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -157,16 +135,6 @@
             <%@include file="footer.jsp" %> 
 
         </div>
-        <script>
-            function toogleSuggestSearch() {
-                var x = document.getElementById("suggest");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-        </script>
 
         <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
 
