@@ -44,15 +44,13 @@ int id = 1;
          
          List<Quiz_History> quizH = dao.getQuizHistory(id);
          
-//         for(Quiz_History q : quizH){
-//             
-//            
-//             
-//             if(q.getMark()>8){
+         for(Quiz_History q : quizH){
+
+             if(q.getMark()>8){
 //                 
-//                 q.setStatus(1);
+                 q.setStatus(1);
 //                 
-//             }else{q.setStatus(0);}
+             }else{q.setStatus(0);}
 //             
 //         }
          request.setAttribute("quiz", quizH);
