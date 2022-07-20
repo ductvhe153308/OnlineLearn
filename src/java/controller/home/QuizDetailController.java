@@ -85,8 +85,9 @@ PrintWriter out = response.getWriter();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         
         Account a = (Account) request.getSession().getAttribute("user");
-       
+       int id = Integer.parseInt(request.getParameter("id"));
         int sellect1 = Integer.parseInt(request.getParameter("choice1"));
         int sellect2 = Integer.parseInt(request.getParameter("choice2"));
         int sellect3 = Integer.parseInt(request.getParameter("choice3"));
@@ -94,7 +95,7 @@ PrintWriter out = response.getWriter();
         int sellect5 = Integer.parseInt(request.getParameter("choice5"));
         
         
-        int id =Integer.parseInt(request.getParameter("id"));
+       
         
         QuizDAO dao =new QuizDAO();
         List<Integer> intt1 = dao.getQuizIdListbyLesson(id);
@@ -105,7 +106,7 @@ PrintWriter out = response.getWriter();
         dao.setResult(a.getAid(), intt1.get(3), sellect4, intt2.get(3), id);
         dao.setResult(a.getAid(), intt1.get(4), sellect5, intt2.get(4), id);
        
-        request.getRequestDispatcher("lesson.jsp");
+       response.sendRedirect("home.jsp");
         }
         
         
