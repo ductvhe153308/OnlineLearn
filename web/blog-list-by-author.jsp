@@ -100,8 +100,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="blog-create.jsp" style="text-decoration: underline; color: #009efb; font-size: 19px">Create new blog</a>
+                                       
                                     </c:forEach>
+                                    <a href="blog-create.jsp" style="text-decoration: underline; color: #009efb; font-size: 19px">Create new blog</a>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="blog-pagination">
