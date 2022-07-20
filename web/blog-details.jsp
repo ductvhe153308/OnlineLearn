@@ -16,7 +16,6 @@
         <title>Mentoring</title>
         <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
         <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
         <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
