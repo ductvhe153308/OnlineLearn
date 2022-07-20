@@ -161,24 +161,4 @@ var Dashboard = new function __Dashboard() {
             }
         })
     };
-    /**
-     * Booking List
-     */
-    this.course = function () {
-        var table_name = 'Course List';
-        var header = ['Mentor Name', 'Course', 'Mentee Name', 'Booking Time', 'Status', 'Amount']
-        var colgroup = [100, 60, 90, 70, 50, 70]
-        var data = [1, 2, 3, 4, 5];
-        var table = AP.table.render(table_name, header, data, function (index) {
-            return `<div class="table-row">
-                        <div class="table-data" style="width:${colgroup[0]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[1]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[2]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[3]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[4]}px">${index}</div>
-                        <div class="table-data" style="width:${colgroup[5]}px">${index}</div>
-                    </div>`
-        }, colgroup)
-        $("#page #course").html(table)
-    };
 }
