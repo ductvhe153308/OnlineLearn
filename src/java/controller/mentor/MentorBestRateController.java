@@ -39,8 +39,8 @@ public class MentorBestRateController extends HttpServlet {
        }
        int indexPage = Integer.parseInt(index);
         AccountDAO dao = new AccountDAO();
-       int endPage = dao.getMentorNumberPage();
-       List<Account> list = dao.getAllMentorPaging(indexPage);
+       int endPage = dao.getTopRateMentorNumberPage();
+       List<Account> list = dao.getTopRateMentorPaging(indexPage);
        request.setAttribute("list", list);
        request.setAttribute("endP", endPage);
        request.setAttribute("tag", indexPage);
