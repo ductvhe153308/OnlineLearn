@@ -63,28 +63,6 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <div id="suggest" style="display: none">
-                                        <div class="card category-widget">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Mentor Categories</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="categories">
-                                                    <li><a href="#">HTML <span>(62)</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card tags-widget">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Tags</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="tags">
-                                                    <li><a href="#" class="tag">HTML</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
