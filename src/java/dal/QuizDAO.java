@@ -172,6 +172,25 @@ public class QuizDAO {
         }
     }
 
+    public int getAttemp(int id, int aId) {
+        try {
+            String query = "SELECT count(*) FROM onlinelearning.history_quiz_mark\n"
+                    + " where history_quiz_mark.lesID = ? \n"
+                    + " and history_quiz_mark.acc_id = ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, aId);
+            ps.setInt(2, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public int getMark(int id, int aId) {
         try {
             String query = "SELECT count(*) FROM onlinelearning.result \n"
