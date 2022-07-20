@@ -200,6 +200,29 @@ public class AccountDAO {
         return list;
     }
 
+    public int getTopRateMentorNumberPage() {
+        try {
+            String query = "SELECT  count(*)\n"
+                    + " FROM onlinelearning.account , onlinelearning.course\n"
+                    + " where account.role_id =2 and account.account_id = course.aid  and course.rated_star = 5 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 4;
+                if (total % 4 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public int getMentorNumberPage() {
         try {
             String query = "select count(*) from onlinelearning.account where role_id = 2 ";
