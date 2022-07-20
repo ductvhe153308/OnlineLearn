@@ -148,6 +148,10 @@
         <servlet-name>QuizResultController</servlet-name>
         <servlet-class>controller.home.QuizResultController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuizInfoController</servlet-name>
+        <servlet-class>controller.lesson.QuizInfoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -295,6 +299,10 @@
     <servlet-mapping>
         <servlet-name>QuizResultController</servlet-name>
         <url-pattern>/QuizResult</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizInfoController</servlet-name>
+        <url-pattern>/QuizInfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
