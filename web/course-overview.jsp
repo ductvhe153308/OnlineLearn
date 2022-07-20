@@ -44,13 +44,13 @@
             <div style="width: calc(100% - 220px);">
                 <div class="row" style="display: flex; flex-direction: column; justify-content: center; margin-left: 15%; padding-top: 50px">
                     <c:forEach items="${list}" var="x">
-                        <div style="height: 100px; width: 50%; border: 2px solid black; margin-bottom: 50px; font-size: 18px;border-radius: 30px" class="hover">
+                        <div style="height: 100px; width: 50%; border: 2px solid black; margin-bottom: 50px; font-size: 18px;border-radius: 30px;font-weight: bold" class="hover">
                             <div style="padding-top: 35px;">
                                 <a href="LessonDetail?id=${x.id}&order=${x.lesson_order}&title=${x.title}">Lesson ${x.lesson_order}: ${x.title}
                                 </a> 
                             </div>
                         </div>
-                        <div style="height: 100px; width: 50%; border: 2px solid black; margin-bottom: 50px; font-size: 18px;border-radius: 30px" class="hover">
+                        <div style="height: 100px; width: 50%; border: 2px solid black; margin-bottom: 50px; font-size: 18px;border-radius: 30px;font-weight: bold" class="hover">
                             <div style="padding-top: 35px;">
                             <a href="QuizDetail?id=${x.id}">Quiz ${x.lesson_order}
                             </a>
