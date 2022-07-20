@@ -105,8 +105,13 @@ PrintWriter out = response.getWriter();
         dao.setResult(a.getAid(), intt1.get(2), sellect3, intt2.get(2), id);
         dao.setResult(a.getAid(), intt1.get(3), sellect4, intt2.get(3), id);
         dao.setResult(a.getAid(), intt1.get(4), sellect5, intt2.get(4), id);
-       
-        request.getRequestDispatcher("TotalLesson?id="+a.getAid());
+        int mark = dao.getMark(id,a.getAid()) *2;
+        int status;
+        if(mark > 8){
+            status = 1;
+        }else{status = 0;}
+        dao.getAttemp(id, a.getAid());
+        dao.updatemark(mark, mark, status, id, a.getAid());
         }
         
         
