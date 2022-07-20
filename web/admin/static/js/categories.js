@@ -52,7 +52,10 @@ var Categories = {
                         <div class="table-data" style="width:${colgroup[3]}px;">
                             ${AP.rate.star(rate)}
                         </div>
-                        <div class="table-data" style="width:${colgroup[4]}px">sdf</div>
+                        <div class="table-data" style="width:${colgroup[4]}px; display:flex;align-items: center;justify-content: flex-start;">
+                            <div class="btn-edit" style="position: relative;">Edit</div>
+                            <div class="btn-remove" style="position: relative;margin-left:10px;">Remove</div>
+                        </div>
                     </div>`;
                 }, colgroup, true, true);
                 $("#page #" + id).html(table);
