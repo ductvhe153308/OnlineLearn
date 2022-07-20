@@ -113,7 +113,7 @@ PrintWriter out = response.getWriter();
         int attemp = dao.getAttemp(id, a.getAid())+1;
         
         dao.updatemark(mark, attemp, status, id, a.getAid());
-        response.sendRedirect("terms.jsp");
+        response.sendRedirect("quiz-result.jsp");
         }
         
         
