@@ -156,7 +156,7 @@ public class QuizDAO {
 
     public void updatemark(int mark, int attemp, int status, int lesID, int acc_id) {
         try {
-            String query = "IINSERT INTO onlinelearning.history_quiz_mark\n"
+            String query = "INSERT INTO onlinelearning.history_quiz_mark\n"
                     + "(mark, attemp, status, lesID,acc_id) VALUES \n"
                     + "(?,?,?,?,?);";
             conn = new DBContext().getConnection();
@@ -297,10 +297,11 @@ public class QuizDAO {
 
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
-        List<Quiz_History> quiz = dao.getQuizHistory(1);
-        for (Quiz_History qh : quiz) {
-            System.out.println(qh.getMark());
-        }
+        dao.updatemark(2, 2, 1, 3, 41);
+//        List<Quiz_History> quiz = dao.getQuizHistory(1);
+//        for (Quiz_History qh : quiz) {
+//            System.out.println(qh.getMark());
+//        }
 
 //        System.out.println(n);
 //        for (Quiz o : quiz) {
