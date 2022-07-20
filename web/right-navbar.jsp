@@ -50,19 +50,19 @@
         <div class="header">
             <div class="right-navbar" style="width: 100%; height: 100%; background: #FFB100">
                 <ul class="main-nav" style="display: flex; flex-direction: column;">
-                    <li class="has-submenu" style="border: 1px solid black;">
+                    <li class="has-submenu" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Overview</a>
                     </li>
-                    <li class="" style="border: 1px solid black;">
+                    <li class="" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Grades</a>
                     </li>
-                    <li class="" style="border: 1px solid black;">
+                    <li class="" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Discussion</a>
                     </li>
-                    <li class="" style="border: 1px solid black;">
+                    <li class="" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Messages</i></a>
                     </li>
-                    <li class="" style="border: 1px solid black;">
+                    <li class="" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Course Info</a>
                     </li>
                 </ul>
