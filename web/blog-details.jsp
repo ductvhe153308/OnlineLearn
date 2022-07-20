@@ -23,7 +23,6 @@
     <body>
         <div class="main-wrapper">
             <%@include file="header.jsp" %>
-
             <div class="breadcrumb-bar">
                 <div class="container-fluid">
                     <div class="row align-items-center">
