@@ -170,13 +170,14 @@ public class AccountDAO {
         }
         return list;
     }
+
     public List<Account> getTopRateMentorPaging(int index) {
         List<Account> list = new ArrayList<>();
         try {
-            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, \n"
-                    + "account.date_of_birth, account.profile_picture  \n"
-                    + "FROM onlinelearning.account where role_id = 2 \n"
-                    + "order by account.account_id asc limit 8 offset ?";
+            String query = "SELECT  account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, \n"
+                    + "account.date_of_birth, account.profile_picture \n"
+                    + " FROM onlinelearning.account , onlinelearning.course\n"
+                    + " where account.role_id =2 and account.account_id = course.aid  and course.rated_star = 5 limit 4 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, (index - 1) * 8);
@@ -197,6 +198,29 @@ public class AccountDAO {
 
         }
         return list;
+    }
+
+    public int getTopRateMentorNumberPage() {
+        try {
+            String query = "SELECT  count(*)\n"
+                    + " FROM onlinelearning.account , onlinelearning.course\n"
+                    + " where account.role_id =2 and account.account_id = course.aid  and course.rated_star = 5 ;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 4;
+                if (total % 4 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     public int getMentorNumberPage() {
@@ -421,10 +445,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentee0(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
@@ -454,10 +478,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentee1(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
@@ -487,10 +511,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentee2(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
@@ -520,10 +544,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentor0(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
@@ -552,10 +576,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentor1(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
@@ -584,10 +608,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentor2(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
@@ -616,10 +640,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param asc
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     public JsonArray getSortedListMentor3(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
@@ -649,10 +673,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param rs
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     private JsonObject getMentor(ResultSet rs) throws SQLException {
         Gson gson = new Gson();
@@ -682,10 +706,10 @@ public class AccountDAO {
     }
 
     /**
-     * 
+     *
      * @param rs
      * @return
-     * @throws SQLException 
+     * @throws SQLException
      */
     private JsonObject getMentee(ResultSet rs) throws SQLException {
         Gson gson = new Gson();
@@ -708,9 +732,8 @@ public class AccountDAO {
     }
 
     /**
-     * 
-     * @return
-     * @throws SQLException 
+     *
+     * @return @throws SQLException
      */
     public Account getAdmin() throws SQLException {
         try {
@@ -905,11 +928,12 @@ public class AccountDAO {
         }
         return c;
     }
-    
+
     /**
      * Count total of mentor and mentee.
+     *
      * @return Int
-     * @throws SQLException 
+     * @throws SQLException
      */
     public int countingMember() throws SQLException {
         int c = 0;
@@ -933,6 +957,7 @@ public class AccountDAO {
 
     /**
      * Counting total of booking.
+     *
      * @return Int
      * @throws SQLException
      */
