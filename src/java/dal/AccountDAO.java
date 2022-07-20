@@ -392,6 +392,12 @@ public class AccountDAO {
         return mentees;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentee0(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
@@ -419,6 +425,12 @@ public class AccountDAO {
         return mentees;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentee1(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
@@ -446,6 +458,12 @@ public class AccountDAO {
         return mentees;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentee2(boolean asc) throws SQLException {
         JsonArray mentees = new JsonArray();
         try {
@@ -473,6 +491,12 @@ public class AccountDAO {
         return mentees;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentor0(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
@@ -499,6 +523,12 @@ public class AccountDAO {
         return mentors;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentor1(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
@@ -525,6 +555,12 @@ public class AccountDAO {
         return mentors;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentor2(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
@@ -551,6 +587,12 @@ public class AccountDAO {
         return mentors;
     }
 
+    /**
+     * 
+     * @param asc
+     * @return
+     * @throws SQLException 
+     */
     public JsonArray getSortedListMentor3(boolean asc) throws SQLException {
         JsonArray mentors = new JsonArray();
         try {
@@ -578,6 +620,12 @@ public class AccountDAO {
         return mentors;
     }
 
+    /**
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private JsonObject getMentor(ResultSet rs) throws SQLException {
         Gson gson = new Gson();
         Account a = new Account(rs.getInt("account_id"),
@@ -605,6 +653,12 @@ public class AccountDAO {
         return mentor;
     }
 
+    /**
+     * 
+     * @param rs
+     * @return
+     * @throws SQLException 
+     */
     private JsonObject getMentee(ResultSet rs) throws SQLException {
         Gson gson = new Gson();
         Account a = new Account(rs.getInt("account_id"),
@@ -625,6 +679,11 @@ public class AccountDAO {
         return mentee;
     }
 
+    /**
+     * 
+     * @return
+     * @throws SQLException 
+     */
     public Account getAdmin() throws SQLException {
         try {
             String query = "select * \n"
