@@ -5,10 +5,23 @@
  */
 
 var Transaction = {
+    /**
+     * 
+     * @returns {undefined}
+     */
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #transaction').addClass('active');
     },
+    /**
+     * 
+     * @param {type} id
+     * @param {type} page
+     * @param {type} num_objs
+     * @param {type} sort
+     * @param {type} asc
+     * @returns {undefined}
+     */
     board: function (id, page, num_objs, sort = null, asc = true) {
         $.ajax({
             type: 'POST',
