@@ -8,6 +8,10 @@
  * @type Object
  */
 var Mentee = {
+    /**
+     * 
+     * @returns {undefined}
+     */
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #mentee').addClass('active');
