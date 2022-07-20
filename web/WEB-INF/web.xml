@@ -130,7 +130,7 @@
     </servlet>
     <servlet>
         <servlet-name>DeleteFeebackController</servlet-name>
-        <servlet-class>controller.DeleteFeebackController</servlet-class>
+        <servlet-class>controller.feedback.DeleteFeebackController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SearchCourseController</servlet-name>
