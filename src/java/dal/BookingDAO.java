@@ -25,7 +25,13 @@ public class BookingDAO {
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
-
+    /**
+     * 
+     * @param page
+     * @param num_objs
+     * @return
+     * @throws SQLException 
+     */
     public ArrayList<Booking> getListBooking(int page, int num_objs) throws SQLException {
         ArrayList<Booking> bks = new ArrayList<>();
         try {
