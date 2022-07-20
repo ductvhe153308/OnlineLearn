@@ -5,6 +5,10 @@
  */
 
 var Categories = {
+    /**
+     * 
+     * @returns {undefined}
+     */
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #categories').addClass('active');
@@ -20,6 +24,15 @@ var Categories = {
                 </form>`);
         });
     },
+    /**
+     * 
+     * @param {type} id
+     * @param {type} page
+     * @param {type} num_objs
+     * @param {type} sort
+     * @param {type} asc
+     * @returns {undefined}
+     */
     board: function (id, page, num_objs, sort = null, asc = true) {
         $.ajax({
             type: 'POST',
