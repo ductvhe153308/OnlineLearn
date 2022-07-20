@@ -115,7 +115,12 @@ public class CategoryDAO {
         }
         return add;
     }
-
+    
+    /**
+     * 
+     * @return
+     * @throws SQLException 
+     */
     public ArrayList<Category> getAllCategories() throws SQLException {
         ArrayList<Category> cs = new ArrayList<>();
         try {
@@ -159,6 +164,11 @@ public class CategoryDAO {
         return list;
     }
     
+    /**
+     * 
+     * @return
+     * @throws SQLException 
+     */
     public List<CourseCategory> getAllCourseCategory() {
         List<CourseCategory> list = new ArrayList<>();
         try {
