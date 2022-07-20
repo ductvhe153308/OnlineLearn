@@ -24,7 +24,7 @@ import model.Account;
  *
  * @author DELL
  */
-@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/*"})
+@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/"})
 public class AuthenticationFilter implements Filter {
     
     private static final boolean debug = true;
