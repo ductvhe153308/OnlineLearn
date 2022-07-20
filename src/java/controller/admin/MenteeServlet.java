@@ -60,15 +60,4 @@ public class MenteeServlet extends HttpServlet {
             Logger.getLogger(MenteeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }
-
 }
