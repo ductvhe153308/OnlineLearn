@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="comp-sec-wrapper">
                     <form action="QuizDetail" method="post">
-                        <section class="comp-section">
+                        <section class="comp-section" style="padding-bottom: 50px">
                             <div class="comp-header">
                                 <h3 class="comp-title">Quiz</h3>
                                 <div class="line"></div>
