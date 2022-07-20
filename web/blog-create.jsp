@@ -140,14 +140,10 @@
         </div>
         <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
-
         <script src="assets/plugins/select2/js/select2.min.js"></script>
-
         <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
         <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
-
         <script src="assets/js/script.js"></script>
     </body>
-
     <!-- Mirrored from mentoring-html.dreamguystech.com/template-1/add-blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jun 2022 15:15:24 GMT -->
 </html>
