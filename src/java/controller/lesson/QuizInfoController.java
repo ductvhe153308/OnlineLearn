@@ -30,17 +30,14 @@ public class QuizInfoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet QuizInfoController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet QuizInfoController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            int quiz_id = Integer.parseInt(request.getParameter("quiz_id"));
+            String quiz_title = request.getParameter("quiz_title");
+            request.setAttribute("quiz_title", quiz_title);
+            request.setAttribute("quiz_id", quiz_id);
+            request.getRequestDispatcher("quiz-info.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
