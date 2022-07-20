@@ -44,7 +44,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="suggest">
+                        <div id="suggest" style="display: none">
                             <div class="card category-widget">
                                 <div class="card-header">
                                     <h4 class="card-title">Course Categories</h4>
