@@ -170,6 +170,34 @@ public class AccountDAO {
         }
         return list;
     }
+    public List<Account> getTopRateMentorPaging(int index) {
+        List<Account> list = new ArrayList<>();
+        try {
+            String query = "SELECT account.account_id, account.last_name,account.first_name, account.email, account.phone, account.gender, \n"
+                    + "account.date_of_birth, account.profile_picture  \n"
+                    + "FROM onlinelearning.account where role_id = 2 \n"
+                    + "order by account.account_id asc limit 8 offset ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, (index - 1) * 8);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account a = new Account(
+                        rs.getInt("account_id"),
+                        rs.getString("last_name"),
+                        rs.getString("first_name"),
+                        rs.getString("email"),
+                        rs.getString("phone"),
+                        rs.getInt("gender"),
+                        rs.getDate("date_of_birth"),
+                        rs.getString("profile_picture"));
+                list.add(a);
+            }
+        } catch (SQLException e) {
+
+        }
+        return list;
+    }
 
     public int getMentorNumberPage() {
         try {
