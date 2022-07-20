@@ -5,10 +5,18 @@
  */
 
 var Course = {
+    /**
+     * 
+     * @returns {undefined}
+     */
     init: function () {
         $('.menu-item').removeClass('active');
         $('.menu #booking').addClass('active');
     },
+    /**
+     * 
+     * @type type
+     */
     board: {
         /**
          * Display list of bookings in dashboard.
