@@ -54,7 +54,7 @@ int id = 1;
 //             
          }
          request.setAttribute("quiz", quizH);
-         request.getRequestDispatcher("quiz_result.jsp").forward(request, response);
+         request.getRequestDispatcher("quiz-result.jsp").forward(request, response);
 
     }
 
