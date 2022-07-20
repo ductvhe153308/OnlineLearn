@@ -154,6 +154,24 @@ public class QuizDAO {
         }
     }
 
+    public void updatemark(int mark, int attemp, int status, int lesID, int acc_id) {
+        try {
+            String query = "IINSERT INTO onlinelearning.history_quiz_mark\n"
+                    + "(mark, attemp, status, lesID,acc_id) VALUES \n"
+                    + "(?,?,?,?,?);";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, mark);
+            ps.setInt(2, attemp);
+            ps.setInt(3, status);
+            ps.setInt(4, lesID);
+            ps.setInt(5, acc_id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public int getMark(int id, int aId) {
         try {
             String query = "SELECT count(*) FROM onlinelearning.result \n"
@@ -245,7 +263,7 @@ public class QuizDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Quiz_History qh = new Quiz_History();
-                qh.setId( rs.getInt("id"));   
+                qh.setId(rs.getInt("id"));
                 qh.setMark(rs.getInt("mark"));
                 qh.setStatus(rs.getInt("status"));
                 quizH.add(qh);
@@ -261,10 +279,9 @@ public class QuizDAO {
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
         List<Quiz_History> quiz = dao.getQuizHistory(1);
-        for(Quiz_History qh : quiz){
+        for (Quiz_History qh : quiz) {
             System.out.println(qh.getMark());
         }
-        
 
 //        System.out.println(n);
 //        for (Quiz o : quiz) {
