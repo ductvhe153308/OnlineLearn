@@ -15,6 +15,10 @@ var Mentor = {
         $('.menu-item').removeClass('active');
         $('.menu #mentor').addClass('active');
     },
+    /**
+     * 
+     * @type type
+     */
     board: {
         /**
          * Display list of mentors in dashboard.
