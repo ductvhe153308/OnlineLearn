@@ -46,13 +46,22 @@
                     </div>
                 </div>
             </div>
-
-
-            <div class="content">
+            <div class="content" style="padding-bottom: 100px">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="blog">
+                        <div class="blog" style="width: 70%; margin: 0 auto">
                             <h2>Quiz: ${quiz_title}</h2>
+                            <span>Time: 30min</span>
+                            <div style="display: flex; flex-direction: row; padding-top: 30px; padding-bottom: 50px; font-size: 18px">
+                                <div style="width: 60%">
+                                    <p style="font-weight: bold">Recive grade</p>
+                                    <p><span style="color: #00d285">To pass: </span><span>80% or higher</span></p>
+                                </div>
+                                <div>
+                                    <p style="font-weight: bold">Your grade grade</p>
+                                    <p><span>---</span></p>
+                                </div>
+                            </div>
                             <button type="submit" class="btn btn-primary submit-btn" style="margin-right: 20px; width: 150px; height: 40px">
                                 <a href="QuizDetail?id=${quiz_id}" style="color: white;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-question-diamond" viewBox="0 0 16 16" style="margin-right: 10px">
