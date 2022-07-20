@@ -57,7 +57,7 @@
                                         <div class="card-body">
                                             <form class="search-form" method="post" action="SearchMentor">
                                                 <div class="input-group">
-                                                    <input value="${searchName}" name="searchByName" onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
+                                                    <input value="${searchName}" name="searchByName" type="text" placeholder="Search..." class="form-control">
                                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                                 </div>
                                             </form>
@@ -135,16 +135,6 @@
             <%@include file="footer.jsp" %> 
 
         </div>
-        <script>
-            function toogleSuggestSearch() {
-                var x = document.getElementById("suggest");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
-        </script>
 
         <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
 
