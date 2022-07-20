@@ -22,7 +22,6 @@
     </head>
     <body>
         <div class="main-wrapper">
-            
             <%@include file="header.jsp" %>
 
             <div class="breadcrumb-bar">
