@@ -126,7 +126,6 @@
                                                             <button class="btn btn-primary submit-btn" type="submit" name="form_submit" value="submit">Submit</button>
                                                         </div>
                                                     </form>
-                                                    
                                                 </div>
                                             </div>
                                         </div>
