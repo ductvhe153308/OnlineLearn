@@ -24,7 +24,7 @@ import model.Account;
  *
  * @author DELL
  */
-@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/"})
+@WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"/*"})
 public class AuthenticationFilter implements Filter {
     
     private static final boolean debug = true;
@@ -121,6 +121,8 @@ public class AuthenticationFilter implements Filter {
              */
             if (req.getRequestURI().equalsIgnoreCase("/onlinelearn/")) {
                 req.getRequestDispatcher("/home").forward(req, res);
+            } else if (req.getRequestURI().equalsIgnoreCase("/onlinelearn/logout")) {
+                chain.doFilter(request, response);
             } else if (user != null && 1 != user.getEnabled()) {
                 req.getRequestDispatcher("/home").forward(req, res);
             } // Accept request
