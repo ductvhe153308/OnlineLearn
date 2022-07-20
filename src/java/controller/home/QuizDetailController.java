@@ -107,13 +107,13 @@ PrintWriter out = response.getWriter();
         dao.setResult(a.getAid(), intt1.get(4), sellect5, intt2.get(4), id);
         int mark = dao.getMark(id,a.getAid()) *2;
         int status;
-        if(mark > 8){
+        if(mark >= 8){
             status = 1;
         }else{status = 0;}
         int attemp = dao.getAttemp(id, a.getAid())+1;
         
         dao.updatemark(mark, attemp, status, id, a.getAid());
-        response.sendRedirect("term.jsp");
+        response.sendRedirect("terms.jsp");
         }
         
         
