@@ -57,7 +57,7 @@
                                         <div class="card-body">
                                             <form class="search-form" method="post" action="SearchMentor">
                                                 <div class="input-group">
-                                                    <input value="${searchName}" name="searchByName" type="text" placeholder="Search..." class="form-control">
+                                                    <input value="${searchName}" name="searchByName" type="text" placeholder="Search by Mentor name" class="form-control">
                                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                                 </div>
                                             </form>
