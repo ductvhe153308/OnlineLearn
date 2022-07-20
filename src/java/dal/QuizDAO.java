@@ -116,17 +116,17 @@ public class QuizDAO {
 
         try {
             conn = new DBContext().getConnection();
-            ps = conn.prepareStatement("SELECT c.Id AS ChoiceId, c.answer AS ChoiceDescription,\n"
-                    + " c.is_correct_answer AS ChoiceIsAnswer FROM onlinelearning.choice AS c \n"
+            ps = conn.prepareStatement("SELECT c.Id , c.answer ,\n"
+                    + " c.is_correct_answer  FROM onlinelearning.choice AS c \n"
                     + "INNER JOIN onlinelearning.quiz AS qu \n"
                     + "ON qu.Id=c.quiz_id  where qu.id = ?;");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Choice c = new Choice();
-                c.setChoiceId(rs.getInt("ChoiceId"));
-                c.setDescription(rs.getString("ChoiceDescription"));
-                c.setIsCorrectAnswer(rs.getInt("ChoiceIsAnswer"));
+                c.setChoiceId(rs.getInt("Id"));
+                c.setDescription(rs.getString("answer"));
+                c.setIsCorrectAnswer(rs.getInt("is_correct_answer"));
                 choices.add(c);
             }
         } catch (SQLException e) {
@@ -171,6 +171,7 @@ public class QuizDAO {
             e.printStackTrace();
         }
     }
+    
 
     public int getAttemp(int id, int aId) {
         try {
@@ -298,10 +299,10 @@ public class QuizDAO {
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
         dao.updatemark(2, 2, 1, 3, 41);
-//        List<Quiz_History> quiz = dao.getQuizHistory(1);
-//        for (Quiz_History qh : quiz) {
-//            System.out.println(qh.getMark());
-//        }
+        List<Choice> quiz = dao.getChoices(1);
+        for (Choice qh : quiz) {
+            System.out.println(qh);
+        }
 
 //        System.out.println(n);
 //        for (Quiz o : quiz) {
