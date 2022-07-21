@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Choice;
+import model.Lesson;
 
 import model.Quiz;
 import model.Quiz_History;
@@ -171,7 +172,6 @@ public class QuizDAO {
             e.printStackTrace();
         }
     }
-    
 
     public int getAttemp(int id, int aId) {
         try {
@@ -272,21 +272,28 @@ public class QuizDAO {
         return Id;
     }
 
-    public List<Quiz_History> getQuizHistory(int id) {
-        List<Quiz_History> quizH = new ArrayList<>();
+    public Quiz_History getQuizHistory(int id,int aid) {
+        Quiz_History quizH = new Quiz_History();
 
         try {
             conn = new DBContext().getConnection();
-            ps = conn.prepareStatement("SELECT history_quiz_mark.id,history_quiz_mark.mark,history_quiz_mark.status \n"
-                    + "FROM onlinelearning.history_quiz_mark where history_quiz_mark.lesID = ?;");
-            ps.setInt(1, id);
+            ps = conn.prepareStatement("SELECT history_quiz_mark.id,"
+                    + "max(history_quiz_mark.mark) as mark,"
+                    + "history_quiz_mark.attemp  ,\n"
+                    + " history_quiz_mark.status,history_quiz_mark.lesID\n"
+                    + " FROM onlinelearning.history_quiz_mark \n"
+                    + " where history_quiz_mark.acc_id = ? and history_quiz_mark.lesID = ?;");
+            ps.setInt(1, aid);
+            ps.setInt(2, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Quiz_History qh = new Quiz_History();
-                qh.setId(rs.getInt("id"));
-                qh.setMark(rs.getInt("mark"));
-                qh.setStatus(rs.getInt("status"));
-                quizH.add(qh);
+               
+                quizH.setId(rs.getInt("id"));
+                quizH.setMark(rs.getInt("mark"));
+                quizH.setAttemp(rs.getInt("attemp"));
+                quizH.setStatus(rs.getInt("status"));
+                quizH.setLesson_id(rs.getInt("lesID"));
+               
 
             }
         } catch (SQLException e) {
@@ -298,40 +305,17 @@ public class QuizDAO {
 
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
-        dao.updatemark(2, 2, 1, 3, 41);
-        List<Choice> quiz = dao.getChoices(1);
-        for (Choice qh : quiz) {
-            System.out.println(qh);
-        }
+        LessonDAO lessonDAO = new LessonDAO();
+        List<Lesson> list = lessonDAO.getLessonList(42);
 
-//        System.out.println(n);
-//        for (Quiz o : quiz) {
-//
-//            List<Choice> choice = dao.getChoices(o.getQuizId());
-//            for (Choice c : choice) {
-//                if (c.getIsCorrectAnswer() == 1) {
-//                    o.setAnswer(c.getChoiceId());
-//                }
-//
-//            }
-//            o.setChoices(choice);
-//
-//        }
-//        int firtId = quiz.get(0).getQuizId();
-//
-////        for (Quiz o : quiz) {
-////
-////            System.out.println(o);
-////            System.out.println(o.getAnswer());
-////
-////        }
-//        List<Integer> intt = dao.getQuizIdListbyLesson(1);
-//        for (Integer o : intt) {
-//
-//            System.out.println(o);
-//
-//        }
-//
-//        System.out.println(intt.get(3));
+            for (Lesson lt : list) {
+                Quiz_History quizH = dao.getQuizHistory(lt.getId(), 41);
+                  lt.setQuiz_history(quizH);
+//                  
+            }
+            for (Lesson lt : list) {
+                System.out.println(lt);
+                  
+            }
     }
 }
