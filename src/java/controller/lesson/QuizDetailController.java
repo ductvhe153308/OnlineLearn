@@ -51,8 +51,11 @@ public class QuizDetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         Account a = (Account) request.getSession().getAttribute("user");
+            if(a!=null){
         HttpSession session = request.getSession(true);
-PrintWriter out = response.getWriter();
+        
+        PrintWriter out = response.getWriter();
 
          int id =Integer.parseInt(request.getParameter("id"));
         
@@ -71,7 +74,8 @@ PrintWriter out = response.getWriter();
         request.setAttribute("quiz", quiz);
         request.setAttribute("firtId", firtId);
         
-        request.getRequestDispatcher("quiz-detail.jsp").forward(request, response);
+        request.getRequestDispatcher("quiz-detail.jsp").forward(request, response);}
+            else{ response.sendRedirect("account");}
 
     }
 
@@ -87,16 +91,28 @@ PrintWriter out = response.getWriter();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Account a = (Account) request.getSession().getAttribute("user");
+        String sel1 = request.getParameter("choice1");
+        String sel2 = request.getParameter("choice2");
+        String sel3 = request.getParameter("choice3");
+        String sel4 = request.getParameter("choice4");
+        String sel5 = request.getParameter("choice5");
+        if(sel1 == null){ sel1 = "0";}
+        if(sel2 == null){ sel2 = "0";}
+        if(sel3 == null){ sel3 = "0";}
+        if(sel4 == null){ sel4 = "0";}
+        if(sel5 == null){ sel5 = "0";}
+        
+        
        
-        int sellect1 = Integer.parseInt(request.getParameter("choice1"));
-        int sellect2 = Integer.parseInt(request.getParameter("choice2"));
-        int sellect3 = Integer.parseInt(request.getParameter("choice3"));
-        int sellect4 = Integer.parseInt(request.getParameter("choice4"));
-        int sellect5 = Integer.parseInt(request.getParameter("choice5"));
+        int sellect1 = Integer.parseInt(sel1);
+        int sellect2 = Integer.parseInt(sel2);
+        int sellect3 = Integer.parseInt(sel3);
+        int sellect4 = Integer.parseInt(sel4);
+        int sellect5 = Integer.parseInt(sel5);
         
         
        int id =Integer.parseInt(request.getParameter("id"));
-        
+        int cid = 42;
         QuizDAO dao =new QuizDAO();
         List<Integer> intt1 = dao.getQuizIdListbyLesson(id);
         List<Integer> intt2 = dao.getCorrectChoiceIdList(id);
@@ -113,7 +129,7 @@ PrintWriter out = response.getWriter();
         int attemp = dao.getAttemp(id, a.getAid())+1;
         
         dao.updatemark(mark, attemp, status, id, a.getAid());
-        response.sendRedirect("quiz-result.jsp");
+        response.sendRedirect("QuizResult?id="+cid);
         }
         
         
