@@ -152,6 +152,10 @@
         <servlet-name>QuizInfoController</servlet-name>
         <servlet-class>controller.lesson.QuizInfoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchByCategoryController</servlet-name>
+        <servlet-class>controller.course.SearchByCategoryController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountController</servlet-name>
         <url-pattern>/account</url-pattern>
@@ -303,6 +307,10 @@
     <servlet-mapping>
         <servlet-name>QuizInfoController</servlet-name>
         <url-pattern>/QuizInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchByCategoryController</servlet-name>
+        <url-pattern>/SearchByCategory</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
