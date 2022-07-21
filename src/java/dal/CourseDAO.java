@@ -504,7 +504,44 @@ public class CourseDAO {
         }
         return 0;
     }
-    
+
+    public List<Course> getCourseByCategoryName(int index, String category_name) {
+        List<Course> list = new ArrayList<>();
+        try {
+            String query = "course.thumbnail,course.introduction,course.total_register_number,\n"
+                    + "account.first_name,account.last_name,account.profile_picture, course.aid\n"
+                    + "FROM onlinelearning.course,onlinelearning.account, onlinelearning.coursecategory\n"
+                    + "where course.aid = account.account_id\n"
+                    + "and course.course_category_id = coursecategory.id\n"
+                    + "and coursecategory.name = ?\n"
+                    + "order by course.course_id asc limit 4 offset ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, category_name);
+            ps.setInt(2, (index - 1) * 4);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Course c = new Course(rs.getInt("course_id"),
+                        rs.getString("title"),
+                        rs.getInt("rated_star"),
+                        rs.getDouble("price"),
+                        rs.getString("thumbnail"),
+                        rs.getString("introduction"),
+                        rs.getInt("total_register_number"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("profile_picture"),
+                        rs.getInt("aid")
+                );
+                list.add(c);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         CourseDAO dao = new CourseDAO();
         int n = dao.getNumberPageBySearch("CSS");
