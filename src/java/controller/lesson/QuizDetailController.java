@@ -129,7 +129,7 @@ public class QuizDetailController extends HttpServlet {
         int attemp = dao.getAttemp(id, a.getAid())+1;
         
         dao.updatemark(mark, attemp, status, id, a.getAid());
-        response.sendRedirect("QuizResult?id="+cid);
+        response.sendRedirect("QuizInfo?id="+id);
         }
         
         
