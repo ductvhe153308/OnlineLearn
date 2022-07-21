@@ -38,13 +38,16 @@ public class QuizResultController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 //        int id =Integer.parseInt(request.getParameter("id"));
 
-//         Account a = (Account) request.getSession().getAttribute("user");
+//         
         
 
         try {
+            
+            Account a = (Account) request.getSession().getAttribute("user");
+            if(a!=null){
             QuizDAO dao = new QuizDAO();
-//            int id = Integer.parseInt(request.getParameter("id"));
-            int id = 42;
+            int id = Integer.parseInt(request.getParameter("id"));
+//            int id = 42;
             LessonDAO lessonDAO = new LessonDAO();
             List<Lesson> list = lessonDAO.getLessonList(id);
 
@@ -53,7 +56,8 @@ public class QuizResultController extends HttpServlet {
                 lt.setQuiz_history(quizH);
             }
             request.setAttribute("list", list);
-            request.getRequestDispatcher("quiz-result.jsp").forward(request, response);
+            request.getRequestDispatcher("quiz-result.jsp").forward(request, response);}
+            else{ response.sendRedirect("login.jsp.jsp");}
         } catch (Exception e) {
             e.printStackTrace();
         }
