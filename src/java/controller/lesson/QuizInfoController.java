@@ -5,12 +5,14 @@
  */
 package controller.lesson;
 
+import dal.QuizDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -31,10 +33,17 @@ public class QuizInfoController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            int quiz_id = Integer.parseInt(request.getParameter("quiz_id"));
+            Account a = (Account) request.getSession().getAttribute("user");
+            int quiz_id = Integer.parseInt(request.getParameter("id"));
             String quiz_title = request.getParameter("quiz_title");
+            QuizDAO dao = new QuizDAO();
+            
+            int mark = dao.getMark(quiz_id, a.getAid());
+            
+            request.setAttribute("mark", mark);
             request.setAttribute("quiz_title", quiz_title);
             request.setAttribute("quiz_id", quiz_id);
+            
             request.getRequestDispatcher("quiz-info.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
