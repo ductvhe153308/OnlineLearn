@@ -5,12 +5,15 @@
  */
 package controller.course;
 
+import dal.CourseDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Course;
 
 /**
  *
@@ -30,17 +33,23 @@ public class SearchByCategoryController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SearchByCategoryController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SearchByCategoryController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String category_name = request.getParameter("category_name");
+        if (category_name.length() != 0) {
+            String index = request.getParameter("index");
+            if (index == null) {
+                index = "1";
+            }
+            int indexPage = Integer.parseInt(index);
+            CourseDAO dao = new CourseDAO();
+            int endPage = dao.getNumberPageBySearch(category_name);
+            List<Course> list = dao.getCourseByCategoryName(indexPage, category_name);
+            request.setAttribute("list", list);
+            request.setAttribute("endP", endPage);
+            request.setAttribute("tag", indexPage);
+            request.setAttribute("searchName", category_name);
+            request.getRequestDispatcher("course-list.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("CourseList");
         }
     }
 
