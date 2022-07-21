@@ -54,7 +54,7 @@
                             </div>
                         </a>
 
-                        <a href="QuizInfo?quiz_title=${x.title}&quiz_id=${x.id}">
+                        <a href="QuizInfo?id=${x.id}&quiz_title=${x.title}">
                             <div style="height: 100px; width: 50%; border: 2px solid black; padding-left: 30px; padding-right: 30px; margin-bottom: 50px; font-size: 18px;border-radius: 30px;font-weight: bold" class="hover">
                                 <div style="padding-top: 35px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-question-diamond" viewBox="0 0 16 16" style="margin-right: 10px">
