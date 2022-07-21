@@ -40,7 +40,7 @@ public class QuizInfoController extends HttpServlet {
             
             int mark = dao.getMark(quiz_id, a.getAid());
             
-            request.setAttribute("mark", mark);
+            request.setAttribute("mark", mark *2);
             request.setAttribute("quiz_title", quiz_title);
             request.setAttribute("quiz_id", quiz_id);
             
