@@ -45,7 +45,7 @@ Author     : dell
                                 </form>
                             </div>
                         </div>
-                        <div id="suggest" style="display: none">
+                        <div id="suggest">
                             <div class="card category-widget">
                                 <div class="card-header">
                                     <h4 class="card-title">Course Categories</h4>
@@ -53,7 +53,7 @@ Author     : dell
                                 <div class="card-body">
                                     <ul class="categories">
                                         <c:forEach items="${c.allCourseCategory}" var="x">
-                                            <li><a href="#">${x.name}</a></li>
+                                            <li><a href="SearchByCategory?category_name=${x.name}">${x.name}</a></li>
                                         </c:forEach>
                                       
                                     </ul>
