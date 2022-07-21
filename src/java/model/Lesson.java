@@ -17,6 +17,7 @@ public class Lesson {
     private int course_id;
     private int lesson_order;
     private String title;
+    private Quiz_History quiz_history;
     
     public Lesson() {
     }
@@ -47,6 +48,14 @@ public class Lesson {
         this.video = video;
     }
 
+    public Quiz_History getQuiz_history() {
+        return quiz_history;
+    }
+
+    public void setQuiz_history(Quiz_History quiz_history) {
+        this.quiz_history = quiz_history;
+    }
+    
     public int getId() {
         return id;
     }
