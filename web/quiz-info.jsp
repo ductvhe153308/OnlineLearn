@@ -60,7 +60,7 @@
                                 <div>
                                     <p style="font-weight: bold">Your grade</p>
                                     <p><span><c:if test="${mark == 0}">---</c:if>
-                                            <c:if test="${mark > 0}">${mark}</c:if></span></p>
+                                            <c:if test="${mark > 0}">${mark}%</c:if></span></p>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary submit-btn" style="margin-right: 20px; width: 150px; height: 40px">
