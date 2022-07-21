@@ -58,7 +58,14 @@
                                     <c:forEach items="${list}" var="x">
                                         <div class="blog">
                                             <div class="blog-image">
-                                                <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
+                                                <c:choose>
+                                                    <c:when test="${x.image != null}">
+                                                        <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/${x.image}" alt="Post Image"></a>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <a href="BlogDetail?id=${x.id}"><img class="img-fluid" src="assets/img/blog/blog-0<%= (int) (Math.random() * 10) %>.jpg" alt="Post Image"></a>
+                                                    </c:otherwise>
+                                                </c:choose>
                                             </div>
                                             <h3 class="blog-title"><a href="BlogDetail?id=${x.id}">${x.title}</a></h3>
                                             <div class="blog-info clearfix">
