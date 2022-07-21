@@ -325,6 +325,7 @@ public class QuizDAO {
 //            System.out.println(lt);
 //
 //        }
-        System.out.println(dao.getQuizHistory(1, 41));
+        Quiz_History quiz = dao.getQuizHistory(1, 41);
+        System.out.println(quiz.getMark());
     }
 }
