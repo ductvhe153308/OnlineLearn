@@ -272,28 +272,34 @@ public class QuizDAO {
         return Id;
     }
 
-    public Quiz_History getQuizHistory(int id,int aid) {
+    public Quiz_History getQuizHistory(int id, int aid) {
         Quiz_History quizH = new Quiz_History();
 
         try {
             conn = new DBContext().getConnection();
-            ps = conn.prepareStatement("SELECT history_quiz_mark.id,"
-                    + "max(history_quiz_mark.mark) as mark,"
-                    + "history_quiz_mark.attemp  ,\n"
-                    + " history_quiz_mark.status,history_quiz_mark.lesID\n"
+            ps = conn.prepareStatement("SELECT history_quiz_mark.id,\n"
+                    + "history_quiz_mark.mark,\n"
+                    + "history_quiz_mark.attemp ,\n"
+                    + "history_quiz_mark.status ,\n"
+                    + "history_quiz_mark.lesID\n"
                     + " FROM onlinelearning.history_quiz_mark \n"
-                    + " where history_quiz_mark.acc_id = ? and history_quiz_mark.lesID = ?;");
+                    + " where history_quiz_mark.acc_id = ? \n"
+                    + " and history_quiz_mark.lesID = ?\n"
+                    + " and history_quiz_mark.mark = ( SELECT max(history_quiz_mark.mark) FROM onlinelearning.history_quiz_mark \n"
+                    + " where history_quiz_mark.acc_id = ? \n"
+                    + " and history_quiz_mark.lesID = ?);");
             ps.setInt(1, aid);
             ps.setInt(2, id);
+            ps.setInt(3, aid);
+            ps.setInt(4, id);
             rs = ps.executeQuery();
             while (rs.next()) {
-               
+
                 quizH.setId(rs.getInt("id"));
                 quizH.setMark(rs.getInt("mark"));
                 quizH.setAttemp(rs.getInt("attemp"));
                 quizH.setStatus(rs.getInt("status"));
                 quizH.setLesson_id(rs.getInt("lesID"));
-               
 
             }
         } catch (SQLException e) {
@@ -308,14 +314,14 @@ public class QuizDAO {
         LessonDAO lessonDAO = new LessonDAO();
         List<Lesson> list = lessonDAO.getLessonList(42);
 
-            for (Lesson lt : list) {
-                Quiz_History quizH = dao.getQuizHistory(lt.getId(), 41);
-                  lt.setQuiz_history(quizH);
+        for (Lesson lt : list) {
+            Quiz_History quizH = dao.getQuizHistory(lt.getId(), 41);
+            lt.setQuiz_history(quizH);
 //                  
-            }
-            for (Lesson lt : list) {
-                System.out.println(lt);
-                  
-            }
+        }
+        for (Lesson lt : list) {
+            System.out.println(lt);
+
+        }
     }
 }
