@@ -33,6 +33,7 @@
                              <c:forEach items="${list}" var="ls" >
                                  
                                  ${ls.id} <br>
+                                  ${ls.title} <br>
                                  ${ls.quiz_history.mark} <br>
                                  ${ls.quiz_history.attemp} <br>
                                  ${ls.quiz_history.status} <br>
