@@ -50,38 +50,7 @@
                     </div>
                     <div class="content">
                         <div class="container-fluid">
-                            <div class="row">
-                                <div class="sidebar-right theiaStickySidebar">
-                                    <div class="card search-widget">
-                                        <div class="card-body">
-                                            <form class="search-form">
-                                                <div class="input-group">
-                                                    <input onfocus="toogleSuggestSearch()" onblur="toogleSuggestSearch()" type="text" placeholder="Search..." class="form-control">
-                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div id="suggest" style="display: none">
-                                        <div class="card category-widget">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Mentor Categories</h4>
-                                            </div>
-                                            <div class="card-body">
-                                                <ul class="categories">
-                                                    <li><a href="#">HTML <span>(62)</span></a></li>
-                                                    <li><a href="#">Css <span>(27)</span></a></li>
-                                                    <li><a href="#">Java Script <span>(41)</span></a></li>
-                                                    <li><a href="#">Photoshop <span>(16)</span></a></li>
-                                                    <li><a href="#">Wordpress <span>(55)</span></a></li>
-                                                    <li><a href="#">VB <span>(07)</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="row">
                                 <div style="width: 100%">
                                     <div class="row row-grid">
