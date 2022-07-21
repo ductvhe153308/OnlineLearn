@@ -194,10 +194,10 @@ public class QuizDAO {
 
     public int getMark(int id, int aId) {
         try {
-            String query = "SELECT count(*) FROM onlinelearning.result \n"
+            String query = "select count(*) from (SELECT * FROM onlinelearning.result \n"
                     + "where acId = ? and lessonId = ?\n"
-                    + " and result.user_select = result.is_correct_answer\n"
-                    + "order by result.id desc limit 5";
+                    + " order by result.id desc limit 5) as quizresult\n"
+                    + " where quizresult.user_select = quizresult.is_correct_answer;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, aId);
@@ -311,17 +311,18 @@ public class QuizDAO {
 
     public static void main(String[] args) {
         QuizDAO dao = new QuizDAO();
-        LessonDAO lessonDAO = new LessonDAO();
-        List<Lesson> list = lessonDAO.getLessonList(42);
-
-        for (Lesson lt : list) {
-            Quiz_History quizH = dao.getQuizHistory(lt.getId(), 41);
-            lt.setQuiz_history(quizH);
-//                  
-        }
-        for (Lesson lt : list) {
-            System.out.println(lt);
-
-        }
+//        LessonDAO lessonDAO = new LessonDAO();
+//        List<Lesson> list = lessonDAO.getLessonList(42);
+//
+//        for (Lesson lt : list) {
+//            Quiz_History quizH = dao.getQuizHistory(lt.getId(), 41);
+//            lt.setQuiz_history(quizH);
+////                  
+//        }
+//        for (Lesson lt : list) {
+//            System.out.println(lt);
+//
+//        }
+System.out.println(dao.getMark(1,41));
     }
 }
