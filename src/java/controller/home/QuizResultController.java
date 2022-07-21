@@ -5,6 +5,7 @@
  */
 package controller.home;
 
+import dal.LessonDAO;
 import dal.QuizDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
+import model.Lesson;
 import model.Quiz_History;
 
 /**
@@ -35,27 +37,26 @@ public class QuizResultController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 //        int id =Integer.parseInt(request.getParameter("id"));
-       
+
 //         Account a = (Account) request.getSession().getAttribute("user");
-int id = 1;
-         QuizDAO dao = new QuizDAO();
-         
-         int mark = dao.getMark(id, 41);
-         
-         List<Quiz_History> quizH = dao.getQuizHistory(id);
-         
-         for(Quiz_History q : quizH){
+        
 
-             if(q.getMark()>8){
-//                 
-                 q.setStatus(1);
-//                 
-             }else{q.setStatus(0);}
-//             
-         }
-         request.setAttribute("quiz", quizH);
-         request.getRequestDispatcher("quiz-result.jsp").forward(request, response);
+        try {
+            QuizDAO dao = new QuizDAO();
+//            int id = Integer.parseInt(request.getParameter("id"));
+            int id = 42;
+            LessonDAO lessonDAO = new LessonDAO();
+            List<Lesson> list = lessonDAO.getLessonList(id);
 
+            for (Lesson lt : list) {
+                Quiz_History quizH = dao.getQuizHistory(lt.getId(), 41);
+                lt.setQuiz_history(quizH);
+            }
+            request.setAttribute("list", list);
+            request.getRequestDispatcher("quiz-result.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
