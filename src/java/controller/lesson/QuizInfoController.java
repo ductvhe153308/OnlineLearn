@@ -5,6 +5,7 @@
  */
 package controller.lesson;
 
+import dal.LessonDAO;
 import dal.QuizDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
+import model.Lesson;
 import model.Quiz_History;
 
 /**
@@ -36,14 +38,15 @@ public class QuizInfoController extends HttpServlet {
         try {
             Account a = (Account) request.getSession().getAttribute("user");
             int quiz_id = Integer.parseInt(request.getParameter("id"));
-            String quiz_title = request.getParameter("quiz_title");
-            QuizDAO dao = new QuizDAO();
             
+            QuizDAO dao = new QuizDAO();
+            LessonDAO lesson = new LessonDAO();
+            Lesson ls = lesson.getTitleLesson(quiz_id);
             
             Quiz_History quiz = dao.getQuizHistory(quiz_id, a.getAid());
             double mark = quiz.getMark();
             request.setAttribute("mark", mark *10);
-            request.setAttribute("quiz_title", quiz_title);
+            request.setAttribute("quiz_title", ls.getSubtitle());
             request.setAttribute("quiz_id", quiz_id);
             
             request.getRequestDispatcher("quiz-info.jsp").forward(request, response);
