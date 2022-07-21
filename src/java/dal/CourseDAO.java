@@ -541,6 +541,32 @@ public class CourseDAO {
         }
         return null;
     }
+    
+    public int getNumberPageBySearchCategory(String category_name) {
+        try {
+            String query = "SELECT count(*)\n" +
+"FROM onlinelearning.course,onlinelearning.account, onlinelearning.coursecategory\n" +
+"where course.aid = account.account_id\n" +
+"and course.course_category_id = coursecategory.id\n" +
+"and coursecategory.name = ?";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1,category_name);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int total = rs.getInt(1);
+                int countPage = 0;
+                countPage = total / 4;
+                if (total % 4 != 0) {
+                    countPage++;
+                }
+                return countPage;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
     public static void main(String[] args) {
         CourseDAO dao = new CourseDAO();
