@@ -71,7 +71,7 @@ PrintWriter out = response.getWriter();
         request.setAttribute("quiz", quiz);
         request.setAttribute("firtId", firtId);
         
-        request.getRequestDispatcher("quiz.jsp").forward(request, response);
+        request.getRequestDispatcher("quiz-detail.jsp").forward(request, response);
 
     }
 
