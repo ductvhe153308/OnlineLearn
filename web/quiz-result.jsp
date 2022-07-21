@@ -30,9 +30,13 @@
                                 <h3 class="comp-title">Quiz</h3>
                                 <div class="line"></div>
                             </div>
-                             <c:forEach items="${quiz}" var="q">
-                                ${q.mark} 
-                                ${q.status}
+                             <c:forEach items="${list}" var="ls" >
+                                 
+                                 ${ls.id} <br>
+                                 ${ls.quiz_history.mark} <br>
+                                 ${ls.quiz_history.attemp} <br>
+                                 ${ls.quiz_history.status} <br>
+                                
                             </c:forEach>
                              
                         </section>
