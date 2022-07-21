@@ -30,16 +30,20 @@
                                 <h3 class="comp-title">Quiz</h3>
                                 <div class="line"></div>
                             </div>
-                             <c:forEach items="${list}" var="ls" >
-                                 
-                                 ${ls.id} <br>
-                                  ${ls.title} <br>
-                                 ${ls.quiz_history.mark} <br>
-                                 ${ls.quiz_history.attemp} <br>
-                                 ${ls.quiz_history.status} <br>
+                            <c:forEach items="${list}" var="ls" >  
+                                ${ls.id} <br>
+                                ${ls.title} <br>
+                                ${ls.quiz_history.mark} <br>
+                                ${ls.quiz_history.attemp} <br>
+                                ${ls.quiz_history.status} <br>
                                 
+                                <c:if test="${ls.quiz_history.status == 0}">Not Pass</c:if>
+                                <c:if test="${ls.quiz_history.status == 1}">Pass</c:if>
+                                   <br>
+
+
                             </c:forEach>
-                             
+
                         </section>
                     </form>
                 </div>
