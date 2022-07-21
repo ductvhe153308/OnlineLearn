@@ -114,7 +114,7 @@
     </servlet>
     <servlet>
         <servlet-name>QuizDetailController</servlet-name>
-        <servlet-class>controller.home.QuizDetailController</servlet-class>
+        <servlet-class>controller.lesson.QuizDetailController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MyFeedbackController</servlet-name>
@@ -146,7 +146,7 @@
     </servlet>
     <servlet>
         <servlet-name>QuizResultController</servlet-name>
-        <servlet-class>controller.home.QuizResultController</servlet-class>
+        <servlet-class>controller.lesson.QuizResultController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>QuizInfoController</servlet-name>
