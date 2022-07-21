@@ -285,9 +285,11 @@ public class QuizDAO {
                     + " FROM onlinelearning.history_quiz_mark \n"
                     + " where history_quiz_mark.acc_id = ? \n"
                     + " and history_quiz_mark.lesID = ?\n"
-                    + " and history_quiz_mark.mark = ( SELECT max(history_quiz_mark.mark) FROM onlinelearning.history_quiz_mark \n"
+                    + " and history_quiz_mark.mark = ( SELECT max(history_quiz_mark.mark)\n"
+                    + " FROM onlinelearning.history_quiz_mark \n"
                     + " where history_quiz_mark.acc_id = ? \n"
-                    + " and history_quiz_mark.lesID = ?);");
+                    + " and history_quiz_mark.lesID = ?)\n"
+                    + "  order by history_quiz_mark.attemp desc limit 1;");
             ps.setInt(1, aid);
             ps.setInt(2, id);
             ps.setInt(3, aid);
@@ -323,6 +325,6 @@ public class QuizDAO {
 //            System.out.println(lt);
 //
 //        }
-System.out.println(dao.getMark(1,41));
+        System.out.println(dao.getQuizHistory(1, 41));
     }
 }
