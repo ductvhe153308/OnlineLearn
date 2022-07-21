@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Account;
+import model.Quiz_History;
 
 /**
  *
@@ -38,9 +39,10 @@ public class QuizInfoController extends HttpServlet {
             String quiz_title = request.getParameter("quiz_title");
             QuizDAO dao = new QuizDAO();
             
-            int mark = dao.getMark(quiz_id, a.getAid());
             
-            request.setAttribute("mark", mark *2);
+            Quiz_History quiz = dao.getQuizHistory(quiz_id, a.getAid());
+            double mark = quiz.getMark();
+            request.setAttribute("mark", mark *10);
             request.setAttribute("quiz_title", quiz_title);
             request.setAttribute("quiz_id", quiz_id);
             
