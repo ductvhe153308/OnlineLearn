@@ -68,6 +68,14 @@ public class Quiz_History {
         this.status = status;
     }
 
+    public Quiz_History(int id, double mark, int status, int attemp, int lesson_id) {
+        this.id = id;
+        this.mark = mark;
+        this.status = status;
+        this.attemp = attemp;
+        this.lesson_id = lesson_id;
+    }
+
     @Override
     public String toString() {
         return id+" " +mark +""+ status ;
