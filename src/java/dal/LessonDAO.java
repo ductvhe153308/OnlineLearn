@@ -43,6 +43,25 @@ public class LessonDAO {
         }
         return null;
     }
+     public Lesson getTitleLesson(int id) {
+        try {
+            String query = "SELECT lesson.id,lesson.courseId,lesson.title FROM onlinelearning.lesson where lesson.id = ?;";
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Lesson lesson = new Lesson();
+                lesson.setSubtitle(rs.getString("title"));
+                lesson.setCourse_id(rs.getInt("courseId"));
+                lesson.setId(rs.getInt("id"));
+                return lesson;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    } 
 
     public List<Lesson> getLessonList(int id) {
         List<Lesson> list = new ArrayList<>();
@@ -70,5 +89,10 @@ public class LessonDAO {
             e.printStackTrace();
         }
         return null;
+    }
+    public static void main(String[] args) {
+        LessonDAO dao = new LessonDAO();
+        Lesson ls = dao.getTitleLesson(2);
+        System.out.println(ls.getSubtitle());
     }
 }
