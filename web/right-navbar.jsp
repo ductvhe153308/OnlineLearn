@@ -56,19 +56,14 @@
                     <li class="" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Grades</a>
                     </li>
-                    <li class="" style="border: 1px solid white;">
-                        <a href="#" style="color: white;">Discussion</a>
-                    </li>
-                    <li class="" style="border: 1px solid white;">
-                        <a href="#" style="color: white;">Messages</i></a>
-                    </li>
+                    
                     <li class="" style="border: 1px solid white;">
                         <a href="#" style="color: white;">Course Info</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
+        
 
         <script src="assets/js/bootstrap.bundle.min.js"></script>
 
