@@ -445,12 +445,12 @@ public class CourseDAO {
     public List<Course> getCourseBySearchName(int index, String searchName) {
         List<Course> list = new ArrayList<>();
         try {
-            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,"
-                    + "course.thumbnail,course.introduction,course.total_register_number,"
+            String query = "SELECT course.course_id,course.title,course.rated_star,course.price,\n"
+                    + "course.thumbnail,course.introduction,course.total_register_number,\n"
                     + "account.first_name,account.last_name,account.profile_picture, course.aid \n"
                     + "FROM onlinelearning.course,onlinelearning.account\n"
                     + "where course.aid = account.account_id \n"
-                    + "and course.title like %?% \n"
+                    + "and course.title like ?\n"
                     + "order by course.course_id asc limit 4 offset ?;";
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -570,7 +570,7 @@ public class CourseDAO {
 
     public static void main(String[] args) {
         CourseDAO dao = new CourseDAO();
-        
+
         List<Course> list = dao.getCourseByCategoryName(1, "Design");
         for (Course o : list) {
             System.out.println(o);
