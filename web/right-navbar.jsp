@@ -56,10 +56,6 @@
                     <li class="" style="border: 1px solid white;">
                         <a href="QuizResult?id=${id}" style="color: white;">Grades</a>
                     </li>
-                    
-                    <li class="" style="border: 1px solid white;">
-                        <a href="#" style="color: white;">Course Info</a>
-                    </li>
                 </ul>
             </div>
         </div>
