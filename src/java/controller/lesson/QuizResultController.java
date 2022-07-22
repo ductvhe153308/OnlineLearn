@@ -55,6 +55,7 @@ public class QuizResultController extends HttpServlet {
                 Quiz_History quizH = dao.getQuizHistory(lt.getId(), a.getAid());
                 lt.setQuiz_history(quizH);
             }
+            request.setAttribute("id", id);
             request.setAttribute("list", list);
             request.getRequestDispatcher("quiz-result.jsp").forward(request, response);}
             else{ response.sendRedirect("account");}
