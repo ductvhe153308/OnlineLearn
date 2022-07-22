@@ -51,10 +51,10 @@
             <div class="right-navbar" style="width: 100%; height: 100%; background: #FFB100">
                 <ul class="main-nav" style="display: flex; flex-direction: column;">
                     <li class="has-submenu" style="border: 1px solid white;">
-                        <a href="#" style="color: white;">Overview</a>
+                        <a href="TotalLesson?id=${id}" style="color: white;">Overview</a>
                     </li>
                     <li class="" style="border: 1px solid white;">
-                        <a href="#" style="color: white;">Grades</a>
+                        <a href="QuizResult?id=${id}" style="color: white;">Grades</a>
                     </li>
                     
                     <li class="" style="border: 1px solid white;">
