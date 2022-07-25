@@ -42,10 +42,11 @@ public class QuizInfoController extends HttpServlet {
             QuizDAO dao = new QuizDAO();
             LessonDAO lesson = new LessonDAO();
             Lesson ls = lesson.getTitleLesson(quiz_id);
-            
+            int marklater = dao.getMark(quiz_id,  a.getAid()) * 2*10;
             Quiz_History quiz = dao.getQuizHistory(quiz_id, a.getAid());
             double mark = quiz.getMark();
             request.setAttribute("mark", mark *10);
+            request.setAttribute("marklater", marklater);
             request.setAttribute("quiz_title", ls.getSubtitle());
             request.setAttribute("quiz_id", quiz_id);
             
